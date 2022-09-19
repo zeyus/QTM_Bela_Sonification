@@ -1,3 +1,0 @@
-[submodule "include/qualisys_cpp_sdk"]
-	path = include/qualisys_cpp_sdk
-	url = git@github.com:qualisys/qualisys_cpp_sdk.git
