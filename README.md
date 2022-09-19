@@ -1,3 +1,1 @@
-on bela:
-
-serial /dev/ttyGS0 115200 (or greater baud rate, it's USB )
+ /root/Bela/scripts/run_project.sh QTM_Bela_Sonification -c "--use-analog yes --use-digital no --period 32 --high-performance-mode"
