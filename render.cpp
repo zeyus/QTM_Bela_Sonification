@@ -8,6 +8,11 @@
 #include "qsdk/RTPacket.h"
 #include "qsdk/RTProtocol.h"
 
+#define SHOW_TIME
+
+#ifdef SHOW_TIME
+#include <chrono>
+#endif
 // how much history to keep
 #define NUM_SAMPLES 2
 // how many signals to process (at the moment this is required to be 2)
@@ -183,6 +188,36 @@ bool setup(BelaContext *context, void *userData) {
   if (!rtProtocol.Connect(serverAddr, basePort, 0, majorVersion, minorVersion,
                           bigEndian))
     return false;
+  printf("Connected to QTM...");
+
+#ifdef SHOW_TIME
+  using clock = std::chrono::system_clock;
+  using ms = std::chrono::duration<double, std::milli>;
+  // get current time
+  const auto before = clock::now();
+
+  // allocate char to stor version
+  char *qtmVer = new char();
+
+  // request version from QTM
+  rtProtocol.GetQTMVersion(qtmVer, 5000000U);
+
+  // get the duration of the request / response
+  const ms duration = clock::now() - before;
+
+  // print the version and duration
+  printf("It took %3.5fms to send a command and get a reply. %s",
+         duration.count(), qtmVer);
+#else
+  // allocate char to stor version
+  char *qtmVer = new char();
+  // request version from QTM
+  rtProtocol.GetQTMVersion(qtmVer, 5000000U);
+  // print the version
+  printf("%s", duration.count(), qtmVer);
+#endif
+
+  printf("\n");
 
   unsigned short nPort = rtProtocol.GetUdpServerPort();
   // make sure there's 3D data
