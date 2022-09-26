@@ -1,3 +1,11 @@
+#define NOMINMAX
+// this is how many times to check packet latency
+#define CHECK_CMD_LATENCY 1000
+
+#ifdef CHECK_CMD_LATENCY
+#include <chrono>
+#endif
+
 #include <Bela.h>
 #include <libraries/math_neon/math_neon.h>
 
@@ -8,11 +16,7 @@
 #include "qsdk/RTPacket.h"
 #include "qsdk/RTProtocol.h"
 
-#define SHOW_TIME
 
-#ifdef SHOW_TIME
-#include <chrono>
-#endif
 // how much history to keep
 #define NUM_SAMPLES 2
 // how many signals to process (at the moment this is required to be 2)
@@ -190,24 +194,37 @@ bool setup(BelaContext *context, void *userData) {
     return false;
   printf("Connected to QTM...");
 
-#ifdef SHOW_TIME
+#ifdef CHECK_CMD_LATENCY
   using clock = std::chrono::system_clock;
   using ms = std::chrono::duration<double, std::milli>;
-  // get current time
-  const auto before = clock::now();
 
-  // allocate char to stor version
+  double minLatency = 1000.0;
+  double maxLatency = 0.0;
+  double avgLatency = 0.0;
+
+  // allocate char to store version
   char *qtmVer = new char();
 
-  // request version from QTM
-  rtProtocol.GetQTMVersion(qtmVer, 5000000U);
+  for (int i = 0; i < CHECK_CMD_LATENCY; i++) {
+    // get current time
+    const auto before = clock::now();
 
-  // get the duration of the request / response
-  const ms duration = clock::now() - before;
+    // request version from QTM
+    rtProtocol.GetQTMVersion(qtmVer, 5000000U);
 
+    // get the duration of the request / response
+    const ms duration = clock::now() - before;
+
+    // update min / max / avg
+    minLatency = std::min(minLatency, duration.count());
+    maxLatency = std::max(maxLatency, duration.count());
+    avgLatency += duration.count();
+
+  }
+  avgLatency /= CHECK_CMD_LATENCY;
   // print the version and duration
-  printf("It took %3.5fms to send a command and get a reply. %s",
-         duration.count(), qtmVer);
+  printf("It took %3.5fms/%3.5fms/%3.5fms (min/max/avg) to send a command %d times and get a reply. %s",
+         minLatency, maxLatency, avgLatency, CHECK_CMD_LATENCY, qtmVer);
 #else
   // allocate char to stor version
   char *qtmVer = new char();
