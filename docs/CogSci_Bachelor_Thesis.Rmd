@@ -1,0 +1,97 @@
+---
+title: "Realtime Sonification of Motion Capture Data"
+tags:
+  - t...
+  - t....
+authors:
+- name: Linus Backström
+  affiliation: 1
+- name: Luke Ring
+  affiliation: 1
+affiliations:
+ - name: Aarhus University
+   index: 1
+citation_author: Backström, L. and Ring, L.
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+year: 2022
+bibliography:
+  - master.bib
+  - packages.bib
+biblio-title: References
+biblio-style: apa
+link-citations: true
+# geometry: margin=2.5cm
+# mainfont: georgia
+# sansfont: calibri
+fontsize: 11pt
+spacing: double
+output:
+  bookdown::pdf_document2:
+    keep_tex: yes
+    latex_engine: xelatex
+    citation_package: biblatex
+    toc: yes
+    toc_depth: 3
+    number_sections: yes
+    fig_caption: yes
+    template: templates/latex_template.tex
+csl: templates/apa7.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::write_bib(.packages(), "packages.bib")
+bookdown::pdf_document2()
+# this leaves all of the intermediate files in the dir if FALSE
+options(tinytex.clean = TRUE)
+options(tinytex.verbose = FALSE)
+
+# set default cran mirror
+r <- getOption("repos")
+r["CRAN"] <- "https://mirrors.dotsrc.org/cran/" # Denmark
+options(repos = r)
+rm(r)
+
+# use this function to load packages to save manual installation
+use_package <- function(p) {
+    if (!is.element(p, installed.packages()[,1]))
+        install.packages(p, dep = TRUE)
+    require(p, character.only = TRUE)
+}
+
+use_package("bookdown")
+use_package("rticles")
+use_package("tidyverse")
+
+```
+
+# Abstract
+
+adf
+
+# Mathematics
+
+Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
+
+Double dollars make self-standing equations:
+
+$$\Theta(x) = \left\{\begin{array}{l}
+0\textrm{ if } x < 0\cr
+1\textrm{ else}
+\end{array}\right.$$
+
+
+# Citations
+
+Citations to entries in paper.bib should be in
+[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+format.
+
+For a quick reference, the following citation commands can be used:
+- @zammSynchronizingMIDIWireless2019  ->  "Author et al. (2001)"
+- [@walkerMUSICALSOUNDSCAPESACCESSIBLE2007] -> "(Author et al., 2001)"
+- [@vinkenAuditoryCodingHuman2013; @umekSuitabilityStrainGage2017] -> "(Author1 et al., 2001; Author2 et al., 2002)"
+
+# References
+
+<div id="refs"></div>
