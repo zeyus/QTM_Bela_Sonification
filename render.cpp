@@ -1,5 +1,6 @@
 #define NOMINMAX
 // this is how many times to check packet latency
+// if it's not defined, there will be no latency check
 #define CHECK_CMD_LATENCY 1000
 
 #ifdef CHECK_CMD_LATENCY
