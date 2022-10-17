@@ -6,7 +6,7 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 <!--ts-->
 * [QTM Low-latency Sonification](#qtm-low-latency-sonification)
 * [Contents](#contents)
-* [Cognitive Science Bachelor's Project](#cognitive-science-bachelors-project)
+* [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
 * [Project Structure](#project-structure)
 * [Instructions](#instructions)
 * [Open Source Libraries](#open-source-libraries)
