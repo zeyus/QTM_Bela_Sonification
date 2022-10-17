@@ -14,8 +14,8 @@
 #include <iterator>
 #include <string>
 
-#include "qsdk/RTPacket.h"
-#include "qsdk/RTProtocol.h"
+#include "lib/qsdk/RTPacket.h"
+#include "lib/qsdk/RTProtocol.h"
 
 
 // how much history to keep
