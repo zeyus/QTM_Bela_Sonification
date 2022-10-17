@@ -14,12 +14,12 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
    * [Used](#used)
 <!--te-->
 
-# Cognitive Science Bachelor's Project
+# Cognitive Science Bachelor's Project (WORK IN PROGRESS)
 
 The thesis was written around the investigation of the effect of low-latency sonification on the synchroniciy of joint action tasks.
 The project was supervised by [Anna Zamm](https://pure.au.dk/portal/en/persons/anna-zamm(34046139-7057-4cae-927d-f2458b279026).html) (PhD, Assistant Professor, Aarhus University).
 
-The final thesis can be found in this repository in the `docs` directory in the following formats:
+The ~~final~~ WIP thesis can be found in this repository in the `docs` directory in the following formats:
 
 - [PDF](docs/CogSci_Bachelor_Thesis.pdf)
 - [LaTeX](docs/CogSci_Bachelor_Thesis.tex)
