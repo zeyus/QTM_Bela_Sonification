@@ -1,8 +1,10 @@
 ---
 title: "Realtime Sonification of Motion Capture Data"
-tags:
-  - t...
-  - t....
+keywords: 
+  - Sonification
+  - Motion Capture
+  - Realtime
+  - Processing
 authors:
 - name: Linus Backström
   affiliation: 1
@@ -36,6 +38,9 @@ output:
     fig_caption: yes
     template: templates/latex_template.tex
 csl: templates/apa7.csl
+repository: https\://github.com/zeyus/QTM_Bela_Sonification
+submitted: "`r format(Sys.time(), '%B %d, %Y')`"
+licensepath: https\://github.com/zeyus/QTM_Bela_Sonification/blob/main/LICENSE.md
 ---
 
 ```{r setup, include=FALSE}
@@ -54,7 +59,7 @@ rm(r)
 
 # use this function to load packages to save manual installation
 use_package <- function(p) {
-    if (!is.element(p, installed.packages()[,1]))
+    if (!is.element(p, installed.packages()[, 1]))
         install.packages(p, dep = TRUE)
     require(p, character.only = TRUE)
 }
@@ -62,14 +67,15 @@ use_package <- function(p) {
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
-
 ```
 
 # Abstract
 
 adf
 
-# Mathematics
+# `r rmarkdown::metadata$title`
+
+Main intro goes here (why what how?)
 
 Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
 
@@ -80,17 +86,61 @@ $$\Theta(x) = \left\{\begin{array}{l}
 1\textrm{ else}
 \end{array}\right.$$
 
-
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
 For a quick reference, the following citation commands can be used:
 - @zammSynchronizingMIDIWireless2019  ->  "Author et al. (2001)"
 - [@walkerMUSICALSOUNDSCAPESACCESSIBLE2007] -> "(Author et al., 2001)"
 - [@vinkenAuditoryCodingHuman2013; @umekSuitabilityStrainGage2017] -> "(Author1 et al., 2001; Author2 et al., 2002)"
+
+# Literature review (background/etc)
+
+Interpersonal coordination describes situations where two or more individuals strive to match or complement each other's actions,
+and it is rooted in both the perception and anticipation of motor actions between those individuals [@gerdschmitzSoundJoinedActions2017].
+While perception, anticipation and action have traditionally been viewed as separate phenomena, current theories state that they are all intrinsically connected.
+A large part of embodiment research builds on the key hypothesis that merely observing an action triggers internal models of
+movement that actively engage the motor system [@gerdschmitzSoundJoinedActions2017].
+As a result, the motor system appears to not only assist with the planning and controlling of one's own actions,
+but also serves the secondary function of perceiving and anticipating other people's actions [@gerdschmitzSoundJoinedActions2017].
+This dual-purpose function of the motor system helps with achieving interpersonal coordination and can also result in spontaneous coordination,
+where the actions of others may unwittingly affect one's own actions, even after being instructed to ignore them [@demosRockingBeatEffects2012].
+
+Sonification is defined as the use of nonspeech audio to convey information.
+More specifically, sonification is the transformation of data relations into perceived relations in an acoustic
+signal for the purposes of facilitating communication or interpretation [@kramerSonificationReportStatus1999].
+While concepts around sonification and audification were not formalized until around the year 1992 when the first 
+International Conference on Auditory Display (ICAD) was held [@dubusSonificationPhysicalQuantities2011], practical examples of sonification can 
+be found throughout history. Water clocks in ancient Greece and medieval China were sometimes constructed to 
+produce sounds and thereby provide auditory information about the passage of time [@dubusSonificationPhysicalQuantities2011]. 
+The stethoscope, which is used for listening to sounds made by the heart and lungs as well as other internal 
+sounds of the body, was invented in 1816 by French physician and amateur musician Rene Laënnec [@roguinReneTheophileHyacinthe2006]. 
+The Geiger counter developed in 1928 provides perhaps the most characteristic example of sonification through 
+its function of sonifying levels of radiation. The device detects ionizing radiation and translates it into audible clicks, 
+where a faster tempo signifies a higher level of radiation. @dubusSonificationPhysicalQuantities2011 describe the value of the Geiger 
+counter as "transposing a physical quantity which is essentially non-visual and pictured in everyone's imagination 
+as very important because life-threatening, to the auditory modality through clicks with a varying pulse".
+
+
+....
+
+RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?
+
+H_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.
+
+H_1: Real-time sonification of object movement effects joint action synchronization between subjects.
+
+
+# Methods
+
+Describe subject demographics etc.
+
+## Hardware and Software
+
+## Experimental Design
+
+# Analysis
+
+# Results
+
+# Discussion
 
 # References
 

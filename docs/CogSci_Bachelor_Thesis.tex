@@ -7,7 +7,7 @@
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{hyperref}
-\hypersetup{colorlinks,breaklinks,
+\hypersetup{colorlinks,
             urlcolor=[rgb]{0.0, 0.5, 1.0},
             linkcolor=[rgb]{0.0, 0.5, 1.0}}
 \usepackage{caption}
@@ -15,7 +15,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{seqsplit}
-\usepackage{fixltx2e} % provides \textsubscript
+% \usepackage{fixltx2e} % provides \textsubscript
 \usepackage[backend=biber,style=apa]{biblatex}
 
 \addbibresource{master.bib}
@@ -53,13 +53,13 @@
 \fancyhf{}
 %\renewcommand{\headrulewidth}{0.50pt}
 \renewcommand{\headrulewidth}{0pt}
-% \fancyhead[L]{\hspace{-0.75cm}\includegraphics[width=5.5cm]{}}
+
 \fancyhead[L]{}
 \fancyhead[C]{}
 \fancyhead[R]{}
 \renewcommand{\footrulewidth}{0.25pt}
 
-\fancyfoot[L]{\footnotesize{\sffamily Backström, L. and Ring, L., (2022). Realtime Sonification of Motion Capture Data. \textit{}, (), . \href{https://doi.org/}{https://doi.org/}}}
+\fancyfoot[L]{\footnotesize{\sffamily Backström, L. and Ring, L., (2022). Realtime Sonification of Motion Capture Data., .}}
 
 
 \fancyfoot[R]{\sffamily \thepage}
@@ -143,8 +143,9 @@
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Realtime Sonification of Motion Capture Data},
+            pdfkeywords={Sonification; Motion Capture; Realtime; Processing},
             pdfborder={0 0 0},
-            breaklinks=true}
+            }
 \urlstyle{same}  % don't use monospace font for urls
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
@@ -195,29 +196,23 @@
 \maketitle
 
 \marginpar{
-  %\hrule
   \sffamily\small
-
-  {\bfseries DOI:} \href{https://doi.org/}{\color{linky}{}}
 
   \vspace{2mm}
 
   {\bfseries Software}
   \begin{itemize}
     \setlength\itemsep{0em}
-    \item \href{}{\color{linky}{Review}} \ExternalLink
-    \item \href{}{\color{linky}{Repository}} \ExternalLink
-    \item \href{}{\color{linky}{Archive}} \ExternalLink
+    \item \href{https://github.com/zeyus/QTM\_Bela\_Sonification}{\color{linky}{Repository}} \ExternalLink
   \end{itemize}
 
   \vspace{2mm}
 
-  {\bfseries Submitted:} \\
-  {\bfseries Published:} 
+  {\bfseries Submitted:} October 17, 2022
 
   \vspace{2mm}
   {\bfseries License}\\
-  Authors of papers retain copyright and release the work under a Creative Commons Attribution 4.0 International License (\href{http://creativecommons.org/licenses/by/4.0/}{\color{linky}{CC-BY}}).
+  Authors of papers retain copyright and release the work under a MIT Licence (\href{https://github.com/zeyus/QTM\_Bela\_Sonification/blob/main/LICENSE.md}{\color{linky}{MIT}}).
 }
 
 {
@@ -229,8 +224,10 @@
 
 adf
 
-\hypertarget{mathematics}{%
-\section{Mathematics}\label{mathematics}}
+\hypertarget{realtime-sonification-of-motion-capture-data}{%
+\section{Realtime Sonification of Motion Capture Data}\label{realtime-sonification-of-motion-capture-data}}
+
+Main intro goes here (why what how?)
 
 Single dollars (\$) are required for inline mathematics e.g.~\(f(x) = e^{\pi/x}\)
 
@@ -241,17 +238,66 @@ Double dollars make self-standing equations:
 1\textrm{ else}
 \end{array}\right.\]
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
-
-Citations to entries in paper.bib should be in
-\href{http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html}{rMarkdown}
-format.
-
 For a quick reference, the following citation commands can be used:
 - \textcite{zammSynchronizingMIDIWireless2019} -\textgreater{} ``Author et al.~(2001)''
 - \autocite{walkerMUSICALSOUNDSCAPESACCESSIBLE2007} -\textgreater{} ``(Author et al., 2001)''
 - \autocite{vinkenAuditoryCodingHuman2013,umekSuitabilityStrainGage2017} -\textgreater{} ``(Author1 et al., 2001; Author2 et al., 2002)''
+
+\hypertarget{literature-review-backgroundetc}{%
+\section{Literature review (background/etc)}\label{literature-review-backgroundetc}}
+
+Interpersonal coordination describes situations where two or more individuals strive to match or complement each other's actions,
+and it is rooted in both the perception and anticipation of motor actions between those individuals \autocite{gerdschmitzSoundJoinedActions2017}.
+While perception, anticipation and action have traditionally been viewed as separate phenomena, current theories state that they are all intrinsically connected.
+A large part of embodiment research builds on the key hypothesis that merely observing an action triggers internal models of
+movement that actively engage the motor system \autocite{gerdschmitzSoundJoinedActions2017}.
+As a result, the motor system appears to not only assist with the planning and controlling of one's own actions,
+but also serves the secondary function of perceiving and anticipating other people's actions \autocite{gerdschmitzSoundJoinedActions2017}.
+This dual-purpose function of the motor system helps with achieving interpersonal coordination and can also result in spontaneous coordination,
+where the actions of others may unwittingly affect one's own actions, even after being instructed to ignore them \autocite{demosRockingBeatEffects2012}.
+
+Sonification is defined as the use of nonspeech audio to convey information.
+More specifically, sonification is the transformation of data relations into perceived relations in an acoustic
+signal for the purposes of facilitating communication or interpretation \autocite{kramerSonificationReportStatus1999}.
+While concepts around sonification and audification were not formalized until around the year 1992 when the first
+International Conference on Auditory Display (ICAD) was held \autocite{dubusSonificationPhysicalQuantities2011}, practical examples of sonification can
+be found throughout history. Water clocks in ancient Greece and medieval China were sometimes constructed to
+produce sounds and thereby provide auditory information about the passage of time \autocite{dubusSonificationPhysicalQuantities2011}.
+The stethoscope, which is used for listening to sounds made by the heart and lungs as well as other internal
+sounds of the body, was invented in 1816 by French physician and amateur musician Rene Laënnec \autocite{roguinReneTheophileHyacinthe2006}.
+The Geiger counter developed in 1928 provides perhaps the most characteristic example of sonification through
+its function of sonifying levels of radiation. The device detects ionizing radiation and translates it into audible clicks,
+where a faster tempo signifies a higher level of radiation. \textcite{dubusSonificationPhysicalQuantities2011} describe the value of the Geiger
+counter as ``transposing a physical quantity which is essentially non-visual and pictured in everyone's imagination
+as very important because life-threatening, to the auditory modality through clicks with a varying pulse''.
+
+\ldots.
+
+RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?
+
+H\_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.
+
+H\_1: Real-time sonification of object movement effects joint action synchronization between subjects.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Describe subject demographics etc.
+
+\hypertarget{hardware-and-software}{%
+\subsection{Hardware and Software}\label{hardware-and-software}}
+
+\hypertarget{experimental-design}{%
+\subsection{Experimental Design}\label{experimental-design}}
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 \printbibliography[title=References]
 
