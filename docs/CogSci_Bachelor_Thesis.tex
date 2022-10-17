@@ -1,0 +1,304 @@
+\documentclass[10pt,a4paper,onecolumn]{article}
+\usepackage{marginnote}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{authblk,etoolbox}
+\usepackage{titlesec}
+\usepackage{calc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\hypersetup{colorlinks,
+            urlcolor=[rgb]{0.0, 0.5, 1.0},
+            linkcolor=[rgb]{0.0, 0.5, 1.0}}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{seqsplit}
+% \usepackage{fixltx2e} % provides \textsubscript
+\usepackage[backend=biber,style=apa]{biblatex}
+
+\addbibresource{master.bib}
+\addbibresource{packages.bib}
+
+% --- Page layout -------------------------------------------------------------
+\usepackage[top=3.5cm, bottom=3cm, right=1.5cm, left=1.0cm,
+            headheight=2.2cm, reversemp, includemp, marginparwidth=4.5cm]{geometry}
+
+% --- Default font ------------------------------------------------------------
+% \renewcommand\familydefault{\sfdefault}
+
+% --- Style -------------------------------------------------------------------
+\renewcommand{\bibfont}{\small \sffamily}
+\renewcommand{\captionfont}{\small\sffamily}
+\renewcommand{\captionlabelfont}{\bfseries}
+
+% --- Section/SubSection/SubSubSection ----------------------------------------
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries}
+  {}{0pt}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries}
+  {}{0pt}{}
+\titleformat{\subsubsection}
+  {\normalfont\sffamily\bfseries}
+  {}{0pt}{}
+\titleformat*{\paragraph}
+  {\sffamily\normalsize}
+
+
+% --- Header / Footer ---------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\renewcommand{\headrulewidth}{0.50pt}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\renewcommand{\footrulewidth}{0.25pt}
+
+\fancyfoot[L]{\footnotesize{\sffamily Backström, L. and Ring, L., (2022). Realtime Sonification of Motion Capture Data., .}}
+
+
+\fancyfoot[R]{\sffamily \thepage}
+\makeatletter
+\let\ps@plain\ps@fancy
+\fancyheadoffset[L]{4.5cm}
+\fancyfootoffset[L]{4.5cm}
+
+% --- Macros ---------
+
+\definecolor{linky}{rgb}{0.0, 0.5, 1.0}
+
+\newtcolorbox{repobox}
+   {colback=red, colframe=red!75!black,
+     boxrule=0.5pt, arc=2pt, left=6pt, right=6pt, top=3pt, bottom=3pt}
+
+\newcommand{\ExternalLink}{%
+   \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{%
+       \begin{scope}[x=1ex, y=1ex]
+           \clip (-0.1,-0.1)
+               --++ (-0, 1.2)
+               --++ (0.6, 0)
+               --++ (0, -0.6)
+               --++ (0.6, 0)
+               --++ (0, -1);
+           \path[draw,
+               line width = 0.5,
+               rounded corners=0.5]
+               (0,0) rectangle (1,1);
+       \end{scope}
+       \path[draw, line width = 0.5] (0.5, 0.5)
+           -- (1, 1);
+       \path[draw, line width = 0.5] (0.6, 1)
+           -- (1, 1) -- (1, 0.6);
+       }
+   }
+
+% --- Title / Authors ---------------------------------------------------------
+% patch \maketitle so that it doesn't center
+\patchcmd{\@maketitle}{center}{flushleft}{}{}
+\patchcmd{\@maketitle}{center}{flushleft}{}{}
+% patch \maketitle so that the font size for the title is normal
+\patchcmd{\@maketitle}{\LARGE}{\LARGE\sffamily}{}{}
+% patch the patch by authblk so that the author block is flush left
+\def\maketitle{{%
+  \renewenvironment{tabular}[2][]
+    {\begin{flushleft}}
+    {\end{flushleft}}
+  \AB@maketitle}}
+\makeatletter
+\renewcommand\AB@affilsepx{ \protect\Affilfont}
+%\renewcommand\AB@affilnote[1]{{\bfseries #1}\hspace{2pt}}
+\renewcommand\AB@affilnote[1]{{\bfseries #1}\hspace{3pt}}
+\makeatother
+\renewcommand\Authfont{\sffamily\bfseries}
+\renewcommand\Affilfont{\sffamily\small\mdseries}
+\setlength{\affilsep}{1em}
+
+
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Realtime Sonification of Motion Capture Data},
+            pdfkeywords={Sonification; Motion Capture; Realtime; Processing},
+            pdfborder={0 0 0},
+            }
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+% tightlist command for lists without linebreak
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% From pandoc table feature
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+
+
+
+\title{Realtime Sonification of Motion Capture Data}
+
+        \author[1]{Linus Backström}
+          \author[1]{Luke Ring}
+    
+      \affil[1]{Aarhus University}
+  \date{\vspace{-5ex}}
+
+\begin{document}
+\maketitle
+
+\marginpar{
+  \sffamily\small
+
+  \vspace{2mm}
+
+  {\bfseries Software}
+  \begin{itemize}
+    \setlength\itemsep{0em}
+    \item \href{https://github.com/zeyus/QTM\_Bela\_Sonification}{\color{linky}{Repository}} \ExternalLink
+  \end{itemize}
+
+  \vspace{2mm}
+
+  {\bfseries Submitted:} October 17, 2022
+
+  \vspace{2mm}
+  {\bfseries License}\\
+  Authors of papers retain copyright and release the work under a MIT Licence (\href{https://github.com/zeyus/QTM\_Bela\_Sonification/blob/main/LICENSE.md}{\color{linky}{MIT}}).
+}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{abstract}{%
+\section{Abstract}\label{abstract}}
+
+adf
+
+\hypertarget{realtime-sonification-of-motion-capture-data}{%
+\section{Realtime Sonification of Motion Capture Data}\label{realtime-sonification-of-motion-capture-data}}
+
+Main intro goes here (why what how?)
+
+Single dollars (\$) are required for inline mathematics e.g.~\(f(x) = e^{\pi/x}\)
+
+Double dollars make self-standing equations:
+
+\[\Theta(x) = \left\{\begin{array}{l}
+0\textrm{ if } x < 0\cr
+1\textrm{ else}
+\end{array}\right.\]
+
+For a quick reference, the following citation commands can be used:
+- \textcite{zammSynchronizingMIDIWireless2019} -\textgreater{} ``Author et al.~(2001)''
+- \autocite{walkerMUSICALSOUNDSCAPESACCESSIBLE2007} -\textgreater{} ``(Author et al., 2001)''
+- \autocite{vinkenAuditoryCodingHuman2013,umekSuitabilityStrainGage2017} -\textgreater{} ``(Author1 et al., 2001; Author2 et al., 2002)''
+
+\hypertarget{literature-review-backgroundetc}{%
+\section{Literature review (background/etc)}\label{literature-review-backgroundetc}}
+
+Interpersonal coordination describes situations where two or more individuals strive to match or complement each other's actions,
+and it is rooted in both the perception and anticipation of motor actions between those individuals \autocite{gerdschmitzSoundJoinedActions2017}.
+While perception, anticipation and action have traditionally been viewed as separate phenomena, current theories state that they are all intrinsically connected.
+A large part of embodiment research builds on the key hypothesis that merely observing an action triggers internal models of
+movement that actively engage the motor system \autocite{gerdschmitzSoundJoinedActions2017}.
+As a result, the motor system appears to not only assist with the planning and controlling of one's own actions,
+but also serves the secondary function of perceiving and anticipating other people's actions \autocite{gerdschmitzSoundJoinedActions2017}.
+This dual-purpose function of the motor system helps with achieving interpersonal coordination and can also result in spontaneous coordination,
+where the actions of others may unwittingly affect one's own actions, even after being instructed to ignore them \autocite{demosRockingBeatEffects2012}.
+
+Sonification is defined as the use of nonspeech audio to convey information.
+More specifically, sonification is the transformation of data relations into perceived relations in an acoustic
+signal for the purposes of facilitating communication or interpretation \autocite{kramerSonificationReportStatus1999}.
+While concepts around sonification and audification were not formalized until around the year 1992 when the first
+International Conference on Auditory Display (ICAD) was held \autocite{dubusSonificationPhysicalQuantities2011}, practical examples of sonification can
+be found throughout history. Water clocks in ancient Greece and medieval China were sometimes constructed to
+produce sounds and thereby provide auditory information about the passage of time \autocite{dubusSonificationPhysicalQuantities2011}.
+The stethoscope, which is used for listening to sounds made by the heart and lungs as well as other internal
+sounds of the body, was invented in 1816 by French physician and amateur musician Rene Laënnec \autocite{roguinReneTheophileHyacinthe2006}.
+The Geiger counter developed in 1928 provides perhaps the most characteristic example of sonification through
+its function of sonifying levels of radiation. The device detects ionizing radiation and translates it into audible clicks,
+where a faster tempo signifies a higher level of radiation. \textcite{dubusSonificationPhysicalQuantities2011} describe the value of the Geiger
+counter as ``transposing a physical quantity which is essentially non-visual and pictured in everyone's imagination
+as very important because life-threatening, to the auditory modality through clicks with a varying pulse''.
+
+\ldots.
+
+RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?
+
+H\_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.
+
+H\_1: Real-time sonification of object movement effects joint action synchronization between subjects.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Describe subject demographics etc.
+
+\hypertarget{hardware-and-software}{%
+\subsection{Hardware and Software}\label{hardware-and-software}}
+
+\hypertarget{experimental-design}{%
+\subsection{Experimental Design}\label{experimental-design}}
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\printbibliography[title=References]
+
+\end{document}
