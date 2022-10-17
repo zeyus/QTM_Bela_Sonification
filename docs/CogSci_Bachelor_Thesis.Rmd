@@ -21,8 +21,8 @@ biblio-title: References
 biblio-style: apa
 link-citations: true
 # geometry: margin=2.5cm
-# mainfont: georgia
-# sansfont: calibri
+mainfont: georgia
+sansfont: calibri
 fontsize: 11pt
 spacing: double
 output:
