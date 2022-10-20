@@ -1,22 +1,15 @@
-#define NOMINMAX
-// this is how many times to check packet latency
-// if it's not defined, there will be no latency check
-#define CHECK_CMD_LATENCY 1000
-
-#ifdef CHECK_CMD_LATENCY
-#include <chrono>
-#endif
-
 #include <Bela.h>
+
 #include <libraries/math_neon/math_neon.h>
 
 #include <array>
 #include <iterator>
 #include <string>
 
-#include "lib/qsdk/RTPacket.h"
-#include "lib/qsdk/RTProtocol.h"
+#include "qsdk/RTPacket.h"
+#include "qsdk/RTProtocol.h"
 
+// #include "utils/latency_check.h" // include this file to do a latency check
 
 // how much history to keep
 #define NUM_SAMPLES 2
@@ -59,6 +52,8 @@ std::array<float, NUM_SUBJECTS> gMaxStep{};
 // record of last rendered QTM frame.
 unsigned int gLastFrame = 0;
 
+float gOut;
+
 // array of size n_subjects x n_history x 3 (x, y, z)
 std::array<std::array<std::array<float, NUM_COORDS>, NUM_SUBJECTS>, NUM_SAMPLES>
     gPos3D{};
@@ -70,10 +65,10 @@ std::array<float, NUM_SUBJECTS> gStepDistance{};
 std::array<float, NUM_SUBJECTS> gFreq{};
 
 // QTM protocol
-CRTProtocol rtProtocol;
+CRTProtocol* rtProtocol;
 
 // QTM communication packet
-CRTPacket *rtPacket;
+CRTPacket* rtPacket;
 
 // QTM packet type (we want Data Packets (CRTPacket::PacketData).
 CRTPacket::EPacketType packetType;
@@ -96,14 +91,14 @@ AuxiliaryTask gFillBufferTask;
 // wrapper to retrieve latest QTM 3d packet
 bool get3DPacket() {
   // Ask QTM for latest packet.
-  if (rtProtocol.Receive(packetType, true) != CNetwork::ResponseType::success) {
+  if (rtProtocol->Receive(packetType, true) != CNetwork::ResponseType::success) {
     printf("Problem reading data...\n");
     return false;
   }
   // we got a data packet from QTM
   if (packetType == CRTPacket::PacketData) {
     // get the current data packet
-    rtPacket = rtProtocol.GetRTPacket();
+    rtPacket = rtProtocol->GetRTPacket();
     return true;
   } else {
     return false;
@@ -185,73 +180,51 @@ bool setup(BelaContext *context, void *userData) {
   const unsigned short basePort = 22222;
   // Protocol version, 1.23 is the latest
   const int majorVersion = 1;
-  const int minorVersion = 23;
+  const int minorVersion = 22;
   // Leave as false
   const bool bigEndian = false;
-
+  unsigned short nPort = 0;
   // Connect to the QTM application
-  if (!rtProtocol.Connect(serverAddr, basePort, 0, majorVersion, minorVersion,
-                          bigEndian))
+  if (!rtProtocol->Connect(serverAddr, basePort, &nPort, majorVersion, minorVersion,
+                          &bigEndian)) {
+  	printf("\nFailed to connect to QTM RT Server. %s\n\n", rtProtocol->GetErrorString());
+                system("pause");
     return false;
+  }
+    
   printf("Connected to QTM...");
 
-#ifdef CHECK_CMD_LATENCY
-  using clock = std::chrono::system_clock;
-  using ms = std::chrono::duration<double, std::milli>;
 
-  double minLatency = 1000.0;
-  double maxLatency = 0.0;
-  double avgLatency = 0.0;
-
-  // allocate char to store version
-  char *qtmVer = new char();
-
-  for (int i = 0; i < CHECK_CMD_LATENCY; i++) {
-    // get current time
-    const auto before = clock::now();
-
-    // request version from QTM
-    rtProtocol.GetQTMVersion(qtmVer, 5000000U);
-
-    // get the duration of the request / response
-    const ms duration = clock::now() - before;
-
-    // update min / max / avg
-    minLatency = std::min(minLatency, duration.count());
-    maxLatency = std::max(maxLatency, duration.count());
-    avgLatency += duration.count();
-
-  }
-  avgLatency /= CHECK_CMD_LATENCY;
-  // print the version and duration
-  printf("It took %3.5fms/%3.5fms/%3.5fms (min/max/avg) to send a command %d times and get a reply. %s",
-         minLatency, maxLatency, avgLatency, CHECK_CMD_LATENCY, qtmVer);
-#else
   // allocate char to stor version
   char *qtmVer = new char();
   // request version from QTM
-  rtProtocol.GetQTMVersion(qtmVer, 5000000U);
+  rtProtocol->GetQTMVersion(qtmVer, 5000000U);
   // print the version
-  printf("%s", duration.count(), qtmVer);
+  printf("%s\n", qtmVer);
+#ifdef CHECK_CMD_LATENCY
+  checkLatency(rtProtocol);
 #endif
 
   printf("\n");
 
-  unsigned short nPort = rtProtocol.GetUdpServerPort();
+  
+  printf("Hi\n");
   // make sure there's 3D data
-  bool dataAvailable;
-  if (!rtProtocol.Read3DSettings(dataAvailable)) return false;
+  bool dataAvailable = false;
+  printf("Hi3\n");
+  if (!rtProtocol->Read3DSettings(dataAvailable)) return false;
+  printf("Hi2\n");
 
   // Start streaming from QTM
   if (gStreamUDP) {
-    if (!rtProtocol.StreamFrames(CRTProtocol::RateAllFrames, 0, nPort, NULL,
+    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, nPort, NULL,
                                  CRTProtocol::cComponent3d)) {
       printf("Error streaming from QTM\n");
       return false;
     }
   } else {
     // Start the 3D data stream.
-    if (!rtProtocol.StreamFrames(CRTProtocol::RateAllFrames, 0, 0, NULL,
+    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, 0, NULL,
                                  CRTProtocol::cComponent3d)) {
       printf("Error streaming from QTM\n");
       return false;
@@ -261,11 +234,11 @@ bool setup(BelaContext *context, void *userData) {
   gConnected = true;
 
   // number of labelled markers
-  const unsigned int nLabels = rtProtocol.Get3DLabeledMarkerCount();
+  const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
   printf("Found labels: \n");
   // loop through labels to find ones we are interested in.
   for (unsigned int i = 0; i < nLabels; i++) {
-    const char *cLabelName = rtProtocol.Get3DLabelName(i);
+    const char *cLabelName = rtProtocol->Get3DLabelName(i);
     printf("- %s\n", cLabelName);
     for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
       // if the label is one of our specified markers, keep the ID.
@@ -292,17 +265,15 @@ float sin_freq(float &phase, float freq, float inv_sr) {
 
 // bela main render loop function
 void render(BelaContext *context, void *userData) {
-  float out;
-
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     // there will probably always be 2 out channels
     for (unsigned int channel = 0; channel < context->audioOutChannels;
          channel++) {
       // get the value for the current sample.
-      out = sin_freq(gPhase[channel], gFreq[channel],
+      gOut = sin_freq(gPhase[channel], gFreq[channel],
                      gInverseSampleRate[channel]);
-      audioWrite(context, n, channel, out);
+      audioWrite(context, n, channel, gOut);
     }
   }
   // just keep polling for 3D data.
@@ -314,6 +285,6 @@ void cleanup(BelaContext *context, void *userData) {
   // disconnect nicely from QTM
   if (gConnected) {
     gConnected = false;
-    rtProtocol.Disconnect();
+    rtProtocol->Disconnect();
   }
 }
