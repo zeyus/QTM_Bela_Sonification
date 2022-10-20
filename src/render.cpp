@@ -186,7 +186,7 @@ bool setup(BelaContext *context, void *userData) {
   unsigned short nPort = 0;
   // Connect to the QTM application
   if (!rtProtocol->Connect(serverAddr, basePort, &nPort, majorVersion, minorVersion,
-                          &bigEndian)) {
+                          bigEndian)) {
   	printf("\nFailed to connect to QTM RT Server. %s\n\n", rtProtocol->GetErrorString());
                 system("pause");
     return false;
