@@ -4,7 +4,7 @@
 #include "latency_check.h"
 
 // this is coupled with QTM, not ideal but it works for now
-void checkLatency(CRTProtocol rtProtocol)
+void checkLatency(CRTProtocol* rtProtocol)
 {
   using clock = std::chrono::system_clock;
   using ms = std::chrono::duration<double, std::milli>;
@@ -16,14 +16,14 @@ void checkLatency(CRTProtocol rtProtocol)
   double avgLatency = 0.0;
 
   // allocate char to store version
-  char *qtmVer = new char();
+  char qtmVer[64];
 
   for (int i = 0; i < CHECK_CMD_LATENCY; i++) {
     // get current time
     const auto before = clock::now();
 
     // request version from QTM
-    rtProtocol.GetQTMVersion(qtmVer, 5000000U);
+    rtProtocol->GetQTMVersion(qtmVer, sizeof(qtmVer));
 
     // get the duration of the request / response
     const ms duration = clock::now() - before;
