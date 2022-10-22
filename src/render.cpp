@@ -9,7 +9,7 @@
 #include "qsdk/RTPacket.h"
 #include "qsdk/RTProtocol.h"
 
-// #include "utils/latency_check.h" // include this file to do a latency check
+// #include "utils/latency_check.cpp" // include this file to do a latency check
 
 // how much history to keep
 #define NUM_SAMPLES 2
@@ -65,10 +65,10 @@ std::array<float, NUM_SUBJECTS> gStepDistance{};
 std::array<float, NUM_SUBJECTS> gFreq{};
 
 // QTM protocol
-CRTProtocol* rtProtocol;
+CRTProtocol* rtProtocol = NULL;
 
 // QTM communication packet
-CRTPacket* rtPacket;
+CRTPacket* rtPacket = NULL;
 
 // QTM packet type (we want Data Packets (CRTPacket::PacketData).
 CRTPacket::EPacketType packetType;
@@ -180,10 +180,12 @@ bool setup(BelaContext *context, void *userData) {
   const unsigned short basePort = 22222;
   // Protocol version, 1.23 is the latest
   const int majorVersion = 1;
-  const int minorVersion = 22;
+  const int minorVersion = 23;
   // Leave as false
   const bool bigEndian = false;
   unsigned short nPort = 0;
+  
+  rtProtocol = new CRTProtocol();
   // Connect to the QTM application
   if (!rtProtocol->Connect(serverAddr, basePort, &nPort, majorVersion, minorVersion,
                           bigEndian)) {
@@ -194,11 +196,10 @@ bool setup(BelaContext *context, void *userData) {
     
   printf("Connected to QTM...");
 
-
   // allocate char to stor version
-  char *qtmVer = new char();
+  char qtmVer[64];
   // request version from QTM
-  rtProtocol->GetQTMVersion(qtmVer, 5000000U);
+  rtProtocol->GetQTMVersion(qtmVer, sizeof(qtmVer));
   // print the version
   printf("%s\n", qtmVer);
 #ifdef CHECK_CMD_LATENCY
@@ -206,14 +207,10 @@ bool setup(BelaContext *context, void *userData) {
 #endif
 
   printf("\n");
-
   
-  printf("Hi\n");
   // make sure there's 3D data
-  bool dataAvailable = false;
-  printf("Hi3\n");
+  bool dataAvailable;
   if (!rtProtocol->Read3DSettings(dataAvailable)) return false;
-  printf("Hi2\n");
 
   // Start streaming from QTM
   if (gStreamUDP) {
