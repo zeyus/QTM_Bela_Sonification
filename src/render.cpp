@@ -1,6 +1,7 @@
 #include <Bela.h>
 
 #include <libraries/math_neon/math_neon.h>
+#include <libraries/AudioFile/AudioFile.h>
 
 #include <array>
 #include <iterator>
@@ -37,6 +38,32 @@ const float gFreqMax = 1000.0;
 const float gStepDistanceMin = 0.025;
 // maximum distance that tracked markers will move in a single frame (mm/frame).
 const float gStepDistanceMax = 43.2;
+
+const std::string gUndertoneFile = "./res/130bpm_8thnote_LFO_As3_1osc.wav";
+const std::string gOvertoneFile = "./res/130bpm_8thnote_LFO_F4_1osc.wav";
+
+const int gSampleLength = 10604;
+
+
+// minimum frequency for playback.
+const float gFreqMin1 = 232.819;
+// maximum frequencey for playback.
+const float gFreqMax1 = 369.577;
+
+// minimum frequency for playback.
+const float gFreqMin2 = 349.23;
+// maximum frequencey for playback.
+const float gFreqMax2 = 554.365;
+
+// track start and end points (on corresponding axis)
+const float gTrackStart = 0.0;
+const float gTrackEnd = 1.0;
+
+unsigned int gReadPtr;
+// track axis
+const int gTrackAxis = 0;
+
+
 
 // use UDP for QTM connection.
 // UDP has less overhead so try to use that if no problems.
@@ -84,6 +111,10 @@ std::array<float, NUM_SUBJECTS> gPhase{};
 
 // current inverse sample rate (per channel)
 std::array<float, NUM_SUBJECTS> gInverseSampleRate{};
+
+std::vector<float> gUndertoneSampleData;
+
+std::vector<float> gOvertoneSampleData;
 
 // define Bela aux task to avoid render slowdown.
 AuxiliaryTask gFillBufferTask;
@@ -247,6 +278,11 @@ bool setup(BelaContext *context, void *userData) {
   }
   // start getting the 3D data.
   Bela_scheduleAuxiliaryTask(gFillBufferTask);
+
+
+  gUndertoneSampleData = AudioFileUtilities::loadMono(gUndertoneFile);
+  gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
+
   return true;
 }
 
@@ -260,16 +296,26 @@ float sin_freq(float &phase, float freq, float inv_sr) {
   return out;
 }
 
+void warp_index(unsigned int &index, float base_sr, float warp_sr) {
+  index = round((warp_sr / base_sr) * (float)index);
+  while (index > gSampleLength) index -= gSampleLength;
+}
+
 // bela main render loop function
 void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     // there will probably always be 2 out channels
+    ++gReadPtr;
+    // replace with skip frame instead 
+	  warp_index(gReadPtr, gFreqMin2, gFreqMax2);
     for (unsigned int channel = 0; channel < context->audioOutChannels;
          channel++) {
+          
       // get the value for the current sample.
-      gOut = sin_freq(gPhase[channel], gFreq[channel],
-                     gInverseSampleRate[channel]);
+      // gOut = sin_freq(gPhase[channel], gFreq[channel],
+      //               gInverseSampleRate[channel]);
+      gOut = (gUndertoneSampleData[gReadPtr] + gOvertoneSampleData[gReadPtr]) * 0.5f;
       audioWrite(context, n, channel, gOut);
     }
   }
