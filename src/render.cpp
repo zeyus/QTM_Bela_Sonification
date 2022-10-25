@@ -49,19 +49,26 @@ const int gSampleLength = 10604;
 const float gFreqMin1 = 232.819;
 // maximum frequencey for playback.
 const float gFreqMax1 = 369.577;
+// the starting key / center
+const float gFreqCenter1 = 293.333;
 
 // minimum frequency for playback.
 const float gFreqMin2 = 349.23;
 // maximum frequencey for playback.
 const float gFreqMax2 = 554.365;
+// the starting key / center
+const float gFreqCenter2 = 440.0;
+
 
 // track start and end points (on corresponding axis)
-const float gTrackStart = 0.0;
-const float gTrackEnd = 1.0;
+const float gTrackStart = 100.0;
+const float gTrackEnd = 700.0;
+const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
+// track axis
+const int gTrackAxis = 1; // x: 0, y: 1, z: 2
 
 unsigned int gReadPtr;
-// track axis
-const int gTrackAxis = 0;
+
 
 
 
@@ -149,34 +156,6 @@ void fillBuffer(void *) {
     auto &currPos = gPos3D[0][i];
     // get the position of the marker
     rtPacket->Get3DMarker(gSubjMarker[i], currPos[0], currPos[1], currPos[2]);
-    if (!gInitialized) {
-      prevPos[0] = currPos[0];
-      prevPos[1] = currPos[1];
-      prevPos[2] = currPos[2];
-    }
-
-    // calculate the distance between the current and previous position
-    gStepDistance[i] = sqrtf_neon(powf_neon(currPos[0] - prevPos[0], 2) +
-                                  powf_neon(currPos[1] - prevPos[1], 2) +
-                                  powf_neon(currPos[2] - prevPos[2], 2));
-
-    // Update max step distance but don't include QTM loop.
-    if (gStepDistance[i] > gMaxStep[i] && uPacketFrame > gLastFrame) {
-      printf(
-          "%s [%d]: New max step distance for %9.3f curPos: x: %9.3f, y: "
-          "%9.3f, z: %9.3f\n",
-          gSubjMarkerLabels[i].c_str(), uPacketFrame, gStepDistance[i],
-          currPos[0], currPos[1], currPos[2]);
-      gMaxStep[i] = gStepDistance[i];
-    }
-
-    // limit the range so we don't get rogue values.
-    gStepDistance[i] =
-        constrain(gStepDistance[i], gStepDistanceMin, gStepDistanceMax);
-
-    // map the step distnce range to frequency range.
-    gFreq[i] = map(gStepDistance[i], gStepDistanceMin, gStepDistanceMax,
-                   gFreqMin, gFreqMax);
   }
 
   // update last processed frame
@@ -233,6 +212,7 @@ bool setup(BelaContext *context, void *userData) {
   rtProtocol->GetQTMVersion(qtmVer, sizeof(qtmVer));
   // print the version
   printf("%s\n", qtmVer);
+
 #ifdef CHECK_CMD_LATENCY
   checkLatency(rtProtocol);
 #endif
@@ -296,9 +276,23 @@ float sin_freq(float &phase, float freq, float inv_sr) {
   return out;
 }
 
+// this doesn't work so well
 void warp_index(unsigned int &index, float base_sr, float warp_sr) {
   index = round((warp_sr / base_sr) * (float)index);
   while (index > gSampleLength) index -= gSampleLength;
+}
+
+// Get the sample data for a given index, and adjust for new sample rate
+float warp_sample(std::vector<float> &sample, unsigned int &index, float base_sr, float warp_sr) {
+  float warp_index = (warp_sr / base_sr) * (float)index;
+  while (warp_index > (float) gSampleLength) warp_index -= gSampleLength;
+  int index_prev = floor(warp_index);
+  int index_next = ceil(warp_index);
+  float frac = warp_index - (float) index_prev;
+  float sample_prev = sample[index_prev];
+  float sample_next = sample[index_next];
+
+  return sample_prev + frac * (sample_next - sample_prev);
 }
 
 // bela main render loop function
@@ -307,15 +301,15 @@ void render(BelaContext *context, void *userData) {
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     // there will probably always be 2 out channels
     ++gReadPtr;
-    // replace with skip frame instead 
-	  warp_index(gReadPtr, gFreqMin2, gFreqMax2);
     for (unsigned int channel = 0; channel < context->audioOutChannels;
          channel++) {
-          
       // get the value for the current sample.
       // gOut = sin_freq(gPhase[channel], gFreq[channel],
       //               gInverseSampleRate[channel]);
-      gOut = (gUndertoneSampleData[gReadPtr] + gOvertoneSampleData[gReadPtr]) * 0.5f;
+      gOut = (
+        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, gFreqMin1) +
+        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin1, gFreqMin1)
+        ) * 0.5f;
       audioWrite(context, n, channel, gOut);
     }
   }
