@@ -1,16 +1,19 @@
-#include <Bela.h>
-
-#include <libraries/math_neon/math_neon.h>
-#include <libraries/AudioFile/AudioFile.h>
-
+#include <iostream>
 #include <array>
 #include <iterator>
 #include <string>
 
+#include <Bela.h>
+#include <libraries/AudioFile/AudioFile.h>
+
 #include "qsdk/RTPacket.h"
 #include "qsdk/RTProtocol.h"
 
-// #include "utils/latency_check.cpp" // include this file to do a latency check
+#include "utils/qtm.h"
+#include "utils/sound.h"
+#include "utils/space.h"
+
+// #include "utils/latency_check.h" // include this file to do a latency check
 
 // how much history to keep
 #define NUM_SAMPLES 2
@@ -24,20 +27,22 @@
  * USER CONFIGURATION
  */
 
+const bool gUseTaskBasedSonification = true;
+
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR1", "CAR2"}};
 // IDs of corresponding markers will be stored here.
 std::array<int, NUM_SUBJECTS> gSubjMarker{};
 
 // minimum frequency for generated sin wave.
-const float gFreqMin = 250.0;
+// const float gFreqMin = 250.0;
 // maximum frequencey for generated sin wave.
-const float gFreqMax = 1000.0;
+// const float gFreqMax = 1000.0;
 
 // minimum distance that should be tracked (this is mm/frame)
-const float gStepDistanceMin = 0.025;
+// const float gStepDistanceMin = 0.025;
 // maximum distance that tracked markers will move in a single frame (mm/frame).
-const float gStepDistanceMax = 43.2;
+// const float gStepDistanceMax = 43.2;
 
 const std::string gUndertoneFile = "./res/130bpm_8thnote_LFO_As3_1osc.wav";
 const std::string gOvertoneFile = "./res/130bpm_8thnote_LFO_F4_1osc.wav";
@@ -63,14 +68,11 @@ const float gFreqCenter2 = 440.0;
 // track start and end points (on corresponding axis)
 const float gTrackStart = 100.0;
 const float gTrackEnd = 700.0;
-const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
+// const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
 // track axis
 const int gTrackAxis = 1; // x: 0, y: 1, z: 2
 
 unsigned int gReadPtr;
-
-
-
 
 // use UDP for QTM connection.
 // UDP has less overhead so try to use that if no problems.
@@ -114,10 +116,10 @@ bool gConnected = false;
 bool gInitialized = false;
 
 // current sin wave phase (per channel)
-std::array<float, NUM_SUBJECTS> gPhase{};
+// std::array<float, NUM_SUBJECTS> gPhase{};
 
 // current inverse sample rate (per channel)
-std::array<float, NUM_SUBJECTS> gInverseSampleRate{};
+// std::array<float, NUM_SUBJECTS> gInverseSampleRate{};
 
 std::vector<float> gUndertoneSampleData;
 
@@ -126,33 +128,18 @@ std::vector<float> gOvertoneSampleData;
 // define Bela aux task to avoid render slowdown.
 AuxiliaryTask gFillBufferTask;
 
-// wrapper to retrieve latest QTM 3d packet
-bool get3DPacket() {
-  // Ask QTM for latest packet.
-  if (rtProtocol->Receive(packetType, true) != CNetwork::ResponseType::success) {
-    printf("Problem reading data...\n");
-    return false;
-  }
-  // we got a data packet from QTM
-  if (packetType == CRTPacket::PacketData) {
-    // get the current data packet
-    rtPacket = rtProtocol->GetRTPacket();
-    return true;
-  } else {
-    return false;
-  }
-}
+
 
 // update buffer of QTM data
 void fillBuffer(void *) {
   // Make sure we successfully get the data
-  if (!get3DPacket()) return;
+  if (!get3DPacket(rtProtocol, rtPacket, packetType)) return;
 
   // this helps us when we're doing realtime playback, because it loops.
   const unsigned int uPacketFrame = rtPacket->GetFrameNumber();
 
   for (int i = 0; i < NUM_SUBJECTS; i++) {
-    auto &prevPos = gPos3D[1][i];
+    // auto &prevPos = gPos3D[1][i];
     auto &currPos = gPos3D[0][i];
     // get the position of the marker
     rtPacket->Get3DMarker(gSubjMarker[i], currPos[0], currPos[1], currPos[2]);
@@ -178,8 +165,8 @@ bool setup(BelaContext *context, void *userData) {
     return false;
 
   // initialize some default variable values.
-  gInverseSampleRate[0] = 1.0 / context->audioSampleRate;
-  gInverseSampleRate[1] = gInverseSampleRate[0];
+  // gInverseSampleRate[0] = 1.0 / context->audioSampleRate;
+  // gInverseSampleRate[1] = gInverseSampleRate[0];
 
   printf("Starting project. SR: %9.3f, ChOut: %d\n", context->audioSampleRate,
          context->audioOutChannels);
@@ -259,40 +246,11 @@ bool setup(BelaContext *context, void *userData) {
   // start getting the 3D data.
   Bela_scheduleAuxiliaryTask(gFillBufferTask);
 
-
+  // these are (and should be) small enough to load into memory.
   gUndertoneSampleData = AudioFileUtilities::loadMono(gUndertoneFile);
   gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
 
   return true;
-}
-
-// this will probably change, but a simple function
-// to get a value for a given phase and frequency
-// for a sin wave
-float sin_freq(float &phase, float freq, float inv_sr) {
-  const float out = 0.8f * sinf_neon(phase);
-  phase += 2.0f * (float)M_PI * freq * inv_sr;
-  if (phase > M_PI) phase -= 2.0f * (float)M_PI;
-  return out;
-}
-
-// this doesn't work so well
-void warp_index(unsigned int &index, float base_sr, float warp_sr) {
-  index = round((warp_sr / base_sr) * (float)index);
-  while (index > gSampleLength) index -= gSampleLength;
-}
-
-// Get the sample data for a given index, and adjust for new sample rate
-float warp_sample(std::vector<float> &sample, unsigned int &index, float base_sr, float warp_sr) {
-  float warp_index = (warp_sr / base_sr) * (float)index;
-  while (warp_index > (float) gSampleLength) warp_index -= gSampleLength;
-  int index_prev = floor(warp_index);
-  int index_next = ceil(warp_index);
-  float frac = warp_index - (float) index_prev;
-  float sample_prev = sample[index_prev];
-  float sample_next = sample[index_next];
-
-  return sample_prev + frac * (sample_next - sample_prev);
 }
 
 // bela main render loop function
@@ -301,17 +259,43 @@ void render(BelaContext *context, void *userData) {
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     // there will probably always be 2 out channels
     ++gReadPtr;
-    for (unsigned int channel = 0; channel < context->audioOutChannels;
-         channel++) {
+    if(gReadPtr >= gSampleLength) {
+      gReadPtr = 0;
+    }
+    // for (unsigned int channel = 0; channel < context->audioOutChannels;
+    //      channel++) {
       // get the value for the current sample.
       // gOut = sin_freq(gPhase[channel], gFreq[channel],
       //               gInverseSampleRate[channel]);
+    if (gUseTaskBasedSonification) {
+      const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
+      const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin2, gFreqMax2);
       gOut = (
-        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, gFreqMin1) +
-        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin1, gFreqMin1)
+        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_sr, gSampleLength) +
+        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)
         ) * 0.5f;
-      audioWrite(context, n, channel, gOut);
+      audioWrite(context, n, 0, gOut);
+      audioWrite(context, n, 1, gOut);
+    } else {
+      const std::array<float, 2> undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
+      const float overtone_sr = gFreqCenter2;
+      const float overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd);
+
+      gOut = (
+        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_srs[0], gSampleLength) +
+        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)*overtone_amp
+      ) * 0.5f;
+      audioWrite(context, n, 0, gOut);
+
+      gOut = (
+        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_srs[1], gSampleLength) +
+        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)*overtone_amp
+      ) * 0.5f;
+      audioWrite(context, n, 1, gOut);
+
+      
     }
+    // }
   }
   // just keep polling for 3D data.
   Bela_scheduleAuxiliaryTask(gFillBufferTask);
