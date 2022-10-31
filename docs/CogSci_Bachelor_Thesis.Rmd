@@ -43,12 +43,28 @@ submitted: "`r format(Sys.time(), '%B %d, %Y')`"
 licensepath: https\://github.com/zeyus/QTM_Bela_Sonification/blob/main/LICENSE.md
 ---
 
+```{r project_variables, include=FALSE}
+
+# MoCap
+qtm_version <- "2022.1 (build 7420)"
+n_tracking_cams <- 8
+n_video_cams <- 1
+capture_freq <- 300
+
+# Bela
+bela_version <- "0.3.8g"
+bela_freq <- 44100
+bela_buffer_size <- 32
+bela_n_channels <- 2
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::write_bib(.packages(), "packages.bib")
 bookdown::pdf_document2()
 # this leaves all of the intermediate files in the dir if FALSE
 options(tinytex.clean = TRUE)
+# make verbose TRUE to help with debugging
 options(tinytex.verbose = FALSE)
 
 # set default cran mirror
@@ -68,6 +84,10 @@ use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
 ```
+
+
+
+
 
 # Abstract
 
@@ -121,11 +141,13 @@ as very important because life-threatening, to the auditory modality through cli
 
 ....
 
-RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?
+~~RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?~~
 
-H_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.
+~~H_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.~~
 
-H_1: Real-time sonification of object movement effects joint action synchronization between subjects.
+~~H_1: Real-time sonification of object movement effects joint action synchronization between subjects.~~
+
+now RQ is about orientation of sonification scheme (task vs sync)
 
 
 # Methods
@@ -134,6 +156,26 @@ Describe subject demographics etc.
 
 ## Hardware and Software
 
+### Motion Capture
+
+Motion capture data were collected using a `r n_tracking_cams + n_video_cams` (`r n_tracking_cams` Qualisys Miqus M3 marker and `r n_video_cams` Qualisys Miqus Video) camera system connected to a Qualisys Camera Sync Unit.
+Marker data were acquired at at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager software was used to collect and process the data with real-time 3D tracking data output.
+
+#### Markers
+
+For the experimental set up, one passive marker was placed on each car, and additional passive markers were placed at the start and end of each track, as well as one passive marker on each corner of the surface the tracke was mounted on (see Fig X).
+These additional markers provided reference points for 3D orientation of the track and the cars across trials in case of accidental table movement.
+
+### Sonification
+
+#### Hardware
+
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version `r bela_version` running a custom C++ program [^1]. The main program loop 
+
+[^1]: Source, data and analysis are available at `r rmarkdown::metadata$repository`
+
+#### Software
+
 ## Experimental Design
 
 # Analysis
@@ -141,6 +183,8 @@ Describe subject demographics etc.
 # Results
 
 # Discussion
+
+\newpage
 
 # References
 
