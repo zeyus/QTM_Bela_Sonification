@@ -60,7 +60,6 @@ bela_n_channels <- 2
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::write_bib(.packages(), "packages.bib")
 bookdown::pdf_document2()
 # this leaves all of the intermediate files in the dir if FALSE
 options(tinytex.clean = TRUE)
@@ -83,6 +82,11 @@ use_package <- function(p) {
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
+
+# after all the packages are loaded, we can save
+# a bibliography of all the packages used
+# in case we need to cite them
+knitr::write_bib(.packages(), "packages.bib")
 ```
 
 
