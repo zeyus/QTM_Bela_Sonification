@@ -147,6 +147,7 @@
             pdfborder={0 0 0},
             }
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage[normalem]{ulem}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -208,7 +209,7 @@
 
   \vspace{2mm}
 
-  {\bfseries Submitted:} October 17, 2022
+  {\bfseries Submitted:} October 31, 2022
 
   \vspace{2mm}
   {\bfseries License}\\
@@ -273,11 +274,13 @@ as very important because life-threatening, to the auditory modality through cli
 
 \ldots.
 
-RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?
+\sout{RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?}
 
-H\_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.
+\sout{H\_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.}
 
-H\_1: Real-time sonification of object movement effects joint action synchronization between subjects.
+\sout{H\_1: Real-time sonification of object movement effects joint action synchronization between subjects.}
+
+now RQ is about orientation of sonification scheme (task vs sync)
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -286,6 +289,29 @@ Describe subject demographics etc.
 
 \hypertarget{hardware-and-software}{%
 \subsection{Hardware and Software}\label{hardware-and-software}}
+
+\hypertarget{motion-capture}{%
+\subsubsection{Motion Capture}\label{motion-capture}}
+
+Motion capture data were collected using a 9 (8 Qualisys Miqus M3 marker and 1 Qualisys Miqus Video) camera system connected to a Qualisys Camera Sync Unit.
+Marker data were acquired at at a sampling rate of 300 Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager software was used to collect and process the data with real-time 3D tracking data output.
+
+\hypertarget{markers}{%
+\paragraph{Markers}\label{markers}}
+
+For the experimental set up, one passive marker was placed on each car, and additional passive markers were placed at the start and end of each track, as well as one passive marker on each corner of the surface the tracke was mounted on (see Fig X).
+These additional markers provided reference points for 3D orientation of the track and the cars across trials in case of accidental table movement.
+
+\hypertarget{sonification}{%
+\subsubsection{Sonification}\label{sonification}}
+
+\hypertarget{hardware}{%
+\paragraph{Hardware}\label{hardware}}
+
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version 0.3.8g running a custom C++ program \footnote{Source, data and analysis are available at https://github.com/zeyus/QTM\_Bela\_Sonification}. The main program loop
+
+\hypertarget{software}{%
+\paragraph{Software}\label{software}}
 
 \hypertarget{experimental-design}{%
 \subsection{Experimental Design}\label{experimental-design}}
@@ -298,6 +324,8 @@ Describe subject demographics etc.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+\newpage
 
 \printbibliography[title=References]
 
