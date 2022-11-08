@@ -27,10 +27,10 @@
  * USER CONFIGURATION
  */
 
-const bool gUseTaskBasedSonification = true;
+const bool gUseTaskBasedSonification = false;
 
 // names of tracked markers in QTM.
-const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR1", "CAR2"}};
+const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
 // IDs of corresponding markers will be stored here.
 std::array<int, NUM_SUBJECTS> gSubjMarker{};
 
@@ -55,7 +55,7 @@ const float gFreqMin1 = 232.819;
 // maximum frequencey for playback.
 const float gFreqMax1 = 369.577;
 // the starting key / center
-const float gFreqCenter1 = 293.333;
+// const float gFreqCenter1 = 293.333;
 
 // minimum frequency for playback.
 const float gFreqMin2 = 349.23;
