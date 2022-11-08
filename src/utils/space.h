@@ -37,16 +37,16 @@ std::array<float, 2> sync_to_freq(float x1, float x2, float xmin, float xmax, fl
   float f1 = center_freq;
   float f2 = center_freq;
 
-  float dist = fabs(x1 - x2);
+  float dist = fabs(x1 - x2) * 2;
   float max_dist = (xmax - xmin) * threshold;
   if (dist > max_dist) {
-    if (x1 > x1) return {{max_freq, min_freq}};
+    if (x1 > x2) return {{max_freq, min_freq}};
     else return {{min_freq, max_freq}};
   }
 
   // if x1 is greater than x2, f1 will be higher than f2
   // if x1 is less than x2, f1 will be lower than f2
-  float f1_delta = (x1 - x2) * (max_freq - min_freq) / (max_dist * 2);
+  float f1_delta = (x1 - x2) * (max_freq - min_freq) / (max_dist);
   float f2_delta = -f1_delta;
 
   f1 += f1_delta;
