@@ -47,7 +47,7 @@ std::array<int, NUM_SUBJECTS> gSubjMarker{};
 const std::string gUndertoneFile = "./res/130bpm_8thnote_LFO_As3_1osc.wav";
 const std::string gOvertoneFile = "./res/130bpm_8thnote_LFO_F4_1osc.wav";
 
-const int gSampleLength = 10604;
+const int gSampleLength = 10187;
 
 
 // minimum frequency for playback.
@@ -66,8 +66,8 @@ const float gFreqCenter2 = 440.0;
 
 
 // track start and end points (on corresponding axis)
-const float gTrackStart = 100.0;
-const float gTrackEnd = 700.0;
+const float gTrackStart = -200.0;
+const float gTrackEnd = 910.0;
 // const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
 // track axis
 const int gTrackAxis = 1; // x: 0, y: 1, z: 2

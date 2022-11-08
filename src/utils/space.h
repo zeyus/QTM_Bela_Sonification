@@ -13,7 +13,7 @@ float pos_to_freq(float pos, float min, float max, float min_freq, float max_fre
 // and returns an amplitude modulated by the distance.
 // if it's beyond the threshold percentage, it returns 0.
 float sync_to_amp(float x1, float x2, float xmin, float xmax, float threshold = 0.1f) {
-  float dist = abs(x1 - x2);
+  float dist = fabs(x1 - x2);
   float max_dist = (xmax - xmin) * threshold;
   if (dist > max_dist) return 0;
   return 1 - (dist / max_dist);
@@ -37,11 +37,11 @@ std::array<float, 2> sync_to_freq(float x1, float x2, float xmin, float xmax, fl
   float f1 = center_freq;
   float f2 = center_freq;
 
-  float dist = abs(x1 - x2);
+  float dist = fabs(x1 - x2);
   float max_dist = (xmax - xmin) * threshold;
   if (dist > max_dist) {
-    if (x1 > x1) return {max_freq, min_freq};
-    else return {min_freq, max_freq};
+    if (x1 > x1) return {{max_freq, min_freq}};
+    else return {{min_freq, max_freq}};
   }
 
   // if x1 is greater than x2, f1 will be higher than f2
@@ -52,7 +52,7 @@ std::array<float, 2> sync_to_freq(float x1, float x2, float xmin, float xmax, fl
   f1 += f1_delta;
   f2 += f2_delta;
 
-  return {f1, f2};
+  return {{f1, f2}};
 }
 
 #endif
