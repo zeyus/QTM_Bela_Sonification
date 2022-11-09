@@ -27,10 +27,10 @@
  * USER CONFIGURATION
  */
 
-const bool gUseTaskBasedSonification = true;
+const bool gUseTaskBasedSonification = false;
 
 // names of tracked markers in QTM.
-const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR1", "CAR2"}};
+const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
 // IDs of corresponding markers will be stored here.
 std::array<int, NUM_SUBJECTS> gSubjMarker{};
 
@@ -55,7 +55,7 @@ const float gFreqMin1 = 232.819;
 // maximum frequencey for playback.
 const float gFreqMax1 = 369.577;
 // the starting key / center
-const float gFreqCenter1 = 293.333;
+// const float gFreqCenter1 = 293.333;
 
 // minimum frequency for playback.
 const float gFreqMin2 = 349.23;
@@ -72,7 +72,9 @@ const float gTrackEnd = 910.0;
 // track axis
 const int gTrackAxis = 1; // x: 0, y: 1, z: 2
 
-unsigned int gReadPtr;
+// unsigned int gReadPtr;
+float gReadPtrOvertone = 0.0f;
+float gReadPtrUndertone = 0.0f;
 
 // use UDP for QTM connection.
 // UDP has less overhead so try to use that if no problems.
@@ -258,10 +260,10 @@ void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     // there will probably always be 2 out channels
-    ++gReadPtr;
-    if(gReadPtr >= gSampleLength) {
-      gReadPtr = 0;
-    }
+    // ++gReadPtr;
+    // if(gReadPtr >= gSampleLength) {
+    //   gReadPtr = 0;
+    // }
     // for (unsigned int channel = 0; channel < context->audioOutChannels;
     //      channel++) {
       // get the value for the current sample.
@@ -271,25 +273,24 @@ void render(BelaContext *context, void *userData) {
       const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
       const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin2, gFreqMax2);
       gOut = (
-        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_sr, gSampleLength) +
-        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_sr / gFreqMin1, gSampleLength) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, overtone_sr / gFreqMin2, gSampleLength)
         ) * 0.5f;
       audioWrite(context, n, 0, gOut);
       audioWrite(context, n, 1, gOut);
     } else {
       const std::array<float, 2> undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
-      const float overtone_sr = gFreqCenter2;
       const float overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd);
 
       gOut = (
-        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_srs[0], gSampleLength) +
-        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)*overtone_amp
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength, false) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, false)*overtone_amp
       ) * 0.5f;
       audioWrite(context, n, 0, gOut);
 
       gOut = (
-        warp_sample(gUndertoneSampleData, gReadPtr, gFreqMin1, undertone_srs[1], gSampleLength) +
-        warp_sample(gOvertoneSampleData, gReadPtr, gFreqMin2, overtone_sr, gSampleLength)*overtone_amp
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[1] / gFreqMin1, gSampleLength) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
       ) * 0.5f;
       audioWrite(context, n, 1, gOut);
 
