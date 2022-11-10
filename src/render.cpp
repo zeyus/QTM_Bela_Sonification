@@ -27,7 +27,7 @@
  * USER CONFIGURATION
  */
 
-const bool gUseTaskBasedSonification = false;
+const bool gUseTaskBasedSonification = true;
 
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
@@ -44,11 +44,16 @@ std::array<int, NUM_SUBJECTS> gSubjMarker{};
 // maximum distance that tracked markers will move in a single frame (mm/frame).
 // const float gStepDistanceMax = 43.2;
 
-const std::string gUndertoneFile = "./res/130bpm_8thnote_LFO_As3_1osc.wav";
-const std::string gOvertoneFile = "./res/130bpm_8thnote_LFO_F4_1osc.wav";
+const std::string gUndertoneFile = "./res/simple_As3.wav";
+const std::string gOvertoneFile = "./res/simple_f4.wav";
 
-const int gSampleLength = 10187;
-
+const unsigned int gSampleLength = 113145;
+// possible 15 or 5 work well
+const unsigned int gAmpModBaseRate = gSampleLength / 15;
+const unsigned int gAmpModNumSamplesIO = 2515;
+const float gAmpModDepth = 0.75f;
+unsigned int gAmpModPtr = 0;
+float gAmpMod = 0.0f;
 
 // minimum frequency for playback.
 const float gFreqMin1 = 232.819;
@@ -70,7 +75,7 @@ const float gTrackStart = -200.0;
 const float gTrackEnd = 910.0;
 // const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
 // track axis
-const int gTrackAxis = 1; // x: 0, y: 1, z: 2
+const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
 
 // unsigned int gReadPtr;
 float gReadPtrOvertone = 0.0f;
@@ -259,11 +264,13 @@ bool setup(BelaContext *context, void *userData) {
 void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
-    // there will probably always be 2 out channels
-    // ++gReadPtr;
-    // if(gReadPtr >= gSampleLength) {
-    //   gReadPtr = 0;
-    // }
+
+    gAmpMod = amp_fade_linear(gAmpModPtr, gAmpModBaseRate, gAmpModNumSamplesIO, gAmpModDepth);
+    ++gAmpModPtr;
+    if(gAmpModPtr >= gAmpModBaseRate) {
+      gAmpModPtr = 0;
+    }
+    // gAmpMod = 1.0f;
     // for (unsigned int channel = 0; channel < context->audioOutChannels;
     //      channel++) {
       // get the value for the current sample.
@@ -275,7 +282,7 @@ void render(BelaContext *context, void *userData) {
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_sr / gFreqMin1, gSampleLength) +
         warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, overtone_sr / gFreqMin2, gSampleLength)
-        ) * 0.5f;
+        ) * 0.5f * gAmpMod;
       audioWrite(context, n, 0, gOut);
       audioWrite(context, n, 1, gOut);
     } else {
@@ -285,13 +292,13 @@ void render(BelaContext *context, void *userData) {
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength, false) +
         warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, false)*overtone_amp
-      ) * 0.5f;
+      ) * 0.5f * gAmpMod;
       audioWrite(context, n, 0, gOut);
 
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[1] / gFreqMin1, gSampleLength) +
         warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
-      ) * 0.5f;
+      ) * 0.5f * gAmpMod;
       audioWrite(context, n, 1, gOut);
 
       

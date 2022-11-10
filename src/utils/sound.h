@@ -15,6 +15,17 @@ float warp_amp_fade_linear(const float index, const float sample_length, const f
   }
 }
 
+// integer version
+float amp_fade_linear(const unsigned int index, const unsigned int sample_length, const unsigned int fade_length = 220, const float amp_depth = 1.0f) {
+  if (index < fade_length) {
+    return ((float) index / (float) fade_length * amp_depth) + (1.0f - amp_depth);
+  } else if (index > sample_length - fade_length) {
+    return ((float) (sample_length - index) / (float) fade_length * amp_depth) + (1.0f - amp_depth);
+  } else {
+    return 1.0f;
+  }
+}
+
 // get the floored and ceiled indices of the sample and interpolate between them
 float interpolate_sample(std::vector<float> &sample, const float index, const unsigned int sample_length) {
   const int index_floor = floorf_neon(index);
