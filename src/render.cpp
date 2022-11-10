@@ -27,7 +27,7 @@
  * USER CONFIGURATION
  */
 
-const bool gUseTaskBasedSonification = true;
+const bool gUseTaskBasedSonification = false;
 
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
@@ -80,6 +80,7 @@ const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
 // unsigned int gReadPtr;
 float gReadPtrOvertone = 0.0f;
 float gReadPtrUndertone = 0.0f;
+float gReadPtrUndertone2 = 0.0f;
 
 // use UDP for QTM connection.
 // UDP has less overhead so try to use that if no problems.
@@ -290,15 +291,17 @@ void render(BelaContext *context, void *userData) {
       const float overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd);
 
       gOut = (
-        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength, false) +
-        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, false)*overtone_amp
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, false) * overtone_amp
       ) * 0.5f * gAmpMod;
+
       audioWrite(context, n, 0, gOut);
 
       gOut = (
-        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[1] / gFreqMin1, gSampleLength) +
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone2, undertone_srs[1] / gFreqMin1, gSampleLength) +
         warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
       ) * 0.5f * gAmpMod;
+
       audioWrite(context, n, 1, gOut);
 
       
