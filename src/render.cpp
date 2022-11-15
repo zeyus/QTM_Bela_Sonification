@@ -31,20 +31,51 @@ const bool gUseTaskBasedSonification = false;
 
 const bool gSyncUseTwoChannels = false;
 
+// define event label char* s
+const char* gTrialStartLabel = "trial_start";
+const char* gTrialEndLabel = "trial_end";
+const char* gExperimentStartLabel = "experiment_start";
+const char* gExperimentEndLabel = "experiment_end";
+const std::array<char*, 3> gConditionLabels = {
+  "cond_no_sonification",
+  "cond_task_sonification",
+  "cond_sync_sonification"
+};
+
+// the order of the trials (based on the condition labels)
+const std::array<unsigned int, 3> gConditionOrder = {
+  0, 1, 2
+};
+
+// how many trials per condition
+const std::array<unsigned int, 3> gTrialCounts = {
+  3, 3, 3
+};
+
+// how long per trial for each condition
+const std::array<unsigned int, 3> gTrialDurationsSec = {
+  120, 120, 120
+};
+
+// output sample rate
+const float gSampleRate = 44100.0f;
+
+// the duration of trials for each condition in samples
+const std::array<float, 3> gTrialDurationsSamples = {
+  gTrialDurationsSec[0] * gSampleRate,
+  gTrialDurationsSec[1] * gSampleRate,
+  gTrialDurationsSec[2] * gSampleRate
+};
+
+// the duration of the break between trials in samples
+const float gBreakDurationSamples = 30 * gSampleRate;
+
+// if this is true, no sound is generated
+bool gSilence = true;
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
 // IDs of corresponding markers will be stored here.
 std::array<int, NUM_SUBJECTS> gSubjMarker{};
-
-// minimum frequency for generated sin wave.
-// const float gFreqMin = 250.0;
-// maximum frequencey for generated sin wave.
-// const float gFreqMax = 1000.0;
-
-// minimum distance that should be tracked (this is mm/frame)
-// const float gStepDistanceMin = 0.025;
-// maximum distance that tracked markers will move in a single frame (mm/frame).
-// const float gStepDistanceMax = 43.2;
 
 const std::string gUndertoneFile = "./res/simple_As3.wav";
 const std::string gOvertoneFile = "./res/simple_f4.wav";
@@ -215,7 +246,14 @@ bool setup(BelaContext *context, void *userData) {
 #endif
 
   printf("\n");
-  
+  // these are (and should be) small enough to load into memory.
+  gUndertoneSampleData = AudioFileUtilities::loadMono(gUndertoneFile);
+  gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
+
+  return true;
+}
+
+bool prepare_sonification_condition() {
   // make sure there's 3D data
   bool dataAvailable;
   if (!rtProtocol->Read3DSettings(dataAvailable)) return false;
@@ -255,11 +293,20 @@ bool setup(BelaContext *context, void *userData) {
   }
   // start getting the 3D data.
   Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  gSilence = false;
+  // Bela_deleteAllAuxiliaryTasks();
+  return true;
+}
 
-  // these are (and should be) small enough to load into memory.
-  gUndertoneSampleData = AudioFileUtilities::loadMono(gUndertoneFile);
-  gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
-
+bool endSonificationCondition() {
+  // Stop streaming from QTM
+  if (!rtProtocol->StreamFramesStop()) {
+    printf("Error stopping streaming from QTM\n");
+    return false;
+  }
+  printf("Stopped streaming 3D data\n\n");
+  gConnected = false;
+  Bela_deleteAllAuxiliaryTasks();
   return true;
 }
 
@@ -267,6 +314,13 @@ bool setup(BelaContext *context, void *userData) {
 void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
+
+    if (gSilence) {
+      // if this is between trials, or in the no sonification condition
+      // just output silence.
+      audioWrite(context, n, 0, 0);
+      audioWrite(context, n, 1, 0);
+    }
 
     gAmpMod = amp_fade_linear(gAmpModPtr, gAmpModBaseRate, gAmpModNumSamplesIO, gAmpModDepth);
     ++gAmpModPtr;
