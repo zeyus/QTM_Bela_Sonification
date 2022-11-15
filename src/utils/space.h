@@ -21,7 +21,7 @@ float sync_to_amp(float x1, float x2, float xmin, float xmax, float threshold = 
 
 
 float calc_center_freq(float f1, float f2) {
-  if (f1/f2 >= 1.1) {
+  if (f1/f2 < 1.1) {
     return sqrtf_neon(f1 * f2);
   } else {
     return (f1 + f2) / 2;
@@ -32,26 +32,26 @@ float calc_center_freq(float f1, float f2) {
 // if x1 and x2 are equal, both f1 and f2 will be the center frequency
 // if x1 is greater than x2, f1 will be higher than f2
 // if x1 is less than x2, f1 will be lower than f2
-std::array<float, 2> sync_to_freq(float x1, float x2, float xmin, float xmax, float min_freq, float max_freq, float threshold = 0.5f) {
-  float center_freq = calc_center_freq(min_freq, max_freq);
-  float f1 = center_freq;
-  float f2 = center_freq;
+std::array<float, 2> sync_to_freq(float x1, float x2, float xmin, float xmax, float min_freq, float max_freq, float threshold = 0.3f) {
+  const float center_freq = calc_center_freq(min_freq, max_freq);
+  // float f1 = center_freq;
+  // float f2 = center_freq;
 
-  float dist = fabs(x1 - x2) * 2;
-  float max_dist = (xmax - xmin) * threshold;
-  if (dist > max_dist) {
+  const float dist = x1 - x2;
+  const float max_dist = (xmax - xmin) * threshold;
+  if (fabs(dist) >= max_dist) {
     if (x1 > x2) return {{max_freq, min_freq}};
     else return {{min_freq, max_freq}};
   }
 
-  // if x1 is greater than x2, f1 will be higher than f2
-  // if x1 is less than x2, f1 will be lower than f2
-  float f1_delta = (x1 - x2) * (max_freq - min_freq) / (max_dist);
-  float f2_delta = -f1_delta;
+  // calculate delta from center frequency
+  const float delta = (max_freq - min_freq) * (dist / max_dist / 2);
 
-  f1 += f1_delta;
-  f2 += f2_delta;
+  // calculate f1 and f2
+  const float f1 = center_freq + delta;
+  const float f2 = center_freq - delta;
 
+  // return the frequencies
   return {{f1, f2}};
 }
 
