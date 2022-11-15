@@ -22,4 +22,8 @@ bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPack
   }
 }
 
+bool sendEventLabel(CRTProtocol* rtProtocol, const char* pLabel) {
+  return rtProtocol->SetQTMEvent(pLabel);
+}
+
 #endif
