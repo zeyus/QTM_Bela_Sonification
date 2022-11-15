@@ -23,28 +23,38 @@
 // just x, y, z. but maybe we want to track other things?
 #define NUM_COORDS 3
 
-/*
- * USER CONFIGURATION
- */
+/************************************************/
+/*            EXPERIMENT VARIABLES              */
+/************************************************/
 
-const bool gUseTaskBasedSonification = false;
+// condition indices
+enum Condition {
+  NO_SONIFICATION = 0,
+  TASK_SONIFICATION = 1,
+  SYNC_SONIFICATION = 2
+};
 
-const bool gSyncUseTwoChannels = false;
 
-// define event label char* s
-const char* gTrialStartLabel = "trial_start";
-const char* gTrialEndLabel = "trial_end";
-const char* gExperimentStartLabel = "experiment_start";
-const char* gExperimentEndLabel = "experiment_end";
-const std::array<char*, 3> gConditionLabels = {
-  "cond_no_sonification",
-  "cond_task_sonification",
-  "cond_sync_sonification"
+// define event label char*s
+enum class Labels : char {
+    TRIAL_START = 's',
+    TRIAL_END = 'e',
+    EXPERIMENT_START = 'S',
+    EXPERIMENT_END = 'E',
+};
+
+// labels for conditions
+enum class ConditionLabels : char {
+  NO_SONIFICATION = 'n',
+  TASK_SONIFICATION = 't',
+  SYNC_SONIFICATION = 'y',
 };
 
 // the order of the trials (based on the condition labels)
 const std::array<unsigned int, 3> gConditionOrder = {
-  0, 1, 2
+  Condition::NO_SONIFICATION,
+  Condition::TASK_SONIFICATION,
+  Condition::SYNC_SONIFICATION
 };
 
 // how many trials per condition
@@ -53,9 +63,141 @@ const std::array<unsigned int, 3> gTrialCounts = {
 };
 
 // how long per trial for each condition
-const std::array<unsigned int, 3> gTrialDurationsSec = {
-  120, 120, 120
+const std::array<float, 3> gTrialDurationsSec = {
+  120.0f, 120.0f, 120.0f
 };
+
+// the duration of trials for each condition in seconds
+const float gBreakDurationSec = 5.0f;
+
+// names of tracked markers in QTM.
+const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
+
+// file for the lower tone
+const std::string gUndertoneFile = "./res/simple_As3.wav";
+
+// file for the higher tone
+const std::string gOvertoneFile = "./res/simple_f4.wav";
+
+// length of wave files in samples
+const unsigned int gSampleLength = 113145;
+
+// Amplitude modulation
+// Frequency in samples for modulation
+const unsigned int gAmpModBaseRate = gSampleLength / 15;
+
+// Length of fade in and fade out in samples
+const unsigned int gAmpModNumSamplesIO = 2515;
+
+// Depth of modulation from 0.0 to 1.0 (0.0 = no modulation)
+const float gAmpModDepth = 0.0f;
+
+// minimum frequency for undertone playback.
+const float gFreqMin1 = 232.819;
+// maximum frequencey for undertone playback.
+const float gFreqMax1 = 369.577;
+
+// minimum frequency for overtone playback.
+const float gFreqMin2 = 349.23;
+// maximum frequencey for overtone playback.
+const float gFreqMax2 = 554.365;
+// the center overtone frequency
+const float gFreqCenter2 = 440.0;
+
+
+// track start and end points (on corresponding axis)
+const float gTrackStart = -250.0;
+const float gTrackEnd = 900.0;
+// const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
+// track axis
+const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
+
+
+// use UDP for QTM connection.
+// UDP has less overhead so try to use that if no problems.
+const bool gStreamUDP = true;
+
+// Should bela tell QTM to start and stop capture?
+const bool gControlQTMCapture = true;
+
+// Should sync condition be different for left and right channels?
+const bool gSyncUseTwoChannels = false;
+
+/************************************************/
+/*            NON-USER VARIABLES                */
+/************************************************/
+
+// you probably don't need to change anything below this line.
+
+// if the current trial is the task trial specified in gTaskConditionIndex
+bool gUseTaskBasedSonification = false;
+// the current trial index
+unsigned int gCurrentTrial = 0;
+
+/************************************************/
+/*            SPATIAL VARIABLES                 */
+/************************************************/
+
+// record of maximum distance travelled, for debugging.
+std::array<float, NUM_SUBJECTS> gMaxStep{};
+
+// array of size n_subjects x n_history x 3 (x, y, z)
+std::array<std::array<std::array<float, NUM_COORDS>, NUM_SUBJECTS>, NUM_SAMPLES>
+    gPos3D{};
+
+// keep track of last step distance for each subject.
+std::array<float, NUM_SUBJECTS> gStepDistance{};
+
+// frequency
+std::array<float, NUM_SUBJECTS> gFreq{};
+
+
+/************************************************/
+/*                QTM VARIABLES                 */
+/************************************************/
+
+// record of last rendered QTM frame.
+unsigned int gLastFrame = 0;
+
+// QTM protocol
+CRTProtocol* rtProtocol = NULL;
+
+// QTM communication packet
+CRTPacket* rtPacket = NULL;
+
+// QTM packet type (we want Data Packets (CRTPacket::PacketData).
+CRTPacket::EPacketType packetType;
+
+// Connect to host (adjust as neccessary)
+const char serverAddr[] = "192.168.6.1";
+// Default port for QTM is 22222
+const unsigned short basePort = 22222;
+// Protocol version, 1.23 is the latest
+const int majorVersion = 1;
+const int minorVersion = 23;
+// Leave as false
+const bool bigEndian = false;
+// server port
+unsigned short nPort = 0;
+
+// are we connected to QTM?
+bool gConnected = false;
+
+// are we currently streaming from QTM?
+bool gStreaming = false;
+
+// have we initialized the variables.
+bool gInitialized = false;
+
+// IDs of corresponding markers will be stored here.
+std::array<int, NUM_SUBJECTS> gSubjMarker{};
+
+/************************************************/
+/*              AUDIO VARIABLES                 */
+/************************************************/
+
+// while this is true, no sound is generated
+bool gSilence = true;
 
 // output sample rate
 const float gSampleRate = 44100.0f;
@@ -70,105 +212,28 @@ const std::array<float, 3> gTrialDurationsSamples = {
 // the duration of the break between trials in samples
 const float gBreakDurationSamples = 30 * gSampleRate;
 
-// if this is true, no sound is generated
-bool gSilence = true;
-// names of tracked markers in QTM.
-const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
-// IDs of corresponding markers will be stored here.
-std::array<int, NUM_SUBJECTS> gSubjMarker{};
+// current sample out
+float gOut;
 
-const std::string gUndertoneFile = "./res/simple_As3.wav";
-const std::string gOvertoneFile = "./res/simple_f4.wav";
+// the entire undertone file buffer
+std::vector<float> gUndertoneSampleData;
 
-const unsigned int gSampleLength = 113145;
-// possible 15 or 5 work well
-const unsigned int gAmpModBaseRate = gSampleLength / 15;
-const unsigned int gAmpModNumSamplesIO = 2515;
-const float gAmpModDepth = 0.0f;
-unsigned int gAmpModPtr = 0;
-float gAmpMod = 0.0f;
+// the entire overtone file buffer
+std::vector<float> gOvertoneSampleData;
 
-// minimum frequency for playback.
-const float gFreqMin1 = 232.819;
-// maximum frequencey for playback.
-const float gFreqMax1 = 369.577;
-// the starting key / center
-// const float gFreqCenter1 = 293.333;
-
-// minimum frequency for playback.
-const float gFreqMin2 = 349.23;
-// maximum frequencey for playback.
-const float gFreqMax2 = 554.365;
-// the starting key / center
-const float gFreqCenter2 = 440.0;
-
-
-// track start and end points (on corresponding axis)
-const float gTrackStart = -250.0;
-const float gTrackEnd = 900.0;
-// const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
-// track axis
-const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
-
-// unsigned int gReadPtr;
+// read pointers for the sample output
 float gReadPtrOvertone = 0.0f;
 float gReadPtrUndertone = 0.0f;
 float gReadPtrUndertone2 = 0.0f;
 
-// use UDP for QTM connection.
-// UDP has less overhead so try to use that if no problems.
-const bool gStreamUDP = true;
+// the amplitude modulation pointer
+unsigned int gAmpModPtr = 0;
 
-/*
- * GLOBAL VARIABLES
- */
-
-// record of maximum distance travelled, for debugging.
-std::array<float, NUM_SUBJECTS> gMaxStep{};
-
-// record of last rendered QTM frame.
-unsigned int gLastFrame = 0;
-
-float gOut;
-
-// array of size n_subjects x n_history x 3 (x, y, z)
-std::array<std::array<std::array<float, NUM_COORDS>, NUM_SUBJECTS>, NUM_SAMPLES>
-    gPos3D{};
-
-// keep track of last step distance for each subject.
-std::array<float, NUM_SUBJECTS> gStepDistance{};
-
-// frequency
-std::array<float, NUM_SUBJECTS> gFreq{};
-
-// QTM protocol
-CRTProtocol* rtProtocol = NULL;
-
-// QTM communication packet
-CRTPacket* rtPacket = NULL;
-
-// QTM packet type (we want Data Packets (CRTPacket::PacketData).
-CRTPacket::EPacketType packetType;
-
-// are we connected to QTM?
-bool gConnected = false;
-
-// have we initialized the variables.
-bool gInitialized = false;
-
-// current sin wave phase (per channel)
-// std::array<float, NUM_SUBJECTS> gPhase{};
-
-// current inverse sample rate (per channel)
-// std::array<float, NUM_SUBJECTS> gInverseSampleRate{};
-
-std::vector<float> gUndertoneSampleData;
-
-std::vector<float> gOvertoneSampleData;
+// the current amplitude modulation value
+float gAmpMod = 0.0f;
 
 // define Bela aux task to avoid render slowdown.
 AuxiliaryTask gFillBufferTask;
-
 
 
 // update buffer of QTM data
@@ -212,16 +277,6 @@ bool setup(BelaContext *context, void *userData) {
   printf("Starting project. SR: %9.3f, ChOut: %d\n", context->audioSampleRate,
          context->audioOutChannels);
 
-  // Connect to host (adjust as neccessary)
-  const char serverAddr[] = "192.168.6.1";
-  // Default port for QTM is 22222
-  const unsigned short basePort = 22222;
-  // Protocol version, 1.23 is the latest
-  const int majorVersion = 1;
-  const int minorVersion = 23;
-  // Leave as false
-  const bool bigEndian = false;
-  unsigned short nPort = 0;
   
   rtProtocol = new CRTProtocol();
   // Connect to the QTM application
@@ -231,7 +286,7 @@ bool setup(BelaContext *context, void *userData) {
                 system("pause");
     return false;
   }
-    
+  gConnected = true;
   printf("Connected to QTM...");
 
   // allocate char to stor version
@@ -274,7 +329,7 @@ bool prepare_sonification_condition() {
     }
   }
   printf("Streaming 3D data\n\n");
-  gConnected = true;
+  gStreaming = true;
 
   // number of labelled markers
   const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
@@ -305,7 +360,7 @@ bool endSonificationCondition() {
     return false;
   }
   printf("Stopped streaming 3D data\n\n");
-  gConnected = false;
+  gStreaming = false;
   Bela_deleteAllAuxiliaryTasks();
   return true;
 }
@@ -323,9 +378,11 @@ void render(BelaContext *context, void *userData) {
     }
 
     gAmpMod = amp_fade_linear(gAmpModPtr, gAmpModBaseRate, gAmpModNumSamplesIO, gAmpModDepth);
-    ++gAmpModPtr;
-    if(gAmpModPtr >= gAmpModBaseRate) {
-      gAmpModPtr = 0;
+    if (gAmpMod > 0.0f) {
+      ++gAmpModPtr;
+      if(gAmpModPtr >= gAmpModBaseRate) {
+        gAmpModPtr = 0;
+      }
     }
     
     if (gUseTaskBasedSonification) {
@@ -360,8 +417,10 @@ void render(BelaContext *context, void *userData) {
     }
     // }
   }
-  // just keep polling for 3D data.
-  Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  if (!gSilence && gStreaming) {
+    // just keep polling for 3D data.
+    Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  }
 }
 
 // bela cleanup function
