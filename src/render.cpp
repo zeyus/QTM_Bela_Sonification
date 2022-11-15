@@ -29,6 +29,8 @@
 
 const bool gUseTaskBasedSonification = false;
 
+const bool gSyncUseTwoChannels = false;
+
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
 // IDs of corresponding markers will be stored here.
@@ -271,12 +273,7 @@ void render(BelaContext *context, void *userData) {
     if(gAmpModPtr >= gAmpModBaseRate) {
       gAmpModPtr = 0;
     }
-    // gAmpMod = 1.0f;
-    // for (unsigned int channel = 0; channel < context->audioOutChannels;
-    //      channel++) {
-      // get the value for the current sample.
-      // gOut = sin_freq(gPhase[channel], gFreq[channel],
-      //               gInverseSampleRate[channel]);
+    
     if (gUseTaskBasedSonification) {
       const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
       const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin2, gFreqMax2);
@@ -292,18 +289,19 @@ void render(BelaContext *context, void *userData) {
 
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength) +
-        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, false) * overtone_amp
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, !gSyncUseTwoChannels) * overtone_amp
       ) * 0.5f * gAmpMod;
 
       audioWrite(context, n, 0, gOut);
 
-      gOut = (
-        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone2, undertone_srs[1] / gFreqMin1, gSampleLength) +
-        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
-      ) * 0.5f * gAmpMod;
+      if (gSyncUseTwoChannels) {
+        gOut = (
+          warp_read_sample(gUndertoneSampleData, gReadPtrUndertone2, undertone_srs[1] / gFreqMin1, gSampleLength) +
+          warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
+        ) * 0.5f * gAmpMod;
+      }
 
       audioWrite(context, n, 1, gOut);
-
       
     }
     // }
