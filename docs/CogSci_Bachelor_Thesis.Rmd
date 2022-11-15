@@ -174,11 +174,17 @@ These additional markers provided reference points for 3D orientation of the tra
 
 #### Hardware
 
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version `r bela_version` running a custom C++ program [^1]. The main program loop 
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version `r bela_version` running a custom C++ program[^code]. The main program loop 
+was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The stereo audio output was split into
+two channels which were connected to a pair of headphones for each subject.
 
-[^1]: Source, data and analysis are available at `r rmarkdown::metadata$repository`
+[^code]: Source, data and analysis are available at `r rmarkdown::metadata$repository`
 
 #### Software
+
+The main program used the Bela platform from 10 August 2022[^belaplatform].
+
+[^belaplatform]: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
 ## Experimental Design
 
