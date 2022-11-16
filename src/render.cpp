@@ -22,6 +22,63 @@
 // #include "utils/latency_check.h" // include this file to do a latency check
 
 
+bool prepare_sonification_condition() {
+  // make sure there's 3D data
+  bool dataAvailable;
+  if (!rtProtocol->Read3DSettings(dataAvailable)) return false;
+
+  // Start streaming from QTM
+  if (gStreamUDP) {
+    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, nPort, NULL,
+                                 CRTProtocol::cComponent3d)) {
+      printf("Error streaming from QTM\n");
+      return false;
+    }
+  } else {
+    // Start the 3D data stream.
+    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, 0, NULL,
+                                 CRTProtocol::cComponent3d)) {
+      printf("Error streaming from QTM\n");
+      return false;
+    }
+  }
+  printf("Streaming 3D data\n\n");
+  gStreaming = true;
+
+  // number of labelled markers
+  const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
+  printf("Found labels: \n");
+  // loop through labels to find ones we are interested in.
+  for (unsigned int i = 0; i < nLabels; i++) {
+    const char *cLabelName = rtProtocol->Get3DLabelName(i);
+    printf("- %s\n", cLabelName);
+    for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
+      // if the label is one of our specified markers, keep the ID.
+      if (cLabelName == gSubjMarkerLabels[j]) {
+        printf("Found marker: %s id: %d\n", cLabelName, i);
+        gSubjMarker[j] = i;
+      }
+    }
+  }
+  // start getting the 3D data.
+  // Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  gSilence = false;
+  // Bela_deleteAllAuxiliaryTasks();
+  return true;
+}
+
+bool end_sonification_condition() {
+  // Stop streaming from QTM
+  if (!rtProtocol->StreamFramesStop()) {
+    printf("Error stopping streaming from QTM\n");
+    return false;
+  }
+  printf("Stopped streaming 3D data\n\n");
+  gStreaming = false;
+  gSilence = true;
+  return true;
+}
+
 // experiment runner
 void runExperiment(void *) {
   if (!gExperimentStarted && !gExperimentFinished) {
@@ -179,63 +236,6 @@ bool setup(BelaContext *context, void *userData) {
   gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
 
   Bela_scheduleAuxiliaryTask(gRunExperimentTask);
-  return true;
-}
-
-bool prepare_sonification_condition() {
-  // make sure there's 3D data
-  bool dataAvailable;
-  if (!rtProtocol->Read3DSettings(dataAvailable)) return false;
-
-  // Start streaming from QTM
-  if (gStreamUDP) {
-    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, nPort, NULL,
-                                 CRTProtocol::cComponent3d)) {
-      printf("Error streaming from QTM\n");
-      return false;
-    }
-  } else {
-    // Start the 3D data stream.
-    if (!rtProtocol->StreamFrames(CRTProtocol::RateAllFrames, 0, 0, NULL,
-                                 CRTProtocol::cComponent3d)) {
-      printf("Error streaming from QTM\n");
-      return false;
-    }
-  }
-  printf("Streaming 3D data\n\n");
-  gStreaming = true;
-
-  // number of labelled markers
-  const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
-  printf("Found labels: \n");
-  // loop through labels to find ones we are interested in.
-  for (unsigned int i = 0; i < nLabels; i++) {
-    const char *cLabelName = rtProtocol->Get3DLabelName(i);
-    printf("- %s\n", cLabelName);
-    for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
-      // if the label is one of our specified markers, keep the ID.
-      if (cLabelName == gSubjMarkerLabels[j]) {
-        printf("Found marker: %s id: %d\n", cLabelName, i);
-        gSubjMarker[j] = i;
-      }
-    }
-  }
-  // start getting the 3D data.
-  // Bela_scheduleAuxiliaryTask(gFillBufferTask);
-  gSilence = false;
-  // Bela_deleteAllAuxiliaryTasks();
-  return true;
-}
-
-bool end_sonification_condition() {
-  // Stop streaming from QTM
-  if (!rtProtocol->StreamFramesStop()) {
-    printf("Error stopping streaming from QTM\n");
-    return false;
-  }
-  printf("Stopped streaming 3D data\n\n");
-  gStreaming = false;
-  gSilence = true;
   return true;
 }
 
