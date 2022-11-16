@@ -157,10 +157,7 @@ void render(BelaContext *context, void *userData) {
     // }
   }
   Bela_scheduleAuxiliaryTask(gRunExperimentTask);
-  if (!gSilence && gStreaming) {
-    // just keep polling for 3D data.
-    Bela_scheduleAuxiliaryTask(gFillBufferTask);
-  }
+  
 }
 
 // bela cleanup function

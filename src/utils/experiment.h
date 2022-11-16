@@ -33,7 +33,7 @@ bool prepare_sonification_condition() {
     }
   }
   printf("Started streaming 3D data...\n");
-  gStreaming = true;
+  
 
   // number of labelled markers
   const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
@@ -52,7 +52,8 @@ bool prepare_sonification_condition() {
   }
   // start getting the 3D data.
   // Bela_scheduleAuxiliaryTask(gFillBufferTask);
-  gSilence = false;
+  gSilence = true;
+  gStreaming = true;
   // Bela_deleteAllAuxiliaryTasks();
   return true;
 }
@@ -100,7 +101,7 @@ void endBreak() {
 }
 
 void waitForButton() {
-  printf("\n\nCondition ended. Please press the Bela button to continue...\n\n");
+  printf("\n\nPlease press the Bela button to continue...\n\n");
   gWaitingForButtonPress = true;
   gBelaButtonPressed = false;
 }
@@ -189,6 +190,7 @@ void startExperiment() {
     printf("QTM capture started.\n");
   }
   sendEventLabel(rtProtocol, Labels::EXPERIMENT_START);
+  waitForButton();
 }
 
 void endExperiment() {
@@ -206,6 +208,7 @@ void endExperiment() {
 }
 
 void startTrial() {
+  printf("Sending trial start label...\n");
   sendEventLabel(rtProtocol, Labels::TRIAL_START);
   printf("Trial %d started.\n", gCurrentTrialRep);
   resetTrial();
@@ -225,6 +228,8 @@ void startTrialIfReady() {
 
   if (!startTonePlayed && !startTonePlaying) {
     // start tone hasn't been played yet
+    printf("Starting sonification.\n");
+    prepare_sonification_condition();
     printf("Playing start tone.\n");
     startStartTone();
     return;
@@ -249,23 +254,32 @@ void startTrialIfReady() {
   }
   
   // tone and break are done, so now start the trial
-    
+  printf("Sending trial condition label...\n");
   if (gCurrentConditionIdx == Condition::NO_SONIFICATION) {
     sendEventLabel(rtProtocol, ConditionLabels::NO_SONIFICATION);
     printf("Condition %d: NO_SONIFICATION\n", gCurrentConditionIdx);
   } else if (gCurrentConditionIdx == Condition::TASK_SONIFICATION) {
-    printf("Starting sonification.\n");
-    prepare_sonification_condition();
     sendEventLabel(rtProtocol, ConditionLabels::TASK_SONIFICATION);
+
+    // printf("Starting sonification.\n");
+    // prepare_sonification_condition();
+    
     printf("Condition %d: TASK_SONIFICATION\n", gCurrentConditionIdx);
+    gSilence = false;
 
   } else if (gCurrentConditionIdx == Condition::SYNC_SONIFICATION) {
-    printf("Starting sonification.\n");
-    prepare_sonification_condition();
     sendEventLabel(rtProtocol, ConditionLabels::SYNC_SONIFICATION);
+
+    // printf("Starting sonification.\n");
+    // prepare_sonification_condition();
+
     printf("Condition %d: SYNC_SONIFICATION\n", gCurrentConditionIdx);
+    gSilence = false;
   }
   startTrial();
+  if (!gSilence && gStreaming) {
+    Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  }
   
 }
 
@@ -297,6 +311,7 @@ void endTrialIfReady() {
         } else {
           waitForButton();
         }
+        end_sonification_condition();
         return;
       }
     
@@ -313,15 +328,20 @@ void endTrialIfReady() {
     printf("Trial %d ended.\n", gCurrentTrialRep);
     gCurrentTrialRep++;
     if (gCurrentConditionIdx != Condition::NO_SONIFICATION) {
-      printf("Stopping sonification.\n");
-      end_sonification_condition();
+      gSilence = true;
     }
     if (gCurrentTrialRep >= gTrialCounts[gCurrentConditionIdx]) {
       // we have completed all the reps for this trial, move on to the next one
       gCurrentConditionIdx++;
       endCondition();
     }
+    printf("Sending trial end label...\n");
     sendEventLabel(rtProtocol, Labels::TRIAL_END);
+  } else {
+    if (!gSilence && gStreaming) {
+      // just keep polling for 3D data.
+      Bela_scheduleAuxiliaryTask(gFillBufferTask);
+    }
   }
 }
 
@@ -347,13 +367,17 @@ void runExperiment(void *) {
   }
   if (gExperimentFinished) {
     endExperiment();
+    return;
   }
+
+  
 }
 
 // update buffer of QTM data
 void fillBuffer(void *) {
+  // if stream is not open, or we're silenced, don't do anything
+  if (!gStreaming || gSilence) return;
   // Make sure we successfully get the data
-  if (!gStreaming) return;
   if (!get3DPacket(rtProtocol, rtPacket, packetType)) return;
 
   // this helps us when we're doing realtime playback, because it loops.

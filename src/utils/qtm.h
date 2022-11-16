@@ -19,7 +19,7 @@ constexpr bool sendEventLabel(CRTProtocol* rtProtocol, E pLabel)
   const bool result = rtProtocol->SetQTMEvent(labelPtr);
   if (!result) {
     const char* errorStr = rtProtocol->GetErrorString();
-    printf("Error sending event label: %s\n", errorStr);
+    printf("Error sending event label (%c): %s\n", label, errorStr);
   }
   return result;
 }
@@ -52,9 +52,16 @@ bool reindexMarkers(CRTProtocol* rtProtocol) {
 
 // wrapper to retrieve latest QTM 3d packet
 bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPacketType& packetType) {
+  // if stream is not open, or we're silenced, don't do anything
+  if (!gStreaming || gSilence) {
+    return false;
+  }
   // Ask QTM for latest packet.
-  if (rtProtocol->Receive(packetType, true) != CNetwork::ResponseType::success) {
+  if (rtProtocol->Receive(packetType, true, gPacketTimeoutMicroSec) != CNetwork::ResponseType::success) {
     printf("Problem reading data...\n");
+    // print error
+    const char* errorStr = rtProtocol->GetErrorString();
+    printf("Error: %s\n", errorStr);
     return false;
   }
   // we got a data packet from QTM

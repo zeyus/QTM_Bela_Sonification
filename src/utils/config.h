@@ -79,6 +79,7 @@ const std::array<unsigned int, 3> gConditionOrder = {{
 
 /* MOCAP */
 
+const unsigned int gPacketTimeoutMicroSec = 100000; // 100ms
 // track axis
 const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
 
