@@ -17,6 +17,9 @@ float warp_amp_fade_linear(const float index, const float sample_length, const f
 
 // integer version
 float amp_fade_linear(const unsigned int index, const unsigned int sample_length, const unsigned int fade_length = 220, const float amp_depth = 1.0f) {
+  // if the amp depth is 0, we can just return 1.0f immediately
+  if (amp_depth == 0.0f) return 1.0f;
+
   if (index < fade_length) {
     return ((float) index / (float) fade_length * amp_depth) + (1.0f - amp_depth);
   } else if (index > sample_length - fade_length) {
