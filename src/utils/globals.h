@@ -9,7 +9,7 @@
 #include "../qsdk/RTPacket.h"
 #include "../qsdk/RTProtocol.h"
 
-#include <config.h>
+#include "./config.h"
 
 /************************************************/
 /*            NON-USER VARIABLES                */
@@ -19,8 +19,6 @@
 
 // if the current trial is the task trial specified in gTaskConditionIndex
 bool gUseTaskBasedSonification = false;
-// the current trial index
-unsigned int gCurrentTrialIdx = 0;
 // thow many trials have been completed
 unsigned int gCurrentConditionIdx = 0;
 // how many times the current trial has run
@@ -104,11 +102,11 @@ bool gSilence = true;
 const float gSampleRate = 44100.0f;
 
 // the duration of trials for each condition in samples
-const std::array<float, 3> gTrialDurationsSamples = {
+const std::array<float, 3> gTrialDurationsSamples = {{
   gTrialDurationsSec[0] * gSampleRate,
   gTrialDurationsSec[1] * gSampleRate,
   gTrialDurationsSec[2] * gSampleRate
-};
+}};
 
 // the duration of the break between trials in samples
 const float gBreakDurationSamples = 30 * gSampleRate;

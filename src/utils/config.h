@@ -27,14 +27,14 @@ enum Condition {
 };
 
 // how many trials per condition
-const std::array<unsigned int, 3> gTrialCounts = {
+const std::array<unsigned int, 3> gTrialCounts = {{
   3, 3, 3
-};
+}};
 
 // how long per trial for each condition
-const std::array<float, 3> gTrialDurationsSec = {
+const std::array<float, 3> gTrialDurationsSec = {{
   120.0f, 120.0f, 120.0f
-};
+}};
 
 // the duration of trials for each condition in seconds
 const float gBreakDurationSec = 5.0f;
@@ -57,11 +57,11 @@ enum class ConditionLabels : char {
 };
 
 // the order of the trials (based on the condition labels)
-const std::array<unsigned int, 3> gConditionOrder = {
+const std::array<unsigned int, 3> gConditionOrder = {{
   Condition::NO_SONIFICATION,
   Condition::TASK_SONIFICATION,
   Condition::SYNC_SONIFICATION
-};
+}};
 
 
 /* MOCAP */
@@ -78,7 +78,7 @@ const float gTrackEnd = 900.0;
 const bool gStreamUDP = true;
 
 // Should bela tell QTM to start and stop capture?
-const bool gControlQTMCapture = true;
+const bool gControlQTMCapture = false;
 
 // names of tracked markers in QTM.
 const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
