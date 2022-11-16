@@ -12,6 +12,9 @@
 // just x, y, z. but maybe we want to track other things?
 #define NUM_COORDS 3
 
+#define NUM_TRIALS 4
+#define NUM_CONDITIONS 3
+
 /************************************************/
 /*            EXPERIMENT VARIABLES              */
 /************************************************/
@@ -19,28 +22,35 @@
 
 /* TRIAL CONFIGURATION */
 
-// condition indices
+// condition indices (don't change order but you can change values in [0, NUM_CONDITIONS-1])
 enum Condition {
   NO_SONIFICATION = 0,
   TASK_SONIFICATION = 1,
   SYNC_SONIFICATION = 2
 };
 
+// condition labels for printing messages to console
+const char* gConditionLabels[NUM_CONDITIONS] = {
+    "no_sonification",
+    "task_sonification",
+    "sync_sonification"
+  };
+
 // should the trial start and end sounds play?
 const bool gPlayTrialSounds = true;
 
 // how many trials per condition
 const std::array<unsigned int, 3> gTrialCounts = {{
-  3, 3, 3
+  NUM_TRIALS, NUM_TRIALS, NUM_TRIALS
 }};
 
-// how long per trial for each condition
-const std::array<float, 3> gTrialDurationsSec = {{
-  120.0f, 120.0f, 120.0f
+// how long per trial for all conditions
+const std::array<float, NUM_TRIALS> gTrialDurationsSec = {{
+  30.0f, 120.0f, 120.0f, 120.0f
 }};
 
 // the duration of trials for each condition in seconds
-const float gBreakDurationSec = 5.0f;
+const float gBreakDurationSec = 15.0f;
 
 /* LABELS */
 

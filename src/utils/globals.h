@@ -5,6 +5,7 @@
 #include <string>
 
 #include <Bela.h>
+#include <Gpio.h>
 
 #include "../qsdk/RTPacket.h"
 #include "../qsdk/RTProtocol.h"
@@ -29,11 +30,17 @@ unsigned int gCurrentTrialDuration = 0;
 bool gTrialRunning = false;
 // is the current trial done
 bool gTrialDone = false;
+// is the current condition done
+bool gConditionDone = false;
 // has the experiment started?
 bool gExperimentStarted = false;
 // has the experiment finished?
 bool gExperimentFinished = false;
 
+Gpio gBelaCapeButton;
+
+bool gWaitingForButtonPress = false;
+bool gBelaButtonPressed = false;
 
 /************************************************/
 /*            SPATIAL VARIABLES                 */
@@ -101,10 +108,11 @@ bool gSilence = true;
 const float gSampleRate = 44100.0f;
 
 // the duration of trials for each condition in samples
-const std::array<float, 3> gTrialDurationsSamples = {{
+const std::array<float, NUM_TRIALS> gTrialDurationsSamples = {{
   gTrialDurationsSec[0] * gSampleRate,
   gTrialDurationsSec[1] * gSampleRate,
-  gTrialDurationsSec[2] * gSampleRate
+  gTrialDurationsSec[2] * gSampleRate,
+  gTrialDurationsSec[3] * gSampleRate
 }};
 
 // the duration of the break between trials in samples
