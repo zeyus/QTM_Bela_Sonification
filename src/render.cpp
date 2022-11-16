@@ -9,232 +9,101 @@
 #include "qsdk/RTPacket.h"
 #include "qsdk/RTProtocol.h"
 
+// user/experiment configuration
+#include "utils/config.h"
+
+// global variables
+#include "utils/globals.h"
+
 #include "utils/qtm.h"
 #include "utils/sound.h"
 #include "utils/space.h"
 
 // #include "utils/latency_check.h" // include this file to do a latency check
 
-// how much history to keep
-#define NUM_SAMPLES 2
-// how many signals to process (at the moment this is required to be 2)
-// because we match them to out channels...for now.
-#define NUM_SUBJECTS 2
-// just x, y, z. but maybe we want to track other things?
-#define NUM_COORDS 3
 
-/************************************************/
-/*            EXPERIMENT VARIABLES              */
-/************************************************/
+// experiment runner
+void runExperiment(void *) {
+  if (!gExperimentStarted && !gExperimentFinished) {
+    // start the experiment
+    gExperimentStarted = true;
+    printf("Experiment started.\n");
+    // start the first trial
+    gCurrentConditionIdx = 0;
+    gCurrentTrialRep = 0;
+    gCurrentTrialDuration = 0;
+    gTrialRunning = false;
+    // if we're using bela to start / stop capture, do it here.
+    if (gControlQTMCapture) {
+      startCapture(rtProtocol);
+      printf("QTM capture started.\n");
+    }
+    sendEventLabel(rtProtocol, Labels::EXPERIMENT_START);
+  } else if (!gTrialRunning) {
+    // this is a break between trials
+    if (gCurrentTrialDuration >= gBreakDurationSamples) {
+      // break time is over, start the next trial
+      gCurrentTrialDuration = 0;
+      gTrialRunning = true;
+      
+      if (gCurrentConditionIdx == Condition::NO_SONIFICATION) {
 
-// condition indices
-enum Condition {
-  NO_SONIFICATION = 0,
-  TASK_SONIFICATION = 1,
-  SYNC_SONIFICATION = 2
-};
+        sendEventLabel(rtProtocol, ConditionLabels::NO_SONIFICATION);
+        printf("Condition %d: NO_SONIFICATION\n", gCurrentConditionIdx);
 
+      } else if (gCurrentConditionIdx == Condition::TASK_SONIFICATION) {
 
-// define event label char*s
-enum class Labels : char {
-    TRIAL_START = 's',
-    TRIAL_END = 'e',
-    EXPERIMENT_START = 'S',
-    EXPERIMENT_END = 'E',
-};
+        prepare_sonification_condition();
+        sendEventLabel(rtProtocol, ConditionLabels::TASK_SONIFICATION);
+        printf("Condition %d: TASK_SONIFICATION\n", gCurrentConditionIdx);
 
-// labels for conditions
-enum class ConditionLabels : char {
-  NO_SONIFICATION = 'n',
-  TASK_SONIFICATION = 't',
-  SYNC_SONIFICATION = 'y',
-};
+      } else if (gCurrentConditionIdx == Condition::SYNC_SONIFICATION) {
 
-// the order of the trials (based on the condition labels)
-const std::array<unsigned int, 3> gConditionOrder = {
-  Condition::NO_SONIFICATION,
-  Condition::TASK_SONIFICATION,
-  Condition::SYNC_SONIFICATION
-};
+        prepare_sonification_condition();
+        sendEventLabel(rtProtocol, ConditionLabels::SYNC_SONIFICATION);
+        printf("Condition %d: SYNC_SONIFICATION\n", gCurrentConditionIdx);
 
-// how many trials per condition
-const std::array<unsigned int, 3> gTrialCounts = {
-  3, 3, 3
-};
-
-// how long per trial for each condition
-const std::array<float, 3> gTrialDurationsSec = {
-  120.0f, 120.0f, 120.0f
-};
-
-// the duration of trials for each condition in seconds
-const float gBreakDurationSec = 5.0f;
-
-// names of tracked markers in QTM.
-const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}};
-
-// file for the lower tone
-const std::string gUndertoneFile = "./res/simple_As3.wav";
-
-// file for the higher tone
-const std::string gOvertoneFile = "./res/simple_f4.wav";
-
-// length of wave files in samples
-const unsigned int gSampleLength = 113145;
-
-// Amplitude modulation
-// Frequency in samples for modulation
-const unsigned int gAmpModBaseRate = gSampleLength / 15;
-
-// Length of fade in and fade out in samples
-const unsigned int gAmpModNumSamplesIO = 2515;
-
-// Depth of modulation from 0.0 to 1.0 (0.0 = no modulation)
-const float gAmpModDepth = 0.0f;
-
-// minimum frequency for undertone playback.
-const float gFreqMin1 = 232.819;
-// maximum frequencey for undertone playback.
-const float gFreqMax1 = 369.577;
-
-// minimum frequency for overtone playback.
-const float gFreqMin2 = 349.23;
-// maximum frequencey for overtone playback.
-const float gFreqMax2 = 554.365;
-// the center overtone frequency
-const float gFreqCenter2 = 440.0;
-
-
-// track start and end points (on corresponding axis)
-const float gTrackStart = -250.0;
-const float gTrackEnd = 900.0;
-// const float gTrackCenter = (gTrackEnd - gTrackStart) / 2;
-// track axis
-const unsigned int gTrackAxis = 1; // x: 0, y: 1, z: 2
-
-
-// use UDP for QTM connection.
-// UDP has less overhead so try to use that if no problems.
-const bool gStreamUDP = true;
-
-// Should bela tell QTM to start and stop capture?
-const bool gControlQTMCapture = true;
-
-// Should sync condition be different for left and right channels?
-const bool gSyncUseTwoChannels = false;
-
-/************************************************/
-/*            NON-USER VARIABLES                */
-/************************************************/
-
-// you probably don't need to change anything below this line.
-
-// if the current trial is the task trial specified in gTaskConditionIndex
-bool gUseTaskBasedSonification = false;
-// the current trial index
-unsigned int gCurrentTrial = 0;
-
-/************************************************/
-/*            SPATIAL VARIABLES                 */
-/************************************************/
-
-// record of maximum distance travelled, for debugging.
-std::array<float, NUM_SUBJECTS> gMaxStep{};
-
-// array of size n_subjects x n_history x 3 (x, y, z)
-std::array<std::array<std::array<float, NUM_COORDS>, NUM_SUBJECTS>, NUM_SAMPLES>
-    gPos3D{};
-
-// keep track of last step distance for each subject.
-std::array<float, NUM_SUBJECTS> gStepDistance{};
-
-// frequency
-std::array<float, NUM_SUBJECTS> gFreq{};
-
-
-/************************************************/
-/*                QTM VARIABLES                 */
-/************************************************/
-
-// record of last rendered QTM frame.
-unsigned int gLastFrame = 0;
-
-// QTM protocol
-CRTProtocol* rtProtocol = NULL;
-
-// QTM communication packet
-CRTPacket* rtPacket = NULL;
-
-// QTM packet type (we want Data Packets (CRTPacket::PacketData).
-CRTPacket::EPacketType packetType;
-
-// Connect to host (adjust as neccessary)
-const char serverAddr[] = "192.168.6.1";
-// Default port for QTM is 22222
-const unsigned short basePort = 22222;
-// Protocol version, 1.23 is the latest
-const int majorVersion = 1;
-const int minorVersion = 23;
-// Leave as false
-const bool bigEndian = false;
-// server port
-unsigned short nPort = 0;
-
-// are we connected to QTM?
-bool gConnected = false;
-
-// are we currently streaming from QTM?
-bool gStreaming = false;
-
-// have we initialized the variables.
-bool gInitialized = false;
-
-// IDs of corresponding markers will be stored here.
-std::array<int, NUM_SUBJECTS> gSubjMarker{};
-
-/************************************************/
-/*              AUDIO VARIABLES                 */
-/************************************************/
-
-// while this is true, no sound is generated
-bool gSilence = true;
-
-// output sample rate
-const float gSampleRate = 44100.0f;
-
-// the duration of trials for each condition in samples
-const std::array<float, 3> gTrialDurationsSamples = {
-  gTrialDurationsSec[0] * gSampleRate,
-  gTrialDurationsSec[1] * gSampleRate,
-  gTrialDurationsSec[2] * gSampleRate
-};
-
-// the duration of the break between trials in samples
-const float gBreakDurationSamples = 30 * gSampleRate;
-
-// current sample out
-float gOut;
-
-// the entire undertone file buffer
-std::vector<float> gUndertoneSampleData;
-
-// the entire overtone file buffer
-std::vector<float> gOvertoneSampleData;
-
-// read pointers for the sample output
-float gReadPtrOvertone = 0.0f;
-float gReadPtrUndertone = 0.0f;
-float gReadPtrUndertone2 = 0.0f;
-
-// the amplitude modulation pointer
-unsigned int gAmpModPtr = 0;
-
-// the current amplitude modulation value
-float gAmpMod = 0.0f;
-
-// define Bela aux task to avoid render slowdown.
-AuxiliaryTask gFillBufferTask;
-
+      }
+      sendEventLabel(rtProtocol, Labels::TRIAL_START);
+      printf("Trial %d started.\n", gCurrentTrialRep);
+    }
+  } else if (!gExperimentFinished) {
+    // now we have to keep running the experiment until it reaches the sample limit
+    if (gCurrentTrialDuration >= gTrialDurationsSamples[gCurrentConditionIdx]) {
+      printf("Trial %d ended.\n", gCurrentTrialRep);
+      gCurrentTrialRep++;
+      if (gCurrentConditionIdx != Condition::NO_SONIFICATION) {
+        end_sonification_condition();
+      }
+      if (gCurrentTrialRep >= gTrialCounts[gCurrentConditionIdx]) {
+        // we have completed all the reps for this trial, move on to the next one
+        gCurrentConditionIdx++;
+        gCurrentTrialRep = 0;
+        if (gCurrentConditionIdx >= gTrialCounts.size()) {
+          // we have completed all the trials, stop the experiment
+          gExperimentFinished = true;
+          gTrialRunning = false;
+          gCurrentTrialDuration = 0;
+          gCurrentConditionIdx = 0;
+          gCurrentTrialRep = 0;
+        }
+      }
+      sendEventLabel(rtProtocol, Labels::TRIAL_END);
+      
+      gTrialRunning = false;
+      // gSilence = true;
+    }
+  } else {
+    // experiment is finished, place marker and plan exit
+    // TODO: confirm type conversion
+    sendEventLabel(rtProtocol, Labels::EXPERIMENT_END);
+    // if we're using bela to start / stop capture, do it here.
+    if (gControlQTMCapture) {
+      stopCapture(rtProtocol);
+      printf("QTM capture stopped.\n");
+    }
+  }
+}
 
 // update buffer of QTM data
 void fillBuffer(void *) {
@@ -268,6 +137,10 @@ bool setup(BelaContext *context, void *userData) {
   // create fill buffer function auxillary task
   if ((gFillBufferTask =
            Bela_createAuxiliaryTask(&fillBuffer, 90, "fill-buffer")) == 0)
+    return false;
+
+  if ((gRunExperimentTask =
+           Bela_createAuxiliaryTask(&runExperiment, 90, "run-experiment")) == 0)
     return false;
 
   // initialize some default variable values.
@@ -305,6 +178,7 @@ bool setup(BelaContext *context, void *userData) {
   gUndertoneSampleData = AudioFileUtilities::loadMono(gUndertoneFile);
   gOvertoneSampleData = AudioFileUtilities::loadMono(gOvertoneFile);
 
+  Bela_scheduleAuxiliaryTask(gRunExperimentTask);
   return true;
 }
 
@@ -347,13 +221,13 @@ bool prepare_sonification_condition() {
     }
   }
   // start getting the 3D data.
-  Bela_scheduleAuxiliaryTask(gFillBufferTask);
+  // Bela_scheduleAuxiliaryTask(gFillBufferTask);
   gSilence = false;
   // Bela_deleteAllAuxiliaryTasks();
   return true;
 }
 
-bool endSonificationCondition() {
+bool end_sonification_condition() {
   // Stop streaming from QTM
   if (!rtProtocol->StreamFramesStop()) {
     printf("Error stopping streaming from QTM\n");
@@ -361,7 +235,7 @@ bool endSonificationCondition() {
   }
   printf("Stopped streaming 3D data\n\n");
   gStreaming = false;
-  Bela_deleteAllAuxiliaryTasks();
+  gSilence = true;
   return true;
 }
 
@@ -369,7 +243,7 @@ bool endSonificationCondition() {
 void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
-
+    gCurrentTrialDuration++;
     if (gSilence) {
       // if this is between trials, or in the no sonification condition
       // just output silence.
@@ -386,29 +260,29 @@ void render(BelaContext *context, void *userData) {
     }
     
     if (gUseTaskBasedSonification) {
-      const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
-      const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin2, gFreqMax2);
+      const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
+      const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gOvertoneFreqMin, gOvertoneFreqMax);
       gOut = (
-        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_sr / gFreqMin1, gSampleLength) +
-        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, overtone_sr / gFreqMin2, gSampleLength)
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_sr / gUndertoneFreqMin, gSampleLength) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, overtone_sr / gOvertoneFreqMin, gSampleLength)
         ) * 0.5f * gAmpMod;
       audioWrite(context, n, 0, gOut);
       audioWrite(context, n, 1, gOut);
     } else {
-      const std::array<float, 2> undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gFreqMin1, gFreqMax1);
+      const std::array<float, 2> undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
       const float overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, 0.15f);
 
       gOut = (
-        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gFreqMin1, gSampleLength) +
-        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength, !gSyncUseTwoChannels) * overtone_amp
+        warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gUndertoneFreqMin, gSampleLength) +
+        warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter / gOvertoneFreqMin, gSampleLength, !gSyncUseTwoChannels) * overtone_amp
       ) * 0.5f * gAmpMod;
 
       audioWrite(context, n, 0, gOut);
 
       if (gSyncUseTwoChannels) {
         gOut = (
-          warp_read_sample(gUndertoneSampleData, gReadPtrUndertone2, undertone_srs[1] / gFreqMin1, gSampleLength) +
-          warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter2 / gFreqMin2, gSampleLength) * overtone_amp
+          warp_read_sample(gUndertoneSampleData, gReadPtrUndertone2, undertone_srs[1] / gUndertoneFreqMin, gSampleLength) +
+          warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, gFreqCenter / gOvertoneFreqMin, gSampleLength) * overtone_amp
         ) * 0.5f * gAmpMod;
       }
 
@@ -417,6 +291,7 @@ void render(BelaContext *context, void *userData) {
     }
     // }
   }
+  Bela_scheduleAuxiliaryTask(gRunExperimentTask);
   if (!gSilence && gStreaming) {
     // just keep polling for 3D data.
     Bela_scheduleAuxiliaryTask(gFillBufferTask);
