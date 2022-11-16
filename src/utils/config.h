@@ -26,6 +26,9 @@ enum Condition {
   SYNC_SONIFICATION = 2
 };
 
+// should the trial start and end sounds play?
+const bool gPlayTrialSounds = true;
+
 // how many trials per condition
 const std::array<unsigned int, 3> gTrialCounts = {{
   3, 3, 3

@@ -27,6 +27,8 @@ unsigned int gCurrentTrialRep = 0;
 unsigned int gCurrentTrialDuration = 0;
 // is a trial currently running?
 bool gTrialRunning = false;
+// is the current trial done
+bool gTrialDone = false;
 // has the experiment started?
 bool gExperimentStarted = false;
 // has the experiment finished?
@@ -109,7 +111,39 @@ const std::array<float, 3> gTrialDurationsSamples = {{
 }};
 
 // the duration of the break between trials in samples
-const float gBreakDurationSamples = 30 * gSampleRate;
+const float gBreakDurationSamples = gBreakDurationSec * gSampleRate;
+
+bool gOnBreak = false;
+bool gBreakDone = false;
+
+// start and end tone configuration
+
+// start tone
+const std::array<float, 6> gTrialStartTones = {{
+  // C4, C4, C5
+  261.6256f, 0.0f, 261.6256f, 0.0f, 523.2511f
+}};
+
+// how long the tones should play for
+const float gTrialStartToneDuration = 1.0f * gSampleRate;
+
+const std::array<float, 1> gTrialEndTones = {{
+  // C5
+  523.2511f
+}};
+
+bool startTonePlayed = false;
+bool endTonePlayed = false;
+bool startTonePlaying = false;
+bool endTonePlaying = false;
+
+float gCurrentToneFreq = 0.0f;
+float gCurrentTonePhase = 0.0f;
+const float gCurrentToneInvSampleRate = 1.0f / gSampleRate;
+unsigned int gCurrentToneIdx = 0;
+
+// how long the tones should play for
+const float gTrialEndToneDuration = 2.0f * gSampleRate;
 
 // current sample out
 float gOut;
@@ -131,9 +165,15 @@ unsigned int gAmpModPtr = 0;
 // the current amplitude modulation value
 float gAmpMod = 0.0f;
 
+float undertone_sr = 0.0f;
+float overtone_sr = 0.0f;
+float overtone_amp = 0.0f;
+std::array<float, 2> undertone_srs = {{0.0f, 0.0f}};
+
 // define Bela aux task to avoid render slowdown.
 AuxiliaryTask gFillBufferTask;
 AuxiliaryTask gRunExperimentTask;
+
 
 
 #endif

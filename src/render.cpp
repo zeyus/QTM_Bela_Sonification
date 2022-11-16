@@ -42,16 +42,16 @@ bool prepare_sonification_condition() {
       return false;
     }
   }
-  printf("Streaming 3D data\n\n");
+  printf("Started streaming 3D data...\n");
   gStreaming = true;
 
   // number of labelled markers
   const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
-  printf("Found labels: \n");
+  // printf("Found labels: \n");
   // loop through labels to find ones we are interested in.
   for (unsigned int i = 0; i < nLabels; i++) {
     const char *cLabelName = rtProtocol->Get3DLabelName(i);
-    printf("- %s\n", cLabelName);
+    // printf("- %s\n", cLabelName);
     for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
       // if the label is one of our specified markers, keep the ID.
       if (cLabelName == gSubjMarkerLabels[j]) {
@@ -73,98 +73,248 @@ bool end_sonification_condition() {
     printf("Error stopping streaming from QTM\n");
     return false;
   }
-  printf("Stopped streaming 3D data\n\n");
+  printf("Stopped streaming 3D data\n");
   gStreaming = false;
   gSilence = true;
   return true;
 }
 
+void resetDuration() {
+  gCurrentTrialDuration = 0;
+}
+
+void resetTrial() {
+  resetDuration();
+  gTrialRunning = false;
+  startTonePlayed = false;
+  endTonePlayed = false;
+  gTrialDone = false;
+  gReadPtrOvertone = 0.0f;
+  gReadPtrUndertone = 0.0f;
+  gReadPtrUndertone2 = 0.0f;
+  gAmpModPtr = 0;
+
+}
+
+void startBreak() {
+  printf("Starting break\n");
+  resetDuration();
+  gOnBreak = true;
+  gBreakDone = false;
+}
+
+void endBreak() {
+  printf("Ending break\n");
+  gOnBreak = false;
+  gBreakDone = true;
+}
+
+void resetCondition() {
+  // resetTrial();
+  gCurrentTrialRep = 0;
+}
+
+void resetSine() {
+  gCurrentTonePhase = 0.0f;
+}
+
+void startStartTone() {
+  resetDuration();
+  resetSine();
+  gSilence = false;
+  startTonePlaying = true;
+  gCurrentToneIdx = 0;
+  gCurrentToneFreq = gTrialStartTones[gCurrentToneIdx];
+}
+
+void endStartTone() {
+  gSilence = true;
+  startTonePlaying = false;
+  startTonePlayed = true;
+}
+
+void startEndTone() {
+  resetDuration();
+  resetSine();
+  gSilence = false;
+  endTonePlaying = true;
+  gCurrentToneIdx = 0;
+  gCurrentToneFreq = gTrialEndTones[gCurrentToneIdx];
+}
+
+void endEndTone() {
+  gSilence = true;
+  endTonePlaying = false;
+  endTonePlayed = true;
+}
+
+void startExperiment() {
+  // start the experiment
+  gExperimentStarted = true;
+  printf("Experiment started.\n");
+  // start the first trial
+  gCurrentConditionIdx = 0;
+  resetCondition();
+  resetTrial();
+  // startBreak();
+  // if we're using bela to start / stop capture, do it here.
+  if (gControlQTMCapture) {
+    startCapture(rtProtocol);
+    printf("QTM capture started.\n");
+  }
+  sendEventLabel(rtProtocol, Labels::EXPERIMENT_START);
+}
+
+void endExperiment() {
+  // experiment is finished, place marker and plan exit
+  // TODO: confirm type conversion
+  printf("Experiment ended.\n");
+  sendEventLabel(rtProtocol, Labels::EXPERIMENT_END);
+  // if we're using bela to start / stop capture, do it here.
+  if (gControlQTMCapture) {
+    stopCapture(rtProtocol);
+    printf("QTM capture stopped.\n");
+  }
+  printf("Exiting.\n");
+  Bela_requestStop();
+}
+
+void startTrial() {
+  sendEventLabel(rtProtocol, Labels::TRIAL_START);
+  printf("Trial %d started.\n", gCurrentTrialRep);
+  resetTrial();
+  gTrialRunning = true;
+}
+
+
+void startTrialIfReady() {
+  if (gOnBreak && !gBreakDone) {
+    // this is a break between trials
+    if (gCurrentTrialDuration >= gBreakDurationSamples) {
+      endBreak();
+    } else {
+      return;
+    }
+  }
+
+  if (!startTonePlayed && !startTonePlaying) {
+    // start tone hasn't been played yet
+    printf("Playing start tone.\n");
+    startStartTone();
+    return;
+  }
+
+  if (!startTonePlayed) {
+    if (gCurrentTrialDuration >= gTrialStartToneDuration) {
+      if (gCurrentToneIdx + 1 >= gTrialStartTones.size()) {
+        printf("Start tone complete.\n");
+        endStartTone();
+      } else {
+        // play the next tone
+        resetDuration();
+        gCurrentToneIdx++;
+        gCurrentToneFreq = gTrialStartTones[gCurrentToneIdx];
+        gSilence = gCurrentToneFreq == 0.0f;
+        return;
+      }
+    } else {
+      return;
+    }
+  }
+  
+  // tone and break are done, so now start the trial
+    
+  if (gCurrentConditionIdx == Condition::NO_SONIFICATION) {
+    sendEventLabel(rtProtocol, ConditionLabels::NO_SONIFICATION);
+    printf("Condition %d: NO_SONIFICATION\n", gCurrentConditionIdx);
+  } else if (gCurrentConditionIdx == Condition::TASK_SONIFICATION) {
+    printf("Starting sonification.\n");
+    prepare_sonification_condition();
+    sendEventLabel(rtProtocol, ConditionLabels::TASK_SONIFICATION);
+    printf("Condition %d: TASK_SONIFICATION\n", gCurrentConditionIdx);
+
+  } else if (gCurrentConditionIdx == Condition::SYNC_SONIFICATION) {
+    printf("Starting sonification.\n");
+    prepare_sonification_condition();
+    sendEventLabel(rtProtocol, ConditionLabels::SYNC_SONIFICATION);
+    printf("Condition %d: SYNC_SONIFICATION\n", gCurrentConditionIdx);
+  }
+  startTrial();
+  
+}
+
+void endTrial() {
+  resetTrial();
+  if (gCurrentConditionIdx >= gTrialCounts.size()) {
+    // we have completed all the trials, stop the experiment
+    gExperimentFinished = true;
+  }
+  startBreak();
+}
+
+void endTrialIfReady() {
+  if (gTrialDone) {
+    if (!endTonePlayed && !endTonePlaying) {
+      // start tone hasn't been played yet
+      printf("Playing end tone.\n");
+      startEndTone();
+      return;
+    }
+
+    if (endTonePlaying && gCurrentTrialDuration >= gTrialEndToneDuration) {
+      if (gCurrentToneIdx + 1 >= gTrialEndTones.size()) {
+        printf("End tone complete.\n");
+        endEndTone();
+        endTrial();
+        return;
+      }
+    
+      // play the next tone
+      resetDuration();
+      gCurrentToneIdx++;
+      gCurrentToneFreq = gTrialEndTones[gCurrentToneIdx];
+      gSilence = gCurrentToneFreq == 0.0f;
+      return;
+    }
+  } else if (gCurrentTrialDuration >= gTrialDurationsSamples[gCurrentConditionIdx]) {
+    // now we have to keep running the experiment until it reaches the sample limit
+    gTrialDone = true;
+    printf("Trial %d ended.\n", gCurrentTrialRep);
+    gCurrentTrialRep++;
+    if (gCurrentConditionIdx != Condition::NO_SONIFICATION) {
+      printf("Stopping sonification.\n");
+      end_sonification_condition();
+    }
+    if (gCurrentTrialRep >= gTrialCounts[gCurrentConditionIdx]) {
+      // we have completed all the reps for this trial, move on to the next one
+      gCurrentConditionIdx++;
+      resetCondition();
+      
+    }
+    sendEventLabel(rtProtocol, Labels::TRIAL_END);
+  }
+}
+
 // experiment runner
 void runExperiment(void *) {
   if (!gExperimentStarted && !gExperimentFinished) {
-    // start the experiment
-    gExperimentStarted = true;
-    printf("Experiment started.\n");
-    // start the first trial
-    gCurrentConditionIdx = 0;
-    gCurrentTrialRep = 0;
-    gCurrentTrialDuration = 0;
-    gTrialRunning = false;
-    // if we're using bela to start / stop capture, do it here.
-    if (gControlQTMCapture) {
-      startCapture(rtProtocol);
-      printf("QTM capture started.\n");
-    }
-    sendEventLabel(rtProtocol, Labels::EXPERIMENT_START);
+    startExperiment();
   } else if (!gTrialRunning) {
-    // this is a break between trials
-    if (gCurrentTrialDuration >= gBreakDurationSamples) {
-      // break time is over, start the next trial
-      gCurrentTrialDuration = 0;
-      gTrialRunning = true;
-      
-      if (gCurrentConditionIdx == Condition::NO_SONIFICATION) {
-
-        sendEventLabel(rtProtocol, ConditionLabels::NO_SONIFICATION);
-        printf("Condition %d: NO_SONIFICATION\n", gCurrentConditionIdx);
-
-      } else if (gCurrentConditionIdx == Condition::TASK_SONIFICATION) {
-
-        prepare_sonification_condition();
-        sendEventLabel(rtProtocol, ConditionLabels::TASK_SONIFICATION);
-        printf("Condition %d: TASK_SONIFICATION\n", gCurrentConditionIdx);
-
-      } else if (gCurrentConditionIdx == Condition::SYNC_SONIFICATION) {
-
-        prepare_sonification_condition();
-        sendEventLabel(rtProtocol, ConditionLabels::SYNC_SONIFICATION);
-        printf("Condition %d: SYNC_SONIFICATION\n", gCurrentConditionIdx);
-
-      }
-      sendEventLabel(rtProtocol, Labels::TRIAL_START);
-      printf("Trial %d started.\n", gCurrentTrialRep);
-    }
+    // trials will start if it's not during a break
+    startTrialIfReady();
   } else if (!gExperimentFinished) {
-    // now we have to keep running the experiment until it reaches the sample limit
-    if (gCurrentTrialDuration >= gTrialDurationsSamples[gCurrentConditionIdx]) {
-      printf("Trial %d ended.\n", gCurrentTrialRep);
-      gCurrentTrialRep++;
-      if (gCurrentConditionIdx != Condition::NO_SONIFICATION) {
-        end_sonification_condition();
-      }
-      if (gCurrentTrialRep >= gTrialCounts[gCurrentConditionIdx]) {
-        // we have completed all the reps for this trial, move on to the next one
-        gCurrentConditionIdx++;
-        gCurrentTrialRep = 0;
-        if (gCurrentConditionIdx >= gTrialCounts.size()) {
-          // we have completed all the trials, stop the experiment
-          gExperimentFinished = true;
-          gTrialRunning = false;
-          gCurrentTrialDuration = 0;
-          gCurrentConditionIdx = 0;
-          gCurrentTrialRep = 0;
-        }
-      }
-      sendEventLabel(rtProtocol, Labels::TRIAL_END);
-      
-      gTrialRunning = false;
-      // gSilence = true;
-    }
-  } else {
-    // experiment is finished, place marker and plan exit
-    // TODO: confirm type conversion
-    sendEventLabel(rtProtocol, Labels::EXPERIMENT_END);
-    // if we're using bela to start / stop capture, do it here.
-    if (gControlQTMCapture) {
-      stopCapture(rtProtocol);
-      printf("QTM capture stopped.\n");
-    }
+    // trials will end if they've run for the specified duration
+    endTrialIfReady();
+  }
+  if (gExperimentFinished) {
+    endExperiment();
   }
 }
 
 // update buffer of QTM data
 void fillBuffer(void *) {
   // Make sure we successfully get the data
+  if (!gConnected || !gTrialRunning) return;
   if (!get3DPacket(rtProtocol, rtPacket, packetType)) return;
 
   // this helps us when we're doing realtime playback, because it loops.
@@ -226,6 +376,14 @@ bool setup(BelaContext *context, void *userData) {
   // print the version
   printf("%s\n", qtmVer);
 
+  // taking control of QTM
+  if (!rtProtocol->TakeControl()) {
+    printf("Failed to take control of QTM RT Server. %s\n",
+           rtProtocol->GetErrorString());
+    return false;
+  }
+  printf("Took control of QTM.\n");  
+
 #ifdef CHECK_CMD_LATENCY
   checkLatency(rtProtocol);
 #endif
@@ -244,11 +402,19 @@ void render(BelaContext *context, void *userData) {
   // this is how many audio frames are rendered per loop
   for (unsigned int n = 0; n < context->audioFrames; n++) {
     gCurrentTrialDuration++;
+    // if silent mode is set or the current tone is the "pause" tone
     if (gSilence) {
       // if this is between trials, or in the no sonification condition
       // just output silence.
       audioWrite(context, n, 0, 0);
       audioWrite(context, n, 1, 0);
+      continue;
+    } else if (startTonePlaying || endTonePlaying) {
+      // if we're playing a start or end tone, we need to play a sine tone instead of sonification
+      gOut = sin_freq(gCurrentTonePhase, gCurrentToneFreq, gCurrentToneInvSampleRate);
+      audioWrite(context, n, 0, gOut);
+      audioWrite(context, n, 1, gOut);
+      continue;
     }
 
     gAmpMod = amp_fade_linear(gAmpModPtr, gAmpModBaseRate, gAmpModNumSamplesIO, gAmpModDepth);
@@ -259,9 +425,9 @@ void render(BelaContext *context, void *userData) {
       }
     }
     
-    if (gUseTaskBasedSonification) {
-      const float undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
-      const float overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gOvertoneFreqMin, gOvertoneFreqMax);
+    if (gCurrentConditionIdx == Condition::TASK_SONIFICATION) {
+      undertone_sr = pos_to_freq(gPos3D[1][0][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
+      overtone_sr = pos_to_freq(gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gOvertoneFreqMin, gOvertoneFreqMax);
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_sr / gUndertoneFreqMin, gSampleLength) +
         warp_read_sample(gOvertoneSampleData, gReadPtrOvertone, overtone_sr / gOvertoneFreqMin, gSampleLength)
@@ -269,8 +435,8 @@ void render(BelaContext *context, void *userData) {
       audioWrite(context, n, 0, gOut);
       audioWrite(context, n, 1, gOut);
     } else {
-      const std::array<float, 2> undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
-      const float overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, 0.15f);
+      undertone_srs = sync_to_freq(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, gUndertoneFreqMin, gUndertoneFreqMax);
+      overtone_amp = sync_to_amp(gPos3D[1][0][gTrackAxis], gPos3D[1][1][gTrackAxis], gTrackStart, gTrackEnd, 0.15f);
 
       gOut = (
         warp_read_sample(gUndertoneSampleData, gReadPtrUndertone, undertone_srs[0] / gUndertoneFreqMin, gSampleLength) +

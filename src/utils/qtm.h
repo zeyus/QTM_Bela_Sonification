@@ -4,6 +4,25 @@
 #include "../qsdk/RTPacket.h"
 #include "../qsdk/RTProtocol.h"
 
+template<typename E>
+constexpr auto toUnderlyingType(E e) 
+{
+    return static_cast<typename std::underlying_type<E>::type>(e);
+}
+
+
+template<typename E>
+constexpr bool sendEventLabel(CRTProtocol* rtProtocol, E pLabel) 
+{
+  const char label = toUnderlyingType(pLabel);
+  const char* labelPtr = &label;
+  const bool result = rtProtocol->SetQTMEvent(labelPtr);
+  if (!result) {
+    const char* errorStr = rtProtocol->GetErrorString();
+    printf("Error sending event label: %s\n", errorStr);
+  }
+  return result;
+}
 
 // wrapper to retrieve latest QTM 3d packet
 bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPacketType& packetType) {
@@ -20,14 +39,6 @@ bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPack
   } else {
     return false;
   }
-}
-
-bool sendEventLabel(CRTProtocol* rtProtocol, Labels pLabel) {
-  return rtProtocol->SetQTMEvent((char*)pLabel);
-}
-
-bool sendEventLabel(CRTProtocol* rtProtocol, ConditionLabels pLabel) {
-  return rtProtocol->SetQTMEvent((char*)pLabel);
 }
 
 bool startCapture(CRTProtocol* rtProtocol) {
