@@ -22,8 +22,20 @@ bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPack
   }
 }
 
-bool sendEventLabel(CRTProtocol* rtProtocol, const char* pLabel) {
-  return rtProtocol->SetQTMEvent(pLabel);
+bool sendEventLabel(CRTProtocol* rtProtocol, Labels pLabel) {
+  return rtProtocol->SetQTMEvent((char*)pLabel);
+}
+
+bool sendEventLabel(CRTProtocol* rtProtocol, ConditionLabels pLabel) {
+  return rtProtocol->SetQTMEvent((char*)pLabel);
+}
+
+bool startCapture(CRTProtocol* rtProtocol) {
+  return rtProtocol->StartCapture();
+}
+
+bool stopCapture(CRTProtocol* rtProtocol) {
+  return rtProtocol->StopCapture();
 }
 
 #endif
