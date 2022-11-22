@@ -87,9 +87,6 @@ bool gConnected = false;
 // are we currently streaming from QTM?
 bool gStreaming = false;
 
-// have we initialized the variables.
-bool gInitialized = false;
-
 // IDs of corresponding markers will be stored here.
 std::array<int, NUM_SUBJECTS> gSubjMarker{};
 

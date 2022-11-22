@@ -24,6 +24,32 @@ constexpr bool sendEventLabel(CRTProtocol* rtProtocol, E pLabel)
   return result;
 }
 
+bool reindexMarkers(CRTProtocol* rtProtocol) {
+  unsigned int markersFound = 0;
+  // number of labelled markers
+  const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
+  // printf("Found labels: \n");
+  // loop through labels to find ones we are interested in.
+  for (unsigned int i = 0; i < nLabels; i++) {
+    const char *cLabelName = rtProtocol->Get3DLabelName(i);
+    // printf("- %s\n", cLabelName);
+    for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
+      // if the label is one of our specified markers, keep the ID.
+      if (cLabelName == gSubjMarkerLabels[j]) {
+        printf("Found marker: %s id: %d\n", cLabelName, i);
+        gSubjMarker[j] = i;
+        markersFound++;
+      }
+    }
+  }
+  // if we didn't find all the markers, return false.
+  if (markersFound != NUM_SUBJECTS) {
+    printf("Error: not all markers found.\n");
+    return false;
+  }
+  return true;
+}
+
 // wrapper to retrieve latest QTM 3d packet
 bool get3DPacket(CRTProtocol* rtProtocol, CRTPacket*& rtPacket, CRTPacket::EPacketType& packetType) {
   // Ask QTM for latest packet.

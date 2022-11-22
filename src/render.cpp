@@ -44,22 +44,8 @@ bool prepare_sonification_condition() {
   }
   printf("Started streaming 3D data...\n");
   gStreaming = true;
+  if (!reindexMarkers(rtProtocol)) return false;
 
-  // number of labelled markers
-  const unsigned int nLabels = rtProtocol->Get3DLabeledMarkerCount();
-  // printf("Found labels: \n");
-  // loop through labels to find ones we are interested in.
-  for (unsigned int i = 0; i < nLabels; i++) {
-    const char *cLabelName = rtProtocol->Get3DLabelName(i);
-    // printf("- %s\n", cLabelName);
-    for (unsigned int j = 0; j < NUM_SUBJECTS; j++) {
-      // if the label is one of our specified markers, keep the ID.
-      if (cLabelName == gSubjMarkerLabels[j]) {
-        printf("Found marker: %s id: %d\n", cLabelName, i);
-        gSubjMarker[j] = i;
-      }
-    }
-  }
   // start getting the 3D data.
   // Bela_scheduleAuxiliaryTask(gFillBufferTask);
   gSilence = false;
@@ -324,15 +310,33 @@ void fillBuffer(void *) {
     // auto &prevPos = gPos3D[1][i];
     auto &currPos = gPos3D[0][i];
     // get the position of the marker
-    rtPacket->Get3DMarker(gSubjMarker[i], currPos[0], currPos[1], currPos[2]);
+    if (!rtPacket->Get3DMarker(gSubjMarker[i], currPos[0], currPos[1], currPos[2])) {
+      // the marker failed, we can try reindexing
+      printf("Marker %d failed, reindexing.\n", gSubjMarker[i]);
+      if (reindexMarkers(rtProtocol)) {
+        printf("Reindexing successful.\n");
+        // reindexing was successful, so we can try again
+        if (!rtPacket->Get3DMarker(gSubjMarker[i], currPos[0], currPos[1], currPos[2])) {
+          // the marker failed again, so we'll just set the position to 0
+          printf("Marker %d failed again, setting position to 0.\n", gSubjMarker[i]);
+          currPos[0] = 0.0f;
+          currPos[1] = 0.0f;
+          currPos[2] = 0.0f;
+        }
+      } else {
+        // reindexing failed, so we'll just set the position to 0
+        printf("Reindexing failed, setting position to 0.\n");
+        currPos[0] = 0.0f;
+        currPos[1] = 0.0f;
+        currPos[2] = 0.0f;
+      }
+
+    }
   }
 
   // update last processed frame
   gLastFrame = uPacketFrame;
 
-  if (!gInitialized) {
-    gInitialized = true;
-  }
   // swap the current and previous positions
   // this means we always have the previous position in gPos3D[1]
   // but overwrite gPos3D[0]
