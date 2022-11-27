@@ -383,5 +383,5 @@ dat %>%
 
 # let's save this data frame
 
-con <- bzfile("data/combined_data_labelled.tsv.bz2")
+con <- bzfile("data/combined_data_labeled.tsv.bz2")
 write_tsv(dat, con)
