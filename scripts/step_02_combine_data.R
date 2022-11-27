@@ -1,7 +1,6 @@
 # This file loads all of the cleaned subject data into a single data frame.
 
 library(tidyverse)
-library(stringi)
 
 # Load the data in data/Pair{n}/data_*.tsv
 # n is the number of the subject pair
@@ -36,9 +35,8 @@ for (data_file in data_files) {
     dat <- rbind(dat, dat_temp)
 }
 
-head(dat)
+print(head(dat))
 
 # now write the data to a single file
 con <- bzfile("data/combined_data.tsv.bz2")
 write_tsv(dat, con)
-close(con)
