@@ -81,32 +81,32 @@ dat %>%
 # that looks it confirms the theory, to be sure let's make sure there are
 # exactly that all "te" events have the same elapsed_time as an "s" event
 
-te_elasped_times <- dat %>%
+te_elapsed_times <- dat %>%
     filter(event_label == "te") %>%
     select(index, elapsed_time, event_label, filename)
 
-print(te_elasped_times)
+print(te_elapsed_times)
 
 #  now let's join the data to itself to get the "s" events that correspond to the "te" events
 
 matching_s_events <- dat %>%
     filter(event_label == "s") %>%
-    inner_join(te_elasped_times, by = c("elapsed_time", "filename"), suffix = c("", "_te")) %>%
+    inner_join(te_elapsed_times, by = c("elapsed_time", "filename"), suffix = c("", "_te")) %>%
     select(index_te, event_label, event_label_te, elapsed_time, filename)
 
 print(matching_s_events)
 
 
-# good, it could be that the elasped time is off by a few milliseconds
+# good, it could be that the elapsed time is off by a few milliseconds
 # so let's find the "s" events that are within 10ms of the "te" events
 
-te_elasped_times <- dat %>%
+te_elapsed_times <- dat %>%
     filter(event_label == "te") %>%
     select(index, elapsed_time, event_label, filename)
 
 matching_s_events <- dat %>%
     filter(event_label == "s") %>%
-    inner_join(te_elasped_times, by = c("filename"), suffix = c("", "_te")) %>%
+    inner_join(te_elapsed_times, by = c("filename"), suffix = c("", "_te")) %>%
     mutate(elapsed_time_diff = abs(elapsed_time - elapsed_time_te)) %>%
     filter(abs(elapsed_time - elapsed_time_te) < 0.01) %>%
     select(index, index_te, event_label, event_label_te, elapsed_time, filename, elapsed_time_diff)
