@@ -4,19 +4,19 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 # Contents
 
 <!--ts-->
-* [QTM Low-latency Sonification](#qtm-low-latency-sonification)
-* [Contents](#contents)
-* [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
-* [Project Structure](#project-structure)
-* [Usage](#usage)
-   * [Sonification](#sonification)
-   * [Data](#data)
-      * [Subject Information](#subject-information)
-      * [QTM Data Format](#qtm-data-format)
-   * [Data Preparation](#data-preparation)
-* [Open Source Libraries](#open-source-libraries)
-   * [Included](#included)
-   * [Used](#used)
+- [QTM Low-latency Sonification](#qtm-low-latency-sonification)
+- [Contents](#contents)
+- [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+  - [Sonification](#sonification)
+  - [Data](#data)
+    - [Subject Information](#subject-information)
+    - [QTM Data Format](#qtm-data-format)
+  - [Data Preparation](#data-preparation)
+- [Open Source Libraries](#open-source-libraries)
+  - [Included](#included)
+  - [Used](#used)
 <!--te-->
 
 # Cognitive Science Bachelor's Project (WORK IN PROGRESS)
@@ -72,8 +72,10 @@ The project is structured as follows:
 1. Connect to the Bela board via SSH and run the project
     ```sh
     ssh root@192.168.2.6
-    /root/Bela/scripts/run_project.sh QTM_Bela_Sonification -c "--use-analog yes --use-digital no --period 32 --high-performance-mode"
+    /root/Bela/scripts/run_project.sh QTM_Bela_Sonification -c "--use-analog no --use-digital no --period 32 --high-performance-mode --stop-button-pin=-1 --disable-led"
     ```
+
+**Important note: When compiling, you must ensure that the compiler is in C++14 mode by using `CPPFLAGS=-std=c++14`**
 
 ## Data
 
@@ -123,11 +125,11 @@ qtm_capture_azsw_wsza_test.tsv
 
 ## Data Preparation
 
-The data preparation can be replicated by running the R scripts in the `scripts` directory.
+The data preparation can be replicated by running the R scripts in the [`scripts`](scripts) directory.
 
-- [`scripts/step_01_import_raw_data.R`](scripts/step_01_import_raw_data.R): Imports the raw data from the `data/raw` directory and saves the data (compressed) in the `data/` directory. **Note: this is only necessary if you are using your own data**
-- [`scripts/step_02_combine_data.R`](scripts/step_02_combine_data.R): Combines the data from all of the subjects into a single data frame and saves it in the `data/combined_data.tsv.bz2` file
-- [`scripts/step_03_remove_invalid_trials.R`](scripts/step_03_remove_invalid_trials.R): Removes trials that are invalid (e.g. due to missing data) and saves the data in the `data/combined_data_labeled.tsv.bz2` file
+- [`scripts/step_01_import_raw_data.R`](scripts/step_01_import_raw_data.R): Imports the raw data from the `data/raw` directory and saves the data (compressed) in the [`data/`](data) directory. **Note: this is only necessary if you are using your own data**
+- [`scripts/step_02_combine_data.R`](scripts/step_02_combine_data.R): Combines the data from all of the subjects into a single data frame and saves it in the [`data/combined_data.tsv.bz2`](data/combined_data.tsv.bz2) file
+- [`scripts/step_03_remove_invalid_trials.R`](scripts/step_03_remove_invalid_trials.R): Removes trials that are invalid (e.g. due to missing data) and saves the data in the [`data/combined_data_labeled.tsv.bz2`](data/combined_data_labeled.tsv.bz2) file
   - Invalid trials are removed
   - Trial sequence numbers are added
   - Condition labels are added
