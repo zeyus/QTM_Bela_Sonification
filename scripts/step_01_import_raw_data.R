@@ -20,14 +20,15 @@ data_files <- Sys.glob(paste0(data_dir, data_prefix, "*.tsv"))
 # id	trial_order	partner	door_or_window	handedness	age	tone_deaf	gender	years_formal_music_training	rating1	rating2	rating3	rating4
 subject_info <- read_tsv(
   paste0(
-    data_dir, "subject_information.tsv"),
+    data_dir, "subject_information.tsv"
+  ),
   col_types = cols(
     id = col_character(),
     trial_order = col_character(),
     partner = col_character(),
     door_or_window = col_character(),
     handedness = col_character(),
-    age = col_double(),
+    age_range = col_double(),
     tone_deaf = col_logical(),
     gender = col_character(),
     years_formal_music_training = col_double(),
@@ -35,7 +36,8 @@ subject_info <- read_tsv(
     rating2 = col_double(),
     rating3 = col_double(),
     rating4 = col_double()
-))
+  )
+)
 
 
 # now we need to anonymize the data
@@ -52,9 +54,9 @@ for (data_file in data_files) {
   print(paste("Processing", data_file))
   # read in the data
   dat <- readLines(data_file)
-  
-  subj_ids_match <- stri_match_first_regex(data_file, paste0(data_prefix, "([^_]+)_([^_\\.]+)"))
-  
+  subj_ids_match <- stri_match_first_regex(
+    data_file, paste0(data_prefix, "([^_]+)_([^_\\.]+)"))
+
   subj_id_1 <- subj_ids_match[1, 2]
   subj_id_2 <- subj_ids_match[1, 3]
 
@@ -67,16 +69,18 @@ for (data_file in data_files) {
     pull(id)
 
   if (length(subj_w) == 0 | length(subj_d) == 0) {
-    stop(paste("Could not find subject", subj_id_1, "or", subj_id_2, "in subject_info"))
+    stop(paste("Could not find subject",
+      subj_id_1, "or", subj_id_2, "in subject_info"))
   }
   if (length(subj_w) > 1 | length(subj_d) > 1) {
-    stop(paste("Found multiple subjects", subj_id_1, "or", subj_id_2, "in subject_info"))
+    stop(paste("Found multiple subjects",
+      subj_id_1, "or", subj_id_2, "in subject_info"))
   }
 
   subj_w <- subj_w[1]
   subj_d <- subj_d[1]
 
-  
+
   data_file <- sub(data_dir, data_dir_out, data_file)
   data_file <- sub(".tsv", ".tsv.bz2", data_file)
 
@@ -104,7 +108,8 @@ for (data_file in data_files) {
   marker_names <- marker_names[!is.na(marker_names)]
   marker_names_values <- stri_split_fixed(
     marker_names,
-    "\t")[[1]][1:marker_count_value + 1]
+    "\t"
+  )[[1]][1:marker_count_value + 1]
 
   # now just keep the tracking information
   dat <- stri_extract_first_regex(dat, "^[0-9]+\t.*")
@@ -114,13 +119,15 @@ for (data_file in data_files) {
   # this is the number of lines in the data
   assertthat::assert_that(
     length(dat) == frame_count_value,
-    msg = "Number of frames is not correct")
+    msg = "Number of frames is not correct"
+  )
 
   # ensure the number of markers is correct
   # this is 3 columns per marker, plus index and time
   assertthat::assert_that(
     length(stri_split_fixed(dat[[1]], "\t")[[1]]) == marker_count_value * 3 + 2,
-    msg = "Number of markers is not correct")
+    msg = "Number of markers is not correct"
+  )
 
   print(paste("File has", length(dat), "frames"))
   print(paste("File has", marker_count_value, "markers"))
@@ -137,9 +144,11 @@ for (data_file in data_files) {
     "elapsed_time",
     paste0(
       rep(marker_names_values, each = 3),
-      c("_x", "_y", "_z")),
+      c("_x", "_y", "_z")
+    ),
     "subj_w",
-    "subj_d")
+    "subj_d"
+  )
   header <- paste0(header, collapse = "\t")
 
   print("adding subject IDs")
@@ -172,6 +181,5 @@ for (data_file in data_files) {
   con <- bzfile(metadata_out_filename)
   writeLines(metadata, con)
   close(con)
-
 }
 print("Done")

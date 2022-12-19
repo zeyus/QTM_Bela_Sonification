@@ -64,11 +64,11 @@ print(event_counts)
 # so that's cleaned up the events, but there's still an anomoly
 # "te" is not a label, so let's visualize the event positions (in terms of time)
 
-dat %>%
-    filter(!is.na(event_label)) %>%
-    ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
-    geom_point() +
-    facet_wrap(~filename, ncol = 2)
+# dat %>%
+#     filter(!is.na(event_label)) %>%
+#     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
+#     geom_point() +
+#     facet_wrap(~filename, ncol = 2)
 
 # ok it seems the "te" events are only occurring after the "t" events
 # and it corresponds interestingly to the trial start...let's confirm the timestamps
@@ -124,7 +124,6 @@ dat %>%
     head(n = 10)
 
 # now lets make sure the event counts are the same as before
-
 event_counts_cleaned <- dat %>%
     group_by(event_label) %>%
     summarise(count = n())
@@ -138,14 +137,22 @@ print(event_counts)
 
 # we can use matching_s_events_duplicates to get the index and filename of the "te" events
 # that have a matching "s" event
+# in "dat" these have an event_label of NA, so we can use anti_join to remove them
+dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2") 
+
 matching_s_events_duplicates <- matching_s_events %>%
     filter(index == index_te)
 matching_s_events_duplicates <- matching_s_events_duplicates %>%
     select(index, filename)
 matching_s_events_duplicates$event_label <- NA
+
 matching_s_events_duplicates
+
 dat <- dat %>%
     anti_join(matching_s_events_duplicates, by = c("index", "filename", "event_label"))
+
+dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2")
+
 
 # now the duplicated data is removed, it's time to address the invalidated trials
 # one thing to note is that there were no recorded experiment END events
@@ -154,14 +161,14 @@ dat <- dat %>%
 # because they only occur when a specific condition starts, we can call them all
 # "condition start"
 
-dat %>%
-    mutate(event_label = ifelse(event_label == "t", "condition start", event_label)) %>%
-    mutate(event_label = ifelse(event_label == "y", "condition start", event_label)) %>%
-    mutate(event_label = ifelse(event_label == "n", "condition start", event_label)) %>%
-    filter(!is.na(event_label)) %>%
-    ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
-    geom_point() +
-    facet_wrap(~filename, ncol = 2)
+# dat %>%
+#     mutate(event_label = ifelse(event_label == "t", "t start", event_label)) %>%
+#     mutate(event_label = ifelse(event_label == "y", "y start", event_label)) %>%
+#     mutate(event_label = ifelse(event_label == "n", "n start", event_label)) %>%
+#     filter(!is.na(event_label)) %>%
+#     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
+#     geom_point() +
+#     facet_wrap(~filename, ncol = 2)
 
 # ok, this looks mostly good, but for some reason there are multiple condition start labels
 # for the same condition, let's see if we can find the problem
@@ -183,7 +190,7 @@ n_events <- dat %>%
     filter(event_label == "n")
 
 n_events
-
+S_events
 # now we can find the first "n" event that occurs after an "S" event
 
 n_events <- n_events %>%
@@ -194,27 +201,38 @@ n_events <- n_events %>%
     slice(1) %>%
     ungroup()
 
-n_events
+
 
 # now we can set all the other "n" events to NA
 dat <- dat %>%
     mutate(event_label = ifelse(event_label == "n" & !index %in% n_events$index, NA, event_label))
 
-# now let's check the event counts again
-event_counts_cleaned <- dat %>%
-    group_by(event_label) %>%
-    summarise(count = n())
-event_counts_cleaned
-
-# now let's plot again
+# plotting shows the correct output!
 dat %>%
-    mutate(event_label = ifelse(event_label == "t", "condition start", event_label)) %>%
-    mutate(event_label = ifelse(event_label == "y", "condition start", event_label)) %>%
-    mutate(event_label = ifelse(event_label == "n", "condition start", event_label)) %>%
+    mutate(event_label = ifelse(event_label == "t", "t start", event_label)) %>%
+    mutate(event_label = ifelse(event_label == "y", "y start", event_label)) %>%
+    mutate(event_label = ifelse(event_label == "n", "n start", event_label)) %>%
     filter(!is.na(event_label)) %>%
     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
     geom_point() +
     facet_wrap(~filename, ncol = 2)
+
+# now let's check the event counts again
+event_counts_cleaned <- dat %>%
+    group_by(event_label) %>%
+    summarise(count = n())
+
+event_counts_cleaned
+
+# now let's plot again
+# dat %>%
+#     mutate(event_label = ifelse(event_label == "t", "condition start", event_label)) %>%
+#     mutate(event_label = ifelse(event_label == "y", "condition start", event_label)) %>%
+#     mutate(event_label = ifelse(event_label == "n", "condition start", event_label)) %>%
+#     filter(!is.na(event_label)) %>%
+#     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
+#     geom_point() +
+#     facet_wrap(~filename, ncol = 2)
 
 # althought the counts looked weird, this is correct, because multiple trials
 # required that the QTM / Bela, so when sonification didn't work correctly
@@ -269,7 +287,6 @@ for (i in 1:length(valid_start_indices)) {
 }
 
 
-
 # order by filename and index
 valid_trials <- valid_trials %>%
     arrange(filename, index)
@@ -299,52 +316,60 @@ trial_ranges <- valid_trials %>%
 # now we have every required to append the tiral number and condition to the original data frame
 # all indices between start_index and end_index that match the filename will
 # be given the trial number and condition
+nrow(dat)
 
-dat$condition <- NA
-dat$trial <- NA
-dat$trial_elapsed_time <- NA
+dat$condition <- NA_character_
+dat$trial <- NA_integer_
+dat$trial_elapsed_time <- NA_real_
 
 
 for (i in 1:nrow(trial_ranges)) {
     start_index <- trial_ranges$start_index[i]
     end_index <- trial_ranges$end_index[i]
-    filename <- trial_ranges$filename[i]
+    filename_filter <- trial_ranges$filename[i]
     condition_label <- trial_ranges$condition[i]
     trial_number <- trial_ranges$trial_number[i]
+    # print some debug info
+    print(paste("filename:", filename_filter))
+    print(paste("condition:", condition_label))
+    print(paste("trial number:", trial_number))
+    print(paste("start index:", start_index))
+    print(paste("end index:", end_index))
+
     # get starting elapsed time
     elapsed_start <- dat %>%
         filter(filename == filename & index == start_index) %>%
         select(elapsed_time) %>%
         pull()
+
+    print(paste("elapsed start:", elapsed_start[1]))
+
     elapsed_start <- elapsed_start[1]
     dat <- dat %>%
         mutate(
-            trial = ifelse(
+            trial = case_when(
+                filename == filename_filter &
                 index >= start_index &
-                index <= end_index &
-                filename == filename,
-                trial_number,
-                trial)) %>%
-        mutate(
-            condition = ifelse(
+                index <= end_index ~ trial_number,
+                TRUE ~ trial),
+            condition = case_when(
+                filename == filename_filter &
                 index >= start_index &
-                index <= end_index &
-                filename == filename,
-                condition_label,
-                condition)) %>%
-        mutate(
-            trial_elapsed_time = ifelse(
+                index <= end_index ~ condition_label,
+                TRUE ~ condition),
+            trial_elapsed_time = case_when(
+                filename == filename_filter &
                 index >= start_index &
-                index <= end_index &
-                filename == filename,
-                elapsed_time - elapsed_start,
-                trial_elapsed_time))
+                index <= end_index ~ (elapsed_time - elapsed_start),
+                TRUE ~ trial_elapsed_time)
+        )
 }
 
+nrow(dat)
 # now delete all rows that don't have a condition
 dat <- dat %>%
     filter(!is.na(condition))
-
+nrow(dat)
 # now we can plot the y coordinates for each trial by subject
 # facet on condition and color by subject
 dat$trial <- as.factor(dat$trial)
@@ -354,29 +379,34 @@ dat$subj_d <- as.factor(dat$subj_d)
 
 # remove unnecessary columns
 dat <- dat %>%
-    select(-c(elapsed_time_event, event_label))
+    select(-c(elapsed_time_event, event_label, type))
 
-dat %>%
-    filter(subj_w == "h" & condition == "y") %>%
-    ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
-    geom_line(color = "blue") +
-    geom_line(aes(y = CAR_D_y), color = "red") +
-    facet_wrap(~trial, ncol = 2)
+# remove duplicates on "index", "filename", "trial", "condition"
+dat <- dat %>%
+    distinct(index, filename, trial, condition, .keep_all = TRUE)
+nrow(dat)
 
-dat %>%
-    filter(subj_w == "h" & condition == "t") %>%
-    ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
-    geom_line(color = "blue") +
-    geom_line(aes(y = CAR_D_y), color = "red") +
-    facet_wrap(~trial, ncol = 2)
+# dat %>%
+#     filter(subj_w == "h" & condition == "y") %>%
+#     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
+#     geom_line(color = "blue") +
+#     geom_line(aes(y = CAR_D_y), color = "red") +
+#     facet_wrap(~trial, ncol = 2)
+
+# dat %>%
+#     filter(subj_w == "h" & condition == "t") %>%
+#     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
+#     geom_line(color = "blue") +
+#     geom_line(aes(y = CAR_D_y), color = "red") +
+#     facet_wrap(~trial, ncol = 2)
 
 
-dat %>%
-    filter(subj_w == "h" & condition == "n") %>%
-    ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
-    geom_line(color = "blue") +
-    geom_line(aes(y = CAR_D_y), color = "red") +
-    facet_wrap(~trial, ncol = 2)
+# dat %>%
+#     filter(subj_w == "h" & condition == "n") %>%
+#     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
+#     geom_line(color = "blue") +
+#     geom_line(aes(y = CAR_D_y), color = "red") +
+#     facet_wrap(~trial, ncol = 2)
 
 # if there's huge chunks of missing data, it probably means the model didn't apply correctly in QTM
 # and that a re-export is needed

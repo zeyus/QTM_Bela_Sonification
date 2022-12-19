@@ -23,14 +23,15 @@ for (data_file in data_files) {
     print(paste("Processing", data_file))
     # read in the data
     dat_temp <- read_tsv(data_file)
+    # add the filename
+    dat_temp <- dat_temp %>%
+        mutate(filename = data_file)
     # get the events
     events_temp <- read_tsv(sub("data_", "events_", data_file))
     # add the events to the data
     dat_temp <- dat_temp %>%
         left_join(events_temp, by = "index", suffix = c("", "_event"))
-    # add the filename
-    dat_temp <- dat_temp %>%
-        mutate(filename = data_file)
+
     # add to the data frame
     dat <- rbind(dat, dat_temp)
 }
