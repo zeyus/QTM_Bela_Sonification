@@ -46,7 +46,7 @@ licensepath: https\://github.com/zeyus/QTM_Bela_Sonification/blob/main/LICENSE.m
 ```{r project_variables, include=FALSE}
 
 # MoCap
-qtm_version <- "2022.1 (build 7420)"
+qtm_version <- "2022.2 (build 7700)"
 n_tracking_cams <- 8
 n_video_cams <- 1
 capture_freq <- 300
@@ -58,7 +58,16 @@ bela_buffer_size <- 32
 bela_n_channels <- 2
 ```
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, cache = FALSE}
+
+# set working directory if it isn't the directory of this file
+wd <- getwd()
+if (basename(wd) != "docs") {
+    wd <- paste0(wd, "/docs")
+    setwd(wd)
+}
+
+knitr::opts_knit$set(root.dir = paste0(getwd(), wd))
 knitr::opts_chunk$set(echo = TRUE)
 bookdown::pdf_document2()
 # this leaves all of the intermediate files in the dir if FALSE
@@ -82,6 +91,9 @@ use_package <- function(p) {
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
+use_package("ggprism")
+# The following are used in the preprocessing pipieline
+use_package("mousetrap")
 
 # after all the packages are loaded, we can save
 # a bibliography of all the packages used
