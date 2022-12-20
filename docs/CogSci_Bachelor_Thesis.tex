@@ -1,15 +1,16 @@
 \documentclass[10pt,a4paper,onecolumn]{article}
 \usepackage{marginnote}
 \usepackage{graphicx}
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{authblk,etoolbox}
 \usepackage{titlesec}
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{hyperref}
 \hypersetup{colorlinks,
-            urlcolor=[rgb]{0.0, 0.5, 1.0},
-            linkcolor=[rgb]{0.0, 0.5, 1.0}}
+            urlcolor=NavyBlue,
+            linkcolor=Mulberry}
 \usepackage{caption}
 \usepackage{tcolorbox}
 \usepackage{amssymb,amsmath}
@@ -143,10 +144,14 @@
 }{}
 
 \usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
             pdftitle={Harmony in Motion: Real-time Sonification Strategies for Joint Action Research},
             pdfkeywords={Sonification; Motion Capture; Realtime; Processing},
-            pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor=Mulberry,
+            citecolor=BrickRed,
+            urlcolor=NavyBlue,
             }
 \urlstyle{same}  % don't use monospace font for urls
 \IfFileExists{parskip.sty}{%
@@ -208,7 +213,7 @@
     {\bfseries Software}
     \begin{itemize}
       \setlength\itemsep{0em}
-      \item \href{https://github.com/zeyus/QTM\_Bela\_Sonification}{\color{linky}{Repository}} \ExternalLink
+      \item \href{https://github.com/zeyus/QTM\_Bela\_Sonification}{\color{NavyBlue}{Repository}} \ExternalLink
     \end{itemize}
 
     \vspace{2mm}
@@ -217,10 +222,11 @@
 
     \vspace{2mm}
     {\bfseries License}\\
-    Authors of papers retain copyright and release the work under a MIT Licence (\href{https://github.com/zeyus/QTM\_Bela\_Sonification/blob/main/LICENSE.md}{\color{linky}{MIT}}).
+    Authors of papers retain copyright and release the work under a MIT Licence (\href{https://github.com/zeyus/QTM\_Bela\_Sonification/blob/main/LICENSE.md}{\color{NavyBlue}{MIT}}).
   }
 \restoregeometry
 {
+\hypersetup{linkcolor=Black}
 \setcounter{tocdepth}{3}
 \tableofcontents
 }
@@ -357,7 +363,7 @@ These additional markers provided reference points for 3D orientation of the tra
 \hypertarget{hardware}{%
 \paragraph{Hardware}\label{hardware}}
 
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version 0.3.8g running a custom C++ program\footnote{Source, data and analysis are available at \url{https://github.com/zeyus/QTM_Bela_Sonification}}. The main program loop
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version 0.3.8g running a custom C++ program\footnote{Source, data and analyses are available at \url{https://github.com/zeyus/QTM_Bela_Sonification}}. The main program loop
 was configured to execute every 32 samples, with an output sample rate of \ensuremath{4.41\times 10^{4}} Hz for 2 audio channels. The stereo audio output was split into
 two channels which were connected to a pair of headphones for each subject.
 

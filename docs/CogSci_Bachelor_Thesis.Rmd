@@ -23,6 +23,11 @@ bibliography:
 biblio-title: References
 biblio-style: apa
 link-citations: true
+colorlinks: true
+urlcolor: NavyBlue
+linkcolor: Mulberry
+citecolor: BrickRed
+toccolor: Black
 # geometry: margin=2.5cm
 mainfont: georgia
 sansfont: calibri
@@ -221,7 +226,7 @@ Motion capture data were sent via UDP packets over USB networking to a Bela Mini
 was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The stereo audio output was split into
 two channels which were connected to a pair of headphones for each subject.
 
-[^code]: Source, data and analysis are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
+[^code]: Source, data and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
 
 #### Software
 

@@ -1,15 +1,16 @@
 \documentclass[10pt,a4paper,onecolumn]{article}
 \usepackage{marginnote}
 \usepackage{graphicx}
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{authblk,etoolbox}
 \usepackage{titlesec}
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{hyperref}
 \hypersetup{colorlinks,
-            urlcolor=[rgb]{0.0, 0.5, 1.0},
-            linkcolor=[rgb]{0.0, 0.5, 1.0}}
+            urlcolor=NavyBlue,
+            linkcolor=Mulberry}
 \usepackage{caption}
 \usepackage{tcolorbox}
 \usepackage{amssymb,amsmath}
@@ -366,7 +367,7 @@ $endif$
     {\bfseries Software}
     \begin{itemize}
       \setlength\itemsep{0em}
-      \item \href{$repository$}{\color{linky}{Repository}} \ExternalLink
+      \item \href{$repository$}{\color{NavyBlue}{Repository}} \ExternalLink
     \end{itemize}
 
     \vspace{2mm}
@@ -375,7 +376,7 @@ $endif$
 
     \vspace{2mm}
     {\bfseries License}\\
-    Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{linky}{MIT}}).
+    Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{NavyBlue}{MIT}}).
   }
 \restoregeometry
 $for(include-before)$
