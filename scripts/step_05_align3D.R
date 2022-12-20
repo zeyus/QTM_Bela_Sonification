@@ -122,7 +122,7 @@ plt <- ggplot(
   )
 
 ggsave(
-  "docs/plots/mt_trajectories_no_sonification.png",
+  "docs/figures/mt_trajectories_no_sonification.png",
   plt,
   width = 16,
   height = 9,
@@ -157,7 +157,7 @@ plt <- ggplot(
   )
 
 ggsave(
-  "docs/plots/mt_trajectories_sync_sonification.png",
+  "docs/figures/mt_trajectories_sync_sonification.png",
   plt,
   width = 16,
   height = 9,
@@ -191,7 +191,7 @@ plt <- ggplot(
   )
 
 ggsave(
-  "docs/plots/mt_trajectories_task_sonification.png",
+  "docs/figures/mt_trajectories_task_sonification.png",
   plt,
   width = 16,
   height = 9,

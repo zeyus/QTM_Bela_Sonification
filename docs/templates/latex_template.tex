@@ -15,6 +15,8 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{seqsplit}
+%\usepackage{changepage}
+%\usepackage{multicol}
 % \usepackage{fixltx2e} % provides \textsubscript
 $if(biblatex)$
 \usepackage$if(biblio-style)$[backend=biber,style=$biblio-style$]$endif${biblatex}
@@ -25,8 +27,8 @@ $endfor$
 $endif$
 
 % --- Page layout -------------------------------------------------------------
-\usepackage[top=3.5cm, bottom=3cm, right=1.5cm, left=1.0cm,
-            headheight=2.2cm, reversemp, includemp, marginparwidth=4.5cm]{geometry}
+\usepackage[top=3.5cm, bottom=3cm, right=1.5cm, left=1.5cm,
+            headheight=2.2cm, reversemp, marginparwidth=0cm, marginparsep=0cm]{geometry}
 
 % --- Default font ------------------------------------------------------------
 % \renewcommand\familydefault{\sfdefault}
@@ -68,8 +70,8 @@ $endif$
 \fancyfoot[R]{\sffamily \thepage}
 \makeatletter
 \let\ps@plain\ps@fancy
-\fancyheadoffset[L]{4.5cm}
-\fancyfootoffset[L]{4.5cm}
+\fancyheadoffset[L]{0cm}
+\fancyfootoffset[L]{0cm}
 
 % --- Macros ---------
 
@@ -345,37 +347,37 @@ $if(affiliations)$
   $endfor$
 $endif$
 \date{\vspace{-5ex}}
-
 \begin{document}
-$if(title)$
-\maketitle
-$endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
+\newgeometry{includemp, reversemp, left=1.0cm, marginparwidth=4.5cm, marginparsep=0.5cm}
+  $if(title)$
+  \maketitle
+  $endif$
+  $if(abstract)$
+  \begin{abstract}
+  $abstract$
+  \end{abstract}
+  $endif$
 
-\marginpar{
-  \sffamily\small
+  \marginpar{
+    \sffamily\small
 
-  \vspace{2mm}
+    \vspace{2mm}
 
-  {\bfseries Software}
-  \begin{itemize}
-    \setlength\itemsep{0em}
-    \item \href{$repository$}{\color{linky}{Repository}} \ExternalLink
-  \end{itemize}
+    {\bfseries Software}
+    \begin{itemize}
+      \setlength\itemsep{0em}
+      \item \href{$repository$}{\color{linky}{Repository}} \ExternalLink
+    \end{itemize}
 
-  \vspace{2mm}
+    \vspace{2mm}
 
-  {\bfseries Submitted:} $submitted$
+    {\bfseries Submitted:} $submitted$
 
-  \vspace{2mm}
-  {\bfseries License}\\
-  Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{linky}{MIT}}).
-}
-
+    \vspace{2mm}
+    {\bfseries License}\\
+    Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{linky}{MIT}}).
+  }
+\restoregeometry
 $for(include-before)$
 $include-before$
 
@@ -395,7 +397,12 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
+\twocolumn
+
+% This will be displayed full-width
 $body$
+
+\onecolumn
 
 $if(natbib)$
 $if(bibliography)$

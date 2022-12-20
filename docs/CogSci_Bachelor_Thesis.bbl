@@ -1,0 +1,1207 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{boltSensoryAttenuationAuditory2021}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
+           family={Bolt},
+           familyi={B\bibinitperiod},
+           given={Nicole\bibnamedelima K.},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{fullhash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{bibnamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authorbibnamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authornamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authorfullhash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Successful human interaction relies on people's ability to differentiate between the sensory consequences of their own and others' actions. Research in solo action contexts has identified sensory attenuation, that is, the selective perceptual or neural dampening of the sensory consequences of self-produced actions, as a potential marker of the distinction between self- and externally produced sensory consequences. However, very little research has examined whether sensory attenuation distinguishes self- from partner-produced sensory consequences in joint action contexts. The current study examined whether sensory attenuation of the auditory N1 or P2 ERPs distinguishes self- from partner-produced tones when pairs of people coordinate their actions to produce tone sequences that match a metronome pace. We did not find evidence of auditory N1 attenuation for either self- or partner-produced tones. Instead, the auditory P2 was attenuated for self-produced tones compared to partner-produced tones within the joint action. These findings indicate that self-specific attenuation of the auditory P2 differentiates the sensory consequences of one's own from others' actions during joint action. These findings also corroborate recent evidence that N1 attenuation may be driven by general rather than action-specific processes and support a recently proposed functional dissociation between auditory N1 and P2 attenuation.}
+      \field{day}{1}
+      \field{issn}{0898-929X, 1530-8898}
+      \field{journaltitle}{Journal of Cognitive Neuroscience}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{11}
+      \field{title}{Sensory {{Attenuation}} of the {{Auditory P2 Differentiates Self-}} from {{Partner-Produced Sounds}} during {{Joint Action}}}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{33}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2297\bibrangedash 2310}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1162/jocn_a_01760
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\I32PJGPZ\\Bolt and Loehr - 2021 - Sensory Attenuation of the Auditory P2 Differentia.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/jocn/article/33/11/2297/102999/Sensory-Attenuation-of-the-Auditory-P2
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/jocn/article/33/11/2297/102999/Sensory-Attenuation-of-the-Auditory-P2
+      \endverb
+      \keyw{extracted,introduction,linus,main-paper}
+    \endentry
+    \entry{dubusSonificationPhysicalQuantities2011}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gael},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a59474db7c65b94f259d403f69d45c5}{%
+           family={Bresin},
+           familyi={B\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{fullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{bibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authorbibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authornamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authorfullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a meta-study of previous sonification designs taking physical quantities as input data. The aim is to build a solid foundation for future sonification works so that auditory display researchers would be able to take benefit from former studies, avoiding to start from scratch when beginning new sonification projects. This work is at an early stage and the objective of this paper is rather to introduce the methodology than to come to definitive conclusions. After a historical introduction, we explain how to collect a large amount of articles and extract useful information about mapping strategies. Then, we present the physical quantities grouped according to conceptual dimensions, as well as the sound parameters used in sonification designs and we summarize the current state of the study by listing the couplings extracted from the article database. A total of 54 articles have been examined for the present article. Finally, a preliminary analysis of the results is performed.}
+      \field{journaltitle}{International Conference on Auditory Display, 2011}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Sonification of {{Physical Quantities Throughout History}}: {{A Meta-Study}} of {{Previous Mapping Strategies}}}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{8}
+      \range{pages}{1}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\R5PXJFRK\\Dubus and Bresin - 2011 - SONIFICATION OF PHYSICAL QUANTITIES THROUGHOUT HIS.pdf
+      \endverb
+      \keyw{introduction,linus,luke,useful}
+    \endentry
+    \entry{gerdschmitzSoundJoinedActions2017}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9dbbe5b642b1c7dd87df4d84f7a49faa}{%
+           family={{Gerd Schmitz}},
+           familyi={G\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=31de8c199c88063d3fbc85889065fe71}{%
+           family={{Alfred O. Effenberg}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
+           family={Wedelstaedt},
+           familyi={W\bibinitperiod},
+           given={Ulrich\bibnamedelima V.},
+           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Philadelphia}%
+      }
+      \list{publisher}{1}{%
+        {John Benjamins Publishing Company}%
+      }
+      \strng{namehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{fullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{bibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authorbibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authornamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authorfullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
+      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
+      \field{isbn}{978-90-272-6555-5}
+      \field{number}{volume 8}
+      \field{series}{Advances in Interaction Studies}
+      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{193\bibrangedash 214}
+      \range{pages}{22}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \endverb
+      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+    \endentry
+    \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb43c70eea86c752a09ff9c672d0340b}{%
+           family={Butterfill},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5ce5717d984f9eef4a822a650711b0b3}
+      \strng{fullhash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{bibnamehash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{authorbibnamehash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{authornamehash}{5ce5717d984f9eef4a822a650711b0b3}
+      \strng{authorfullhash}{d98343d8a6cff418a57f8e964628a83d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Psychology of {{Learning}} and {{Motivation}}}
+      \field{isbn}{978-0-12-385527-5}
+      \field{langid}{english}
+      \field{title}{Psychological {{Research}} on {{Joint Action}}}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{54}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{59\bibrangedash 101}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-385527-5.00003-6
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
+    \entry{kourtisPredictiveRepresentationOther2012}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9698eb877b645060d94c9e6af21b962e}{%
+           family={Kourtis},
+           familyi={K\bibinitperiod},
+           given={Dimitrios},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7da74b3ab14fe9bf4e67e8e68f511b9}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9c86b0ba8f271d710b6c2a6808c434b}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{37ebee8bc2fd0f922f145d44f00a3399}
+      \strng{fullhash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{bibnamehash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{authorbibnamehash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{authornamehash}{37ebee8bc2fd0f922f145d44f00a3399}
+      \strng{authorfullhash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{It has been postulated that when people engage in joint actions they form internal representations not only of their part of the joint task but of their co-actors' parts of the task as well. However, empirical evidence for this claim is scarce. By means of high-density electroencephalography, this study investigated whether one represents and simulates the action of an interaction partner when planning to perform a joint action. The results showed that joint action planning compared with individual action planning resulted in amplitude modulations of the frontal P3a and parietal P3b event-related potentials, which are associated with stimulus classification, updating of representations, and decision-making. Moreover, there was evidence for anticipatory motor simulation of the partner's action in the amplitude and peak latency of the late, motor part of the Contingent Negative Variation, which was correlated with joint action performance. Our results provide evidence that when people engage in joint tasks, they represent in advance each other's actions in order to facilitate coordination.}
+      \field{day}{6}
+      \field{journaltitle}{Social neuroscience}
+      \field{month}{6}
+      \field{shortjournal}{Social neuroscience}
+      \field{shorttitle}{Predictive Representation of Other People's Actions in Joint Action Planning}
+      \field{title}{Predictive Representation of Other People's Actions in Joint Action Planning: {{An EEG}} Study}
+      \field{volume}{8}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1080/17470919.2012.694823
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\7JHZ2WQC\\Kourtis et al. - 2012 - Predictive representation of other people's action.pdf
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{kramerSonificationReportStatus1999}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=5a035bbb8c698ab0c47ea9f8891d0575}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94e99d6e72eb2da55c033b77c03900be}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e23b899ec9679354057935b9ffdb200}{%
+           family={Bonebright},
+           familyi={B\bibinitperiod},
+           given={Terri},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb8afda09f94f9e6d85f7c759f7aa49a}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Perry},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {International Community for Auditory Display}%
+      }
+      \strng{namehash}{201047e50d9cc5de51c3ea01225950f8}
+      \strng{fullhash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{bibnamehash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{authorbibnamehash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{authornamehash}{201047e50d9cc5de51c3ea01225950f8}
+      \strng{authorfullhash}{32551b2d448230f6e8992a2a95356b64}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sonification {{Report}}: {{Status}} of the {{Field}} and {{Research Agenda}}}
+      \field{year}{1999}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\RDTBT4TR\\Kramer et al. - 1999 - Sonification Report Status of the Field and Resea.pdf
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{loehrMonitoringIndividualJoint2013}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9698eb877b645060d94c9e6af21b962e}{%
+           family={Kourtis},
+           familyi={K\bibinitperiod},
+           given={Dimitrios},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f305461e9d6087d80dd78bbb9d69ca61}
+      \strng{fullhash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{bibnamehash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{authorbibnamehash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{authornamehash}{f305461e9d6087d80dd78bbb9d69ca61}
+      \strng{authorfullhash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract We investigated whether people monitor the outcomes of their own and their partners' individual actions as well as the outcome of their combined actions when performing joint actions together. Pairs of pianists memorized both parts of a piano duet. Each pianist then performed one part while their partner performed the other; EEG was recorded from both. Auditory outcomes (pitches) associated with keystrokes produced by the pianists were occasionally altered in a way that either did or did not affect the joint auditory outcome (i.e., the harmony of a chord produced by the two pianists' combined pitches). Altered auditory outcomes elicited a feedback-related negativity whether they occurred in the pianist's own part or the partner's part, and whether they affected individual or joint action outcomes. Altered auditory outcomes also elicited a P300 whose amplitude was larger when the alteration affected the joint outcome compared with individual outcomes and when the alteration affected the pianist's own part compared with the partner's part. Thus, musicians engaged in joint actions monitor their own and their partner's actions as well as their combined action outcomes, while at the same time maintaining a distinction between their own and others' actions and between individual and joint outcomes.}
+      \field{day}{1}
+      \field{issn}{0898-929X, 1530-8898}
+      \field{journaltitle}{Journal of Cognitive Neuroscience}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Monitoring {{Individual}} and {{Joint Action Outcomes}} in {{Duet Music Performance}}}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{25}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1049\bibrangedash 1061}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1162/jocn_a_00388
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\8KJ3IZXM\\Loehr et al. - 2013 - Monitoring Individual and Joint Action Outcomes in.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/jocn/article/25/7/1049/27943/Monitoring-Individual-and-Joint-Action-Outcomes-in
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/jocn/article/25/7/1049/27943/Monitoring-Individual-and-Joint-Action-Outcomes-in
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{roguinReneTheophileHyacinthe2006}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ea57eba90fec9187792a5249a492da94}{%
+           family={Roguin},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{fullhash}{ea57eba90fec9187792a5249a492da94}
+      \strng{bibnamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authorbibnamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authornamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authorfullhash}{ea57eba90fec9187792a5249a492da94}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1539-4182, 1554-6179}
+      \field{journaltitle}{Clinical Medicine \& Research}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{Clinical Medicine \& Research}
+      \field{shorttitle}{Rene {{Theophile Hyacinthe Laennec}} (1781-1826)}
+      \field{title}{Rene {{Theophile Hyacinthe Laennec}} (1781-1826): {{The Man Behind}} the {{Stethoscope}}}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{4}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{230\bibrangedash 235}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.3121/cmr.4.3.230
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\KPVSRQ94\\Roguin - 2006 - Rene Theophile Hyacinthe Laennec (1781-1826) The .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
+      \endverb
+      \verb{url}
+      \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
+      \endverb
+      \keyw{linus,single-citation}
+    \endentry
+    \entry{sebanzJointActionBodies2006}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d7da74b3ab14fe9bf4e67e8e68f511b9}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5d3853e0543b5fe1b973a06803018e9}{%
+           family={Bekkering},
+           familyi={B\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9c86b0ba8f271d710b6c2a6808c434b}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c5c495b011a7f466d48fe914e248afe6}
+      \strng{fullhash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{bibnamehash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{authorbibnamehash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{authornamehash}{c5c495b011a7f466d48fe914e248afe6}
+      \strng{authorfullhash}{42262fb5d69354adb55c72479fd8cfde}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{13646613}
+      \field{journaltitle}{Trends in Cognitive Sciences}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Trends in Cognitive Sciences}
+      \field{shorttitle}{Joint Action}
+      \field{title}{Joint Action: Bodies and Minds Moving Together}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{10}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{70\bibrangedash 76}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.tics.2005.12.009
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\2IH5VK5A\\Sebanz et al. - 2006 - Joint action bodies and minds moving together.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1364661305003566
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1364661305003566
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{vesperMinimalArchitectureJoint2010}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb43c70eea86c752a09ff9c672d0340b}{%
+           family={Butterfill},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{bibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{authorbibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{What kinds of processes and representations make joint action possible? In this paper, we suggest a minimal architecture for joint action that focuses on representations, action monitoring and action prediction processes, as well as ways of simplifying coordination. The architecture spells out minimal requirements for an individual agent to engage in a joint action. We discuss existing evidence in support of the architecture as well as open questions that remain to be empirically addressed. In addition, we suggest possible interfaces between the minimal architecture and other approaches to joint action. The minimal architecture has implications for theorising about the emergence of joint action, for human–machine interaction, and for understanding how coordination can be facilitated by exploiting relations between multiple agents’ actions and between actions and the environment.}
+      \field{issn}{08936080}
+      \field{journaltitle}{Neural Networks}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{8-9}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{A Minimal Architecture for Joint Action}
+      \field{urlday}{14}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{23}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{998\bibrangedash 1003}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.neunet.2010.06.002
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\E3BUU2Q6\\Vesper et al. - 2010 - A minimal architecture for joint action.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{boltSensoryAttenuationAuditory2021}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
+           family={Bolt},
+           familyi={B\bibinitperiod},
+           given={Nicole\bibnamedelima K.},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{fullhash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{bibnamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authorbibnamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authornamehash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \strng{authorfullhash}{7662cf0742f283ac8f2c5804157d5e2d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract Successful human interaction relies on people's ability to differentiate between the sensory consequences of their own and others' actions. Research in solo action contexts has identified sensory attenuation, that is, the selective perceptual or neural dampening of the sensory consequences of self-produced actions, as a potential marker of the distinction between self- and externally produced sensory consequences. However, very little research has examined whether sensory attenuation distinguishes self- from partner-produced sensory consequences in joint action contexts. The current study examined whether sensory attenuation of the auditory N1 or P2 ERPs distinguishes self- from partner-produced tones when pairs of people coordinate their actions to produce tone sequences that match a metronome pace. We did not find evidence of auditory N1 attenuation for either self- or partner-produced tones. Instead, the auditory P2 was attenuated for self-produced tones compared to partner-produced tones within the joint action. These findings indicate that self-specific attenuation of the auditory P2 differentiates the sensory consequences of one's own from others' actions during joint action. These findings also corroborate recent evidence that N1 attenuation may be driven by general rather than action-specific processes and support a recently proposed functional dissociation between auditory N1 and P2 attenuation.}
+      \field{day}{1}
+      \field{issn}{0898-929X, 1530-8898}
+      \field{journaltitle}{Journal of Cognitive Neuroscience}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{11}
+      \field{title}{Sensory {{Attenuation}} of the {{Auditory P2 Differentiates Self-}} from {{Partner-Produced Sounds}} during {{Joint Action}}}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{33}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2297\bibrangedash 2310}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1162/jocn_a_01760
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\I32PJGPZ\\Bolt and Loehr - 2021 - Sensory Attenuation of the Auditory P2 Differentia.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/jocn/article/33/11/2297/102999/Sensory-Attenuation-of-the-Auditory-P2
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/jocn/article/33/11/2297/102999/Sensory-Attenuation-of-the-Auditory-P2
+      \endverb
+      \keyw{extracted,introduction,linus,main-paper}
+    \endentry
+    \entry{dubusSonificationPhysicalQuantities2011}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gael},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a59474db7c65b94f259d403f69d45c5}{%
+           family={Bresin},
+           familyi={B\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{fullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{bibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authorbibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authornamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \strng{authorfullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a meta-study of previous sonification designs taking physical quantities as input data. The aim is to build a solid foundation for future sonification works so that auditory display researchers would be able to take benefit from former studies, avoiding to start from scratch when beginning new sonification projects. This work is at an early stage and the objective of this paper is rather to introduce the methodology than to come to definitive conclusions. After a historical introduction, we explain how to collect a large amount of articles and extract useful information about mapping strategies. Then, we present the physical quantities grouped according to conceptual dimensions, as well as the sound parameters used in sonification designs and we summarize the current state of the study by listing the couplings extracted from the article database. A total of 54 articles have been examined for the present article. Finally, a preliminary analysis of the results is performed.}
+      \field{journaltitle}{International Conference on Auditory Display, 2011}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Sonification of {{Physical Quantities Throughout History}}: {{A Meta-Study}} of {{Previous Mapping Strategies}}}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{8}
+      \range{pages}{1}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\R5PXJFRK\\Dubus and Bresin - 2011 - SONIFICATION OF PHYSICAL QUANTITIES THROUGHOUT HIS.pdf
+      \endverb
+      \keyw{introduction,linus,luke,useful}
+    \endentry
+    \entry{gerdschmitzSoundJoinedActions2017}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9dbbe5b642b1c7dd87df4d84f7a49faa}{%
+           family={{Gerd Schmitz}},
+           familyi={G\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=31de8c199c88063d3fbc85889065fe71}{%
+           family={{Alfred O. Effenberg}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
+           family={Wedelstaedt},
+           familyi={W\bibinitperiod},
+           given={Ulrich\bibnamedelima V.},
+           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Philadelphia}%
+      }
+      \list{publisher}{1}{%
+        {John Benjamins Publishing Company}%
+      }
+      \strng{namehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{fullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{bibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authorbibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authornamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{authorfullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
+      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
+      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
+      \field{isbn}{978-90-272-6555-5}
+      \field{number}{volume 8}
+      \field{series}{Advances in Interaction Studies}
+      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{193\bibrangedash 214}
+      \range{pages}{22}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \endverb
+      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+    \endentry
+    \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb43c70eea86c752a09ff9c672d0340b}{%
+           family={Butterfill},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5ce5717d984f9eef4a822a650711b0b3}
+      \strng{fullhash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{bibnamehash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{authorbibnamehash}{d98343d8a6cff418a57f8e964628a83d}
+      \strng{authornamehash}{5ce5717d984f9eef4a822a650711b0b3}
+      \strng{authorfullhash}{d98343d8a6cff418a57f8e964628a83d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Psychology of {{Learning}} and {{Motivation}}}
+      \field{isbn}{978-0-12-385527-5}
+      \field{langid}{english}
+      \field{title}{Psychological {{Research}} on {{Joint Action}}}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{54}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{59\bibrangedash 101}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-385527-5.00003-6
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
+    \entry{kourtisPredictiveRepresentationOther2012}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9698eb877b645060d94c9e6af21b962e}{%
+           family={Kourtis},
+           familyi={K\bibinitperiod},
+           given={Dimitrios},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7da74b3ab14fe9bf4e67e8e68f511b9}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9c86b0ba8f271d710b6c2a6808c434b}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{37ebee8bc2fd0f922f145d44f00a3399}
+      \strng{fullhash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{bibnamehash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{authorbibnamehash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \strng{authornamehash}{37ebee8bc2fd0f922f145d44f00a3399}
+      \strng{authorfullhash}{d06c3a2c6312141b17b31c0e31e221fc}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{It has been postulated that when people engage in joint actions they form internal representations not only of their part of the joint task but of their co-actors' parts of the task as well. However, empirical evidence for this claim is scarce. By means of high-density electroencephalography, this study investigated whether one represents and simulates the action of an interaction partner when planning to perform a joint action. The results showed that joint action planning compared with individual action planning resulted in amplitude modulations of the frontal P3a and parietal P3b event-related potentials, which are associated with stimulus classification, updating of representations, and decision-making. Moreover, there was evidence for anticipatory motor simulation of the partner's action in the amplitude and peak latency of the late, motor part of the Contingent Negative Variation, which was correlated with joint action performance. Our results provide evidence that when people engage in joint tasks, they represent in advance each other's actions in order to facilitate coordination.}
+      \field{day}{6}
+      \field{journaltitle}{Social neuroscience}
+      \field{month}{6}
+      \field{shortjournal}{Social neuroscience}
+      \field{shorttitle}{Predictive Representation of Other People's Actions in Joint Action Planning}
+      \field{title}{Predictive Representation of Other People's Actions in Joint Action Planning: {{An EEG}} Study}
+      \field{volume}{8}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1080/17470919.2012.694823
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\7JHZ2WQC\\Kourtis et al. - 2012 - Predictive representation of other people's action.pdf
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{kramerSonificationReportStatus1999}{misc}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=5a035bbb8c698ab0c47ea9f8891d0575}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94e99d6e72eb2da55c033b77c03900be}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0e23b899ec9679354057935b9ffdb200}{%
+           family={Bonebright},
+           familyi={B\bibinitperiod},
+           given={Terri},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb8afda09f94f9e6d85f7c759f7aa49a}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Perry},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {International Community for Auditory Display}%
+      }
+      \strng{namehash}{201047e50d9cc5de51c3ea01225950f8}
+      \strng{fullhash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{bibnamehash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{authorbibnamehash}{32551b2d448230f6e8992a2a95356b64}
+      \strng{authornamehash}{201047e50d9cc5de51c3ea01225950f8}
+      \strng{authorfullhash}{32551b2d448230f6e8992a2a95356b64}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sonification {{Report}}: {{Status}} of the {{Field}} and {{Research Agenda}}}
+      \field{year}{1999}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\RDTBT4TR\\Kramer et al. - 1999 - Sonification Report Status of the Field and Resea.pdf
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{loehrMonitoringIndividualJoint2013}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9698eb877b645060d94c9e6af21b962e}{%
+           family={Kourtis},
+           familyi={K\bibinitperiod},
+           given={Dimitrios},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f305461e9d6087d80dd78bbb9d69ca61}
+      \strng{fullhash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{bibnamehash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{authorbibnamehash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \strng{authornamehash}{f305461e9d6087d80dd78bbb9d69ca61}
+      \strng{authorfullhash}{d0a6295623ca6f9d46d9fbc23bb4c50e}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract We investigated whether people monitor the outcomes of their own and their partners' individual actions as well as the outcome of their combined actions when performing joint actions together. Pairs of pianists memorized both parts of a piano duet. Each pianist then performed one part while their partner performed the other; EEG was recorded from both. Auditory outcomes (pitches) associated with keystrokes produced by the pianists were occasionally altered in a way that either did or did not affect the joint auditory outcome (i.e., the harmony of a chord produced by the two pianists' combined pitches). Altered auditory outcomes elicited a feedback-related negativity whether they occurred in the pianist's own part or the partner's part, and whether they affected individual or joint action outcomes. Altered auditory outcomes also elicited a P300 whose amplitude was larger when the alteration affected the joint outcome compared with individual outcomes and when the alteration affected the pianist's own part compared with the partner's part. Thus, musicians engaged in joint actions monitor their own and their partner's actions as well as their combined action outcomes, while at the same time maintaining a distinction between their own and others' actions and between individual and joint outcomes.}
+      \field{day}{1}
+      \field{issn}{0898-929X, 1530-8898}
+      \field{journaltitle}{Journal of Cognitive Neuroscience}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Monitoring {{Individual}} and {{Joint Action Outcomes}} in {{Duet Music Performance}}}
+      \field{urlday}{2}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{25}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1049\bibrangedash 1061}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1162/jocn_a_00388
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\8KJ3IZXM\\Loehr et al. - 2013 - Monitoring Individual and Joint Action Outcomes in.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/jocn/article/25/7/1049/27943/Monitoring-Individual-and-Joint-Action-Outcomes-in
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/jocn/article/25/7/1049/27943/Monitoring-Individual-and-Joint-Action-Outcomes-in
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{roguinReneTheophileHyacinthe2006}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ea57eba90fec9187792a5249a492da94}{%
+           family={Roguin},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{fullhash}{ea57eba90fec9187792a5249a492da94}
+      \strng{bibnamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authorbibnamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authornamehash}{ea57eba90fec9187792a5249a492da94}
+      \strng{authorfullhash}{ea57eba90fec9187792a5249a492da94}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1539-4182, 1554-6179}
+      \field{journaltitle}{Clinical Medicine \& Research}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{Clinical Medicine \& Research}
+      \field{shorttitle}{Rene {{Theophile Hyacinthe Laennec}} (1781-1826)}
+      \field{title}{Rene {{Theophile Hyacinthe Laennec}} (1781-1826): {{The Man Behind}} the {{Stethoscope}}}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{4}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{230\bibrangedash 235}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.3121/cmr.4.3.230
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\KPVSRQ94\\Roguin - 2006 - Rene Theophile Hyacinthe Laennec (1781-1826) The .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
+      \endverb
+      \verb{url}
+      \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
+      \endverb
+      \keyw{linus,single-citation}
+    \endentry
+    \entry{sebanzJointActionBodies2006}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d7da74b3ab14fe9bf4e67e8e68f511b9}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5d3853e0543b5fe1b973a06803018e9}{%
+           family={Bekkering},
+           familyi={B\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9c86b0ba8f271d710b6c2a6808c434b}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c5c495b011a7f466d48fe914e248afe6}
+      \strng{fullhash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{bibnamehash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{authorbibnamehash}{42262fb5d69354adb55c72479fd8cfde}
+      \strng{authornamehash}{c5c495b011a7f466d48fe914e248afe6}
+      \strng{authorfullhash}{42262fb5d69354adb55c72479fd8cfde}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{13646613}
+      \field{journaltitle}{Trends in Cognitive Sciences}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Trends in Cognitive Sciences}
+      \field{shorttitle}{Joint Action}
+      \field{title}{Joint Action: Bodies and Minds Moving Together}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{10}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{70\bibrangedash 76}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.tics.2005.12.009
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\2IH5VK5A\\Sebanz et al. - 2006 - Joint action bodies and minds moving together.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1364661305003566
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1364661305003566
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{vesperMinimalArchitectureJoint2010}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb43c70eea86c752a09ff9c672d0340b}{%
+           family={Butterfill},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{bibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{authorbibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{What kinds of processes and representations make joint action possible? In this paper, we suggest a minimal architecture for joint action that focuses on representations, action monitoring and action prediction processes, as well as ways of simplifying coordination. The architecture spells out minimal requirements for an individual agent to engage in a joint action. We discuss existing evidence in support of the architecture as well as open questions that remain to be empirically addressed. In addition, we suggest possible interfaces between the minimal architecture and other approaches to joint action. The minimal architecture has implications for theorising about the emergence of joint action, for human–machine interaction, and for understanding how coordination can be facilitated by exploiting relations between multiple agents’ actions and between actions and the environment.}
+      \field{issn}{08936080}
+      \field{journaltitle}{Neural Networks}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{8-9}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{A Minimal Architecture for Joint Action}
+      \field{urlday}{14}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{23}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{998\bibrangedash 1003}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.neunet.2010.06.002
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\E3BUU2Q6\\Vesper et al. - 2010 - A minimal architecture for joint action.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
+      \endverb
+      \keyw{extracted,introduction,linus}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

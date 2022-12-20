@@ -1,5 +1,5 @@
 ---
-title: "Realtime Sonification of Motion Capture Data"
+title: "Harmony in Motion: Real-time Sonification Strategies for Joint Action Research"
 keywords: 
   - Sonification
   - Motion Capture
@@ -13,9 +13,10 @@ authors:
 affiliations:
  - name: Aarhus University
    index: 1
-citation_author: Backström, L. and Ring, L.
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-year: 2022
+citation_author: "Backström, L. and Ring, L."
+abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
+date: "4 January 2023"
+year: 2023
 bibliography:
   - master.bib
   - packages.bib
@@ -34,6 +35,7 @@ output:
     citation_package: biblatex
     toc: yes
     toc_depth: 3
+    toc_bib: yes
     number_sections: yes
     fig_caption: yes
     template: templates/latex_template.tex
@@ -67,11 +69,12 @@ if (basename(wd) != "docs") {
     setwd(wd)
 }
 
-knitr::opts_knit$set(root.dir = paste0(getwd(), wd))
+options(knitr.graphics.auto_pdf = TRUE)
+knitr::opts_knit$set(root.dir = wd)
 knitr::opts_chunk$set(echo = TRUE)
 bookdown::pdf_document2()
 # this leaves all of the intermediate files in the dir if FALSE
-options(tinytex.clean = TRUE)
+options(tinytex.clean = FALSE)
 # make verbose TRUE to help with debugging
 options(tinytex.verbose = FALSE)
 
@@ -87,11 +90,11 @@ use_package <- function(p) {
         install.packages(p, dep = TRUE)
     require(p, character.only = TRUE)
 }
-
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
 use_package("ggprism")
+use_package("gsignal")
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
 
@@ -99,83 +102,111 @@ use_package("mousetrap")
 # a bibliography of all the packages used
 # in case we need to cite them
 knitr::write_bib(.packages(), "packages.bib")
+
+# For a quick reference, the following citation commands can be used:
+# - @zammSynchronizingMIDIWireless2019  ->  "Author et al. (2001)"
+# - [@walkerMUSICALSOUNDSCAPESACCESSIBLE2007] -> "(Author et al., 2001)"
+# - [@vinkenAuditoryCodingHuman2013; @umekSuitabilityStrainGage2017] -> "(Author1 et al., 2001; Author2 et al., 2002)"
+
 ```
-
-
-
-
-
-# Abstract
-
-adf
 
 # `r rmarkdown::metadata$title`
 
-Main intro goes here (why what how?)
+Joint action tasks form an integral part of the everyday life of humans and many other species [ref],
+and the mechanisms underlying this cooperative ability to work together towards a common goal have been 
+the subject of an increasing number of publications [ref, scholar search?]. Many types of cooperation 
+involve auditory perception as a key aspect, either as the focus of the task – as is the case for 
+musicians in a band – or as a component that can be leveraged for increasing synchronization, 
+for example with a steady beat to set the pace for rowers. For any time-sensitive task making 
+use of auditory feedback, having low latency is vital to ensure the sonification feels connected 
+to the action, rather than disjointed [ref]. While there has been research into the effects of 
+sonification on joint action [ref], this thesis presents a flexible low latency sonification 
+framework that uses real-time positional data for joint action research. This framework has been 
+implemented in a pilot study to investigate the utility of a novel joint action synchrony paradigm 
+that puts the focus of the sonification strategy as a core aspect of study design in this field. By 
+comparing subject synchronization during experiments employing task-oriented or synchronization-oriented 
+strategies, we have attempted to show differences that highlight the importance of strategy selection 
+for sonification and provide a pathway for further investigation.
 
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
+# Background
 
-Double dollars make self-standing equations:
+## Joint Action
 
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
+Joint actions, where two or more people synchronize their actions in pursuit of a shared goal [@knoblichPsychologicalResearchJoint2011], are a regular part of human behaviour. Examples include handshakes, conversations, musical performances… dancing
 
-For a quick reference, the following citation commands can be used:
-- @zammSynchronizingMIDIWireless2019  ->  "Author et al. (2001)"
-- [@walkerMUSICALSOUNDSCAPESACCESSIBLE2007] -> "(Author et al., 2001)"
-- [@vinkenAuditoryCodingHuman2013; @umekSuitabilityStrainGage2017] -> "(Author1 et al., 2001; Author2 et al., 2002)"
+What are the cognitive processes involved in joint action? Recent theory suggests that the main cognitive processes involved include representations, action monitoring and action prediction [@vesperMinimalArchitectureJoint2010; @loehrMonitoringIndividualJoint2013; @sebanzJointActionBodies2006].
 
-# Literature review (background/etc)
+### Representations
 
-Interpersonal coordination describes situations where two or more individuals strive to match or complement each other's actions,
-and it is rooted in both the perception and anticipation of motor actions between those individuals [@gerdschmitzSoundJoinedActions2017].
-While perception, anticipation and action have traditionally been viewed as separate phenomena, current theories state that they are all intrinsically connected.
-A large part of embodiment research builds on the key hypothesis that merely observing an action triggers internal models of
-movement that actively engage the motor system [@gerdschmitzSoundJoinedActions2017].
-As a result, the motor system appears to not only assist with the planning and controlling of one's own actions,
-but also serves the secondary function of perceiving and anticipating other people's actions [@gerdschmitzSoundJoinedActions2017].
-This dual-purpose function of the motor system helps with achieving interpersonal coordination and can also result in spontaneous coordination,
-where the actions of others may unwittingly affect one's own actions, even after being instructed to ignore them [@demosRockingBeatEffects2012].
+According to the minimal architecture for joint action proposed by @vesperMinimalArchitectureJoint2010, an agent involved in joint action must, at a minimum, have a representation of their own task and the shared goal. While it is not required, it is usually helpful to also represent the other’s task, as it allows for more precise predictions of what the other will do next [@boltSensoryAttenuationAuditory2021]. As an example, consider two singers performing a duet together. Each singer must fully know their own part, while also representing the shared goal of synchronized singing. Although these two main representations can be sufficient for performing a duet, professional singers typically familiarize themselves with their singing partner's part in addition to their own, as it allows for a more polished and cohesive musical performance. 
 
-Sonification is defined as the use of nonspeech audio to convey information.
-More specifically, sonification is the transformation of data relations into perceived relations in an acoustic
-signal for the purposes of facilitating communication or interpretation [@kramerSonificationReportStatus1999].
-While concepts around sonification and audification were not formalized until around the year 1992 when the first 
-International Conference on Auditory Display (ICAD) was held [@dubusSonificationPhysicalQuantities2011], practical examples of sonification can 
-be found throughout history. Water clocks in ancient Greece and medieval China were sometimes constructed to 
-produce sounds and thereby provide auditory information about the passage of time [@dubusSonificationPhysicalQuantities2011]. 
-The stethoscope, which is used for listening to sounds made by the heart and lungs as well as other internal 
-sounds of the body, was invented in 1816 by French physician and amateur musician Rene Laënnec [@roguinReneTheophileHyacinthe2006]. 
-The Geiger counter developed in 1928 provides perhaps the most characteristic example of sonification through 
-its function of sonifying levels of radiation. The device detects ionizing radiation and translates it into audible clicks, 
-where a faster tempo signifies a higher level of radiation. @dubusSonificationPhysicalQuantities2011 describe the value of the Geiger 
-counter as "transposing a physical quantity which is essentially non-visual and pictured in everyone's imagination 
-as very important because life-threatening, to the auditory modality through clicks with a varying pulse".
+Further insight into the role of representations in joint action comes from an EEG study by @kourtisPredictiveRepresentationOther2012, which found that partners represented each other’s actions in advance when passing an object, and doing so facilitated coordination. Having these shared representations of actions and their underlying goals allows individuals to establish a procedural common ground for joint action without needing to rely on symbolic communication [@sebanzJointActionBodies2006].
+
+### Action Monitoring
+
+Monitoring processes are used to assess the extent to which a task or goal is being accomplished and whether actions are proceeding as intended (Botvinick et al., 2001). In terms of assessing task and goal progress, three things can be monitored: one's own task, the other’s task, and the shared goal. As with representations, one must at least monitor the progress of one’s own task and the shared goal. It is not strictly necessary to monitor the other’s task, and it depends on the type of joint action that is performed. Nevertheless, it is likely true that monitoring what one’s partner is doing will improve joint action performance – especially for tasks that require precise synchronization [@vesperMinimalArchitectureJoint2010].
+
+### Action Predicting
+
+In order to coordinate effectively, it is often necessary to make predictions about future events. This prediction process is achieved through motor simulation, which uses internal models to determine the sensory consequences of actions as well as their effect on the environment (Vesper et al., 2010).
+
+### Integrating Predicted Outcomes of One’s Own and Others’ Actions 
+
+The crucial final feature of joint action is the manner in which individuals adapt their own actions to those of others in time and space. The question concerns the decision-making process that occurs after a prediction of another person’s action is made, i.e. choosing a suitable complementary action and performing it at the appropriate time. In order to avoid constantly being one step behind during joint action, interacting partners cannot simply respond to observed actions, but must rather plan their own actions in relation to what they predict their partner will do [@sebanzJointActionBodies2006]. A study by Knoblich and Jordan [Sebanz 43-34] using a joint action tracking paradigm found that partners planned their actions based on a prediction of what the joint effect of both their own and their partner’s actions would be.
+
+Some of the questions that have been investigated in recent joint action research concern the aforementioned processes (representations, action monitoring and action predicting) and how they relate to agency (self vs other) and outcome (individual vs joint). Researchers have studied whether agents involved in joint action represent both their own task and their partner’s task (citation), whether they monitor individual outcomes or joint outcomes, and 
+
+### Current Study
+
+The current study had participants perform a joint action task under three different conditions, where the sensory consequences were manipulated through real-time sonification of movement.
+
+The current study focuses on what happens during learning of joint action. Through movement sonification, we can enhance attention towards specific features of joint action. Is learning optimized when focusing on self-other representations or joint outcome representations?
+
+While we could not completely separate the conditions, our sonifications focus attention towards either self-other monitoring, or joint outcome.
 
 
-....
+## Sonification
 
-~~RQ: To what extent does real-time sonification of object movement effect joint action synchronization between subjects?~~
+Sonification is defined as the use of nonspeech audio to convey information. More specifically, sonification is the transformation of data relations into perceived relations in an acoustic signal for the purposes of facilitating communication or interpretation [@kramerSonificationReportStatus1999, p. 4].
 
-~~H_0: Real-time sonification of object movement has no effect on joint action synchronization between subjects.~~
+While concepts around sonification and audification were not formalized until around the year 1992 when the first International Conference on Auditory Display (ICAD) was held [@dubusSonificationPhysicalQuantities2011], practical examples of sonification can be found throughout history. Water clocks in ancient Greece and medieval China were sometimes constructed to produce sounds and thereby provide auditory information about the passage of time [@dubusSonificationPhysicalQuantities2011]. The stethoscope, which is used for listening to sounds made by the heart and lungs as well as other internal sounds of the body, was invented in 1816 by French physician and amateur musician Rene Laënnec [@roguinReneTheophileHyacinthe2006]. The Geiger counter developed in 1928 provides perhaps the most characteristic example of sonification through its function of sonifying levels of radiation. The device detects ionizing radiation and translates it into audible clicks, where a faster tempo signifies a higher level of radiation. @dubusSonificationPhysicalQuantities2011 describe the value of the Geiger counter as “transposing a physical quantity which is essentially non-visual and pictured in everyone’s imagination as very important because life-threatening, to the auditory modality through clicks with a varying pulse”.
 
-~~H_1: Real-time sonification of object movement effects joint action synchronization between subjects.~~
+### What is sonification useful for?
 
-now RQ is about orientation of sonification scheme (task vs sync)
+Making sense of large amounts of data, and utilizing modern powerful media technologies. “Sonification research is well positioned to provide technology to assist scientists in comprehending the information and data-rich world of today and of the future.”. “The wide availability of audio technology (e.g., in multimedia computers) makes auditory data representation a viable option for large numbers of users. Thus, there exists today a synergism between the widespread need for new data comprehension methods and readily available technology that, with proper support and funding, can lead to a large number of users reaping the benefits conferred by the development of scientific sonification.” [@kramerSonificationReportStatus1999]
+
+### Movement sonification
+
+“Approaches within the discipline of Sport Science reflect the whole range from fundamental research with high internal validity to applied research with high ecological validity. Applied research plays an important role for the development of new, more effective intervention methods. Assuming that more senses are more powerful in perceiving gross motor patterns it should be supportive to create and convey more acoustic movement information. For multisensory integration benefits, additional auditory movement information has to correspond to the structure of a perceptual feature stream of another modality (visual, kinesthetic, tactile). For such an acoustic enhancement of motor perception Effenberg (1996, 2004, 2005) has established the concept of 'movement sonification', adapting the sonification approach of the early 1990s to the kinematics and dynamics of human motor behavior.” One of the movement parameters that can be used is “kinematic parameters representing the spatiotemporal features of a pose or a movement pattern.” “The question whether dynamic or kinematic movement parameters should be chosen for movement sonification should be answered under consideration of the sensory modality or modalities with which bi- or multimodal convergence should be achieved: If visual motion perception is the reference, movement sonification should be based on kinematic parameters.” [@gerdschmitzSoundJoinedActions2017]
+
+> “Subjects are able to perceive differences in swimming stroke frequency more accurately when visualizations of a swimmer are complemented with a kinematic sonification.” [@gerdschmitzSoundJoinedActions2017]
+
+### Auditory perception
+
+Research into auditory perception indicates two basic features of auditory perception that provide good arguments for representing data as sound. First, auditory perception is especially useful for detecting temporal characteristics, i.e. variations in sound over time. [find study that said we’re better at detecting rhythm aurally vs visually?] Sonification can thus be useful for monitoring or understanding complex temporal data. Second, our sense of hearing does not require us to be oriented towards the sound source. Unlike visual perception, which allows us to perceive approximately 180 degrees of our environment in front of us while we remain blind to the other 180 degrees behind us, auditory perception allows perception of 360 degrees. This makes auditory signals particularly useful for situations where our visual system is occupied with another task and we cannot afford to look around constantly, such as monitoring and alarm applications. [@kramerSonificationReportStatus1999]
+
+Other benefits of auditory perception that speak for sonification: parallel listening (ability to monitor and process multiple auditory data sets), rapid detection (especially in high-stress environments), affective response (ease of learning and high engagement qualities) and auditory gestalt formation (discerning relationships or trends in data streams) [@kramerSonificationReportStatus1999]
 
 
 # Methods
 
-Describe subject demographics etc.
+## Pilot Experiment
+
+A pilot experiment was conducted that required subjects to…
+
+Describe exp setup and subject demographics etc. See Figure \@ref(fig:track-setup)
+
+```{r track-setup, echo=FALSE, fig.align='center', fig.cap='Experimental track setup', out.width="100%"}
+knitr::include_graphics("figures/track_dimensions.png")
+```
 
 ## Hardware and Software
 
 ### Motion Capture
 
 Motion capture data were collected using a `r n_tracking_cams + n_video_cams` (`r n_tracking_cams` Qualisys Miqus M3 marker and `r n_video_cams` Qualisys Miqus Video) camera system connected to a Qualisys Camera Sync Unit.
-Marker data were acquired at at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager software was used to collect and process the data with real-time 3D tracking data output.
+Marker data were acquired at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager version `r qtm_version` software was used to collect and process the data with real-time 3D tracking data output.
+
 
 #### Markers
 
@@ -190,7 +221,7 @@ Motion capture data were sent via UDP packets over USB networking to a Bela Mini
 was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The stereo audio output was split into
 two channels which were connected to a pair of headphones for each subject.
 
-[^code]: Source, data and analysis are available at `r rmarkdown::metadata$repository`
+[^code]: Source, data and analysis are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
 
 #### Software
 
@@ -202,12 +233,76 @@ The main program used the Bela platform from 10 August 2022[^belaplatform].
 
 # Analysis
 
+```{r hilbert_transform, include=FALSE, echo=FALSE}
+# load the data
+# load("../data/standardized_trajectories.Rda.bz2")
+# # data is available in "trajectories"
+
+# # for each experiment_id (subject pair)
+# # calculate the hilbert transform of the y position
+# # per trial and per condition for both subjects
+# trajectories$y_hilbert <- NA_complex_
+# trajectories$y_std_hilbert <- NA_complex_
+# for (experiment_id in unique(trajectories$experiment_id)) {
+#   # get the data for this experiment
+#   exp_data <- trajectories[trajectories$experiment_id == experiment_id, ]
+#   # for each condition
+#   for (condition in unique(exp_data$condition)) {
+#     # get the data for this condition
+#     cond_data <- exp_data[exp_data$condition == condition, ]
+#     # for each trial
+#     for (trial in unique(cond_data$trial)) {
+#       # get the data for this trial
+#       trial_data <- cond_data[cond_data$trial == trial, ]
+#       # for each subject
+#       for (subject in unique(trial_data$subj)) {
+#         # get the data for this subject
+#         subject_data <- trial_data[trial_data$subj == subject, ]
+#         # calculate the hilbert transform of the y position
+#         subject_data$y_hilbert <- hilbert(subject_data$ypos)
+#         subject_data$y_std_hilbert <- hilbert(subject_data$z_ypos)
+#         # save the data
+#         trajectories[
+#           trajectories$experiment_id == experiment_id &
+#           trajectories$condition == condition &
+#           trajectories$trial == trial &
+#           trajectories$subj == subject, ] <- subject_data
+#       }
+#     }
+#   }
+# }
+
+# # plot the hilbert transform of the y position
+# trajectories %>% dplyr::filter(condition == "Sync") %>%
+#   ggplot(aes(x = timestamps, y = Re(y_hilbert))) +
+#     geom_line(color = "blue") +
+#     geom_line(aes(y = Im(y_hilbert)), color = "red") +
+#     facet_grid(condition ~ subj) +
+#     theme_bw() +
+#     theme(
+#       axis.text.x = element_blank(),
+#       axis.ticks.x = element_blank(),
+#       axis.title.x = element_blank(),
+#       axis.title.y = element_blank(),
+#       strip.text = element_text(size = 20),
+#       strip.background = element_blank()
+#     )
+
+
+```
+
+```{r mt-trajectories, echo=FALSE, fig.cap="Plot of trajectories from subject pairs in the Task-oriented sonification condition", fig.align="center", out.width="100%"}
+knitr::include_graphics("figures/mt_trajectories_task_sonification.png")
+```
+
+Test cross-ref, see figure \@ref(fig:mt-trajectories)
+
+
+
+
 # Results
 
 # Discussion
 
-\newpage
-
-# References
 
 <div id="refs"></div>
