@@ -47,11 +47,12 @@ spacing: double
 output:
   bookdown::pdf_document2:
     keep_tex: yes
-    latex_engine: xelatex
+    latex_engine: xelatex 
     citation_package: biblatex
     toc: yes
     toc_depth: 3
     toc_bib: yes
+    toc_appendix: yes
     number_sections: yes
     fig_caption: yes
     template: templates/latex_template.tex
@@ -67,7 +68,7 @@ qtm_version <- "2022.2 (build 7700)"
 n_tracking_cams <- 8
 n_video_cams <- 1
 capture_freq <- 300
-
+rmarkdown::pdf_document
 # Bela
 bela_version <- "0.3.8g"
 bela_freq <- 44100

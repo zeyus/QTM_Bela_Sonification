@@ -19,7 +19,6 @@
 \usepackage{enumitem}
 \usepackage{xparse}
 
-
 \ExplSyntaxOn
 
 \clist_new:N \g_mapo_allauthors_clist
@@ -61,13 +60,13 @@ $endif$
 % --- Section/SubSection/SubSubSection ----------------------------------------
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries}
-  {}{0pt}{}
+  {\thesection}{1em}{}
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries}
-  {}{0pt}{}
+  {\thesubsection}{1em}{}
 \titleformat{\subsubsection}
   {\normalfont\sffamily\bfseries}
-  {}{0pt}{}
+  {\thesubsubsection}{1em}{}
 \titleformat*{\paragraph}
   {\sffamily\normalsize}
 
