@@ -16,8 +16,27 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{seqsplit}
-%\usepackage{changepage}
-%\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xparse}
+
+
+\ExplSyntaxOn
+
+\clist_new:N \g_mapo_allauthors_clist
+
+\NewDocumentCommand\addauthor {m}
+ {
+  \clist_gput_right:Nn \g_mapo_allauthors_clist { #1 }
+ }
+
+\NewDocumentCommand \printall { } { } % initialization
+\DeclareExpandableDocumentCommand \printall { }
+ {
+  \clist_use:Nnnn \g_mapo_allauthors_clist { ~and~ } { ,~ } { ~and~ }
+ }
+
+\ExplSyntaxOff
+
 % \usepackage{fixltx2e} % provides \textsubscript
 \usepackage[backend=biber,style=apa]{biblatex}
 
@@ -57,7 +76,11 @@
 %\renewcommand{\headrulewidth}{0.50pt}
 \renewcommand{\headrulewidth}{0pt}
 
-\fancyhead[L]{\footnotesize{\sffamily Backström, L. (202004875, LB) and Ring, L. (202009983, LR).}}
+
+\addauthor{{Backström, L. (202004875, LB)}}
+\addauthor{{Ring, L. (202009983, LR)}}
+
+\fancyhead[L]{\footnotesize{\sffamily \printall}.}
 \fancyhead[C]{}
 \fancyhead[R]{\footnotesize{\sffamily Bachelor's Project (147201E020).}}
 \renewcommand{\footrulewidth}{0.25pt}
@@ -222,10 +245,19 @@
     {\bfseries Faculty}\\Faculty of Arts\\
     Aarhus University\\[2mm]
 
-    {\bfseries Submitted} 4 January 2023\\[2mm]
+    {\bfseries Submitted:} 4 January 2023\\[2mm]
+
+    {\bfseries Student Details}
+    \begin{itemize}[align=parleft,left=1em..2em]
+      \setlength\itemsep{0em}
+            \item Linus Backström\\ ID: 202004875\\ Initials: LB
+            \item Luke Ring\\ ID: 202009983\\ Initials: LR
+          \end{itemize}
+
+    \vspace{2mm}
 
     {\bfseries Software}
-    \begin{itemize}
+    \begin{itemize}[align=parleft,left=1em..2em]
       \setlength\itemsep{0em}
       \item \href{https://github.com/zeyus/QTM\_Bela\_Sonification}{\color{NavyBlue}{Repository}} \ExternalLink
     \end{itemize}

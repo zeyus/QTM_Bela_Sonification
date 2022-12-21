@@ -8,12 +8,17 @@ keywords:
 authors:
 - name: Linus Backström
   affiliation: 1
+  student_id: 202004875
+  initials: LB
+  citation: "Backström, L."
 - name: Luke Ring
   affiliation: 1
+  student_id: 202009983
+  initials: LR
+  citation: "Ring, L."
 affiliations:
  - name: Aarhus University
    index: 1
-citation_author: "Backström, L. (202004875, LB) and Ring, L. (202009983, LR)"
 abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
 date: "4 January 2023"
 submitted: "4 January 2023"

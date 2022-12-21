@@ -16,8 +16,27 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{seqsplit}
-%\usepackage{changepage}
-%\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xparse}
+
+
+\ExplSyntaxOn
+
+\clist_new:N \g_mapo_allauthors_clist
+
+\NewDocumentCommand\addauthor {m}
+ {
+  \clist_gput_right:Nn \g_mapo_allauthors_clist { #1 }
+ }
+
+\NewDocumentCommand \printall { } { } % initialization
+\DeclareExpandableDocumentCommand \printall { }
+ {
+  \clist_use:Nnnn \g_mapo_allauthors_clist { ~and~ } { ,~ } { ~and~ }
+ }
+
+\ExplSyntaxOff
+
 % \usepackage{fixltx2e} % provides \textsubscript
 $if(biblatex)$
 \usepackage$if(biblio-style)$[backend=biber,style=$biblio-style$]$endif${biblatex}
@@ -60,7 +79,12 @@ $endif$
 %\renewcommand{\headrulewidth}{0.50pt}
 \renewcommand{\headrulewidth}{0pt}
 
-\fancyhead[L]{\footnotesize{\sffamily $citation_author$.}}
+
+$for(authors)$
+\addauthor{{$authors.citation$ ($authors.student_id$, $authors.initials$)}}
+$endfor$
+
+\fancyhead[L]{\footnotesize{\sffamily \printall}.}
 \fancyhead[C]{}
 \fancyhead[R]{\footnotesize{\sffamily $course$.}}
 \renewcommand{\footrulewidth}{0.25pt}
@@ -376,10 +400,20 @@ $endif$
     {\bfseries Faculty}\\$faculty$\\
     $university$\\[2mm]
 
-    {\bfseries Submitted} $submitted$\\[2mm]
+    {\bfseries Submitted:} $submitted$\\[2mm]
+
+    {\bfseries Student Details}
+    \begin{itemize}[align=parleft,left=1em..2em]
+      \setlength\itemsep{0em}
+      $for(authors)$
+      \item $authors.name$\\ ID: $authors.student_id$\\ Initials: $authors.initials$
+      $endfor$
+    \end{itemize}
+
+    \vspace{2mm}
 
     {\bfseries Software}
-    \begin{itemize}
+    \begin{itemize}[align=parleft,left=1em..2em]
       \setlength\itemsep{0em}
       \item \href{$repository$}{\color{NavyBlue}{Repository}} \ExternalLink
     \end{itemize}
