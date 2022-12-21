@@ -60,12 +60,12 @@ $endif$
 %\renewcommand{\headrulewidth}{0.50pt}
 \renewcommand{\headrulewidth}{0pt}
 
-\fancyhead[L]{}
+\fancyhead[L]{\footnotesize{\sffamily $citation_author$.}}
 \fancyhead[C]{}
-\fancyhead[R]{}
+\fancyhead[R]{\footnotesize{\sffamily $course$. Exam code: $examcode$.}}
 \renewcommand{\footrulewidth}{0.25pt}
 
-\fancyfoot[L]{\footnotesize{\sffamily $citation_author$, ($year$). $title$., $page$.}}
+\fancyfoot[L]{\footnotesize{\sffamily $title$, ($year$).}}
 
 
 \fancyfoot[R]{\sffamily \thepage}
@@ -73,6 +73,13 @@ $endif$
 \let\ps@plain\ps@fancy
 \fancyheadoffset[L]{0cm}
 \fancyfootoffset[L]{0cm}
+
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+  \fancyfoot[L]{\footnotesize{\sffamily $title$, ($year$).}}%
+  \fancyfoot[R]{\sffamily \thepage}%
+}
 
 % --- Macros ---------
 
@@ -352,6 +359,7 @@ $endif$
 \newgeometry{includemp, reversemp, left=1.0cm, marginparwidth=4.5cm, marginparsep=0.5cm}
   $if(title)$
   \maketitle
+  % \thispagestyle{empty}% suppress header and footer on title page
   $endif$
   $if(abstract)$
   \begin{abstract}
@@ -361,8 +369,15 @@ $endif$
 
   \marginpar{
     \sffamily\small
+    
+    {\bfseries Programme}\\$degree$\\[1mm]
+    {\bfseries Course}\\$course$\\[1mm]
+    {\bfseries Exam code:} $examcode$\\[1mm]
+    {\bfseries Supervisor}\\$supervisor$\\[1mm]
+    {\bfseries Faculty}\\$faculty$\\
+    $university$\\[2mm]
 
-    \vspace{2mm}
+    {\bfseries Submitted} $submitted$\\[2mm]
 
     {\bfseries Software}
     \begin{itemize}
@@ -372,9 +387,6 @@ $endif$
 
     \vspace{2mm}
 
-    {\bfseries Submitted:} $submitted$
-
-    \vspace{2mm}
     {\bfseries License}\\
     Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{NavyBlue}{MIT}}).
   }

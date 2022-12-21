@@ -13,9 +13,16 @@ authors:
 affiliations:
  - name: Aarhus University
    index: 1
-citation_author: "Backström, L. and Ring, L."
+citation_author: "Backström, L. (202004875, LB) and Ring, L. (202009983, LR)"
 abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
 date: "4 January 2023"
+submitted: "4 January 2023"
+degree: "Bachelor of Cognitive Science"
+examcode: "ABC123"
+supervisor: "Assistant Professor, Anna Zamm"
+faculty: "Faculty of Arts"
+university: "Aarhus University"
+course: "Bachelor's Project (147201E020)"
 year: 2023
 bibliography:
   - master.bib
@@ -46,7 +53,6 @@ output:
     template: templates/latex_template.tex
 csl: templates/apa7.csl
 repository: https\://github.com/zeyus/QTM_Bela_Sonification
-submitted: "`r format(Sys.time(), '%B %d, %Y')`"
 licensepath: https\://github.com/zeyus/QTM_Bela_Sonification/blob/main/LICENSE.md
 ---
 
@@ -222,15 +228,15 @@ These additional markers provided reference points for 3D orientation of the tra
 
 #### Hardware
 
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini computer running version `r bela_version` running a custom C++ program[^code]. The main program loop 
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop 
 was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The stereo audio output was split into
-two channels which were connected to a pair of headphones for each subject.
+two channels which were connected to a pair of Genelec G Two active speakers.
 
 [^code]: Source, data and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
 
 #### Software
 
-The main program used the Bela platform from 10 August 2022[^belaplatform].
+The main program used the Bela platform franework from 10 August 2022[^belaplatform].
 
 [^belaplatform]: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
