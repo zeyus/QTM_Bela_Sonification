@@ -18,6 +18,7 @@
 \usepackage{seqsplit}
 \usepackage{enumitem}
 \usepackage{xparse}
+\usepackage{balance}
 
 \ExplSyntaxOn
 
@@ -433,8 +434,9 @@ Test cross-ref, see figure \ref{fig:mt-trajectories}
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
+\balance
+\clearpage
 
-\onecolumn
 
 \printbibliography[title=References,heading=bibintoc]
 

@@ -44,6 +44,8 @@ mainfont: georgia
 sansfont: calibri
 fontsize: 11pt
 spacing: double
+# set this to false if the last page or refs look bad
+align_end_of_doc: true
 output:
   bookdown::pdf_document2:
     keep_tex: yes

@@ -18,6 +18,7 @@
 \usepackage{seqsplit}
 \usepackage{enumitem}
 \usepackage{xparse}
+\usepackage{balance}
 
 \ExplSyntaxOn
 
@@ -446,8 +447,9 @@ $endif$
 
 % This will be displayed full-width
 $body$
+\balance
+\clearpage
 
-\onecolumn
 
 $if(natbib)$
 $if(bibliography)$
