@@ -1,36 +1,36 @@
 ---
 title: "Harmony in Motion: Real-time Sonification Strategies for Joint Action Research"
 keywords: 
-  - Sonification
-  - Motion Capture
-  - Realtime
-  - Processing
+    - Sonification
+    - Motion Capture
+    - Realtime
+    - Processing
 authors:
-- name: Linus Backström
-  affiliation: 1
-  student_id: 202004875
-  initials: LB
-  citation: "Backström, L."
-- name: Luke Ring
-  affiliation: 1
-  student_id: 202009983
-  initials: LR
-  citation: "Ring, L."
+    - name: Linus Backström
+        affiliation: 1
+        student_id: 202004875
+        initials: LB
+        citation: "Backström, L."
+    - name: Luke Ring
+        affiliation: 1
+        student_id: 202009983
+        initials: LR
+        citation: "Ring, L."
 affiliations:
- - name: Aarhus University
-   index: 1
+    - name: Aarhus University
+        index: 1
 abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
 date: "4 January 2023"
 submitted: "4 January 2023"
 degree: "BSc Cognitive Science"
-supervisor: "Assistant Professor, Anna Zamm"
+supervisor: "Anna Zamm, Assistant Professor"
 faculty: "Faculty of Arts"
 university: "Aarhus University"
 course: "Bachelor's Project (147201E020)"
 year: 2023
 bibliography:
-  - master.bib
-  - packages.bib
+    - master.bib
+    - packages.bib
 biblio-title: References
 biblio-style: apa
 link-citations: true
@@ -49,17 +49,17 @@ draft: true
 # set this to false if the last page or refs look bad
 aligncols: true
 output:
-  bookdown::pdf_document2:
-    keep_tex: yes
-    latex_engine: xelatex 
-    citation_package: biblatex
-    toc: yes
-    toc_depth: 3
-    toc_bib: yes
-    toc_appendix: yes
-    number_sections: yes
-    fig_caption: yes
-    template: templates/latex_template.tex
+    bookdown::pdf_document2:
+        keep_tex: yes
+        latex_engine: xelatex 
+        citation_package: biblatex
+        toc: yes
+        toc_depth: 3
+        toc_bib: yes
+        toc_appendix: yes
+        number_sections: yes
+        fig_caption: yes
+        template: templates/latex_template.tex
 csl: templates/apa7.csl
 repository: https\://github.com/zeyus/QTM_Bela_Sonification
 licensepath: https\://github.com/zeyus/QTM_Bela_Sonification/blob/main/LICENSE.md
@@ -72,27 +72,32 @@ qtm_version <- "2022.2 (build 7700)"
 n_tracking_cams <- 8
 n_video_cams <- 1
 capture_freq <- 300
-rmarkdown::pdf_document
+
 # Bela
 bela_version <- "0.3.8g"
 bela_freq <- 44100
 bela_buffer_size <- 32
 bela_n_channels <- 2
+
+# Data
+trajectories_file <- "../data/standardized_trajectories.Rda.bz2"
+cache_dir <- ".cache"
 ```
 
-```{r setup, include=FALSE, cache = FALSE}
+```{r setup, include=FALSE, cache=FALSE}
 
 # set working directory if it isn't the directory of this file
 wd <- getwd()
+wd_parent <- dirname(wd)
 if (basename(wd) != "docs") {
+    wd_parent <- wd
     wd <- paste0(wd, "/docs")
     setwd(wd)
 }
 
 options(knitr.graphics.auto_pdf = TRUE)
 knitr::opts_knit$set(root.dir = wd)
-knitr::opts_chunk$set(echo = TRUE)
-bookdown::pdf_document2()
+knitr::opts_chunk$set(echo = FALSE)
 # this leaves all of the intermediate files in the dir if FALSE
 options(tinytex.clean = FALSE)
 # make verbose TRUE to help with debugging
@@ -115,6 +120,9 @@ use_package("rticles")
 use_package("tidyverse")
 use_package("ggprism")
 use_package("gsignal")
+use_package("circular")
+use_package("conflicted")
+use_package("pracma")
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
 
@@ -254,65 +262,172 @@ The main program used the Bela platform franework from 10 August 2022[^belaplatf
 # Analysis
 
 ```{r hilbert_transform, include=FALSE, echo=FALSE}
-# load the data
-# load("../data/standardized_trajectories.Rda.bz2")
-# # data is available in "trajectories"
+# this is slow, so check for a cached version
+trajectories_with_hilbert <-
+    paste0(cache_dir, "/trajectories_with_hilbert.rds.bz2")
+# if the cached version exists, use it!
+if (file.exists(trajectories_with_hilbert)) {
+    trajectories_and_angles <- readRDS(trajectories_with_hilbert)
+    rm(trajectories_with_hilbert)
+} else {
+    # load the data
+    load(trajectories_file)
+    # data is available in "trajectories"
 
-# # for each experiment_id (subject pair)
-# # calculate the hilbert transform of the y position
-# # per trial and per condition for both subjects
-# trajectories$y_hilbert <- NA_complex_
-# trajectories$y_std_hilbert <- NA_complex_
-# for (experiment_id in unique(trajectories$experiment_id)) {
-#   # get the data for this experiment
-#   exp_data <- trajectories[trajectories$experiment_id == experiment_id, ]
-#   # for each condition
-#   for (condition in unique(exp_data$condition)) {
-#     # get the data for this condition
-#     cond_data <- exp_data[exp_data$condition == condition, ]
-#     # for each trial
-#     for (trial in unique(cond_data$trial)) {
-#       # get the data for this trial
-#       trial_data <- cond_data[cond_data$trial == trial, ]
-#       # for each subject
-#       for (subject in unique(trial_data$subj)) {
-#         # get the data for this subject
-#         subject_data <- trial_data[trial_data$subj == subject, ]
-#         # calculate the hilbert transform of the y position
-#         subject_data$y_hilbert <- hilbert(subject_data$ypos)
-#         subject_data$y_std_hilbert <- hilbert(subject_data$z_ypos)
-#         # save the data
-#         trajectories[
-#           trajectories$experiment_id == experiment_id &
-#           trajectories$condition == condition &
-#           trajectories$trial == trial &
-#           trajectories$subj == subject, ] <- subject_data
-#       }
-#     }
-#   }
-# }
+    # for each experiment_id (subject pair)
+    # calculate the hilbert transform of the y position
+    # per trial and per condition for both subjects
 
-# # plot the hilbert transform of the y position
-# trajectories %>% dplyr::filter(condition == "Sync") %>%
-#   ggplot(aes(x = timestamps, y = Re(y_hilbert))) +
-#     geom_line(color = "blue") +
-#     geom_line(aes(y = Im(y_hilbert)), color = "red") +
-#     facet_grid(condition ~ subj) +
-#     theme_bw() +
-#     theme(
-#       axis.text.x = element_blank(),
-#       axis.ticks.x = element_blank(),
-#       axis.title.x = element_blank(),
-#       axis.title.y = element_blank(),
-#       strip.text = element_text(size = 20),
-#       strip.background = element_blank()
-#     )
+    trajectories$y_std_hilbert <- NA_complex_
+    trajectories$instantaneous_phase_angle <- NA_real_ # in radians
 
+    trajectories <- trajectories %>%
+      group_by(experiment_id, condition, trial, subj) %>%
+      group_modify(~ {
+        # calculate the hilbert transform of the y position
+        y_hilbert <- hilbert(.x$z_ypos)
+        # calculate the instantaneous phase angle
+        instantaneous_phase_angle <- pracma::angle(y_hilbert)
+        # make instantaneous phase angle a circular object
+        instantaneous_phase_angle <- circular(
+            instantaneous_phase_angle,
+            units = "radians",
+            modulo = "pi")
+        # add the hilbert transform and instantaneous phase angle to the data
+        .x$y_std_hilbert <- y_hilbert
+        .x$instantaneous_phase_angle <- instantaneous_phase_angle
+        .x
+      }) %>%
+      ungroup()
 
+    # now we can calculate the mean instantaneous phase angle
+    # for each time point for each subject pair
+    trajectories$mean_instantaneous_phase_angle <- NA_real_
+
+    # split the data into groups
+    trajectories <- trajectories %>%
+        group_by(experiment_id, condition, trial, mt_seq)
+    timewise_pairs <- group_split(trajectories)
+    trajectories <- trajectories %>% ungroup()
+
+    # calculate the mean instantaneous phase angle for each time point
+    num_groups <- nrow(
+        trajectories %>%
+        distinct(experiment_id, condition, trial, mt_seq))
+    n_processed <- 0
+    message("Calculating mean instantaneous phase angle...")
+    flush.console()
+
+    index_pairs_with_mean <- lapply(timewise_pairs, function(index_pair) {
+        n_processed <<- n_processed + 1
+        if (counter %% 1000 == 0) {
+            message(paste0("  ", counter, " of ", num_groups))
+            flush.console()
+        }
+        # get the mean instantaneous phase angle for each time point
+        # for each subject pair
+        mean_instantaneous_phase_angle <-
+            mean(index_pair$instantaneous_phase_angle)
+
+        # add the mean instantaneous phase angle to the data
+        index_pair$mean_instantaneous_phase_angle <-
+            mean_instantaneous_phase_angle
+        index_pair
+    })
+
+    # join togethr using unlist
+    trajectories_and_angles <- list2DF(
+        lapply(
+            setNames(
+                seq_along(
+                    index_pairs_with_mean[[1]]),
+                names(index_pairs_with_mean[[1]])),
+            \(i)
+            unlist(lapply(index_pairs_with_mean, `[[`, i), FALSE, FALSE)))
+
+    # save the trajectories with hilbert transform
+    saveRDS(trajectories_and_angles, trajectories_with_hilbert)
+    rm(trajectories_with_hilbert, trajectories, counter, index_pairs_with_mean,
+       timewise_pairs, num_groups)
+}
 ```
 
-```{r mt-trajectories, echo=FALSE, fig.cap="Plot of trajectories from subject pairs in the Task-oriented sonification condition", fig.align="center", out.width="100%"}
-knitr::include_graphics("figures/mt_trajectories_task_sonification.png")
+```{r mean-pairwise-phase-angles, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+# drop subject, we are doing pairwise analysis now
+trajectories_angles_pairwise <- trajectories_and_angles %>%
+    dplyr::select(-subj) %>%
+    dplyr::distinct()
+
+# allow for circular to convert radians to degrees
+trajectories_angles_pairwise$mean_instantaneous_phase_angle <-
+    circular::circular(
+        trajectories_angles_pairwise$mean_instantaneous_phase_angle,
+        type = "angles",
+        units = "radians",
+        modulo = "pi")
+
+# plot the mean pairwise phase angles by experiment, condition, trial and mt_seq
+plt <- trajectories_angles_pairwise %>%
+    dplyr::filter(timestamps >= 50.0 & timestamps <= 70.0) %>%
+    ggplot(aes(
+        x = timestamps,
+        y = circular::deg(mean_instantaneous_phase_angle),
+        color = trial)) +
+    geom_line() +
+    facet_grid(experiment_id ~ condition) +
+    scale_color_prism("floral") +
+    guides(y = "prism_offset_minor") +
+    theme_prism(base_size = 18) +
+    ggtitle(
+        "Mean Instantaneous Phase Angles by Condition and Trial") +
+    xlab("Time (s)") +
+    ylab("Mean pairwise phase angle (degrees)")
+
+ggsave("figures/mean_pairwise_phase_angles.png", plt, width = 12, height = 8)
+
+plt
+```
+
+```{r instantaneous-phase-angle-circular-plot, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+
+trajectories_angles_pairwise %>%
+    group_by(experiment_id, condition, trial) %>%
+    group_map(~ {
+        plot(.x$mean_instantaneous_phase_angle)
+    })
+test_pair <- trajectories_angles_pairwise %>%
+    dplyr::filter(
+        experiment_id == "Subject Pair 1" &
+        condition == "Sync" &
+        trial == "Trial 1")
+
+plot.circular(circular::deg(test_pair$mean_instantaneous_phase_angle), stack = TRUE, bins = 150, shrink = 1.5)
+
+
+
+
+
+
+test_test <- trajectories_and_angles %>% dplyr::filter(experiment_id == "Subject Pair 1" & condition == "Sync" & trial == "Trial 1")
+
+test_test$instantaneous_phase_angle_360 <- circular::circular(
+    test_test$instantaneous_phase_angle,
+    type = "angles",
+    units = "radians",
+    modulo = "pi")
+
+test_test$instantaneous_phase_angle_180 <- circular::circular(
+    test_test$instantaneous_phase_angle,
+    type = "angles",
+    units = "radians",
+    modulo = "pi")
+head(test_test)
+cor.circular(
+    test_test[subj == FO22J, ]$instantaneous_phase_angle_360,
+    test_test$instantaneous_phase_angle_180,
+    method = "spearman")
+# 
+
 ```
 
 Test cross-ref, see figure \@ref(fig:mt-trajectories)

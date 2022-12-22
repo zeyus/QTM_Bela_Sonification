@@ -6,3 +6,4 @@
 *.run.xml
 *.toc
 *.knit.md
+.cache/*
