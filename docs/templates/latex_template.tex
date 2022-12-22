@@ -18,7 +18,16 @@
 \usepackage{seqsplit}
 \usepackage{enumitem}
 \usepackage{xparse}
+$if(aligncols)$
 \usepackage{balance}
+$endif$
+$if(draft)$
+\usepackage{draftwatermark}
+\SetWatermarkScale{2}
+\SetWatermarkText{DRAFT}
+\SetWatermarkColor[gray]{0.6}
+\SetWatermarkAngle{60}
+$endif$
 
 \ExplSyntaxOn
 
@@ -447,7 +456,9 @@ $endif$
 
 % This will be displayed full-width
 $body$
+$if(aligncols)$
 \balance
+$endif$
 \clearpage
 
 
