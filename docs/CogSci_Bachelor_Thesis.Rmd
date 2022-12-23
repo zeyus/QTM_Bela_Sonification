@@ -6,19 +6,19 @@ keywords:
     - Realtime
     - Processing
 authors:
-    - name: Linus Backström
-        affiliation: 1
-        student_id: 202004875
-        initials: LB
-        citation: "Backström, L."
-    - name: Luke Ring
-        affiliation: 1
-        student_id: 202009983
-        initials: LR
-        citation: "Ring, L."
+- name: Linus Backström
+  affiliation: 1
+  student_id: 202004875
+  initials: LB
+  citation: "Backström, L."
+- name: Luke Ring
+  affiliation: 1
+  student_id: 202009983
+  initials: LR
+  citation: "Ring, L."
 affiliations:
-    - name: Aarhus University
-        index: 1
+- name: Aarhus University
+  index: 1
 abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
 date: "4 January 2023"
 submitted: "4 January 2023"
@@ -115,6 +115,7 @@ use_package <- function(p) {
         install.packages(p, dep = TRUE)
     require(p, character.only = TRUE)
 }
+use_package("kableExtra")
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
@@ -123,8 +124,10 @@ use_package("gsignal")
 use_package("circular")
 use_package("conflicted")
 use_package("pracma")
+
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
+
 
 # after all the packages are loaded, we can save
 # a bibliography of all the packages used
@@ -160,29 +163,32 @@ for sonification and provide a pathway for further investigation.
 
 ## Joint Action
 
-Joint actions, where two or more people synchronize their actions in pursuit of a shared goal [@knoblichPsychologicalResearchJoint2011], are a regular part of human behaviour. Examples include handshakes, conversations, musical performances… dancing
+Joint actions, where two or more people synchronize their actions in pursuit of a shared goal [@knoblichPsychologicalResearchJoint2011], are a regular part of human behaviour. Examples include handshakes, conversations, musical performances, dancing…
 
 What are the cognitive processes involved in joint action? Recent theory suggests that the main cognitive processes involved include representations, action monitoring and action prediction [@vesperMinimalArchitectureJoint2010; @loehrMonitoringIndividualJoint2013; @sebanzJointActionBodies2006].
 
 ### Representations
 
-According to the minimal architecture for joint action proposed by @vesperMinimalArchitectureJoint2010, an agent involved in joint action must, at a minimum, have a representation of their own task and the shared goal. While it is not required, it is usually helpful to also represent the other’s task, as it allows for more precise predictions of what the other will do next [@boltSensoryAttenuationAuditory2021]. As an example, consider two singers performing a duet together. Each singer must fully know their own part, while also representing the shared goal of synchronized singing. Although these two main representations can be sufficient for performing a duet, professional singers typically familiarize themselves with their singing partner's part in addition to their own, as it allows for a more polished and cohesive musical performance. 
+According to the minimal architecture for joint action proposed by @vesperMinimalArchitectureJoint2010, an agent involved in joint action must, at a minimum, have a representation of their own task and the shared goal. While it is not required, it is usually helpful to also represent the other’s task, as it allows for more precise predictions of what the other will do next [@boltSensoryAttenuationAuditory2021]. As an example, consider two singers performing a duet together. Each singer must fully know their own part, while also representing the shared goal of synchronized singing. Although these two main representations can be sufficient for performing a duet, professional singers typically familiarize themselves with their singing partner's part in addition to their own, as it allows for a more polished and cohesive musical performance. This is supported by a study (Keller et al., 2007) where pianists were asked to record one part from a selection of piano duets and then, at a later date, play the complementary part in synchrony with either their own or other participants’ recordings. The results showed that the pianists synchronized better with recordings of themselves than those of others, indicating that having more accurate representations of the other’s actions facilitated synchronization.
 
 Further insight into the role of representations in joint action comes from an EEG study by @kourtisPredictiveRepresentationOther2012, which found that partners represented each other’s actions in advance when passing an object, and doing so facilitated coordination. Having these shared representations of actions and their underlying goals allows individuals to establish a procedural common ground for joint action without needing to rely on symbolic communication [@sebanzJointActionBodies2006].
 
 ### Action Monitoring
 
-Monitoring processes are used to assess the extent to which a task or goal is being accomplished and whether actions are proceeding as intended (Botvinick et al., 2001). In terms of assessing task and goal progress, three things can be monitored: one's own task, the other’s task, and the shared goal. As with representations, one must at least monitor the progress of one’s own task and the shared goal. It is not strictly necessary to monitor the other’s task, and it depends on the type of joint action that is performed. Nevertheless, it is likely true that monitoring what one’s partner is doing will improve joint action performance – especially for tasks that require precise synchronization [@vesperMinimalArchitectureJoint2010].
+Monitoring processes are used to assess the extent to which a task or goal is being accomplished and whether actions are proceeding as intended (Botvinick et al., 2001). In terms of assessing task and goal progress, three things can be monitored: one's own task, the other’s task, and the shared goal. As with representations, one must at least monitor the progress of one’s own task and the shared goal. It is not strictly necessary to monitor the other’s task, and it depends on the type of joint action that is performed. Nevertheless, it is likely true that monitoring what one’s partner is doing will improve joint action performance – especially for tasks that require precise synchronization [@vesperMinimalArchitectureJoint2010]. 
+
+With respect to monitoring the sensory consequences or outcomes of joint actions, a distinction can be made between monitoring the individual outcomes vs joint outcomes. A study by Loehr et al. (2013) distinguished between individual and joint outcomes of actions with the help of a clever experiment, where pianists played a pre-rehearsed duet on a digital piano while the outcomes of keypresses were manipulated by the researchers. In the individual outcome condition, the produced tones were manipulated so that the harmony of the resulting chord remained the same. In the joint outcome condition, the produced tones were manipulated so that the harmony of the chord changed. {More text to follow, incorporating these findings: “musicians engaged in joint actions monitor their own and their partner’s actions as well as their combined action outcomes, while at the same time maintaining a distinction between their own and othersʼ actions and between individual and joint outcomes.[…] The first goal of the current study was to provide further evidence that people monitor their own and their partnersʼ action outcomes in parallel. The second goal of the current study was to investigate whether people monitor each personʼs individual part in a joint action and/or the combined outcome of their coordinated actions. […] These findings indicate that skilled performers are able to monitor the outcomes of their own actions, their coperformersʼ actions, and their combined actions when they perform joint actions together. They also indicate that performers nevertheless differentiate between their own and othersʼ action outcomes and between individual and joint action outcomes.“}
 
 ### Action Predicting
 
-In order to coordinate effectively, it is often necessary to make predictions about future events. This prediction process is achieved through motor simulation, which uses internal models to determine the sensory consequences of actions as well as their effect on the environment (Vesper et al., 2010).
+In order to coordinate effectively, it is often necessary to make predictions about future events. This prediction process is achieved through motor simulation, which uses internal models to determine the sensory consequences of actions as well as their effect on the environment (Gerd Schmitz & Alfred O. Effenberg, 2017; Vesper et al., 2010). Simulating the actions of others as they occur may be especially beneficial when engaging in joint action, as it is believed to influence perception and assist in predicting the consequences and timing of others' actions (Vesper et al., 2010). The idea that internal predictive models contribute to the ability to anticipate others' actions is supported by findings that short-term predictions of others' actions are based on one's own motor experience (Aglioti et al., 2008; Calvo-Merino et al., 2005). It is not fully clear yet whether similar mechanisms exist specifically for predicting the joint outcome of an agent and their partner. Some support for predicting joint outcomes comes from a study by Knoblich & Jordan (2003) which demonstrated the ability to predict combined outcomes through improved joint task performance with practice. The results showed that participants initially struggled with the joint task of controlling a cursor together to track a moving target on a computer screen, but with practice, performance reached the level of individual performance.
 
 ### Integrating Predicted Outcomes of One’s Own and Others’ Actions 
 
 The crucial final feature of joint action is the manner in which individuals adapt their own actions to those of others in time and space. The question concerns the decision-making process that occurs after a prediction of another person’s action is made, i.e. choosing a suitable complementary action and performing it at the appropriate time. In order to avoid constantly being one step behind during joint action, interacting partners cannot simply respond to observed actions, but must rather plan their own actions in relation to what they predict their partner will do [@sebanzJointActionBodies2006]. A study by Knoblich and Jordan [Sebanz 43-34] using a joint action tracking paradigm found that partners planned their actions based on a prediction of what the joint effect of both their own and their partner’s actions would be.
 
-Some of the questions that have been investigated in recent joint action research concern the aforementioned processes (representations, action monitoring and action predicting) and how they relate to agency (self vs other) and outcome (individual vs joint). Researchers have studied whether agents involved in joint action represent both their own task and their partner’s task (citation), whether they monitor individual outcomes or joint outcomes, and 
+Some of the questions that have been investigated in recent joint action research concern the aforementioned processes (representations, action monitoring and action predicting) and how they relate to agency (self vs other) and outcome (individual vs joint). Researchers have studied whether agents involved in joint action represent both their own task and their partner’s task (citation), whether they monitor individual outcomes or joint outcomes, and… The current study primed the participants’ attention towards individual and joint outcomes in different conditions while investigating joint task synchronization.
+
 
 ### Current Study
 
@@ -190,7 +196,8 @@ The current study had participants perform a joint action task under three diffe
 
 The current study focuses on what happens during learning of joint action. Through movement sonification, we can enhance attention towards specific features of joint action. Is learning optimized when focusing on self-other representations or joint outcome representations?
 
-While we could not completely separate the conditions, our sonifications focus attention towards either self-other monitoring, or joint outcome.
+While we could not completely separate the conditions, our sonification primes attention towards either self-other monitoring, or joint outcome.
+
 
 
 ## Sonification
@@ -201,10 +208,12 @@ While concepts around sonification and audification were not formalized until ar
 
 ### What is sonification useful for?
 
+{this section is just raw, copypasted quotes for now} 
 Making sense of large amounts of data, and utilizing modern powerful media technologies. “Sonification research is well positioned to provide technology to assist scientists in comprehending the information and data-rich world of today and of the future.”. “The wide availability of audio technology (e.g., in multimedia computers) makes auditory data representation a viable option for large numbers of users. Thus, there exists today a synergism between the widespread need for new data comprehension methods and readily available technology that, with proper support and funding, can lead to a large number of users reaping the benefits conferred by the development of scientific sonification.” [@kramerSonificationReportStatus1999]
 
 ### Movement sonification
 
+{this section is just raw, copypasted quotes for now} 
 “Approaches within the discipline of Sport Science reflect the whole range from fundamental research with high internal validity to applied research with high ecological validity. Applied research plays an important role for the development of new, more effective intervention methods. Assuming that more senses are more powerful in perceiving gross motor patterns it should be supportive to create and convey more acoustic movement information. For multisensory integration benefits, additional auditory movement information has to correspond to the structure of a perceptual feature stream of another modality (visual, kinesthetic, tactile). For such an acoustic enhancement of motor perception Effenberg (1996, 2004, 2005) has established the concept of 'movement sonification', adapting the sonification approach of the early 1990s to the kinematics and dynamics of human motor behavior.” One of the movement parameters that can be used is “kinematic parameters representing the spatiotemporal features of a pose or a movement pattern.” “The question whether dynamic or kinematic movement parameters should be chosen for movement sonification should be answered under consideration of the sensory modality or modalities with which bi- or multimodal convergence should be achieved: If visual motion perception is the reference, movement sonification should be based on kinematic parameters.” [@gerdschmitzSoundJoinedActions2017]
 
 > “Subjects are able to perceive differences in swimming stroke frequency more accurately when visualizations of a swimmer are complemented with a kinematic sonification.” [@gerdschmitzSoundJoinedActions2017]
@@ -213,53 +222,144 @@ Making sense of large amounts of data, and utilizing modern powerful media techn
 
 Research into auditory perception indicates two basic features of auditory perception that provide good arguments for representing data as sound. First, auditory perception is especially useful for detecting temporal characteristics, i.e. variations in sound over time. [find study that said we’re better at detecting rhythm aurally vs visually?] Sonification can thus be useful for monitoring or understanding complex temporal data. Second, our sense of hearing does not require us to be oriented towards the sound source. Unlike visual perception, which allows us to perceive approximately 180 degrees of our environment in front of us while we remain blind to the other 180 degrees behind us, auditory perception allows perception of 360 degrees. This makes auditory signals particularly useful for situations where our visual system is occupied with another task and we cannot afford to look around constantly, such as monitoring and alarm applications. [@kramerSonificationReportStatus1999]
 
-Other benefits of auditory perception that speak for sonification: parallel listening (ability to monitor and process multiple auditory data sets), rapid detection (especially in high-stress environments), affective response (ease of learning and high engagement qualities) and auditory gestalt formation (discerning relationships or trends in data streams) [@kramerSonificationReportStatus1999]
+Other benefits of auditory perception that speak for sonification: parallel listening (ability to monitor and process multiple auditory data sets), rapid detection (especially in high-stress environments), affective response (ease of learning and high engagement qualities) and auditory gestalt formation (discerning relationships or trends in data streams) [@kramerSonificationReportStatus1999].
+
+# Hardware and Software Implementation
+
+## Motion Capture
+
+Motion capture data were collected using a `r n_tracking_cams + n_video_cams` camera (`r n_tracking_cams` Qualisys Miqus M3 marker and `r n_video_cams` Qualisys Miqus Video)  system connected to a Qualisys Camera Sync Unit.
+Marker data were acquired at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager version `r qtm_version` software was used to collect and process the data with real-time 3D tracking data output.
+
+
+### Markers
+
+For the experimental set up, one passive marker was placed on each car, and two additional passive reference markers were placed on the front corners of the track (see Fig X). These additional markers provided reference points for 3D orientation of the track and the cars across trials in case of accidental track movement. QTM Automatic Identification of Marker (AIM) models were trained on variable speed sled movements along the track and were given labels for client-side identification.
+
+### Event Labels
+
+Event labels were sent to QTM to mark the start and end of each condition and each trial within that condition.
+
+## Sonification
+
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The two audio output channels were connected to a pair of Genelec G Two active speakers. The main program used the Bela platform framework from 10 August 2022[^belaplatform]. The experiment flow control was automated using the defined time periods for trials and breaks between them, and paused between conditions until a button on the device was pressed to allow sufficient time for subjects to rest and answer the IOS survey. Figure [xxx] describes the flow of data from motion capture to sonification.
+
+[^code]: Source, data and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
+[^belaplatform]: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
+
+### Real-time 3D Data
+
+A version of the Qualisys C++ SDK using protocol version 1.23 was modified to be compatible with the Bela platform and was used for communicating with QTM. To reduce latency, connection to the QTM server was made over UDP, and round-trip communication latency was verified by performing 1000 requests to the server and logging the elapsed time between resulting in a mean latency of x.xxxms (sd/min/max).
+Using the SDK, 3D streaming was initiated at the start of each sonification condition, and labelled markers were used to obtain the current position of each sled. The coordinates of the sleds were stored in a buffer containing the current and last recorded coordinates.
 
 
 # Methods
 
 ## Pilot Experiment
 
-A pilot experiment was conducted that required subjects to…
-
-Describe exp setup and subject demographics etc. See Figure \@ref(fig:track-setup)
-
-```{r track-setup, echo=FALSE, fig.align='center', fig.cap='Experimental track setup', out.width="100%"}
-knitr::include_graphics("figures/track_dimensions.png")
-```
-
-## Hardware and Software
-
-### Motion Capture
-
-Motion capture data were collected using a `r n_tracking_cams + n_video_cams` (`r n_tracking_cams` Qualisys Miqus M3 marker and `r n_video_cams` Qualisys Miqus Video) camera system connected to a Qualisys Camera Sync Unit.
-Marker data were acquired at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager version `r qtm_version` software was used to collect and process the data with real-time 3D tracking data output.
+A pilot experiment was conducted to assess the viability of the sonification framework in a laboratory setting. This experiment required blindfolded subjects to move their assigned sleds along parallel tracks and use sounds they hear to remain as spatially synchronized as possible.
 
 
-#### Markers
+## Participants
 
-For the experimental set up, one passive marker was placed on each car, and additional passive markers were placed at the start and end of each track, as well as one passive marker on each corner of the surface the tracke was mounted on (see Fig X).
-These additional markers provided reference points for 3D orientation of the track and the cars across trials in case of accidental table movement.
+An availability sample of ten subjects were recruited to participate in pairs, subjects were all aged between 20 and 30 years and were a mix of genders and handedness. Most subjects also reported no formal musicianship training. (prioritized comfort, allowed choice of arm despite handedness) [why this many, why not more, etc, ethics] Subjects were given and signed an informed consent form and information sheet and were under the umbrella project…
 
-### Sonification
-
-#### Hardware
-
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop 
-was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The stereo audio output was split into
-two channels which were connected to a pair of Genelec G Two active speakers.
-
-[^code]: Source, data and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
-
-#### Software
-
-The main program used the Bela platform franework from 10 August 2022[^belaplatform].
-
-[^belaplatform]: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
 ## Experimental Design
 
-# Analysis
+Participants were asked to sit on opposite sides of the track structure and familiarize themselves with the movement of the sleds along the tracks. They were instructed to try to continuously move the sleds back and forth along the track as rapidly as possible while remaining spatially synchronized with their partner’s position on their respective track, using sounds they may hear during the various conditions to assist them. After the conclusion of subject briefing and they had indicated they were ready, they were blindfolded for the duration of all trials within a condition, with a pause between conditions where they could rest and remove the blindfold.
+
+### Track and Sleds
+
+Two parallel tracks were designed with a sigmoid curve shape, surfaced with a smooth veneer that allowed for free movement along the length of the track. Two identical sleds made from LEGO parts were constructed and three felt adhesive pads were attached to the underside of each to reduce resistance during movement. See Figure \@ref(fig:track-setup)
+
+```{r track-setup, echo=FALSE, fig.align='center', fig.cap='Experimental track setup showing track shape and dimensions', out.width="100%"}
+knitr::include_graphics("figures/track_dimensions.png")
+```
+
+### Frequency Range Selection
+
+Two distinct, continuous frequency ranges were selected for application in sonification conditions. These ranges are offset by a perfect fifth and span eight semitones, the overtone range was chosen based on a center frequency of 440Hz (A4) and the range was limited to avoid a large overlap with the undertone range during normal operation (Table X). Consideration was also given to creating ranges that were not sufficiently high to cause discomfort, nor sufficiently low that distinguishing slight differences becomes more difficult.
+
+```{r frequency-ranges}
+
+## change this to a more sane way of doing this
+freq_ranges <- tibble(Tone = c("Overtone", "Undertone"),
+                      Lower_Freq = c(349.230, 232.819),
+                        Lower_Note = c("F4", "A#3"),
+                        Center_Freq = c(440.000, 293.333),
+                        Center_Note = c("A4", "D4"),
+                        Upper_Freq = c(554.365, 369.577),
+                        Upper_Note = c("C#5", "F#4"))
+
+
+# make first column row names
+freq_ranges <- freq_ranges %>% 
+  column_to_rownames(var = "Tone")
+
+# print a pretty table
+kbl(freq_ranges,
+    caption = "Frequency ranges for the two tones used in the sonification conditions. Note names are in International Pitch Notation, and are the closest approximation. Overtone frequencies were calculated to have a center frequency of 440Hz, and undertone frequencies are two-thirds of their overtone counterparts.",
+    booktabs = TRUE,
+    row.names = TRUE,
+    digits = 3,
+    align = c("l", "r", "c", "r", "c", "r", "c"),
+    col.names = c("Freq", "Note", "Freq", "Note", "Freq", "Note")) %>%
+    add_header_above(c("","Lower Bound"=2,"Center"=2, "Upper Bound"=2))
+
+
+```
+
+Table X: Note names are in International Pitch Notation, and are the closest approximation. Overtone frequencies were calculated to have a center frequency of 440Hz, and undertone frequencies are two-thirds of their overtone counterparts.
+
+### Sonification Strategies
+
+The experiment consisted of three conditions that vary the sonification strategy employed, namely: a no sonification control condition, a task-oriented sonification strategy and a synchronization-oriented sonification strategy. Each condition consisted of one practice trial of 30 seconds duration, and three main trials of 90 seconds each. Before each practice trial, subjects were reminded that it was a shorter trial and that they may use it to experiment with the sonification.
+
+#### No sonification. 
+In the no sonification condition, only the motion capture data were recorded, and subjects could use the audible sounds of the sleds moving along the track to align themselves with their partner.
+
+#### Task-oriented sonification strategy. 
+Task oriented sonification represented the position of each sled along the length of the track as a synthesized tone that varied in frequency from highest to lowest at the start and end of the track respectively. One sled produced a higher frequency overtone, while the other produced a lower frequency undertone. If subjects were at the exact same y-coordinate, the two tones would be a perfect fifth apart, creating a harmonious chord, as the sleds drift further apart, the frequency difference would deviate from the perfect fifth and create a more discordant sound. This strategy was selected for sonifying the movement along the track, i.e. the task required of subjects.
+
+[Figure here illustrating task sonification]
+
+#### Synchronization-oriented sonification strategy. 
+The sonification strategy oriented around synchronization represented the position of the sleds relative to each other,…
+
+## Procedure
+
+This is where the experiment flow will be described.
+
+# Data Analysis
+
+[General timing stuff, project specific stuff.]
+
+## Data Preprocessing
+
+### QTM
+
+Each session recorded had the AIM model applied to the duration of the recording, and labelled markers were manually verified and adjusted as required to ensure that for each completed trial, there was 100% coverage of the marker data. Processing of every frame and 2D data preprocessing were disabled for real-time output to ensure minimal latency.
+
+# Results
+
+[Describe]
+
+# Discussion
+
+[Explain]
+
+How might our task be affected by musical training? “Successful music performance requires that musicians monitor the auditory consequences of their actions. Years of training on an instrument lead to strong associations between a given movement or set of movements and a given auditory outcome.” (Loehr et al., 2013)
+
+Mention the marker placement as being problematic. Also the number of reference markers…also that we wanted to use headphones…
+
+•	How does our task compare to e.g. Loehr et al. piano duet task?
+•	What can and can’t our task reveal?
+o	Can’t say that only one of the participants makes a mistake, since the goal is to in sync with each other, without a general “tempo” to follow
+•	Individual representations vs joint outcome representations?
+o	Often can’t mirror the other person exactly
+
+
 
 ```{r hilbert_transform, include=FALSE, echo=FALSE}
 # this is slow, so check for a cached version
@@ -267,12 +367,17 @@ trajectories_with_hilbert <-
     paste0(cache_dir, "/trajectories_with_hilbert.rds.bz2")
 # if the cached version exists, use it!
 if (file.exists(trajectories_with_hilbert)) {
-    trajectories_and_angles <- readRDS(trajectories_with_hilbert)
+    angular_trajectories <- readRDS(trajectories_with_hilbert)
     rm(trajectories_with_hilbert)
 } else {
     # load the data
     load(trajectories_file)
     # data is available in "trajectories"
+    angle_difference_vector <- function(angle1, angle2) {
+        diff <- (angle2 - angle1 + 180) %% 360 - 180
+        diff[diff < -180] <- diff[diff < -180] + 360
+        diff
+    }
 
     # for each experiment_id (subject pair)
     # calculate the hilbert transform of the y position
@@ -287,12 +392,12 @@ if (file.exists(trajectories_with_hilbert)) {
         # calculate the hilbert transform of the y position
         y_hilbert <- hilbert(.x$z_ypos)
         # calculate the instantaneous phase angle
-        instantaneous_phase_angle <- pracma::angle(y_hilbert)
+        instantaneous_phase_angle <- rad2deg(pracma::angle(y_hilbert))
         # make instantaneous phase angle a circular object
-        instantaneous_phase_angle <- circular(
-            instantaneous_phase_angle,
-            units = "radians",
-            modulo = "pi")
+        # instantaneous_phase_angle <- circular(
+        #     instantaneous_phase_angle,
+        #     units = "radians",
+        #     modulo = "pi")
         # add the hilbert transform and instantaneous phase angle to the data
         .x$y_std_hilbert <- y_hilbert
         .x$instantaneous_phase_angle <- instantaneous_phase_angle
@@ -302,86 +407,58 @@ if (file.exists(trajectories_with_hilbert)) {
 
     # now we can calculate the mean instantaneous phase angle
     # for each time point for each subject pair
-    trajectories$mean_instantaneous_phase_angle <- NA_real_
-
-    # split the data into groups
+    trajectories$instantaneous_phase_angle_diff <- NA_real_
     trajectories <- trajectories %>%
-        group_by(experiment_id, condition, trial, mt_seq)
-    timewise_pairs <- group_split(trajectories)
-    trajectories <- trajectories %>% ungroup()
+      group_by(experiment_id, condition, trial) %>%
+      group_modify(~ {
+        # calculate the instantaneous phase angle distance between the two subjects
+        subj_ids <- unique(.x$subj)
+        angle_diff <- angle_difference_vector(
+                .x$instantaneous_phase_angle[.x$subj == subj_ids[1]],
+                .x$instantaneous_phase_angle[.x$subj == subj_ids[2]])
+        .x$instantaneous_phase_angle_diff[.x$subj == subj_ids[1]] <- angle_diff
+        .x$instantaneous_phase_angle_diff[.x$subj == subj_ids[2]] <- angle_diff
+        .x
+      }) %>%
+      ungroup()
 
-    # calculate the mean instantaneous phase angle for each time point
-    num_groups <- nrow(
-        trajectories %>%
-        distinct(experiment_id, condition, trial, mt_seq))
-    n_processed <- 0
-    message("Calculating mean instantaneous phase angle...")
-    flush.console()
-
-    index_pairs_with_mean <- lapply(timewise_pairs, function(index_pair) {
-        n_processed <<- n_processed + 1
-        if (counter %% 1000 == 0) {
-            message(paste0("  ", counter, " of ", num_groups))
-            flush.console()
-        }
-        # get the mean instantaneous phase angle for each time point
-        # for each subject pair
-        mean_instantaneous_phase_angle <-
-            mean(index_pair$instantaneous_phase_angle)
-
-        # add the mean instantaneous phase angle to the data
-        index_pair$mean_instantaneous_phase_angle <-
-            mean_instantaneous_phase_angle
-        index_pair
-    })
-
-    # join togethr using unlist
-    trajectories_and_angles <- list2DF(
-        lapply(
-            setNames(
-                seq_along(
-                    index_pairs_with_mean[[1]]),
-                names(index_pairs_with_mean[[1]])),
-            \(i)
-            unlist(lapply(index_pairs_with_mean, `[[`, i), FALSE, FALSE)))
-
-    # save the trajectories with hilbert transform
-    saveRDS(trajectories_and_angles, trajectories_with_hilbert)
-    rm(trajectories_with_hilbert, trajectories, counter, index_pairs_with_mean,
-       timewise_pairs, num_groups)
+    saveRDS(trajectories, trajectories_with_hilbert)
+    angular_trajectories <- trajectories
+    rm(trajectories_with_hilbert, trajectories)
 }
 ```
 
 ```{r mean-pairwise-phase-angles, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
 # drop subject, we are doing pairwise analysis now
-trajectories_angles_pairwise <- trajectories_and_angles %>%
+trajectories_angles_pairwise <- angular_trajectories %>%
     dplyr::select(-subj) %>%
     dplyr::distinct()
 
 # allow for circular to convert radians to degrees
-trajectories_angles_pairwise$mean_instantaneous_phase_angle <-
+trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
     circular::circular(
-        trajectories_angles_pairwise$mean_instantaneous_phase_angle,
+        trajectories_angles_pairwise$instantaneous_phase_angle_diff,
         type = "angles",
-        units = "radians",
-        modulo = "pi")
+        units = "degrees",
+        modulo = "2pi")
 
 # plot the mean pairwise phase angles by experiment, condition, trial and mt_seq
 plt <- trajectories_angles_pairwise %>%
     dplyr::filter(timestamps >= 50.0 & timestamps <= 70.0) %>%
     ggplot(aes(
         x = timestamps,
-        y = circular::deg(mean_instantaneous_phase_angle),
+        y = instantaneous_phase_angle_diff_c,
         color = trial)) +
     geom_line() +
     facet_grid(experiment_id ~ condition) +
     scale_color_prism("floral") +
     guides(y = "prism_offset_minor") +
-    theme_prism(base_size = 18) +
+    theme_prism(base_size = 16) +
+    theme(legend.position = "bottom") +
     ggtitle(
-        "Mean Instantaneous Phase Angles by Condition and Trial") +
+        "Instantaneous Phase Angle Distance") +
     xlab("Time (s)") +
-    ylab("Mean pairwise phase angle (degrees)")
+    ylab("Distance (degrees)")
 
 ggsave("figures/mean_pairwise_phase_angles.png", plt, width = 12, height = 8)
 
@@ -390,47 +467,21 @@ plt
 
 ```{r instantaneous-phase-angle-circular-plot, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
 
-trajectories_angles_pairwise %>%
-    group_by(experiment_id, condition, trial) %>%
-    group_map(~ {
-        plot(.x$mean_instantaneous_phase_angle)
-    })
+# trajectories_angles_pairwise %>%
+#     group_by(experiment_id, condition, trial) %>%
+#     group_map(~ {
+#         plot(.x$instantaneous_phase_angle_diff)
+#     })
 test_pair <- trajectories_angles_pairwise %>%
     dplyr::filter(
         experiment_id == "Subject Pair 1" &
         condition == "Sync" &
         trial == "Trial 1")
 
-plot.circular(circular::deg(test_pair$mean_instantaneous_phase_angle), stack = TRUE, bins = 150, shrink = 1.5)
+plot.circular(test_pair$instantaneous_phase_angle_diff_c, bins = 60, shrink = 2, stack = TRUE)
 
-
-
-
-
-
-test_test <- trajectories_and_angles %>% dplyr::filter(experiment_id == "Subject Pair 1" & condition == "Sync" & trial == "Trial 1")
-
-test_test$instantaneous_phase_angle_360 <- circular::circular(
-    test_test$instantaneous_phase_angle,
-    type = "angles",
-    units = "radians",
-    modulo = "pi")
-
-test_test$instantaneous_phase_angle_180 <- circular::circular(
-    test_test$instantaneous_phase_angle,
-    type = "angles",
-    units = "radians",
-    modulo = "pi")
-head(test_test)
-cor.circular(
-    test_test[subj == FO22J, ]$instantaneous_phase_angle_360,
-    test_test$instantaneous_phase_angle_180,
-    method = "spearman")
-# 
 
 ```
-
-Test cross-ref, see figure \@ref(fig:mt-trajectories)
 
 
 
