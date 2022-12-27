@@ -91,11 +91,11 @@ dat_long %>%
   group_by(subj, subj_pos, condition, trial) %>%
   summarise(
     x_mean = mean(CAR_x),
-    x_sd = sd(CAR_x),
+    x_sd = stats::sd(CAR_x),
     x_min = min(CAR_x),
     x_max = max(CAR_x),
     y_mean = mean(CAR_y),
-    y_sd = sd(CAR_y),
+    y_sd = stats::sd(CAR_y),
     y_min = min(CAR_y),
     y_max = max(CAR_y)
   )
@@ -105,27 +105,27 @@ dat_long %>%
 dat_long %>% ungroup() %>%
   summarise(
     x_w_mean = mean(REF_W_x),
-    x_w_sd = sd(REF_W_x),
+    x_w_sd = stats::sd(REF_W_x),
     x_w_min = min(REF_W_x),
     x_w_max = max(REF_W_x),
     y_w_mean = mean(REF_W_y),
-    y_w_sd = sd(REF_W_y),
+    y_w_sd = stats::sd(REF_W_y),
     y_w_min = min(REF_W_y),
     y_w_max = max(REF_W_y),
     z_w_mean = mean(REF_W_z),
-    z_w_sd = sd(REF_W_z),
+    z_w_sd = stats::sd(REF_W_z),
     z_w_min = min(REF_W_z),
     z_w_max = max(REF_W_z),
     x_d_mean = mean(REF_D_x),
-    x_d_sd = sd(REF_D_x),
+    x_d_sd = stats::sd(REF_D_x),
     x_d_min = min(REF_D_x),
     x_d_max = max(REF_D_x),
     y_d_mean = mean(REF_D_y),
-    y_d_sd = sd(REF_D_y),
+    y_d_sd = stats::sd(REF_D_y),
     y_d_min = min(REF_D_y),
     y_d_max = max(REF_D_y),
     z_d_mean = mean(REF_D_z),
-    z_d_sd = sd(REF_D_z),
+    z_d_sd = stats::sd(REF_D_z),
     z_d_min = min(REF_D_z),
     z_d_max = max(REF_D_z)
   )

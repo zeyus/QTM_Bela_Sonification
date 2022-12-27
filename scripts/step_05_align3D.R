@@ -50,8 +50,37 @@ dat <- dat %>%
     experiment_id
   )
 # we can also remove all trial "1" data since that is the practice trial
+# dat <- dat %>%
+#   dplyr::filter(trial != "1")
+
+# let's get the unique trial count
+trial_counts <- dat %>% 
+  group_by(mt_id) %>%
+  summarise(
+    trial_count = n_distinct(trial)
+  ) %>%
+  ungroup()
+# instead let's remove trials under 30 seconds (practice trial is 30 seconds)
+# first we need to find the max trial_elapsed_time for each trial
 dat <- dat %>%
-  filter(trial != "1")
+  group_by(mt_id) %>%
+  mutate(
+    max_trial_elapsed_time = max(trial_elapsed_time)
+  ) %>%
+  ungroup() %>%
+  dplyr::filter(max_trial_elapsed_time > 30) %>%
+  select(-max_trial_elapsed_time)
+
+trial_counts <- dat %>% 
+  group_by(mt_id) %>%
+  summarise(
+    trial_count = n_distinct(trial)
+  ) %>%
+  ungroup()
+
+
+
+
 
 # timestamps seem to be required to be an integer, right now they are doubles
 # number of seconds with 5 decimal places
@@ -63,6 +92,57 @@ levels(dat$experiment_id) <- paste("Subject Pair", levels(dat$experiment_id))
 levels(dat$trial) <- paste("Trial", as.integer(levels(dat$trial)) - 1)
 
 levels(dat$condition) <- c("Sync", "Task", "No Sonification")
+
+# based on the data (you can see if you comment out the filters below)
+# we need to completely exclude
+# - Subject Pair 2, No Sonification, Trial 2
+# - Subject Pair 3, Sync, Trial 0
+# - Subject Pair 4, Task, Trial 1
+# And we need to only include partial data for the following:
+# - Subject Pair 1, Sync, Trial 3, only include up to 45 seconds
+# - Subject Pair 2, Sync, Trial 3, only include up to 60 seconds
+# - Subject Pair 5, Sync, Trial 2, only include up to 55 seconds
+# - Subject Pair 5, Sync, Trial 4, only include up to 80 seconds
+# - Subject Pair 2, Task, Trial 2, only include up to 20 seconds
+# - Subject Pair 4, Task, Trial 2, only include up to 65 seconds
+
+# let's remove the above
+
+dat <- dat %>%
+  dplyr::filter(
+    !(experiment_id == "Subject Pair 2" & condition == "No Sonification" & trial == "Trial 2") &
+      !(experiment_id == "Subject Pair 3" & condition == "Sync" & trial == "Trial 0") &
+      !(experiment_id == "Subject Pair 4" & condition == "Task" & trial == "Trial 1")
+  )
+
+# now let's remove the partial data
+dat <- dat %>%
+  dplyr::filter(
+    !(experiment_id == "Subject Pair 1" & condition == "Sync" & trial == "Trial 3" & trial_elapsed_time > 45) &
+      !(experiment_id == "Subject Pair 2" & condition == "Sync" & trial == "Trial 3" & trial_elapsed_time > 60) &
+      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 2" & trial_elapsed_time > 55) &
+      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 4" & trial_elapsed_time > 80) &
+      !(experiment_id == "Subject Pair 2" & condition == "Task" & trial == "Trial 2" & trial_elapsed_time > 20) &
+      !(experiment_id == "Subject Pair 4" & condition == "Task" & trial == "Trial 2" & trial_elapsed_time > 65)
+  )
+
+# Now we just need to reindex the trials so
+# - Subject Pair 2, No Sonification, Trial 3 becomes Trial 2
+# - Subject Pair 5, Sync, Trial 4 becomes Trial 3
+# - Subject Pair 4, Task, Trial 2 becomes Trial 1
+# - Subject Pair 4, Task, Trial 3 becomes Trial 2
+# - Subject Pair 4, Task, Trial 4 becomes Trial 3
+# we need to account for the trial being a factor
+# and case_when is fussy so let's use base r
+# to update the variables
+dat$trial[dat$experiment_id == "Subject Pair 2" & dat$condition == "No Sonification" & dat$trial == "Trial 3"] <- "Trial 2"
+dat$trial[dat$experiment_id == "Subject Pair 5" & dat$condition == "Sync" & dat$trial == "Trial 4"] <- "Trial 3"
+dat$trial[dat$experiment_id == "Subject Pair 4" & dat$condition == "Task" & dat$trial == "Trial 2"] <- "Trial 1"
+dat$trial[dat$experiment_id == "Subject Pair 4" & dat$condition == "Task" & dat$trial == "Trial 3"] <- "Trial 2"
+dat$trial[dat$experiment_id == "Subject Pair 4" & dat$condition == "Task" & dat$trial == "Trial 4"] <- "Trial 3"
+
+
+#### OK THE DATA IS ALL READY TO GO
 
 dat_mt <- mt_import_long(dat,
   xpos_label = "CAR_x",
@@ -198,6 +278,9 @@ ggsave(
   units = "in",
   dpi = 300
 )
+
+
+
 
 
 # now let's save the standardized trajectories

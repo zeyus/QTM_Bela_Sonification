@@ -124,6 +124,9 @@ use_package("gsignal")
 use_package("circular")
 use_package("conflicted")
 use_package("pracma")
+use_package("gridExtra")
+use_package("ggrepel")
+use_package("colorspace")
 
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
@@ -305,7 +308,8 @@ kbl(freq_ranges,
     digits = 3,
     align = c("l", "r", "c", "r", "c", "r", "c"),
     col.names = c("Freq", "Note", "Freq", "Note", "Freq", "Note")) %>%
-    add_header_above(c("","Lower Bound"=2,"Center"=2, "Upper Bound"=2))
+    add_header_above(c("","Lower Bound"=2,"Center"=2, "Upper Bound"=2)) %>%
+    kable_styling(font_size=7)
 
 
 ```
@@ -428,7 +432,7 @@ if (file.exists(trajectories_with_hilbert)) {
 }
 ```
 
-```{r mean-pairwise-phase-angles, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+```{r pairwise-phase-angles, echo=FALSE, fig.cap="Plot of pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
 # drop subject, we are doing pairwise analysis now
 trajectories_angles_pairwise <- angular_trajectories %>%
     dplyr::select(-subj) %>%
@@ -440,7 +444,7 @@ trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
         trajectories_angles_pairwise$instantaneous_phase_angle_diff,
         type = "angles",
         units = "degrees",
-        modulo = "2pi")
+        modulo = "pi")
 
 # plot the mean pairwise phase angles by experiment, condition, trial and mt_seq
 plt <- trajectories_angles_pairwise %>%
@@ -467,18 +471,122 @@ plt
 
 ```{r instantaneous-phase-angle-circular-plot, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
 
-# trajectories_angles_pairwise %>%
-#     group_by(experiment_id, condition, trial) %>%
-#     group_map(~ {
-#         plot(.x$instantaneous_phase_angle_diff)
-#     })
-test_pair <- trajectories_angles_pairwise %>%
-    dplyr::filter(
-        experiment_id == "Subject Pair 1" &
-        condition == "Sync" &
-        trial == "Trial 1")
+# calculate mean and sd of the instantaneous phase angle difference
+# this time only for subject pair and condition
+trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
+    dplyr::group_by(experiment_id, condition) %>%
+    dplyr::summarise(
+        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
+        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)), .groups = "drop")
 
-plot.circular(test_pair$instantaneous_phase_angle_diff_c, bins = 60, shrink = 2, stack = TRUE)
+# from https://stackoverflow.com/a/38420690
+grid_arrange_shared_legend <- function(plots, nrow = 1, ncol = length(plots), position = c("bottom", "right")) {
+  position <- match.arg(position)
+  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+  # exclude label legend
+  # legend <- legend[c(1, 3:length(legend))]
+  lheight <- sum(legend$height)
+  lwidth <- sum(legend$width)
+  gl <- lapply(plots, function(x) x + theme(legend.position = "none"))
+  gl <- c(gl, nrow = nrow, ncol = ncol)
+
+  combined <- switch(position,
+                     "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
+                                            legend,
+                                            ncol = 1,
+                                            heights = unit.c(unit(1, "npc") - lheight, lheight)),
+                     "right" = arrangeGrob(do.call(arrangeGrob, gl),
+                                           legend,
+                                           ncol = 2,
+                                           widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
+  grid.newpage()
+  grid.draw(combined)
+
+}
+
+# adapted from https://stackoverflow.com/a/24921725
+gg.gauge <- function(pos,breaks=c(0,180)) {
+  limit <- 100/max(breaks)
+  pos$angle_mean_pct <- pos$angle_mean*(limit)
+  pos$angle_sd_pct <- pos$angle_sd*(limit) / 100
+  rel_breaks <- breaks*(limit)
+
+  get.poly <- function(a,b,r1=0.0,r2=1.0,condition=NA) {
+    th.start <- pi*(1-a/100)
+    th.end   <- pi*(1-b/100)
+    end.x <- r2*cos(th.end)
+    end.y <- r2*sin(th.end)
+    th     <- seq(th.start,th.end,length.out=1000)
+    x        <- c(r1*cos(th),rev(r2*cos(th)))
+    y        <- c(r1*sin(th),rev(r2*sin(th)))
+    condition <- condition
+    return(data.frame(x,y,condition,end.x,end.y))
+  }
+
+  plt = ggplot() + geom_polygon(data=get.poly(rel_breaks[1],rel_breaks[2]),aes(x,y),color="#00000033", fill="#00000033")
+
+  # add a geom_polygon for each pos
+  d_labels = data.frame()
+  for (i in 1:nrow(pos)) {
+    d = get.poly(
+        pos$angle_mean_pct[i]-0.1,
+        pos$angle_mean_pct[i]+0.1,0,1-pos$angle_sd_pct[i],
+        condition=pos$condition[i])
+    d_label = data.frame(
+        x=d$end.x[1],
+        y=d$end.y[1],
+        text=round(pos$angle_mean[i],2),
+        condition=pos$condition[i])
+    d_labels = rbind(d_labels,d_label)
+    plt = plt + 
+      geom_polygon(
+        data=d,
+        aes(x,y, color=stage(condition, after_scale = alpha(color, 0.5)),
+          fill=stage(condition, after_scale = alpha(fill, 0.5))))
+  }
+  plt = plt +
+    geom_label_repel(
+        data=d_labels,
+        aes(
+          x,
+          y,
+          label=text,
+          fill=stage(condition,
+            after_scale = darken(fill, 0.5)),
+          segment.color=after_scale(darken(fill, 0.5))),
+        color="white",
+        box.padding = 0.5,
+        min.segment.length = 0,
+        show.legend = FALSE) +
+    coord_fixed()+
+    theme_bw()+
+    labs(title = pos$experiment_id) +
+    theme(
+          axis.text=element_blank(),
+          axis.title=element_blank(),
+          axis.ticks=element_blank(),
+          panel.grid=element_blank(),
+          panel.border=element_blank())
+  return(plt)
+}
+
+# plot the means on a gauge plot faceted by subject pair
+# the plot should be a semicircle
+# the range is from 0 to 180 degrees, and a line from the center
+# should represent the mean angle, and the length of the line
+# represents the standard deviation (100% is 0, 0% is 180 degrees)
+
+
+plots <- list()
+
+for (subj_pair in unique(trajectories_angles_pairwise_mean$experiment_id)) {
+    plots[[subj_pair]] <- gg.gauge(trajectories_angles_pairwise_mean[trajectories_angles_pairwise_mean$experiment_id == subj_pair,])
+}
+grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
+
+ggsave("figures/mean_pairwise_phase_angles_mean_sd.png", plt, width = 12, height = 8)
+
 
 
 ```

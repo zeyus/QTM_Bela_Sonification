@@ -65,7 +65,7 @@ print(event_counts)
 # "te" is not a label, so let's visualize the event positions (in terms of time)
 
 # dat %>%
-#     filter(!is.na(event_label)) %>%
+#     dplyr::filter(!is.na(event_label)) %>%
 #     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
 #     geom_point() +
 #     facet_wrap(~filename, ncol = 2)
@@ -74,7 +74,7 @@ print(event_counts)
 # and it corresponds interestingly to the trial start...let's confirm the timestamps
 
 dat %>%
-    filter(event_label == "te" | event_label == "s") %>%
+    dplyr::filter(event_label == "te" | event_label == "s") %>%
     select(event_label, elapsed_time) %>%
     head(n = 10)
 
@@ -82,7 +82,7 @@ dat %>%
 # exactly that all "te" events have the same elapsed_time as an "s" event
 
 te_elapsed_times <- dat %>%
-    filter(event_label == "te") %>%
+    dplyr::filter(event_label == "te") %>%
     select(index, elapsed_time, event_label, filename)
 
 print(te_elapsed_times)
@@ -90,7 +90,7 @@ print(te_elapsed_times)
 #  now let's join the data to itself to get the "s" events that correspond to the "te" events
 
 matching_s_events <- dat %>%
-    filter(event_label == "s") %>%
+    dplyr::filter(event_label == "s") %>%
     inner_join(te_elapsed_times, by = c("elapsed_time", "filename"), suffix = c("", "_te")) %>%
     select(index_te, event_label, event_label_te, elapsed_time, filename)
 
@@ -101,14 +101,14 @@ print(matching_s_events)
 # so let's find the "s" events that are within 10ms of the "te" events
 
 te_elapsed_times <- dat %>%
-    filter(event_label == "te") %>%
+    dplyr::filter(event_label == "te") %>%
     select(index, elapsed_time, event_label, filename)
 
 matching_s_events <- dat %>%
-    filter(event_label == "s") %>%
+    dplyr::filter(event_label == "s") %>%
     inner_join(te_elapsed_times, by = c("filename"), suffix = c("", "_te")) %>%
     mutate(elapsed_time_diff = abs(elapsed_time - elapsed_time_te)) %>%
-    filter(abs(elapsed_time - elapsed_time_te) < 0.01) %>%
+    dplyr::filter(abs(elapsed_time - elapsed_time_te) < 0.01) %>%
     select(index, index_te, event_label, event_label_te, elapsed_time, filename, elapsed_time_diff)
 
 matching_s_events
@@ -120,7 +120,7 @@ dat <- dat %>% mutate(event_label = ifelse(event_label == "te", NA, event_label)
 
 # check we only have 0 "te" events left
 dat %>%
-    filter(event_label == "te") %>%
+    dplyr::filter(event_label == "te") %>%
     head(n = 10)
 
 # now lets make sure the event counts are the same as before
@@ -138,10 +138,10 @@ print(event_counts)
 # we can use matching_s_events_duplicates to get the index and filename of the "te" events
 # that have a matching "s" event
 # in "dat" these have an event_label of NA, so we can use anti_join to remove them
-dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2") 
+dat %>% dplyr::filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2") 
 
 matching_s_events_duplicates <- matching_s_events %>%
-    filter(index == index_te)
+    dplyr::filter(index == index_te)
 matching_s_events_duplicates <- matching_s_events_duplicates %>%
     select(index, filename)
 matching_s_events_duplicates$event_label <- NA
@@ -151,7 +151,7 @@ matching_s_events_duplicates
 dat <- dat %>%
     anti_join(matching_s_events_duplicates, by = c("index", "filename", "event_label"))
 
-dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2")
+dat %>% dplyr::filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2")
 
 
 # now the duplicated data is removed, it's time to address the invalidated trials
@@ -165,7 +165,7 @@ dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2")
 #     mutate(event_label = ifelse(event_label == "t", "t start", event_label)) %>%
 #     mutate(event_label = ifelse(event_label == "y", "y start", event_label)) %>%
 #     mutate(event_label = ifelse(event_label == "n", "n start", event_label)) %>%
-#     filter(!is.na(event_label)) %>%
+#     dplyr::filter(!is.na(event_label)) %>%
 #     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
 #     geom_point() +
 #     facet_wrap(~filename, ncol = 2)
@@ -174,7 +174,7 @@ dat %>% filter(index == 21527 & filename == "data/data_FSIU3_BB349.tsv.bz2")
 # for the same condition, let's see if we can find the problem
 
 dat %>%
-    filter(event_label %in% c("t", "y", "n")) %>%
+    dplyr::filter(event_label %in% c("t", "y", "n")) %>%
     group_by(filename, event_label) %>%
     summarise(count = n())
 
@@ -183,11 +183,11 @@ dat %>%
 
 # first lets find all of the "S" events
 S_events <- dat %>%
-    filter(event_label == "S")
+    dplyr::filter(event_label == "S")
 
 # now lets find all of the "n" events
 n_events <- dat %>%
-    filter(event_label == "n")
+    dplyr::filter(event_label == "n")
 
 n_events
 S_events
@@ -195,7 +195,7 @@ S_events
 
 n_events <- n_events %>%
     inner_join(S_events, by = c("filename"), suffix = c("", "_S")) %>%
-    filter(index > index_S) %>%
+    dplyr::filter(index > index_S) %>%
     select(index, filename, event_label) %>%
     group_by(filename) %>%
     slice(1) %>%
@@ -212,7 +212,7 @@ dat %>%
     mutate(event_label = ifelse(event_label == "t", "t start", event_label)) %>%
     mutate(event_label = ifelse(event_label == "y", "y start", event_label)) %>%
     mutate(event_label = ifelse(event_label == "n", "n start", event_label)) %>%
-    filter(!is.na(event_label)) %>%
+    dplyr::filter(!is.na(event_label)) %>%
     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
     geom_point() +
     facet_wrap(~filename, ncol = 2)
@@ -229,7 +229,7 @@ event_counts_cleaned
 #     mutate(event_label = ifelse(event_label == "t", "condition start", event_label)) %>%
 #     mutate(event_label = ifelse(event_label == "y", "condition start", event_label)) %>%
 #     mutate(event_label = ifelse(event_label == "n", "condition start", event_label)) %>%
-#     filter(!is.na(event_label)) %>%
+#     dplyr::filter(!is.na(event_label)) %>%
 #     ggplot(aes(x = elapsed_time_event, y = as.factor(event_label), color = event_label)) +
 #     geom_point() +
 #     facet_wrap(~filename, ncol = 2)
@@ -245,10 +245,10 @@ event_counts_cleaned
 
 # let's get all the events in order for each file
 event_timeline <- dat %>%
-    filter(!is.na(event_label)) %>%
+    dplyr::filter(!is.na(event_label)) %>%
     group_by(filename) %>%
     ungroup() %>%
-    select(event_label, elapsed_time_event, filename, index) %>%
+    select(event_label, elapsed_time_event, filename, index, subj_w) %>%
     arrange(filename, index)
 
 event_timeline
@@ -259,13 +259,16 @@ event_timeline
 # we can match by the order of event_label
 event_label_order <- paste(event_timeline$event_label, collapse = "")
 
-valid_trial_regex <- "[n,t,y](se){4}"
+# original
+# valid_trial_regex <- "[n,t,y](se){4}"
+# try to include partial trials
+valid_trial_regex <- "[n,t,y](se){1,4}"
 
-valid_trial_ranges = gregexpr(valid_trial_regex, event_label_order)
-
+valid_trial_ranges = gregexpr(valid_trial_regex, event_label_order, perl = TRUE)
 
 match_length <- attr(valid_trial_ranges[[1]], "match.length")
-match_length <- match_length[1] - 1 # they are all the same
+# match_length <- match_length[1] - 1 # they are all the same
+match_length <- match_length - 1 # they are all the same
 
 valid_start_indices <- as.integer(valid_trial_ranges[[1]])
 valid_end_indices <- valid_start_indices + match_length
@@ -300,7 +303,7 @@ valid_trials
 # finally, we need to give each trial within a condition a sequential number
 # so we can group them together
 
-valid_trials <- valid_trials %>% group_by(filename, condition, event_label) %>% mutate(trial_number = 1:n()) %>% ungroup()
+valid_trials <- valid_trials %>% group_by(subj_w, condition, event_label) %>% mutate(trial_number = 1:n()) %>% ungroup()
 
 
 valid_trials
@@ -309,7 +312,7 @@ valid_trials
 # into the original data frame
 
 trial_ranges <- valid_trials %>%
-    filter(event_label == "s" | event_label == "e") %>%
+    dplyr::filter(event_label == "s" | event_label == "e") %>%
     group_by(filename, condition, trial_number) %>%
     summarise(start_index = min(index), end_index = max(index))
 
@@ -338,7 +341,7 @@ for (i in 1:nrow(trial_ranges)) {
 
     # get starting elapsed time
     elapsed_start <- dat %>%
-        filter(filename == filename & index == start_index) %>%
+        dplyr::filter(filename == filename & index == start_index) %>%
         select(elapsed_time) %>%
         pull()
 
@@ -368,7 +371,7 @@ for (i in 1:nrow(trial_ranges)) {
 nrow(dat)
 # now delete all rows that don't have a condition
 dat <- dat %>%
-    filter(!is.na(condition))
+    dplyr::filter(!is.na(condition))
 nrow(dat)
 # now we can plot the y coordinates for each trial by subject
 # facet on condition and color by subject
@@ -387,14 +390,14 @@ dat <- dat %>%
 nrow(dat)
 
 # dat %>%
-#     filter(subj_w == "h" & condition == "y") %>%
+#     dplyr::filter(subj_w == "h" & condition == "y") %>%
 #     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
 #     geom_line(color = "blue") +
 #     geom_line(aes(y = CAR_D_y), color = "red") +
 #     facet_wrap(~trial, ncol = 2)
 
 # dat %>%
-#     filter(subj_w == "h" & condition == "t") %>%
+#     dplyr::filter(subj_w == "h" & condition == "t") %>%
 #     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
 #     geom_line(color = "blue") +
 #     geom_line(aes(y = CAR_D_y), color = "red") +
@@ -402,7 +405,7 @@ nrow(dat)
 
 
 # dat %>%
-#     filter(subj_w == "h" & condition == "n") %>%
+#     dplyr::filter(subj_w == "h" & condition == "n") %>%
 #     ggplot(aes(x = trial_elapsed_time, y = CAR_W_y)) +
 #     geom_line(color = "blue") +
 #     geom_line(aes(y = CAR_D_y), color = "red") +
