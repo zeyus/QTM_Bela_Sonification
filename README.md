@@ -4,19 +4,19 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 # Contents
 
 <!--ts-->
-* [QTM Low-latency Sonification](#qtm-low-latency-sonification)
-* [Contents](#contents)
-* [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
-* [Project Structure](#project-structure)
-* [Usage](#usage)
-   * [Sonification](#sonification)
-   * [Data](#data)
-      * [Subject Information](#subject-information)
-      * [QTM Data Format](#qtm-data-format)
-   * [Data Preparation](#data-preparation)
-* [Open Source Libraries](#open-source-libraries)
-   * [Included](#included)
-   * [Used](#used)
+- [QTM Low-latency Sonification](#qtm-low-latency-sonification)
+- [Contents](#contents)
+- [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+  - [Sonification](#sonification)
+  - [Data](#data)
+    - [Subject Information](#subject-information)
+    - [QTM Data Format](#qtm-data-format)
+  - [Data Preparation](#data-preparation)
+- [Open Source Libraries](#open-source-libraries)
+  - [Included](#included)
+  - [Used](#used)
 <!--te-->
 
 # Cognitive Science Bachelor's Project (WORK IN PROGRESS)
@@ -57,19 +57,21 @@ The project is structured as follows:
 ## Sonification
 
 1. Connect the Bela to the computer where Qualisys Track Manager (or with network access) will run via USB.
-1. Clone / download the repository to your PC
+2. Clone / download the repository to your PC **important note:** if you would like to access the data in the `data` directory, you will need to install [Git LFS](https://git-lfs.github.com/) and run `git lfs pull` after cloning.
     ```sh
     git clone https://github.com/zeyus/QTM_Bela_Sonification.git
+    # optionally, with git lfs
+    git lfs pull
     ```
-1. Start Qualisys Track Manager, open a project with at least 2 labelled markers
-1. Edit `src/render.cpp` to change the marker names to match the ones in your project and the IP address of the computer running QTM
-1. TBD: sonification scheme
-1. Copy the src directory to the Bela project directory
+3. Start Qualisys Track Manager, open a project with at least 2 labelled markers
+4. Edit `src/render.cpp` to change the marker names to match the ones in your project and the IP address of the computer running QTM
+5. TBD: sonification scheme
+6. Copy the src directory to the Bela project directory
     ```sh
     scp -r QTM_Bela_Sonification/src root@192.168.2.6:/root/Bela/projects/QTM_Bela_Sonification
     ```
-1. Start the QTM recording / playback with real-time output enabled
-1. Connect to the Bela board via SSH and run the project
+7. Start the QTM recording / playback with real-time output enabled
+8. Connect to the Bela board via SSH and run the project
     ```sh
     ssh root@192.168.2.6
     /root/Bela/scripts/run_project.sh QTM_Bela_Sonification -c "--use-analog no --use-digital no --period 32 --high-performance-mode --stop-button-pin=-1 --disable-led"
