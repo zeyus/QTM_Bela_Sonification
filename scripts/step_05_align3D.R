@@ -3,6 +3,7 @@
 library(tidyverse)
 library(mousetrap)
 library(ggprism)
+library(conflicted)
 # library(cowplot)
 
 
@@ -120,8 +121,8 @@ dat <- dat %>%
   dplyr::filter(
     !(experiment_id == "Subject Pair 1" & condition == "Sync" & trial == "Trial 3" & trial_elapsed_time > 45) &
       !(experiment_id == "Subject Pair 2" & condition == "Sync" & trial == "Trial 3" & trial_elapsed_time > 60) &
-      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 2" & trial_elapsed_time > 55) &
-      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 4" & trial_elapsed_time > 80) &
+      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 2" & trial_elapsed_time > 52) &
+      !(experiment_id == "Subject Pair 5" & condition == "Sync" & trial == "Trial 4" & trial_elapsed_time > 78) &
       !(experiment_id == "Subject Pair 2" & condition == "Task" & trial == "Trial 2" & trial_elapsed_time > 20) &
       !(experiment_id == "Subject Pair 4" & condition == "Task" & trial == "Trial 2" & trial_elapsed_time > 65)
   )

@@ -1,6 +1,7 @@
 # This file loads all of the cleaned subject data into a single data frame.
 
 library(tidyverse)
+library(conflicted)
 
 # Load the data in data/Pair{n}/data_*.tsv
 # n is the number of the subject pair

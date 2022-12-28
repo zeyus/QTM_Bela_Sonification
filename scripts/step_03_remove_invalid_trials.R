@@ -1,6 +1,7 @@
 # this script removes trials that were invalidated for various reasons
 # e.g. sonification stopped, participants dropped the cars, etc.
 library(tidyverse)
+library(conflicted)
 
 data_file <- "data/combined_data.tsv.bz2"
 

@@ -136,7 +136,8 @@ The data preparation can be replicated by running the R scripts in the [`scripts
   - Trial sequence numbers are added
   - Condition labels are added
   - Only data within trials are retained
-- [`scripts/step_04_align3D.R`](scripts/step_04_align3D.R): WIP: Aligns the 3D data to the track reference markers based on known dimensions and relative offsets
+- [`scripts/step_04_long_format_data.R`](scripts/step_04_long_format_data.R): Organizes the data into long form and saves it in the [`data/combined_data_long.tsv.bz2`](data/combined_data_long.tsv.bz2) file, this prepares it for processing with [mousetrap](https://github.com/pascalkieslich/mousetrap)
+- [`scripts/step_05_align3D.R`](scripts/step_05_align3D.R): Aligns the y-axis trajectorie starts and standardizes the data to be centered around 0 and scaled to be between -1 and 1. Saves the data in the tsv [`data/standardized_trajectories.tsv.bz2`](data/standardized_trajectories.tsv.bz2) file and rdata [`data/standardized_trajectories.Rda.bz2`](data/standardized_trajectories.Rda.bz2) file
 
 
 # Open Source Libraries
