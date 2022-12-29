@@ -96,12 +96,14 @@ if (basename(wd) != "docs") {
 }
 
 options(knitr.graphics.auto_pdf = TRUE)
+options(knitr.table.format = "latex")
 knitr::opts_knit$set(root.dir = wd)
 knitr::opts_chunk$set(echo = FALSE)
 # this leaves all of the intermediate files in the dir if FALSE
 options(tinytex.clean = FALSE)
 # make verbose TRUE to help with debugging
 options(tinytex.verbose = FALSE)
+
 
 # set default cran mirror
 r <- getOption("repos")
@@ -128,9 +130,19 @@ use_package("grid")
 use_package("gridExtra")
 use_package("ggrepel")
 use_package("colorspace")
+use_package("lme4")
+use_package("broom.mixed")
+use_package("gtsummary")
 
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
+
+# define base palette
+colorblind_friendly_pal <- c("#0074e7", "#e7298a", "#8bcf00")
+# make it slightly less intense
+colorblind_friendly_pal <- lighten(colorblind_friendly_pal, 0.25)
+options(ggplot2.discrete.colour=colorblind_friendly_pal)
+options(ggplot2.discrete.fill=colorblind_friendly_pal)
 
 
 # after all the packages are loaded, we can save
@@ -277,7 +289,7 @@ Participants were asked to sit on opposite sides of the track structure and fami
 
 Two parallel tracks were designed with a sigmoid curve shape, surfaced with a smooth veneer that allowed for free movement along the length of the track. Two identical sleds made from LEGO parts were constructed and three felt adhesive pads were attached to the underside of each to reduce resistance during movement. See Figure \@ref(fig:track-setup)
 
-```{r track-setup, echo=FALSE, fig.align='center', fig.cap='Experimental track setup showing track shape and dimensions', out.width="100%"}
+```{r track-setup, fig.align='center', fig.cap='Experimental track setup showing track shape and dimensions', out.width="100%"}
 knitr::include_graphics("figures/track_dimensions.png")
 ```
 
@@ -290,32 +302,41 @@ Two distinct, continuous frequency ranges were selected for application in sonif
 ## change this to a more sane way of doing this
 freq_ranges <- tibble(Tone = c("Overtone", "Undertone"),
                       Lower_Freq = c(349.230, 232.819),
-                        Lower_Note = c("F4", "A#3"),
+                        Lower_Note = c("F4", "A\\#3"),
                         Center_Freq = c(440.000, 293.333),
                         Center_Note = c("A4", "D4"),
                         Upper_Freq = c(554.365, 369.577),
-                        Upper_Note = c("C#5", "F#4"))
+                        Upper_Note = c("C\\#5", "F\\#4"))
 
 
 # make first column row names
 freq_ranges <- freq_ranges %>% 
   column_to_rownames(var = "Tone")
-
+footnote_marker <- footnote_marker_alphabet(1)
+note_col_header <- paste0("Note", footnote_marker)
 # print a pretty table
 kbl(freq_ranges,
     caption = "Frequency ranges for the two tones used in the sonification conditions. Note names are in International Pitch Notation, and are the closest approximation. Overtone frequencies were calculated to have a center frequency of 440Hz, and undertone frequencies are two-thirds of their overtone counterparts.",
+    escape = FALSE,
     booktabs = TRUE,
     row.names = TRUE,
     digits = 3,
     align = c("l", "r", "c", "r", "c", "r", "c"),
-    col.names = c("Freq", "Note", "Freq", "Note", "Freq", "Note")) %>%
-    add_header_above(c("","Lower Bound"=2,"Center"=2, "Upper Bound"=2)) %>%
-    kable_styling(font_size=7)
-
+    col.names = c("Freq", note_col_header, "Freq", note_col_header, "Freq", note_col_header)) %>%
+  add_header_above(c("","Lower Bound"=2,"Center"=2, "Upper Bound"=2)) %>%
+  kable_styling(
+    font_size=7,
+    latex_options = "hold_position") %>%
+  column_spec(c(1:7), width_max = "14.28%") %>%
+  add_footnote(
+    c(
+      paste0("\n\\rightskip2em\n{\\footnotesize \\sffamily ",footnote_marker,"Note names are in International Pitch Notation, and are the closest approximation to the frequencies used}"),
+      "\n\\rightskip2em\n{\\footnotesize \\sffamily \\textit{Note.} Overtone frequencies were calculated to have a center frequency of 440Hz, and undertone frequencies are two-thirds of their overtone counterparts.}"),
+    notation="none",
+    escape = FALSE,
+    threeparttable = TRUE)
 
 ```
-
-Table X: Note names are in International Pitch Notation, and are the closest approximation. Overtone frequencies were calculated to have a center frequency of 440Hz, and undertone frequencies are two-thirds of their overtone counterparts.
 
 ### Sonification Strategies
 
@@ -325,12 +346,18 @@ The experiment consisted of three conditions that vary the sonification strategy
 In the no sonification condition, only the motion capture data were recorded, and subjects could use the audible sounds of the sleds moving along the track to align themselves with their partner.
 
 #### Task-oriented sonification strategy. 
-Task oriented sonification represented the position of each sled along the length of the track as a synthesized tone that varied in frequency from highest to lowest at the start and end of the track respectively. One sled produced a higher frequency overtone, while the other produced a lower frequency undertone. If subjects were at the exact same y-coordinate, the two tones would be a perfect fifth apart, creating a harmonious chord, as the sleds drift further apart, the frequency difference would deviate from the perfect fifth and create a more discordant sound. This strategy was selected for sonifying the movement along the track, i.e. the task required of subjects.
+Task oriented sonification represented the position of each sled along the length of the track as a synthesized tone that varied in frequency from highest to lowest at the start and end of the track respectively. One sled produced a higher frequency overtone, while the other produced a lower frequency undertone. If subjects were at the exact same x-coordinate, the two tones would be a perfect fifth apart, creating a harmonious chord, as the sleds drift further apart, the frequency difference would deviate from the perfect fifth and create a more discordant sound. This strategy was selected for sonifying the movement along the track, i.e. the task required of subjects.
 
-[Figure here illustrating task sonification]
+```{r task-illustration, fig.align='center', fig.cap='Task', out.width="100%"}
+knitr::include_graphics("figures/task_sonif_illustration.png")
+```
 
 #### Synchronization-oriented sonification strategy. 
 The sonification strategy oriented around synchronization represented the position of the sleds relative to each other,…
+
+```{r sync-illustration, fig.align='center', fig.cap='Sync', out.width="100%"}
+knitr::include_graphics("figures/sync_sonif_illustration.png")
+```
 
 ## Procedure
 
@@ -338,7 +365,7 @@ This is where the experiment flow will be described.
 
 # Data Analysis
 
-[General timing stuff, project specific stuff.]
+
 
 ## Data Preprocessing
 
@@ -366,7 +393,7 @@ o	Often can’t mirror the other person exactly
 
 
 
-```{r hilbert_transform, include=FALSE, echo=FALSE}
+```{r hilbert_transform, include=FALSE}
 # this is slow, so check for a cached version
 trajectories_with_hilbert <-
     paste0(cache_dir, "/trajectories_with_hilbert.rds.bz2")
@@ -412,7 +439,9 @@ if (file.exists(trajectories_with_hilbert)) {
 
     # now we can calculate the mean instantaneous phase angle
     # for each time point for each subject pair
+    # as well as the absolute distance between sleds
     trajectories$instantaneous_phase_angle_diff <- NA_real_
+    trajectories$delta_y <- NA_real_
     trajectories <- trajectories %>%
       group_by(experiment_id, condition, trial) %>%
       group_modify(~ {
@@ -421,11 +450,18 @@ if (file.exists(trajectories_with_hilbert)) {
         angle_diff <- angle_difference_vector(
                 .x$instantaneous_phase_angle[.x$subj == subj_ids[1]],
                 .x$instantaneous_phase_angle[.x$subj == subj_ids[2]])
-        .x$instantaneous_phase_angle_diff[.x$subj == subj_ids[1]] <- angle_diff
-        .x$instantaneous_phase_angle_diff[.x$subj == subj_ids[2]] <- angle_diff
+        .x$instantaneous_phase_angle_diff[.x$subj %in% subj_ids] <- angle_diff
+        # .x$instantaneous_phase_angle_diff[.x$subj == subj_ids[2]] <- angle_diff
+
+        # calculate the absolute distance between the two sleds z_ypos
+        delta_y <- abs(.x$z_ypos[.x$subj == subj_ids[1]] -
+                        .x$z_ypos[.x$subj == subj_ids[2]])
+        .x$delta_y[.x$subj %in% subj_ids] <- delta_y
+        # .x$delta_y[.x$subj == subj_ids[2]] <- delta_y
         .x
       }) %>%
       ungroup()
+
 
     saveRDS(trajectories, trajectories_with_hilbert)
     angular_trajectories <- trajectories
@@ -433,52 +469,43 @@ if (file.exists(trajectories_with_hilbert)) {
 }
 ```
 
-```{r pairwise-phase-angles, echo=FALSE, fig.cap="Plot of pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+```{r, pairwise-trajectories, include=FALSE}
 # drop subject, we are doing pairwise analysis now
 trajectories_angles_pairwise <- angular_trajectories %>%
     dplyr::select(-subj) %>%
     dplyr::distinct()
-
-# allow for circular to convert radians to degrees
-trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
-    circular::circular(
-        trajectories_angles_pairwise$instantaneous_phase_angle_diff,
-        type = "angles",
-        units = "degrees",
-        modulo = "pi")
-
-# plot the mean pairwise phase angles by experiment, condition, trial and mt_seq
-plt <- trajectories_angles_pairwise %>%
-    dplyr::filter(timestamps >= 50.0 & timestamps <= 70.0) %>%
-    ggplot(aes(
-        x = timestamps,
-        y = instantaneous_phase_angle_diff_c,
-        color = trial)) +
-    geom_line() +
-    facet_grid(experiment_id ~ condition) +
-    scale_color_prism("floral") +
-    guides(y = "prism_offset_minor") +
-    theme_prism(base_size = 16) +
-    theme(legend.position = "bottom") +
-    ggtitle(
-        "Instantaneous Phase Angle Distance") +
-    xlab("Time (s)") +
-    ylab("Distance (degrees)")
-
-ggsave("figures/mean_pairwise_phase_angles.png", plt, width = 12, height = 8)
-
-plt
 ```
 
-```{r instantaneous-phase-angle-circular-plot, echo=FALSE, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+```{r pairwise-position-delta, fig.cap="Plot of pairwise position delta for each subject pair", fig.align="center", out.width="100%"}
 
-# calculate mean and sd of the instantaneous phase angle difference
-# this time only for subject pair and condition
-trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
-    dplyr::group_by(experiment_id, condition) %>%
-    dplyr::summarise(
-        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
-        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)), .groups = "drop")
+# box plot (geom_boxplot) the mean pairwise position delta by experiment, and condition
+plt <- trajectories_angles_pairwise %>%
+    group_by(condition, trial) %>%
+    summarise(delta_y = mean(delta_y), .groups="drop") %>%
+    ggplot(aes(
+        x = condition,
+        y = delta_y,
+        fill = condition)) +
+    geom_boxplot(show.legend = FALSE) +
+    stat_summary(
+      aes(
+        color = stage(condition, after_scale = darken(color, 0.70))),
+      fun = "mean",
+      geom = "point",
+      shape = 8,
+      size = 2,
+      show.legend = FALSE) +
+    guides(y = "prism_offset_minor") +
+    theme_prism(base_size = 16) +
+    labs(
+        x = "Condition",
+        y = "Mean pairwise position delta")
+
+plt
+
+```
+
+```{r plot_helper, include=FALSE}
 
 # from https://stackoverflow.com/a/38420690
 grid_arrange_shared_legend <- function(plots, nrow = 1, ncol = length(plots), position = c("bottom", "right")) {
@@ -525,7 +552,18 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
     return(data.frame(x,y,condition,end.x,end.y))
   }
 
-  plt = ggplot() + geom_polygon(data=get.poly(rel_breaks[1],rel_breaks[2]),aes(x,y),color="#00000033", fill="#00000033")
+  plt = ggplot() +
+    geom_polygon(
+      data=get.poly(rel_breaks[1],rel_breaks[2]),
+      aes(x,y),
+      color="#000000",
+      fill=NA) +
+    geom_text(
+      data=as.data.frame(breaks),
+      size=5,
+      fontface="bold",
+      vjust=0,
+      aes(x=1.1*cos(pi*(1-rel_breaks/100)),y=1.1*sin(pi*(1-rel_breaks/100)),label=paste0(breaks, "°")))
 
   # add a geom_polygon for each pos
   d_labels = data.frame()
@@ -543,8 +581,8 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
     plt = plt + 
       geom_polygon(
         data=d,
-        aes(x,y, color=stage(condition, after_scale = alpha(color, 0.5)),
-          fill=stage(condition, after_scale = alpha(fill, 0.5))))
+        aes(x,y, color=condition,
+          fill=condition))
   }
   plt = plt +
     geom_label_repel(
@@ -561,37 +599,186 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
         min.segment.length = 0,
         show.legend = FALSE) +
     coord_fixed()+
-    theme_bw()+
-    labs(title = pos$experiment_id) +
+    theme_prism()+
     theme(
           axis.text=element_blank(),
           axis.title=element_blank(),
           axis.ticks=element_blank(),
+          axis.line=element_blank(),
           panel.grid=element_blank(),
           panel.border=element_blank())
+
+    if("experiment_id" %in% colnames(pos)) {
+      plt = plt + labs(title = pos$experiment_id)
+    }
   return(plt)
 }
+
+
+# allow for circular to convert radians to degrees
+trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
+    circular::circular(
+        trajectories_angles_pairwise$instantaneous_phase_angle_diff,
+        type = "angles",
+        units = "degrees",
+        modulo = "pi")
+
+```
+
+```{r instantaneous-phase-angle-circular-plot, fig.cap="Plot of mean pairwise phase angles for each subject pair", fig.align="center", out.width="100%"}
+
+
+# calculate mean and sd of the instantaneous phase angle difference
+# this time only for subject pair and condition
+trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
+    dplyr::group_by(experiment_id, condition) %>%
+    dplyr::summarise(
+        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
+        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)), .groups = "drop")
 
 # plot the means on a gauge plot faceted by subject pair
 # the plot should be a semicircle
 # the range is from 0 to 180 degrees, and a line from the center
 # should represent the mean angle, and the length of the line
 # represents the standard deviation (100% is 0, 0% is 180 degrees)
-
-
 plots <- list()
 
 for (subj_pair in unique(trajectories_angles_pairwise_mean$experiment_id)) {
     plots[[subj_pair]] <- gg.gauge(trajectories_angles_pairwise_mean[trajectories_angles_pairwise_mean$experiment_id == subj_pair,])
 }
-grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
+plt = grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
 
 ggsave("figures/mean_pairwise_phase_angles_mean_sd.png", plt, width = 12, height = 8)
+plt
 
+```
+
+```{r mean-instantaneous-phase-angle-circular-plot, fig.cap="Plot of mean pairwise phase angles by condition", fig.align="center", out.width="100%"}
+
+
+trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise %>%
+    dplyr::group_by(experiment_id, condition, trial) %>%
+    dplyr::summarise(
+        angle_mean = mean.circular(instantaneous_phase_angle_diff_c),
+        angle_sd = circular::sd(instantaneous_phase_angle_diff_c), .groups = "drop")
+
+trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise_mean_trial %>%
+    dplyr::group_by(condition) %>%
+    dplyr::summarise(
+        angle_sd = as.numeric(circular::sd(angle_mean)),
+        angle_mean = as.numeric(mean.circular(angle_mean)),
+        .groups = "drop")
+plt = gg.gauge(trajectories_angles_pairwise_mean_trial) +
+      theme(legend.position = "bottom")
+
+ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt, width = 12, height = 8)
+plt
 
 
 ```
 
+
+```{r regression, include=FALSE}
+
+# here we want to do a linear mixed effects model for both phase angle and distance
+trajectories_angles_pairwise_for_model <- trajectories_angles_pairwise %>%
+    dplyr::group_by(experiment_id, condition, trial) %>%
+    dplyr::summarise(
+        delta_y = mean(delta_y),
+        instantaneous_phase_angle_diff = mean(instantaneous_phase_angle_diff),
+        .groups = "drop")
+# first we need to relevel the condition factor so that the first level is the "No Sonification" condition
+trajectories_angles_pairwise_for_model$condition <- factor(trajectories_angles_pairwise_for_model$condition, levels = c("No Sonification", "Task", "Sync"))
+# starting with distance
+m_dist_null <- lme4::lmer(
+  delta_y ~ 1 + (1|experiment_id),
+  data = trajectories_angles_pairwise_for_model,
+  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+
+m_dist <- lme4::lmer(
+  delta_y ~ condition + (1|experiment_id),
+  data = trajectories_angles_pairwise_for_model,
+  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+
+# now for phase angle
+m_angle_null <- lme4::lmer(
+  instantaneous_phase_angle_diff ~ 1 + (1|experiment_id),
+  data = trajectories_angles_pairwise_for_model,
+  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+m_angle <- lme4::lmer(
+  instantaneous_phase_angle_diff ~ condition + (1|experiment_id),
+  data = trajectories_angles_pairwise_for_model,
+  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+
+```
+
+### Testing different model / outputs / tables
+
+just making sure that the output looks good and seeing which is the most useful for our case.
+
+This has "add_glance_table"
+
+Comparing the distance model with the null distance model
+
+```{r regression-results-dist}
+
+# distance
+tbl_dist_null <- tbl_regression(m_dist_null, intercept = TRUE) %>%
+  add_global_p() %>% 
+  add_glance_table()
+tbl_dist <- tbl_regression(m_dist, intercept = TRUE) %>%
+  add_global_p() %>% 
+  add_glance_table()
+tbl_merge(tbls = list(tbl_dist_null, tbl_dist)) %>%
+  modify_table_body(~.x %>% arrange(row_type == "glance_statistic")) %>%
+  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+
+```
+
+This has "Exponentiate = TRUE", and no "add_global_p"
+
+This compares the angle model with the null angle model
+
+```{r regression-results-angle}
+
+# angle
+tbl_angle_null <- tbl_regression(m_angle_null, intercept = TRUE, exponentiate = TRUE)
+tbl_angle <- tbl_regression(m_angle, intercept = TRUE, exponentiate = TRUE)
+tbl_merge(tbls = list(tbl_angle_null, tbl_angle)) %>%
+  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+
+```
+
+testing another method
+this has the outputs from all four models in the order
+null distance, distance, null angle, angle
+```{r anova-dist}
+all_models <- list(m_dist_null, m_dist, m_angle_null, m_angle)
+broom_outputs <- purrr::map(all_models, broom::tidy)
+broom_stats_long <- purrr::map(broom_outputs, tidyr::gather, 'key', 'value', estimate, std.error)
+broom_stats_long_filter <- purrr::map(broom_stats_long, dplyr::select, term, key, value)
+tidy_tables <- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
+                              function(x, y) dplyr::mutate(x, mod = y))
+df <- tidy_tables %>%
+  dplyr::arrange(term, mod, key, value) %>%
+  tidyr::spread(mod, value, drop = FALSE)
+
+df %>% kbl(format = "latex") %>% kable_styling(font_size=7)
+```
+
+
+simple lm, but grouped with trial, subject pair and condition
+
+this is using the formula `delta_y ~ condition`
+
+```{r lm-dist}
+
+lm_dist <- lm(delta_y ~ condition, data = trajectories_angles_pairwise_for_model)
+
+tbl_regression(lm_dist) %>%
+  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+
+```
 
 
 
