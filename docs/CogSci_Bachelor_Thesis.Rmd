@@ -133,6 +133,9 @@ use_package("colorspace")
 use_package("lme4")
 use_package("broom.mixed")
 use_package("gtsummary")
+use_package("DiagrammeR")
+use_package("DiagrammeRsvg")
+use_package("rsvg")
 
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
@@ -284,6 +287,60 @@ An availability sample of ten subjects were recruited to participate in pairs, s
 ## Experimental Design
 
 Participants were asked to sit on opposite sides of the track structure and familiarize themselves with the movement of the sleds along the tracks. They were instructed to try to continuously move the sleds back and forth along the track as rapidly as possible while remaining spatially synchronized with their partner’s position on their respective track, using sounds they may hear during the various conditions to assist them. After the conclusion of subject briefing and they had indicated they were ready, they were blindfolded for the duration of all trials within a condition, with a pause between conditions where they could rest and remove the blindfold.
+
+```{r exp-graph, fig.align='center', fig.cap='Experimental design', out.width="100%"}
+# @todo change font
+graph <- "
+digraph E {
+    rankdir=\"LR\";
+    
+    node [shape=rect, group=main];
+
+    Marker[label=\"Passive markers\"]
+    MoCap[label=\"Cameras\"]
+    QTM[label=\"QTM server\"]
+    RT[label=\"Real-time API\", shape=ellipse]
+    #Data[label=\"3D Data\", shape=none]
+    #Events[label=\"Event Labels\", shape=none]
+    Code[label=\"Sonification\", shape=ellipse]
+    Experiment[label=\"Trial Runner\", shape=ellipse]
+    Bela
+    Audio[label=\"Audio output\"]
+
+    edge [arrow=normal];
+
+    {rank=same Marker -> MoCap -> QTM}
+    QTM -> RT
+    RT -> Bela [label=\"3D Data\"]
+    # {rank=same Events -> Data [style=invis]}
+    #Experiment -> Events [arrowhead=none]
+    #Events -> RT
+    # RT -> Data [arrowhead=none];
+    # Data -> Bela
+
+    {rank=same Experiment -> Bela -> Code [style=invis]}
+    Bela:n -> Experiment
+    Experiment -> RT [label=\"Event Labels\"]
+    
+    Bela:s -> Code
+    Code -> Audio;
+}
+"
+
+# write svg to file, because include_graphics needs a file with latex
+# and svg isn't supported
+graph_png_file <- "figures/exp-graph.png"
+
+rsvg_png(
+  charToRaw(
+    DiagrammeRsvg::export_svg(
+      grViz(graph))),
+  file = graph_png_file,
+  width = 1600) # height should be auto
+
+knitr::include_graphics(graph_png_file)
+
+```
 
 ### Track and Sleds
 
@@ -723,15 +780,24 @@ Comparing the distance model with the null distance model
 ```{r regression-results-dist}
 
 # distance
-tbl_dist_null <- tbl_regression(m_dist_null, intercept = TRUE) %>%
-  add_global_p() %>% 
+tbl_dist_null <- tbl_regression(
+  m_dist_null,
+  labels = list (condition ~ "Condition"),
+  intercept = TRUE,
+  tidy_fun = broom.mixed::tidy) %>%
   add_glance_table()
-tbl_dist <- tbl_regression(m_dist, intercept = TRUE) %>%
-  add_global_p() %>% 
+tbl_dist <- tbl_regression(
+  m_dist,
+  labels = list (condition ~ "Condition"),
+  intercept = TRUE,
+  tidy_fun = broom.mixed::tidy) %>%
   add_glance_table()
-tbl_merge(tbls = list(tbl_dist_null, tbl_dist)) %>%
+tbl_merge(tbls = list(tbl_dist_null, tbl_dist),
+tab_spanner = c("Null (Mean)", "∆ Distance ~ Condition")) %>%
   modify_table_body(~.x %>% arrange(row_type == "glance_statistic")) %>%
-  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+  as_kable_extra(
+    caption = "Comparison null distance model to distance model",
+    booktabs = TRUE) %>% kable_styling(font_size=7)
 
 ```
 
@@ -742,30 +808,26 @@ This compares the angle model with the null angle model
 ```{r regression-results-angle}
 
 # angle
-tbl_angle_null <- tbl_regression(m_angle_null, intercept = TRUE, exponentiate = TRUE)
-tbl_angle <- tbl_regression(m_angle, intercept = TRUE, exponentiate = TRUE)
-tbl_merge(tbls = list(tbl_angle_null, tbl_angle)) %>%
-  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+tbl_angle_null <- tbl_regression(
+  m_angle_null,
+  labels = list (condition ~ "Condition"),
+  intercept = TRUE,
+  tidy_fun = broom.mixed::tidy) %>%
+  add_glance_table()
+tbl_angle <- tbl_regression(m_angle,
+  labels = list (condition ~ "Condition"),
+  intercept = TRUE,
+  tidy_fun = broom.mixed::tidy) %>%
+  add_glance_table()
+tbl_merge(
+  tbls = list(tbl_angle_null, tbl_angle),
+  tab_spanner = c("Null (Mean)", "∆ Angle° ~ Condition")) %>%
+  modify_table_body(~.x %>% arrange(row_type == "glance_statistic")) %>%
+  as_kable_extra(
+    caption = "Comparison null angle model to angle model",
+    booktabs = TRUE) %>% kable_styling(font_size=7)
 
 ```
-
-testing another method
-this has the outputs from all four models in the order
-null distance, distance, null angle, angle
-```{r anova-dist}
-all_models <- list(m_dist_null, m_dist, m_angle_null, m_angle)
-broom_outputs <- purrr::map(all_models, broom::tidy)
-broom_stats_long <- purrr::map(broom_outputs, tidyr::gather, 'key', 'value', estimate, std.error)
-broom_stats_long_filter <- purrr::map(broom_stats_long, dplyr::select, term, key, value)
-tidy_tables <- purrr::map2_df(broom_stats_long_filter, 1:length(broom_stats_long_filter),
-                              function(x, y) dplyr::mutate(x, mod = y))
-df <- tidy_tables %>%
-  dplyr::arrange(term, mod, key, value) %>%
-  tidyr::spread(mod, value, drop = FALSE)
-
-df %>% kbl(format = "latex") %>% kable_styling(font_size=7)
-```
-
 
 simple lm, but grouped with trial, subject pair and condition
 
@@ -773,13 +835,29 @@ this is using the formula `delta_y ~ condition`
 
 ```{r lm-dist}
 
-lm_dist <- lm(delta_y ~ condition, data = trajectories_angles_pairwise_for_model)
+lm_dist <- lm(
+  delta_y ~ condition,
+  data = trajectories_angles_pairwise_for_model)
 
 tbl_regression(lm_dist) %>%
-  as_kable_extra(format = "latex") %>% kable_styling(font_size=7)
+  as_kable_extra(
+    caption = "Linear model for distance",
+    booktabs = TRUE) %>% kable_styling(font_size=7)
 
 ```
+this is using the formula `angle ~ condition`
+```{r lm-ang}
 
+lm_dist <- lm(
+  instantaneous_phase_angle_diff ~ condition,
+  data = trajectories_angles_pairwise_for_model)
+
+tbl_regression(lm_dist) %>%
+  as_kable_extra(
+    caption = "Linear model for angle",
+    booktabs = TRUE) %>% kable_styling(font_size=7)
+
+```
 
 
 # Results

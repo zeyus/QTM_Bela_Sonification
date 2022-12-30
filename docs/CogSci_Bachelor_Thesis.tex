@@ -438,6 +438,15 @@ An availability sample of ten subjects were recruited to participate in pairs, s
 
 Participants were asked to sit on opposite sides of the track structure and familiarize themselves with the movement of the sleds along the tracks. They were instructed to try to continuously move the sleds back and forth along the track as rapidly as possible while remaining spatially synchronized with their partner's position on their respective track, using sounds they may hear during the various conditions to assist them. After the conclusion of subject briefing and they had indicated they were ready, they were blindfolded for the duration of all trials within a condition, with a pause between conditions where they could rest and remove the blindfold.
 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/exp-graph} 
+
+}
+
+\caption{Experimental design}\label{fig:exp-graph}
+\end{figure}
+
 \hypertarget{track-and-sleds}{%
 \subsubsection{Track and Sleds}\label{track-and-sleds}}
 
@@ -600,42 +609,36 @@ This has ``add\_glance\_table''
 Comparing the distance model with the null distance model
 
 \begin{table}
-\centering\begingroup\fontsize{7}{9}\selectfont
 
-\begin{tabular}{l|c|c|c|c|c|c}
-\hline
-\multicolumn{1}{c|}{ } & \multicolumn{3}{c|}{\textbf{Table 1}} & \multicolumn{3}{c}{\textbf{Table 2}} \\
-\cline{2-4} \cline{5-7}
-\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value}\\
-\hline
-(Intercept) & 0.18 & 0.10, 0.27 & <0.001 & 0.17 & 0.08, 0.25 & <0.001\\
-\hline
-condition &  &  &  &  &  & 0.018\\
-\hline
-\hspace{1em}No Sonification &  &  &  & — & — & \\
-\hline
-\hspace{1em}Task &  &  &  & 0.06 & 0.01, 0.11 & \\
-\hline
-\hspace{1em}Sync &  &  &  & 0.00 & -0.06, 0.05 & \\
-\hline
-\hline
-No. Obs. & 44 &  &  & 44 &  & \\
-\hline
-Sigma & 0.075 &  &  & 0.070 &  & \\
-\hline
-Log-likelihood & 43.0 &  &  & 41.2 &  & \\
-\hline
-AIC & -79.9 &  &  & -72.4 &  & \\
-\hline
-BIC & -74.6 &  &  & -63.4 &  & \\
-\hline
-REMLcrit & -85.9 &  &  & -82.4 &  & \\
-\hline
-Residual df & 41 &  &  & 39 &  & \\
-\hline
-\multicolumn{7}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
+\caption{\label{tab:regression-results-dist}Comparison null distance model to distance model}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{lcccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Null (Mean)} & \multicolumn{2}{c}{∆ Distance \textasciitilde{} Condition} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5}
+\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{Beta} & \textbf{95\% CI}\\
+\midrule
+(Intercept) & 0.18 & 0.10, 0.27 & 0.17 & 0.08, 0.25\\
+experiment\_id.sd\_\_(Intercept) & 0.09 &  & 0.09 & \\
+Residual.sd\_\_Observation & 0.08 &  & 0.07 & \\
+condition &  &  &  & \\
+\hspace{1em}No Sonification &  &  & — & —\\
+\addlinespace
+\hspace{1em}Task &  &  & 0.06 & 0.01, 0.11\\
+\hspace{1em}Sync &  &  & 0.00 & -0.06, 0.05\\
+\midrule
+No. Obs. & 44 &  & 44 & \\
+Sigma & 0.075 &  & 0.070 & \\
+Log-likelihood & 43.0 &  & 41.2 & \\
+\addlinespace
+AIC & -79.9 &  & -72.4 & \\
+BIC & -74.6 &  & -63.4 & \\
+REMLcrit & -85.9 &  & -82.4 & \\
+Residual df & 41 &  & 39 & \\
+\bottomrule
+\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
 \end{tabular}
-\endgroup{}
 \end{table}
 
 This has ``Exponentiate = TRUE'', and no ``add\_global\_p''
@@ -643,62 +646,36 @@ This has ``Exponentiate = TRUE'', and no ``add\_global\_p''
 This compares the angle model with the null angle model
 
 \begin{table}
-\centering\begingroup\fontsize{7}{9}\selectfont
 
-\begin{tabular}{l|c|c|c|c}
-\hline
-\multicolumn{1}{c|}{ } & \multicolumn{2}{c|}{\textbf{Table 1}} & \multicolumn{2}{c}{\textbf{Table 2}} \\
-\cline{2-3} \cline{4-5}
-\textbf{Characteristic} & \textbf{exp(Beta)} & \textbf{95\% CI} & \textbf{exp(Beta)} & \textbf{95\% CI}\\
-\hline
-(Intercept) & 53.2 & 0.24, 11,929 & 47.6 & 0.15, 15,572\\
-\hline
+\caption{\label{tab:regression-results-angle}Comparison null angle model to angle model}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{lcccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Null (Mean)} & \multicolumn{2}{c}{∆ Angle° \textasciitilde{} Condition} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5}
+\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{Beta} & \textbf{95\% CI}\\
+\midrule
+(Intercept) & 4.0 & -1.4, 9.4 & 3.9 & -1.9, 9.7\\
+experiment\_id.sd\_\_(Intercept) & 6.0 &  & 6.0 & \\
+Residual.sd\_\_Observation & 4.8 &  & 4.7 & \\
 condition &  &  &  & \\
-\hline
 \hspace{1em}No Sonification &  &  & — & —\\
-\hline
-\hspace{1em}Task &  &  & 4.56 & 0.14, 144\\
-\hline
-\hspace{1em}Sync &  &  & 0.30 & 0.01, 9.55\\
-\hline
+\addlinespace
+\hspace{1em}Task &  &  & 1.5 & -1.9, 5.0\\
+\hspace{1em}Sync &  &  & -1.2 & -4.6, 2.3\\
+\midrule
+No. Obs. & 44 &  & 44 & \\
+Sigma & 4.76 &  & 4.73 & \\
+Log-likelihood & -135 &  & -131 & \\
+\addlinespace
+AIC & 277 &  & 273 & \\
+BIC & 282 &  & 282 & \\
+REMLcrit & 271 &  & 263 & \\
+Residual df & 41 &  & 39 & \\
+\bottomrule
 \multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
 \end{tabular}
-\endgroup{}
-\end{table}
-
-testing another method
-this has the outputs from all four models in the order
-null distance, distance, null angle, angle
-
-\begin{table}
-\centering\begingroup\fontsize{7}{9}\selectfont
-
-\begin{tabular}[t]{l|l|r|r|r|r}
-\hline
-term & key & 1 & 2 & 3 & 4\\
-\hline
-(Intercept) & estimate & 0.1849614 & 0.1652955 & 3.973976 & 3.862680\\
-\hline
-(Intercept) & std.error & 0.0420439 & 0.0449666 & 2.761660 & 2.954416\\
-\hline
-conditionSync & estimate & NA & -0.0038204 & NA & -1.192065\\
-\hline
-conditionSync & std.error & NA & 0.0261331 & NA & 1.759635\\
-\hline
-conditionTask & estimate & NA & 0.0613497 & NA & 1.517692\\
-\hline
-conditionTask & std.error & NA & 0.0261331 & NA & 1.759635\\
-\hline
-sd\_\_(Intercept) & estimate & 0.0904966 & 0.0913137 & 5.963058 & 5.967414\\
-\hline
-sd\_\_(Intercept) & std.error & NA & NA & NA & NA\\
-\hline
-sd\_\_Observation & estimate & 0.0754838 & 0.0702050 & 4.756061 & 4.727187\\
-\hline
-sd\_\_Observation & std.error & NA & NA & NA & NA\\
-\hline
-\end{tabular}
-\endgroup{}
 \end{table}
 
 simple lm, but grouped with trial, subject pair and condition
@@ -706,23 +683,41 @@ simple lm, but grouped with trial, subject pair and condition
 this is using the formula \texttt{delta\_y\ \textasciitilde{}\ condition}
 
 \begin{table}
-\centering\begingroup\fontsize{7}{9}\selectfont
 
-\begin{tabular}{l|c|c|c}
-\hline
+\caption{\label{tab:lm-dist}Linear model for distance}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{lccc}
+\toprule
 \textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value}\\
-\hline
+\midrule
 condition &  &  & \\
-\hline
 \hspace{1em}No Sonification & — & — & \\
-\hline
 \hspace{1em}Task & 0.06 & -0.03, 0.14 & 0.2\\
-\hline
 \hspace{1em}Sync & -0.01 & -0.09, 0.08 & 0.9\\
-\hline
+\bottomrule
 \multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
 \end{tabular}
-\endgroup{}
+\end{table}
+
+this is using the formula \texttt{angle\ \textasciitilde{}\ condition}
+
+\begin{table}
+
+\caption{\label{tab:lm-ang}Linear model for angle}
+\centering
+\fontsize{7}{9}\selectfont
+\begin{tabular}[t]{lccc}
+\toprule
+\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value}\\
+\midrule
+condition &  &  & \\
+\hspace{1em}No Sonification & — & — & \\
+\hspace{1em}Task & 1.3 & -4.2, 6.8 & 0.6\\
+\hspace{1em}Sync & -1.4 & -6.9, 4.1 & 0.6\\
+\bottomrule
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
+\end{tabular}
 \end{table}
 
 \hypertarget{results-1}{%
