@@ -142,6 +142,8 @@ use_package("mousetrap")
 
 # define base palette
 colorblind_friendly_pal <- c("#0074e7", "#e7298a", "#8bcf00")
+# darker version
+colorblind_friendly_pal_dark <- darken(colorblind_friendly_pal, 0.5)
 # make it slightly less intense
 colorblind_friendly_pal <- lighten(colorblind_friendly_pal, 0.25)
 options(ggplot2.discrete.colour=colorblind_friendly_pal)
@@ -261,10 +263,10 @@ Event labels were sent to QTM to mark the start and end of each condition and ea
 
 ## Sonification
 
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The two audio output channels were connected to a pair of Genelec G Two active speakers. The main program used the Bela platform framework from 10 August 2022[^belaplatform]. The experiment flow control was automated using the defined time periods for trials and breaks between them, and paused between conditions until a button on the device was pressed to allow sufficient time for subjects to rest and answer the IOS survey. Figure [xxx] describes the flow of data from motion capture to sonification.
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The two audio output channels were connected to a pair of Genelec G Two active speakers. The main program used the latest available Bela platform framework [^belaplatform]. The experiment flow control was automated using the defined time periods for trials and breaks between them, and paused between conditions until a button on the device was pressed to allow sufficient time for subjects to rest and answer the IOS survey. Figure \@ref(exp-graph) describes the flow of data from motion capture to sonification.
 
 [^code]: Source, data and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
-[^belaplatform]: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
+[^belaplatform]: Commit ID `42bbf18c3710ed82cdf24b09ab72ac2239bf148e` from 10 August 2022: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
 ### Real-time 3D Data
 
@@ -288,30 +290,30 @@ An availability sample of ten subjects were recruited to participate in pairs, s
 
 Participants were asked to sit on opposite sides of the track structure and familiarize themselves with the movement of the sleds along the tracks. They were instructed to try to continuously move the sleds back and forth along the track as rapidly as possible while remaining spatially synchronized with their partner’s position on their respective track, using sounds they may hear during the various conditions to assist them. After the conclusion of subject briefing and they had indicated they were ready, they were blindfolded for the duration of all trials within a condition, with a pause between conditions where they could rest and remove the blindfold.
 
-```{r exp-graph, fig.align='center', fig.cap='Experimental design', out.width="100%"}
+```{r exp-graph, fig.align='center', fig.cap='Low-latency sonification pipeline', out.width="100%"}
 # @todo change font
 graph <- "
 digraph E {
     rankdir=\"LR\";
-    
-    node [shape=rect, group=main];
+    graph [fontname=\"calibri\"]
+    node [shape=rect, group=main, fontname=\"calibri\", fillcolor=\"#1D56A7\", style=\"filled\", fontcolor=\"white\"];
 
     Marker[label=\"Passive markers\"]
     MoCap[label=\"Cameras\"]
     QTM[label=\"QTM server\"]
-    RT[label=\"Real-time API\", shape=ellipse]
+    RT[label=\"Real-time API\", shape=ellipse, fillcolor=\"#AF1867\"]
     #Data[label=\"3D Data\", shape=none]
     #Events[label=\"Event Labels\", shape=none]
-    Code[label=\"Sonification\", shape=ellipse]
-    Experiment[label=\"Trial Runner\", shape=ellipse]
+    Code[label=\"Sonification\", shape=ellipse, fillcolor=\"#AF1867\"]
+    Experiment[label=\"Trial Runner\", shape=ellipse, fillcolor=\"#AF1867\"]
     Bela
-    Audio[label=\"Audio output\"]
+    Audio[label=\"Audio output\", fontname=\"calibri\", fillcolor=\"#659703\"]
 
-    edge [arrow=normal];
+    edge [arrow=normal, fontname=\"calibri\"];
 
     {rank=same Marker -> MoCap -> QTM}
     QTM -> RT
-    RT -> Bela [label=\"3D Data\"]
+    RT -> Bela [label=\"3D Data\", style=\"dashed\"]
     # {rank=same Events -> Data [style=invis]}
     #Experiment -> Events [arrowhead=none]
     #Events -> RT
@@ -319,10 +321,12 @@ digraph E {
     # Data -> Bela
 
     {rank=same Experiment -> Bela -> Code [style=invis]}
-    Bela:n -> Experiment
-    Experiment -> RT [label=\"Event Labels\"]
+    Bela:s -> Experiment:n;
+    Experiment:n -> Bela:s;
+    Experiment -> RT [label=\"Event Labels\", style=\"dashed\"]
     
-    Bela:s -> Code
+    Bela:n -> Code:s;
+    Code:s -> Bela:n;
     Code -> Audio;
 }
 "
