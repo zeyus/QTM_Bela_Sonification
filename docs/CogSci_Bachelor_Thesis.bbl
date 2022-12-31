@@ -78,6 +78,78 @@
       \endverb
       \keyw{extracted,introduction,linus,main-paper}
     \endentry
+    \entry{botvinickConflictMonitoringCognitive2001}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=cb26a61e230d172a60ade11b9f69bdba}{%
+           family={Botvinick},
+           familyi={B\bibinitperiod},
+           given={Matthew\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e75bb0b55f20d3e5cc1d1e2ec85860cd}{%
+           family={Braver},
+           familyi={B\bibinitperiod},
+           given={Todd\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7cfa4ddc13b0da527952f57f52dbd60e}{%
+           family={Barch},
+           familyi={B\bibinitperiod},
+           given={Deanna\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83283b764d3caa75c7327069ec97c7ab}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Cameron\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74f9e2bf1a38596826af4f725fec39ed}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Jonathan\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b1078d450a2d9223d91443f6fc83506}
+      \strng{fullhash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{bibnamehash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{authorbibnamehash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{authornamehash}{8b1078d450a2d9223d91443f6fc83506}
+      \strng{authorfullhash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1939-1471, 0033-295X}
+      \field{journaltitle}{Psychological Review}
+      \field{langid}{english}
+      \field{number}{3}
+      \field{shortjournal}{Psychological Review}
+      \field{title}{Conflict Monitoring and Cognitive Control.}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{108}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{624\bibrangedash 652}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1037/0033-295X.108.3.624
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
+      \endverb
+      \keyw{extracted}
+    \endentry
     \entry{dubusSonificationPhysicalQuantities2011}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
@@ -120,63 +192,180 @@
       \endverb
       \keyw{introduction,linus,luke,useful}
     \endentry
-    \entry{gerdschmitzSoundJoinedActions2017}{inbook}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=9dbbe5b642b1c7dd87df4d84f7a49faa}{%
-           family={{Gerd Schmitz}},
-           familyi={G\bibinitperiod}}}%
-        {{un=0,uniquepart=base,hash=31de8c199c88063d3fbc85889065fe71}{%
-           family={{Alfred O. Effenberg}},
-           familyi={A\bibinitperiod}}}%
+    \entry{effenbergMovementSonificationEffects2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2898283c164562575d7165f1e70754ce}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={A.O.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
       }
-      \name{editor}{2}{}{%
-        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
-           family={Meyer},
-           familyi={M\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
-           family={Wedelstaedt},
-           familyi={W\bibinitperiod},
-           given={Ulrich\bibnamedelima V.},
-           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam ; Philadelphia}%
-      }
-      \list{publisher}{1}{%
-        {John Benjamins Publishing Company}%
-      }
-      \strng{namehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{fullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{bibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authorbibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authornamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authorfullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \strng{namehash}{2898283c164562575d7165f1e70754ce}
+      \strng{fullhash}{2898283c164562575d7165f1e70754ce}
+      \strng{bibnamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authorbibnamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authornamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authorfullhash}{2898283c164562575d7165f1e70754ce}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
-      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
-      \field{isbn}{978-90-272-6555-5}
-      \field{number}{volume 8}
-      \field{series}{Advances in Interaction Studies}
-      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
-      \field{year}{2017}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1070-986X}
+      \field{journaltitle}{IEEE Multimedia}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shortjournal}{IEEE Multimedia}
+      \field{shorttitle}{Movement {{Sonification}}}
+      \field{title}{Movement {{Sonification}}: {{Effects}} on {{Perception}} and {{Action}}}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{12}
+      \field{year}{2005}
       \field{dateera}{ce}
-      \field{pages}{193\bibrangedash 214}
-      \range{pages}{22}
-      \verb{file}
-      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \field{urldateera}{ce}
+      \field{pages}{53\bibrangedash 59}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/MMUL.2005.31
       \endverb
-      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\7U59MJ5B\\Effenberg - 2005 - Movement Sonification Effects on Perception and A.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{kellerPianistsDuetBetter2007}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17932f0f79d29a8ad0823c1ea70d130d}{%
+           family={Repp},
+           familyi={R\bibinitperiod},
+           given={Bruno\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8895655cb6eaab71a94927174b458fc4}
+      \strng{fullhash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{bibnamehash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{authorbibnamehash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{authornamehash}{8895655cb6eaab71a94927174b458fc4}
+      \strng{authorfullhash}{264711c013c5afdf3145078bf5c99f7d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{10538100}
+      \field{journaltitle}{Consciousness and Cognition}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shortjournal}{Consciousness and Cognition}
+      \field{shorttitle}{Pianists Duet Better When They Play with Themselves}
+      \field{title}{Pianists Duet Better When They Play with Themselves: {{On}} the Possible Role of Action Simulation in Synchronization}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{16}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{102\bibrangedash 111}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.concog.2005.12.004
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\9N9QBGQ4\\Keller et al. - 2007 - Pianists duet better when they play with themselve.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1053810005001613
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1053810005001613
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
+    \entry{knoblichActionCoordinationGroups2003}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=527f0d5788dd4a1fa25dabaed8fc9ae8}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Jerome\bibnamedelima Scott},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{fullhash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{bibnamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authorbibnamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authornamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authorfullhash}{58235ccb89fc4200bb7315032d71f405}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1939-1285, 0278-7393}
+      \field{journaltitle}{Journal of Experimental Psychology: Learning, Memory, and Cognition}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{shortjournal}{Journal of Experimental Psychology: Learning, Memory, and Cognition}
+      \field{shorttitle}{Action Coordination in Groups and Individuals}
+      \field{title}{Action Coordination in Groups and Individuals: {{Learning}} Anticipatory Control.}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{29}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1006\bibrangedash 1016}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1037/0278-7393.29.5.1006
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\NDC9GIFC\\Knoblich and Jordan - 2003 - Action coordination in groups and individuals Lea.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0278-7393.29.5.1006
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0278-7393.29.5.1006
+      \endverb
+      \keyw{extracted,linus}
     \endentry
     \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
       \name{author}{3}{}{%
@@ -608,6 +797,67 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
       \endverb
       \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{mousetrap2021}{misc}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=94f38e4aacf9db7542b0e05db730abfd}{%
+           family={Wulff},
+           familyi={W\bibinitperiod},
+           given={Dirk\bibnamedelima U.},
+           giveni={D\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94226450d3a4cffce193c83b4cccd544}{%
+           family={Kieslich},
+           familyi={K\bibinitperiod},
+           given={Pascal\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c05213eabb6d524ca12dbe6949173fe}{%
+           family={Henninger},
+           familyi={H\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6c2d4be61dcc9c110480f8ccfc6be5ea}{%
+           family={Haslbeck},
+           familyi={H\bibinitperiod},
+           given={Jonas\bibnamedelimb M.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=887923cf94952a9393afed79be354557}{%
+           family={Schulte-Mecklenbeck},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {PsyArXiv}%
+      }
+      \strng{namehash}{cbfdc5b53f95bc02340317fd87b1ae45}
+      \strng{fullhash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{bibnamehash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{authorbibnamehash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{authornamehash}{cbfdc5b53f95bc02340317fd87b1ae45}
+      \strng{authorfullhash}{fe45d4b977d89377b82bfb9528652aa3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Movement tracking of cognitive processes: {A} tutorial using mousetrap}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.31234/osf.io/v685r
+      \endverb
+      \verb{urlraw}
+      \verb https://psyarxiv.com/v685r
+      \endverb
+      \verb{url}
+      \verb https://psyarxiv.com/v685r
+      \endverb
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
@@ -670,6 +920,78 @@
       \endverb
       \keyw{extracted,introduction,linus,main-paper}
     \endentry
+    \entry{botvinickConflictMonitoringCognitive2001}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=cb26a61e230d172a60ade11b9f69bdba}{%
+           family={Botvinick},
+           familyi={B\bibinitperiod},
+           given={Matthew\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e75bb0b55f20d3e5cc1d1e2ec85860cd}{%
+           family={Braver},
+           familyi={B\bibinitperiod},
+           given={Todd\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7cfa4ddc13b0da527952f57f52dbd60e}{%
+           family={Barch},
+           familyi={B\bibinitperiod},
+           given={Deanna\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=83283b764d3caa75c7327069ec97c7ab}{%
+           family={Carter},
+           familyi={C\bibinitperiod},
+           given={Cameron\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74f9e2bf1a38596826af4f725fec39ed}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Jonathan\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b1078d450a2d9223d91443f6fc83506}
+      \strng{fullhash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{bibnamehash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{authorbibnamehash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \strng{authornamehash}{8b1078d450a2d9223d91443f6fc83506}
+      \strng{authorfullhash}{9e1aa5aa6c4034b3b0b2c781e726d933}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1939-1471, 0033-295X}
+      \field{journaltitle}{Psychological Review}
+      \field{langid}{english}
+      \field{number}{3}
+      \field{shortjournal}{Psychological Review}
+      \field{title}{Conflict Monitoring and Cognitive Control.}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{108}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{624\bibrangedash 652}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1037/0033-295X.108.3.624
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
+      \endverb
+      \keyw{extracted}
+    \endentry
     \entry{dubusSonificationPhysicalQuantities2011}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
@@ -712,63 +1034,122 @@
       \endverb
       \keyw{introduction,linus,luke,useful}
     \endentry
-    \entry{gerdschmitzSoundJoinedActions2017}{inbook}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=9dbbe5b642b1c7dd87df4d84f7a49faa}{%
-           family={{Gerd Schmitz}},
-           familyi={G\bibinitperiod}}}%
-        {{un=0,uniquepart=base,hash=31de8c199c88063d3fbc85889065fe71}{%
-           family={{Alfred O. Effenberg}},
-           familyi={A\bibinitperiod}}}%
+    \entry{effenbergMovementSonificationEffects2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2898283c164562575d7165f1e70754ce}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={A.O.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
       }
-      \name{editor}{2}{}{%
-        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
-           family={Meyer},
-           familyi={M\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
-           family={Wedelstaedt},
-           familyi={W\bibinitperiod},
-           given={Ulrich\bibnamedelima V.},
-           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam ; Philadelphia}%
-      }
-      \list{publisher}{1}{%
-        {John Benjamins Publishing Company}%
-      }
-      \strng{namehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{fullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{bibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authorbibnamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authornamehash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{authorfullhash}{0fee0ed3fe83cee3a7e2ef9dac38e0ac}
-      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \strng{namehash}{2898283c164562575d7165f1e70754ce}
+      \strng{fullhash}{2898283c164562575d7165f1e70754ce}
+      \strng{bibnamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authorbibnamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authornamehash}{2898283c164562575d7165f1e70754ce}
+      \strng{authorfullhash}{2898283c164562575d7165f1e70754ce}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
-      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
-      \field{isbn}{978-90-272-6555-5}
-      \field{number}{volume 8}
-      \field{series}{Advances in Interaction Studies}
-      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
-      \field{year}{2017}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1070-986X}
+      \field{journaltitle}{IEEE Multimedia}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shortjournal}{IEEE Multimedia}
+      \field{shorttitle}{Movement {{Sonification}}}
+      \field{title}{Movement {{Sonification}}: {{Effects}} on {{Perception}} and {{Action}}}
+      \field{urlday}{30}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{12}
+      \field{year}{2005}
       \field{dateera}{ce}
-      \field{pages}{193\bibrangedash 214}
-      \range{pages}{22}
-      \verb{file}
-      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \field{urldateera}{ce}
+      \field{pages}{53\bibrangedash 59}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/MMUL.2005.31
       \endverb
-      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\7U59MJ5B\\Effenberg - 2005 - Movement Sonification Effects on Perception and A.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{kellerPianistsDuetBetter2007}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17932f0f79d29a8ad0823c1ea70d130d}{%
+           family={Repp},
+           familyi={R\bibinitperiod},
+           given={Bruno\bibnamedelima H.},
+           giveni={B\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8895655cb6eaab71a94927174b458fc4}
+      \strng{fullhash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{bibnamehash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{authorbibnamehash}{264711c013c5afdf3145078bf5c99f7d}
+      \strng{authornamehash}{8895655cb6eaab71a94927174b458fc4}
+      \strng{authorfullhash}{264711c013c5afdf3145078bf5c99f7d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{10538100}
+      \field{journaltitle}{Consciousness and Cognition}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shortjournal}{Consciousness and Cognition}
+      \field{shorttitle}{Pianists Duet Better When They Play with Themselves}
+      \field{title}{Pianists Duet Better When They Play with Themselves: {{On}} the Possible Role of Action Simulation in Synchronization}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{16}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{102\bibrangedash 111}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.concog.2005.12.004
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\9N9QBGQ4\\Keller et al. - 2007 - Pianists duet better when they play with themselve.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1053810005001613
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1053810005001613
+      \endverb
+      \keyw{extracted,linus}
     \endentry
     \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
       \name{author}{3}{}{%
@@ -828,6 +1209,64 @@
       \endverb
       \verb{url}
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
+    \entry{knoblichActionCoordinationGroups2003}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=527f0d5788dd4a1fa25dabaed8fc9ae8}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Jerome\bibnamedelima Scott},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{fullhash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{bibnamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authorbibnamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authornamehash}{58235ccb89fc4200bb7315032d71f405}
+      \strng{authorfullhash}{58235ccb89fc4200bb7315032d71f405}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1939-1285, 0278-7393}
+      \field{journaltitle}{Journal of Experimental Psychology: Learning, Memory, and Cognition}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{shortjournal}{Journal of Experimental Psychology: Learning, Memory, and Cognition}
+      \field{shorttitle}{Action Coordination in Groups and Individuals}
+      \field{title}{Action Coordination in Groups and Individuals: {{Learning}} Anticipatory Control.}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{29}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1006\bibrangedash 1016}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1037/0278-7393.29.5.1006
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\NDC9GIFC\\Knoblich and Jordan - 2003 - Action coordination in groups and individuals Lea.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0278-7393.29.5.1006
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0278-7393.29.5.1006
       \endverb
       \keyw{extracted,linus}
     \endentry
@@ -1200,6 +1639,67 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
       \endverb
       \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{mousetrap2021}{misc}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=94f38e4aacf9db7542b0e05db730abfd}{%
+           family={Wulff},
+           familyi={W\bibinitperiod},
+           given={Dirk\bibnamedelima U.},
+           giveni={D\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=94226450d3a4cffce193c83b4cccd544}{%
+           family={Kieslich},
+           familyi={K\bibinitperiod},
+           given={Pascal\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7c05213eabb6d524ca12dbe6949173fe}{%
+           family={Henninger},
+           familyi={H\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6c2d4be61dcc9c110480f8ccfc6be5ea}{%
+           family={Haslbeck},
+           familyi={H\bibinitperiod},
+           given={Jonas\bibnamedelimb M.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=887923cf94952a9393afed79be354557}{%
+           family={Schulte-Mecklenbeck},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {PsyArXiv}%
+      }
+      \strng{namehash}{cbfdc5b53f95bc02340317fd87b1ae45}
+      \strng{fullhash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{bibnamehash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{authorbibnamehash}{fe45d4b977d89377b82bfb9528652aa3}
+      \strng{authornamehash}{cbfdc5b53f95bc02340317fd87b1ae45}
+      \strng{authorfullhash}{fe45d4b977d89377b82bfb9528652aa3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Movement tracking of cognitive processes: {A} tutorial using mousetrap}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.31234/osf.io/v685r
+      \endverb
+      \verb{urlraw}
+      \verb https://psyarxiv.com/v685r
+      \endverb
+      \verb{url}
+      \verb https://psyarxiv.com/v685r
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
