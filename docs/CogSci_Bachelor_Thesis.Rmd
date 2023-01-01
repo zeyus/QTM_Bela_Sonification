@@ -122,6 +122,7 @@ use_package("kableExtra")
 use_package("bookdown")
 use_package("rticles")
 use_package("tidyverse")
+use_package("tidybayes")
 use_package("ggprism")
 use_package("gsignal")
 use_package("circular")
@@ -131,13 +132,18 @@ use_package("grid")
 use_package("gridExtra")
 use_package("ggrepel")
 use_package("colorspace")
-use_package("lme4")
+# use_package("lme4")
+# use_package("lmerTest")
+use_package("rstanarm")
+use_package("sjPlot")
+use_package("sjlabelled")
+use_package("sjmisc")
 use_package("broom.mixed")
 use_package("gtsummary")
 use_package("DiagrammeR")
 use_package("DiagrammeRsvg")
 use_package("rsvg")
-
+options(mc.cores = parallel::detectCores())
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
 
@@ -597,7 +603,7 @@ grid_arrange_shared_legend <- function(plots, nrow = 1, ncol = length(plots), po
 gg.gauge <- function(pos,breaks=c(0,180)) {
   limit <- 100/max(breaks)
   pos$angle_mean_pct <- pos$angle_mean*(limit)
-  pos$angle_sd_pct <- pos$angle_sd*(limit) / 100
+  pos$angle_sd_pct <- pos$angle_sd*(1/pos$angle_mean)
   rel_breaks <- breaks*(limit)
 
   get.poly <- function(a,b,r1=0.0,r2=1.0,condition=NA) {
@@ -644,20 +650,20 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
         aes(x,y, color=condition,
           fill=condition))
   }
+    # geom_label_repel(
+    #     data=d_labels,
+    #     aes(
+    #       x,
+    #       y,
+    #       label=text,
+    #       fill=stage(condition,
+    #         after_scale = darken(fill, 0.5)),
+    #       segment.color=after_scale(darken(fill, 0.5))),
+    #     color="white",
+    #     box.padding = 0.5,
+    #     min.segment.length = 0,
+    #     show.legend = FALSE) +
   plt = plt +
-    geom_label_repel(
-        data=d_labels,
-        aes(
-          x,
-          y,
-          label=text,
-          fill=stage(condition,
-            after_scale = darken(fill, 0.5)),
-          segment.color=after_scale(darken(fill, 0.5))),
-        color="white",
-        box.padding = 0.5,
-        min.segment.length = 0,
-        show.legend = FALSE) +
     coord_fixed()+
     theme_prism()+
     theme(
@@ -721,25 +727,46 @@ Hilbert transform…etc.etc, distance doesn’t tell the whole story….what if 
 
 ```{r mean-instantaneous-phase-angle-circular-plot, fig.cap="Plot of mean pairwise phase angles of experimental conditions", fig.align="center", out.width="100%"}
 
-
+# calculate mean and sd of the instantaneous phase angle difference by trial
 trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise %>%
     dplyr::group_by(experiment_id, condition, trial) %>%
     dplyr::summarise(
         angle_mean = mean.circular(instantaneous_phase_angle_diff_c),
         angle_sd = circular::sd(instantaneous_phase_angle_diff_c), .groups = "drop")
 
+# calculate mean and sd of the instantaneous phase angle difference by condition
+# report SEM as well
 trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise_mean_trial %>%
     dplyr::group_by(condition) %>%
     dplyr::summarise(
         angle_sd = as.numeric(circular::sd(angle_mean)),
-        angle_mean = as.numeric(mean.circular(angle_mean)),
-        .groups = "drop")
-plt = gg.gauge(trajectories_angles_pairwise_mean_trial) +
-      theme(legend.position = "bottom")
+        angle_sem = as.numeric(circular::sd(angle_mean)/sqrt(n())),
+        angle_var = as.numeric(circular::angular.variance(angle_mean)),
+        angle_mean = as.numeric(mean.circular(angle_mean)), .groups = "drop")
+plt1 = gg.gauge(trajectories_angles_pairwise_mean_trial) +
+      theme(legend.position = "bottom") +
+      labs(title = "Mean Phase Angle of (trial mean of) Trajectories",
+           subtitle = "Mean of all trials for each condition")
 
 ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt, width = 12, height = 8)
-plt
+plt1
 
+trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise %>%
+    dplyr::group_by(condition) %>%
+    dplyr::summarise(
+        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)),
+        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
+        angle_sem = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)/sqrt(n())),
+        angle_var = as.numeric(circular::angular.variance(instantaneous_phase_angle_diff_c)),
+        .groups = "drop")
+plt2 = gg.gauge(trajectories_angles_pairwise_mean_trial) +
+      theme(legend.position = "bottom")+
+      labs(title = "Mean Phase Angle of Trajectories",
+           subtitle = "Mean of all timepoints for each condition")
+plt2
+
+plt3 = grid_arrange_shared_legend(list(plt1, plt2), nrow = 1, ncol = 2)
+ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt3, width = 12, height = 8)
 
 ```
 
@@ -752,6 +779,8 @@ plt
 
 ```{r regression, include=FALSE}
 
+trajectories_angles_pairwise$condition <- factor(trajectories_angles_pairwise$condition, levels = c("No Sonification", "Task", "Sync"))
+
 # here we want to do a linear mixed effects model for both phase angle and distance
 trajectories_angles_pairwise_for_model <- trajectories_angles_pairwise %>%
     dplyr::group_by(experiment_id, condition, trial) %>%
@@ -759,86 +788,84 @@ trajectories_angles_pairwise_for_model <- trajectories_angles_pairwise %>%
         delta_y = mean(delta_y),
         instantaneous_phase_angle_diff = mean(instantaneous_phase_angle_diff),
         .groups = "drop")
-# first we need to relevel the condition factor so that the first level is the "No Sonification" condition
-trajectories_angles_pairwise_for_model$condition <- factor(trajectories_angles_pairwise_for_model$condition, levels = c("No Sonification", "Task", "Sync"))
-# starting with distance
-m_dist_null <- lme4::lmer(
-  delta_y ~ 1 + (1|experiment_id),
-  data = trajectories_angles_pairwise_for_model,
-  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
 
-m_dist <- lme4::lmer(
-  delta_y ~ condition + (1|experiment_id),
+m_angle <- stan_glmer(
+  instantaneous_phase_angle_diff ~ condition + (1|experiment_id) + (1|trial),
   data = trajectories_angles_pairwise_for_model,
-  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+  adapt_delta = 0.99,
+  iter = 5000,
+  chains = 8,
+  verbose = TRUE)
 
-# now for phase angle
-m_angle_null <- lme4::lmer(
-  instantaneous_phase_angle_diff ~ 1 + (1|experiment_id),
-  data = trajectories_angles_pairwise_for_model,
-  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
-m_angle <- lme4::lmer(
-  instantaneous_phase_angle_diff ~ condition + (1|experiment_id),
-  data = trajectories_angles_pairwise_for_model,
-  control = lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun=2e5)))
+
+# plot model parameters
+plot_model(
+  m_angle,
+  vline.color = "gray",
+  show.intercept = TRUE,
+  show.values = TRUE,
+  value.offset = .3,
+  colors = colorblind_friendly_pal) +
+  theme_prism() +
+  theme(legend.position = "bottom")
+
+m_angle %>%
+  spread_draws(`(Intercept)`, b[,condition]) %>%
+  mutate(condition_mean = `(Intercept)` + b) %>%
+  ggplot(aes(y = condition, x = condition_mean)) +
+  stat_dotsinterval(quantiles = 100) +
+  theme_prism()
+  
+get_variables(m_angle)
+
+grid = trajectories_angles_pairwise_for_model %>%
+  modelr::data_grid(condition, experiment_id, trial)
+
+means = grid %>%
+  add_epred_draws(m_angle)
+
+preds = grid %>%
+  add_predicted_draws(m_angle)
+
+int_col = c(
+  lighten(colorblind_friendly_pal[1], 0.25),
+  lighten(colorblind_friendly_pal[1], 0.5),
+  lighten(colorblind_friendly_pal[1], 0.75),
+  lighten(colorblind_friendly_pal[2], 0.25),
+  lighten(colorblind_friendly_pal[2], 0.5),
+  lighten(colorblind_friendly_pal[2], 0.75),
+  lighten(colorblind_friendly_pal[3], 0.25),
+  lighten(colorblind_friendly_pal[3], 0.5),
+  lighten(colorblind_friendly_pal[3], 0.75)
+)
+
+trajectories_angles_pairwise_for_model %>%
+  ggplot(aes(y = condition, x = instantaneous_phase_angle_diff)) +
+    stat_interval(aes(x = .prediction), data = preds, interval_colour = c(int_col)) +
+    stat_pointinterval(aes(x = .epred), data = means, .width = c(.66, .95), position = position_nudge(y = -0.3)) +
+    geom_point() +
+    theme_prism() +
+    theme(legend.position = "none")
 
 ```
 
 ### Testing different model / outputs / tables
 
-just making sure that the output looks good and seeing which is the most useful for our case.
 
-
-Comparing the distance model with the null distance model
-
-```{r regression-results-dist}
-
-# distance
-tbl_dist_null <- tbl_regression(
-  m_dist_null,
-  labels = list (condition ~ "Condition"),
-  intercept = TRUE,
-  tidy_fun = broom.mixed::tidy) %>%
-  add_glance_table()
-tbl_dist <- tbl_regression(
-  m_dist,
-  labels = list (condition ~ "Condition"),
-  intercept = TRUE,
-  tidy_fun = broom.mixed::tidy) %>%
-  add_glance_table()
-tbl_merge(tbls = list(tbl_dist_null, tbl_dist),
-tab_spanner = c("Null (Mean)", "∆ Distance ~ Condition")) %>%
-  modify_table_body(~.x %>% arrange(row_type == "glance_statistic")) %>%
-  as_kable_extra(
-    caption = "Comparison null distance model to distance model",
-    booktabs = TRUE) %>% kable_styling(font_size=7)
-
-```
-
-This has "Exponentiate = TRUE", and no "add_global_p". This compares the angle model with the null angle model
 
 ```{r regression-results-angle}
 
 # angle
 tbl_angle_null <- tbl_regression(
-  m_angle_null,
+  m_angle,
   labels = list (condition ~ "Condition"),
   intercept = TRUE,
-  tidy_fun = broom.mixed::tidy) %>%
-  add_glance_table()
-tbl_angle <- tbl_regression(m_angle,
-  labels = list (condition ~ "Condition"),
-  intercept = TRUE,
-  tidy_fun = broom.mixed::tidy) %>%
-  add_glance_table()
-tbl_merge(
-  tbls = list(tbl_angle_null, tbl_angle),
-  tab_spanner = c("Null (Mean)", "∆ Angle° ~ Condition")) %>%
-  modify_table_body(~.x %>% arrange(row_type == "glance_statistic")) %>%
+  tidy_fun = broom.mixed::tidyMCMC) %>%
+  add_glance_source_note() %>%
   as_kable_extra(
-    caption = "Comparison null angle model to angle model",
+    caption = "Angle Model",
     booktabs = TRUE) %>% kable_styling(font_size=7)
-
+broom.mixed::tidy
 ```
 
 simple lm, but grouped with trial, subject pair and condition this is using the formula `delta_y ~ condition`

@@ -130,28 +130,12 @@ ggplot2},
   note = {http://haozhu233.github.io/kableExtra/},
 }
 
-@Manual{R-lme4,
-  title = {lme4: Linear Mixed-Effects Models using Eigen and S4},
-  author = {Douglas Bates and Martin Maechler and Ben Bolker and Steven Walker},
-  year = {2022},
-  note = {R package version 1.1-32},
-  url = {https://github.com/lme4/lme4/},
-}
-
 @Manual{R-lubridate,
   title = {lubridate: Make Dealing with Dates a Little Easier},
   author = {Vitalie Spinu and Garrett Grolemund and Hadley Wickham},
   year = {2022},
   note = {R package version 1.9.0},
   url = {https://CRAN.R-project.org/package=lubridate},
-}
-
-@Manual{R-Matrix,
-  title = {Matrix: Sparse and Dense Matrix Classes and Methods},
-  author = {Douglas Bates and Martin Maechler and Mikael Jagan},
-  year = {2022},
-  note = {R package version 1.5-1},
-  url = {https://CRAN.R-project.org/package=Matrix},
 }
 
 @Manual{R-mousetrap,
@@ -178,12 +162,28 @@ ggplot2},
   url = {https://CRAN.R-project.org/package=purrr},
 }
 
+@Manual{R-Rcpp,
+  title = {Rcpp: Seamless R and C++ Integration},
+  author = {Dirk Eddelbuettel and Romain Francois and JJ Allaire and Kevin Ushey and Qiang Kou and Nathan Russell and Inaki Ucar and Douglas Bates and John Chambers},
+  year = {2022},
+  note = {R package version 1.0.9},
+  url = {https://CRAN.R-project.org/package=Rcpp},
+}
+
 @Manual{R-readr,
   title = {readr: Read Rectangular Text Data},
   author = {Hadley Wickham and Jim Hester and Jennifer Bryan},
   year = {2022},
   note = {R package version 2.1.3},
   url = {https://CRAN.R-project.org/package=readr},
+}
+
+@Manual{R-rstanarm,
+  title = {rstanarm: Bayesian Applied Regression Modeling via Stan},
+  author = {Jonah Gabry and Ben Goodrich},
+  year = {2022},
+  note = {R package version 2.21.3},
+  url = {https://CRAN.R-project.org/package=rstanarm},
 }
 
 @Manual{R-rsvg,
@@ -201,6 +201,30 @@ Bitmap Arrays},
   year = {2022},
   note = {R package version 0.24},
   url = {https://github.com/rstudio/rticles},
+}
+
+@Manual{R-sjlabelled,
+  title = {sjlabelled: Labelled Data Utility Functions},
+  author = {Daniel Lüdecke},
+  year = {2022},
+  note = {R package version 1.2.0},
+  url = {https://strengejacke.github.io/sjlabelled/},
+}
+
+@Manual{R-sjmisc,
+  title = {sjmisc: Data and Variable Transformation Functions},
+  author = {Daniel Lüdecke},
+  year = {2021},
+  note = {R package version 2.8.9},
+  url = {https://strengejacke.github.io/sjmisc/},
+}
+
+@Manual{R-sjPlot,
+  title = {sjPlot: Data Visualization for Statistics in Social Science},
+  author = {Daniel Lüdecke},
+  year = {2022},
+  note = {R package version 2.8.12},
+  url = {https://strengejacke.github.io/sjPlot/},
 }
 
 @Manual{R-stringr,
@@ -322,17 +346,6 @@ and Statistics, Ca' Foscari University, Venice, Italy. UL: Department of Statist
   pages = {570-580},
 }
 
-@Article{lme42015,
-  title = {Fitting Linear Mixed-Effects Models Using {lme4}},
-  author = {Douglas Bates and Martin M{\"a}chler and Ben Bolker and Steve Walker},
-  journal = {Journal of Statistical Software},
-  year = {2015},
-  volume = {67},
-  number = {1},
-  pages = {1--48},
-  doi = {10.18637/jss.v067.i01},
-}
-
 @Article{lubridate2011,
   title = {Dates and Times Made Easy with {lubridate}},
   author = {Garrett Grolemund and Hadley Wickham},
@@ -351,6 +364,65 @@ and Statistics, Ca' Foscari University, Venice, Italy. UL: Department of Statist
   publisher = {PsyArXiv},
   url = {https://psyarxiv.com/v685r},
   doi = {10.31234/osf.io/v685r},
+}
+
+@Article{Rcpp2011,
+  title = {{Rcpp}: Seamless {R} and {C++} Integration},
+  author = {Dirk Eddelbuettel and Romain Fran\c{c}ois},
+  journal = {Journal of Statistical Software},
+  year = {2011},
+  volume = {40},
+  number = {8},
+  pages = {1--18},
+  doi = {10.18637/jss.v040.i08},
+}
+
+@Book{Rcpp2013,
+  title = {Seamless {R} and {C++} Integration with {Rcpp}},
+  author = {Dirk Eddelbuettel},
+  publisher = {Springer},
+  address = {New York},
+  year = {2013},
+  note = {ISBN 978-1-4614-6867-7},
+  doi = {10.1007/978-1-4614-6868-4},
+}
+
+@Article{Rcpp2018,
+  title = {{Extending 	extit{R} with 	extit{C++}: A Brief Introduction to 	extit{Rcpp}}},
+  author = {Dirk Eddelbuettel and James Joseph Balamuta},
+  journal = {The American Statistician},
+  year = {2018},
+  volume = {72},
+  number = {1},
+  pages = {28-36},
+  doi = {10.1080/00031305.2017.1375990},
+}
+
+@Misc{rstanarm2018,
+  title = {Joint longitudinal and time-to-event models via {Stan}.},
+  author = {SL Brilleman and MJ Crowther and M Moreno-Betancur and J {Buros Novik} and R Wolfe},
+  note = {StanCon 2018. 10-12 Jan 2018. Pacific Grove, CA, USA.},
+  url = {https://github.com/stan-dev/stancon_talks/},
+  year = {2018},
+}
+
+@Manual{sjlabelled2022,
+  title = {sjlabelled: Labelled Data Utility Functions (Version 1.2.0)},
+  author = {Daniel Lüdecke},
+  year = {2022},
+  url = {https://CRAN.R-project.org/package=sjlabelled},
+  doi = {10.5281/zenodo.1249215},
+}
+
+@Article{sjmisc2018,
+  title = {sjmisc: Data and Variable Transformation Functions.},
+  volume = {3},
+  doi = {10.21105/joss.00754},
+  number = {26},
+  journal = {Journal of Open Source Software},
+  author = {Daniel Lüdecke},
+  year = {2018},
+  pages = {754},
 }
 
 @Article{tidyverse2019,

@@ -588,7 +588,23 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 }
 
-\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot}
+\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-1}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{CogSci_Bachelor_Thesis_files/figure-latex/mean-instantaneous-phase-angle-circular-plot-2} 
+
+}
+
+\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-2}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{CogSci_Bachelor_Thesis_files/figure-latex/mean-instantaneous-phase-angle-circular-plot-3} 
+
+}
+
+\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-3}
 \end{figure}
 
 \hypertarget{learning}{%
@@ -601,78 +617,6 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 \hypertarget{testing-different-model-outputs-tables}{%
 \subsubsection{Testing different model / outputs / tables}\label{testing-different-model-outputs-tables}}
-
-just making sure that the output looks good and seeing which is the most useful for our case.
-
-Comparing the distance model with the null distance model
-
-\begin{table}
-
-\caption{\label{tab:regression-results-dist}Comparison null distance model to distance model}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{lcccc}
-\toprule
-\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Null (Mean)} & \multicolumn{2}{c}{∆ Distance \textasciitilde{} Condition} \\
-\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5}
-\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{Beta} & \textbf{95\% CI}\\
-\midrule
-(Intercept) & 0.18 & 0.10, 0.27 & 0.17 & 0.08, 0.25\\
-experiment\_id.sd\_\_(Intercept) & 0.09 &  & 0.09 & \\
-Residual.sd\_\_Observation & 0.08 &  & 0.07 & \\
-condition &  &  &  & \\
-\hspace{1em}No Sonification &  &  & — & —\\
-\addlinespace
-\hspace{1em}Task &  &  & 0.06 & 0.01, 0.11\\
-\hspace{1em}Sync &  &  & 0.00 & -0.06, 0.05\\
-\midrule
-No. Obs. & 44 &  & 44 & \\
-Sigma & 0.075 &  & 0.070 & \\
-Log-likelihood & 43.0 &  & 41.2 & \\
-\addlinespace
-AIC & -79.9 &  & -72.4 & \\
-BIC & -74.6 &  & -63.4 & \\
-REMLcrit & -85.9 &  & -82.4 & \\
-Residual df & 41 &  & 39 & \\
-\bottomrule
-\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
-\end{tabular}
-\end{table}
-
-This has ``Exponentiate = TRUE'', and no ``add\_global\_p''. This compares the angle model with the null angle model
-
-\begin{table}
-
-\caption{\label{tab:regression-results-angle}Comparison null angle model to angle model}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{lcccc}
-\toprule
-\multicolumn{1}{c}{ } & \multicolumn{2}{c}{Null (Mean)} & \multicolumn{2}{c}{∆ Angle° \textasciitilde{} Condition} \\
-\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5}
-\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{Beta} & \textbf{95\% CI}\\
-\midrule
-(Intercept) & 4.0 & -1.4, 9.4 & 3.9 & -1.9, 9.7\\
-experiment\_id.sd\_\_(Intercept) & 6.0 &  & 6.0 & \\
-Residual.sd\_\_Observation & 4.8 &  & 4.7 & \\
-condition &  &  &  & \\
-\hspace{1em}No Sonification &  &  & — & —\\
-\addlinespace
-\hspace{1em}Task &  &  & 1.5 & -1.9, 5.0\\
-\hspace{1em}Sync &  &  & -1.2 & -4.6, 2.3\\
-\midrule
-No. Obs. & 44 &  & 44 & \\
-Sigma & 4.76 &  & 4.73 & \\
-Log-likelihood & -135 &  & -131 & \\
-\addlinespace
-AIC & 277 &  & 273 & \\
-BIC & 282 &  & 282 & \\
-REMLcrit & 271 &  & 263 & \\
-Residual df & 41 &  & 39 & \\
-\bottomrule
-\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
-\end{tabular}
-\end{table}
 
 simple lm, but grouped with trial, subject pair and condition this is using the formula \texttt{delta\_y\ \textasciitilde{}\ condition}
 
