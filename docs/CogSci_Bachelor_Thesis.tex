@@ -588,23 +588,7 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 }
 
-\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-1}
-\end{figure}
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{CogSci_Bachelor_Thesis_files/figure-latex/mean-instantaneous-phase-angle-circular-plot-2} 
-
-}
-
-\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-2}
-\end{figure}
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{CogSci_Bachelor_Thesis_files/figure-latex/mean-instantaneous-phase-angle-circular-plot-3} 
-
-}
-
-\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot-3}
+\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot}
 \end{figure}
 
 \hypertarget{learning}{%
@@ -618,45 +602,7 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 \hypertarget{testing-different-model-outputs-tables}{%
 \subsubsection{Testing different model / outputs / tables}\label{testing-different-model-outputs-tables}}
 
-simple lm, but grouped with trial, subject pair and condition this is using the formula \texttt{delta\_y\ \textasciitilde{}\ condition}
-
-\begin{table}
-
-\caption{\label{tab:lm-dist}Linear model for distance}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{lccc}
-\toprule
-\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value}\\
-\midrule
-condition &  &  & \\
-\hspace{1em}No Sonification & — & — & \\
-\hspace{1em}Task & 0.06 & -0.03, 0.14 & 0.2\\
-\hspace{1em}Sync & -0.01 & -0.09, 0.08 & 0.9\\
-\bottomrule
-\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
-\end{tabular}
-\end{table}
-
-this is using the formula \texttt{angle\ \textasciitilde{}\ condition}
-
-\begin{table}
-
-\caption{\label{tab:lm-ang}Linear model for angle}
-\centering
-\fontsize{7}{9}\selectfont
-\begin{tabular}[t]{lccc}
-\toprule
-\textbf{Characteristic} & \textbf{Beta} & \textbf{95\% CI} & \textbf{p-value}\\
-\midrule
-condition &  &  & \\
-\hspace{1em}No Sonification & — & — & \\
-\hspace{1em}Task & 1.3 & -4.2, 6.8 & 0.6\\
-\hspace{1em}Sync & -1.4 & -6.9, 4.1 & 0.6\\
-\bottomrule
-\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
-\end{tabular}
-\end{table}
+```
 
 \hypertarget{synchronization}{%
 \subsection{Synchronization}\label{synchronization}}

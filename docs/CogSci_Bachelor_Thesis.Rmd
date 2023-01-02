@@ -126,6 +126,7 @@ use_package("tidybayes")
 use_package("ggprism")
 use_package("gsignal")
 use_package("circular")
+use_package("Directional")
 use_package("conflicted")
 use_package("pracma")
 use_package("grid")
@@ -708,15 +709,15 @@ trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
 # the range is from 0 to 180 degrees, and a line from the center
 # should represent the mean angle, and the length of the line
 # represents the standard deviation (100% is 0, 0% is 180 degrees)
-plots <- list()
+# plots <- list()
 
-for (subj_pair in unique(trajectories_angles_pairwise_mean$experiment_id)) {
-    plots[[subj_pair]] <- gg.gauge(trajectories_angles_pairwise_mean[trajectories_angles_pairwise_mean$experiment_id == subj_pair,])
-}
-plt = grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
+# for (subj_pair in unique(trajectories_angles_pairwise_mean$experiment_id)) {
+#     plots[[subj_pair]] <- gg.gauge(trajectories_angles_pairwise_mean[trajectories_angles_pairwise_mean$experiment_id == subj_pair,])
+# }
+# plt = grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
 
-ggsave("figures/mean_pairwise_phase_angles_mean_sd.png", plt, width = 12, height = 8)
-plt
+# ggsave("figures/mean_pairwise_phase_angles_mean_sd.png", plt, width = 12, height = 8)
+# plt
 
 ```
 
@@ -743,30 +744,14 @@ trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise_mean_tri
         angle_sem = as.numeric(circular::sd(angle_mean)/sqrt(n())),
         angle_var = as.numeric(circular::angular.variance(angle_mean)),
         angle_mean = as.numeric(mean.circular(angle_mean)), .groups = "drop")
-plt1 = gg.gauge(trajectories_angles_pairwise_mean_trial) +
+plt = gg.gauge(trajectories_angles_pairwise_mean_trial) +
       theme(legend.position = "bottom") +
       labs(title = "Mean Phase Angle of (trial mean of) Trajectories",
            subtitle = "Mean of all trials for each condition")
 
 ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt, width = 12, height = 8)
-plt1
+plt
 
-trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise %>%
-    dplyr::group_by(condition) %>%
-    dplyr::summarise(
-        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)),
-        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
-        angle_sem = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)/sqrt(n())),
-        angle_var = as.numeric(circular::angular.variance(instantaneous_phase_angle_diff_c)),
-        .groups = "drop")
-plt2 = gg.gauge(trajectories_angles_pairwise_mean_trial) +
-      theme(legend.position = "bottom")+
-      labs(title = "Mean Phase Angle of Trajectories",
-           subtitle = "Mean of all timepoints for each condition")
-plt2
-
-plt3 = grid_arrange_shared_legend(list(plt1, plt2), nrow = 1, ncol = 2)
-ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt3, width = 12, height = 8)
 
 ```
 
@@ -777,7 +762,7 @@ ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt3, width = 12, heig
 
 # Results
 
-```{r regression, include=FALSE}
+```{r analysis-aov, include=FALSE}
 
 trajectories_angles_pairwise$condition <- factor(trajectories_angles_pairwise$condition, levels = c("No Sonification", "Task", "Sync"))
 
@@ -786,8 +771,21 @@ trajectories_angles_pairwise_for_model <- trajectories_angles_pairwise %>%
     dplyr::group_by(experiment_id, condition, trial) %>%
     dplyr::summarise(
         delta_y = mean(delta_y),
-        instantaneous_phase_angle_diff = mean(instantaneous_phase_angle_diff),
+        instantaneous_phase_angle_diff_c = circular::mean.circular(instantaneous_phase_angle_diff_c),
         .groups = "drop")
+
+anova_angle <- Directional::hcf.circaov(
+  trajectories_angles_pairwise_for_model$instantaneous_phase_angle_diff_c,
+  trajectories_angles_pairwise_for_model$condition,
+  rads = FALSE)
+
+
+anova_distance <- aov(delta_y ~ condition, data = trajectories_angles_pairwise_for_model)
+
+```
+
+```{r bayes-analysis, include=FALSE, eval=FALSE}
+# eval = false, if we want to run this, we can change it to true, pending time...
 
 m_angle <- stan_glmer(
   instantaneous_phase_angle_diff ~ condition + (1|experiment_id) + (1|trial),
@@ -846,14 +844,13 @@ trajectories_angles_pairwise_for_model %>%
     geom_point() +
     theme_prism() +
     theme(legend.position = "none")
-
 ```
 
 ### Testing different model / outputs / tables
 
 
 
-```{r regression-results-angle}
+```{r regression-results-angle, eval=FALSE}
 
 # angle
 tbl_angle_null <- tbl_regression(
@@ -867,34 +864,6 @@ tbl_angle_null <- tbl_regression(
     booktabs = TRUE) %>% kable_styling(font_size=7)
 broom.mixed::tidy
 ```
-
-simple lm, but grouped with trial, subject pair and condition this is using the formula `delta_y ~ condition`
-
-```{r lm-dist}
-
-lm_dist <- lm(
-  delta_y ~ condition,
-  data = trajectories_angles_pairwise_for_model)
-
-tbl_regression(lm_dist) %>%
-  as_kable_extra(
-    caption = "Linear model for distance",
-    booktabs = TRUE) %>% kable_styling(font_size=7)
-
-```
-
-this is using the formula `angle ~ condition`
-
-```{r lm-ang}
-
-lm_dist <- lm(
-  instantaneous_phase_angle_diff ~ condition,
-  data = trajectories_angles_pairwise_for_model)
-
-tbl_regression(lm_dist) %>%
-  as_kable_extra(
-    caption = "Linear model for angle",
-    booktabs = TRUE) %>% kable_styling(font_size=7)
 
 ```
 
