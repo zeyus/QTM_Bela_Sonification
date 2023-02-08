@@ -227,6 +227,7 @@
 
 
 \usepackage{flafter}
+\usepackage{biblatex}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -289,14 +290,13 @@
     Authors of papers retain copyright and release the work under a MIT Licence (\href{https://github.com/zeyus/QTM\_Bela\_Sonification/blob/main/LICENSE.md}{\color{NavyBlue}{MIT}}).
   }
 \restoregeometry
+\twocolumn
 {
 \hypersetup{linkcolor=Black}
 \setcounter{tocdepth}{3}
 \tableofcontents
 }
-\twocolumn
-
-% This will be displayed full-width
+\clearpage
 \hypertarget{harmony-in-motion-real-time-sonification-strategies-for-joint-action-research}{%
 \section{Harmony in Motion: Real-time Sonification Strategies for Joint Action Research}\label{harmony-in-motion-real-time-sonification-strategies-for-joint-action-research}}
 
@@ -439,6 +439,15 @@ Undertone & 232.819 & A\#3 & 293.333 & D4 & 369.577 & F\#4\\
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/setharesTuningTimbreSpectrum2010_p47} 
+
+}
+
+\caption{Sensory dissonance of sine waves by interval for five frequencies. Figure courtesy (ref:setharesTuningTimbreSpectrum2010)}\label{fig:sensory-dissonance}
+\end{figure}
 
 \hypertarget{hardware-and-software-implementation}{%
 \section{Hardware and Software Implementation}\label{hardware-and-software-implementation}}
@@ -584,11 +593,11 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{CogSci_Bachelor_Thesis_files/figure-latex/mean-instantaneous-phase-angle-circular-plot-1} 
+{\centering \includegraphics[width=1\linewidth]{figures/mean_condition_phase_angles_mean_sd} 
 
 }
 
-\caption{Plot of mean pairwise phase angles of experimental conditions}\label{fig:mean-instantaneous-phase-angle-circular-plot}
+\caption{Plot of mean absolute instantaneous phase angles of experimental conditions with the length of the needles representing the standard deviation as a percentage of 90 degrees. No Sonification condition mean phase angle =  8.86 (sd =  0.07 ) degrees, sync sonification condition mean phase angle =  8.75 (sd =  0.08 ) degrees, task sonification condition mean phase angle =  14.21 (sd =  0.22 ) degrees.}\label{fig:mean-instantaneous-phase-angle-circular-plot}
 \end{figure}
 
 \hypertarget{learning}{%
@@ -601,8 +610,6 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 \hypertarget{testing-different-model-outputs-tables}{%
 \subsubsection{Testing different model / outputs / tables}\label{testing-different-model-outputs-tables}}
-
-```
 
 \hypertarget{synchronization}{%
 \subsection{Synchronization}\label{synchronization}}
@@ -636,6 +643,15 @@ and of course all the stuff about different sonification options and testing ran
 
 and of course we can talk about that in relation to the results, lack of results, why we might be seeing the data we see,
 and especially that we actually managed to create a low-latency method for sonification of /arbitrary/ data, and we used it for an expensive mocap setup but this could be applied to outputs from machine learning models (i.e.~webcam object tracking) or even other low-cost hardware like wiimotes or something
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/spec_tones} 
+
+}
+
+\caption{Spectral analysis of the two base frequency audio files}\label{fig:stimuli-spectra}
+\end{figure}
 \balance
 \clearpage
 

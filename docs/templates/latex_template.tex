@@ -438,6 +438,7 @@ $for(include-before)$
 $include-before$
 
 $endfor$
+\twocolumn
 $if(toc)$
 {
 $if(colorlinks)$
@@ -453,9 +454,7 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
-\twocolumn
-
-% This will be displayed full-width
+\clearpage
 $body$
 $if(aligncols)$
 \balance

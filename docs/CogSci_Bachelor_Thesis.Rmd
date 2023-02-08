@@ -51,7 +51,7 @@ aligncols: true
 output:
     bookdown::pdf_document2:
         keep_tex: yes
-        extra_dependencies: ["flafter"]
+        extra_dependencies: ["flafter", "biblatex"]
         latex_engine: xelatex 
         citation_package: biblatex
         toc: yes
@@ -79,6 +79,9 @@ bela_version <- "0.3.8g"
 bela_freq <- 44100
 bela_buffer_size <- 32
 bela_n_channels <- 2
+undertone_stimulus <- "../src/res/simple_As3.wav"
+overtone_stimulus <- "../src/res/simple_f4.wav"
+stimuli_freq <- bela_freq # Hz
 
 # Data
 trajectories_file <- "../data/standardized_trajectories.Rda.bz2"
@@ -100,6 +103,7 @@ options(knitr.graphics.auto_pdf = TRUE)
 options(knitr.table.format = "latex")
 knitr::opts_knit$set(root.dir = wd)
 knitr::opts_chunk$set(echo = FALSE)
+# opts_knit$set(eval.after = "fig.cap")
 # this leaves all of the intermediate files in the dir if FALSE
 options(tinytex.clean = FALSE)
 # make verbose TRUE to help with debugging
@@ -121,30 +125,37 @@ use_package <- function(p) {
 use_package("kableExtra")
 use_package("bookdown")
 use_package("rticles")
+use_package("conflicted")
 use_package("tidyverse")
-use_package("tidybayes")
+use_package("easystats")
 use_package("ggprism")
 use_package("gsignal")
 use_package("circular")
 use_package("Directional")
-use_package("conflicted")
 use_package("pracma")
 use_package("grid")
 use_package("gridExtra")
-use_package("ggrepel")
 use_package("colorspace")
-# use_package("lme4")
-# use_package("lmerTest")
-use_package("rstanarm")
 use_package("sjPlot")
 use_package("sjlabelled")
 use_package("sjmisc")
 use_package("broom.mixed")
-use_package("gtsummary")
 use_package("DiagrammeR")
 use_package("DiagrammeRsvg")
 use_package("rsvg")
-options(mc.cores = parallel::detectCores())
+use_package("wav")
+use_package("zoo")
+use_package("dtw")
+use_package("unigd")
+use_package("ggthemes")
+use_package("astsa")
+######################
+# NOTE
+#####################
+# https://github.com/easystats/report
+# and install easystats too....
+
+# options(mc.cores = parallel::detectCores())
 # The following are used in the preprocessing pipieline
 use_package("mousetrap")
 
@@ -266,7 +277,6 @@ Two parallel tracks were designed with a sigmoid curve shape, surfaced with a sm
 
 Two distinct, continuous frequency ranges were selected for application in sonification conditions. These ranges are offset by a perfect fifth and span eight semitones, the overtone range was chosen based on a center frequency of 440Hz (A4) and the range was limited to avoid a large overlap with the undertone range during normal operation (Table \@ref(tab:frequency-ranges)). Consideration was also given to creating ranges that were not sufficiently high to cause discomfort, nor sufficiently low that distinguishing slight differences becomes more difficult.
 
-
 ```{r frequency-ranges}
 
 ## change this to a more sane way of doing this
@@ -305,8 +315,15 @@ kbl(freq_ranges,
     notation="none",
     escape = FALSE,
     threeparttable = TRUE)
+```
+
+```{r sensory-dissonance, fig.align='center', fig.cap='Sensory dissonance of sine waves by interval for five frequencies. Figure courtesy (ref:setharesTuningTimbreSpectrum2010)', out.width="100%"}
+# load figure image
+sensory_dissonance <- "figures/setharesTuningTimbreSpectrum2010_p47.png"
+knitr::include_graphics(sensory_dissonance)
 
 ```
+
 
 # Hardware and Software Implementation   
 
@@ -468,9 +485,11 @@ if (file.exists(trajectories_with_hilbert)) {
     load(trajectories_file)
     # data is available in "trajectories"
     angle_difference_vector <- function(angle1, angle2) {
-        diff <- (angle2 - angle1 + 180) %% 360 - 180
-        diff[diff < -180] <- diff[diff < -180] + 360
-        diff
+      diff <- angle2 - angle1
+      # circular handles the modulo for us
+      # diff[diff > 90] <- diff[diff > 90] - 180
+      # diff[diff < -90] <- diff[diff < -90] + 180
+      diff
     }
 
     # for each experiment_id (subject pair)
@@ -529,14 +548,89 @@ if (file.exists(trajectories_with_hilbert)) {
     angular_trajectories <- trajectories
     rm(trajectories_with_hilbert, trajectories)
 }
+# ensure consistent ordering of conditions
+angular_trajectories$condition <- factor(angular_trajectories$condition, levels = c("No Sonification", "Task", "Sync"))
 ```
 
-```{r, pairwise-trajectories, include=FALSE}
+```{r, pairwise-trajectories-dtw, include=FALSE}
+
+# OK, let's do the dynamic time warping for all subject pairs, with decimated data
+# and no bandpass filtering
+dtw_results <- angular_trajectories %>%
+  group_by(experiment_id, condition, trial) %>%
+  group_map(~ {
+    # get the data
+    data <- .x
+    # get the subject IDs
+    subj_ids <- unique(data$subj)
+    subj_a <- subj_ids[1]
+    subj_b <- subj_ids[2]
+    # get the y positions
+    y_pos_a <- data[data$subj == subj_a, ]$z_ypos
+    y_pos_b <- data[data$subj == subj_b, ]$z_ypos
+    # decimate the data
+    y_pos_a_ds <- y_pos_a[seq(1, length(y_pos_a), 10)]
+    y_pos_b_ds <- y_pos_b[seq(1, length(y_pos_b), 10)]
+    # calculate the alignment
+    alignments_windowed <- dtw::dtw(y_pos_a_ds, y_pos_b_ds, keep.internals = FALSE, distance.only = TRUE, window.type="sakoechiba", window.size = 30 * 10)
+    # return the result
+    data.frame(
+      experiment_id = .y$experiment_id[1],
+      condition = .y$condition[1],
+      trial = .y$trial[1],
+      subject_a = subj_a,
+      subject_b = subj_b,
+      distance = alignments_windowed$distance,
+      normalizedDistance = alignments_windowed$normalizedDistance,
+      stringsAsFactors = FALSE
+    )
+  })
+
+# combine all results from list into a data frame
+dtw_results <- bind_rows(dtw_results)
+summary(dtw_results)
+# let's plot the mean and standard deviation of the normalized distance
+# for each condition
+
+# get the mean and standard deviation
+dtw_results_mean <- dtw_results %>%
+  group_by(condition) %>%
+  summarise(
+    mean_distance = mean(normalizedDistance),
+    sd_distance = stats::sd(normalizedDistance)
+  )
+
+# set condition order to "No Sonification", "Task", "Sync"
+ 
+
+# plot the mean and standard deviation
+ugd(width=1600, height=1200)
+
+ggplot(dtw_results_mean, aes(x=condition, y=mean_distance, fill=condition)) +
+  geom_bar(stat="identity") +
+  geom_errorbar(aes(ymin=mean_distance-sd_distance, ymax=mean_distance+sd_distance), width=0.2, color = "white") +
+  theme_hc(style = "darkunica") +
+  labs(
+    x = "Condition",
+    y = "DTW Normalized distance"
+  ) +
+  theme(
+    axis.text.x = element_text(color = darken("white", 0.4)),
+    axis.text.y = element_text(color = darken("white", 0.4)),
+    legend.position = "none"
+  )
+
+ugd_save("figures/dtw_summary.png", width=1600, height=1200, zoom = 3)
+dev.off()
+
 # drop subject, we are doing pairwise analysis now
 trajectories_angles_pairwise <- angular_trajectories %>%
     dplyr::select(-subj) %>%
     dplyr::distinct()
+
+
 ```
+
 
 ### Distance
 Distance between subject sleds is a useful proxy for determining the level of success of synchronization, where a trial where subjects move perfectly together would result in a delta of zero for each time point, and large distances would indicate that they were unable to synchronize their sled movements. Absolute distance deltas between the standardized x-coordinates of subject pairs were calculated for each time point by trial and condition. Mean deltas per condition were calculated per subject pair, resulting in….. (Figure \@ref(fig:pairwise-position-delta))
@@ -567,6 +661,8 @@ plt <- trajectories_angles_pairwise %>%
     labs(
         x = "Condition",
         y = "Mean pairwise position delta")
+
+
 
 plt
 
@@ -603,8 +699,13 @@ grid_arrange_shared_legend <- function(plots, nrow = 1, ncol = length(plots), po
 # adapted from https://stackoverflow.com/a/24921725
 gg.gauge <- function(pos,breaks=c(0,180)) {
   limit <- 100/max(breaks)
+  # mean value as a percentage of the limit
   pos$angle_mean_pct <- pos$angle_mean*(limit)
-  pos$angle_sd_pct <- pos$angle_sd*(1/pos$angle_mean)
+  # standard deviation as a percentage limit
+  # doubled because we want to show the standard deviation
+  # on both sides of the mean
+  pos$angle_sd_pct <- pos$angle_sd*2*(1/pos$angle_mean)
+  #pos$angle_sd_pct <- pos$angle_sd*(1/pos$angle_mean)
   rel_breaks <- breaks*(limit)
 
   get.poly <- function(a,b,r1=0.0,r2=1.0,condition=NA) {
@@ -651,19 +752,6 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
         aes(x,y, color=condition,
           fill=condition))
   }
-    # geom_label_repel(
-    #     data=d_labels,
-    #     aes(
-    #       x,
-    #       y,
-    #       label=text,
-    #       fill=stage(condition,
-    #         after_scale = darken(fill, 0.5)),
-    #       segment.color=after_scale(darken(fill, 0.5))),
-    #     color="white",
-    #     box.padding = 0.5,
-    #     min.segment.length = 0,
-    #     show.legend = FALSE) +
   plt = plt +
     coord_fixed()+
     theme_prism()+
@@ -682,43 +770,6 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
 }
 
 
-# allow for circular to convert radians to degrees
-trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
-    circular::circular(
-        trajectories_angles_pairwise$instantaneous_phase_angle_diff,
-        type = "angles",
-        units = "degrees",
-        modulo = "pi")
-
-```
-
-```{r instantaneous-phase-angles, include=FALSE}
-### This is excluded as it was a plot showing all the subject pairs
-### and conditions, but it was too crowded to be useful
-
-# calculate mean and sd of the instantaneous phase angle difference
-# this time only for subject pair and condition
-trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
-    dplyr::group_by(experiment_id, condition) %>%
-    dplyr::summarise(
-        angle_mean = as.numeric(mean.circular(instantaneous_phase_angle_diff_c)),
-        angle_sd = as.numeric(circular::sd(instantaneous_phase_angle_diff_c)), .groups = "drop")
-
-# plot the means on a gauge plot faceted by subject pair
-# the plot should be a semicircle
-# the range is from 0 to 180 degrees, and a line from the center
-# should represent the mean angle, and the length of the line
-# represents the standard deviation (100% is 0, 0% is 180 degrees)
-# plots <- list()
-
-# for (subj_pair in unique(trajectories_angles_pairwise_mean$experiment_id)) {
-#     plots[[subj_pair]] <- gg.gauge(trajectories_angles_pairwise_mean[trajectories_angles_pairwise_mean$experiment_id == subj_pair,])
-# }
-# plt = grid_arrange_shared_legend(plots, nrow = 3, ncol = 2)
-
-# ggsave("figures/mean_pairwise_phase_angles_mean_sd.png", plt, width = 12, height = 8)
-# plt
-
 ```
 
 ### Instantaneous Phase Angle of Trajectories
@@ -726,32 +777,94 @@ trajectories_angles_pairwise_mean <- trajectories_angles_pairwise %>%
 Hilbert transform…etc.etc, distance doesn’t tell the whole story….what if some move really slow, fast, etc….esentially a waveform / signal data….(Figure \@ref(fig:mean-instantaneous-phase-angle-circular-plot))
 
 
-```{r mean-instantaneous-phase-angle-circular-plot, fig.cap="Plot of mean pairwise phase angles of experimental conditions", fig.align="center", out.width="100%"}
+```{r calculate-condition-mean-phase-angle, include=FALSE}
+# allow for circular to convert radians to degrees
+# we take the absolute value of the mean phase angle
+# as we are interested in the synchrony rather than
+# direction and leader/follower dynamics
+trajectories_angles_pairwise$instantaneous_phase_angle_diff_c <-
+    circular::circular(
+        abs(trajectories_angles_pairwise$instantaneous_phase_angle_diff),
+        type = "angles",
+        units = "degrees",
+        modulo = "pi")
 
 # calculate mean and sd of the instantaneous phase angle difference by trial
 trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise %>%
     dplyr::group_by(experiment_id, condition, trial) %>%
     dplyr::summarise(
-        angle_mean = mean.circular(instantaneous_phase_angle_diff_c),
-        angle_sd = circular::sd(instantaneous_phase_angle_diff_c), .groups = "drop")
+        angle_mean = mean.circular(instantaneous_phase_angle_diff_c)
+    )
 
 # calculate mean and sd of the instantaneous phase angle difference by condition
-# report SEM as well
-trajectories_angles_pairwise_mean_trial <- trajectories_angles_pairwise_mean_trial %>%
+trajectories_angles_pairwise_mean_condition <- trajectories_angles_pairwise_mean_trial %>%
     dplyr::group_by(condition) %>%
     dplyr::summarise(
-        angle_sd = as.numeric(circular::sd(angle_mean)),
-        angle_sem = as.numeric(circular::sd(angle_mean)/sqrt(n())),
-        angle_var = as.numeric(circular::angular.variance(angle_mean)),
-        angle_mean = as.numeric(mean.circular(angle_mean)), .groups = "drop")
-plt = gg.gauge(trajectories_angles_pairwise_mean_trial) +
-      theme(legend.position = "bottom") +
-      labs(title = "Mean Phase Angle of (trial mean of) Trajectories",
-           subtitle = "Mean of all trials for each condition")
+        angle_var = circular::angular.variance(angle_mean),
+        angle_mean = as.numeric(mean.circular(angle_mean))
+    )
 
-ggsave("figures/mean_condition_phase_angles_mean_sd.png", plt, width = 12, height = 8)
-plt
+# calculate the standard deviation (degrees)
+trajectories_angles_pairwise_mean_condition$angle_sd <- sqrt(trajectories_angles_pairwise_mean_condition$angle_var)
 
+# remove the angle_var column
+trajectories_angles_pairwise_mean_condition <- trajectories_angles_pairwise_mean_condition %>%
+    dplyr::select(-angle_var)
+
+ugd(width=1600, height=1200)
+gg.gauge(trajectories_angles_pairwise_mean_condition, breaks = c(0, 90)) +
+      theme(legend.position = "bottom")
+ugd_save("figures/mean_condition_phase_angles_mean_sd.png", width=1600, height=1200, zoom = 3)
+dev.off()
+
+plot_title <- paste(
+    "Plot of mean absolute instantaneous phase angles of experimental conditions",
+    "with the length of the needles representing the standard deviation",
+    "as a percentage of 90 degrees.",
+    "No Sonification condition mean phase angle = ",
+    round(
+        trajectories_angles_pairwise_mean_condition$angle_mean[
+            trajectories_angles_pairwise_mean_condition$condition == "No Sonification"
+        ], 
+        2),
+    "(sd = ",
+    round(
+        trajectories_angles_pairwise_mean_condition$angle_sd[
+            trajectories_angles_pairwise_mean_condition$condition == "No Sonification"
+        ],
+        2),
+    ") degrees, sync sonification condition mean phase angle = ",
+        round(
+        trajectories_angles_pairwise_mean_condition$angle_mean[
+            trajectories_angles_pairwise_mean_condition$condition == "Sync"
+        ], 
+        2),
+    "(sd = ",
+        round(
+        trajectories_angles_pairwise_mean_condition$angle_sd[
+            trajectories_angles_pairwise_mean_condition$condition == "Sync"
+        ],
+        2),
+    ") degrees, task sonification condition mean phase angle = ",
+        round(
+        trajectories_angles_pairwise_mean_condition$angle_mean[
+            trajectories_angles_pairwise_mean_condition$condition == "Task"
+        ], 
+        2),
+    "(sd = ",
+        round(
+        trajectories_angles_pairwise_mean_condition$angle_sd[
+            trajectories_angles_pairwise_mean_condition$condition == "Task"
+        ],
+        2),
+    ") degrees.",
+    sep = " ")
+
+```
+
+```{r mean-instantaneous-phase-angle-circular-plot, fig.cap=plot_title, fig.align="center", out.width="100%"}
+
+knitr::include_graphics("figures/mean_condition_phase_angles_mean_sd.png")
 
 ```
 
@@ -762,9 +875,7 @@ plt
 
 # Results
 
-```{r analysis-aov, include=FALSE}
-
-trajectories_angles_pairwise$condition <- factor(trajectories_angles_pairwise$condition, levels = c("No Sonification", "Task", "Sync"))
+```{r analysis-aov, include=FALSE, eval=FALSE}
 
 # here we want to do a linear mixed effects model for both phase angle and distance
 trajectories_angles_pairwise_for_model <- trajectories_angles_pairwise %>%
@@ -863,7 +974,6 @@ tbl_angle_null <- tbl_regression(
     caption = "Angle Model",
     booktabs = TRUE) %>% kable_styling(font_size=7)
 broom.mixed::tidy
-```
 
 ```
 
@@ -897,6 +1007,73 @@ and of course all the stuff about different sonification options and testing ran
 
 and of course we can talk about that in relation to the results, lack of results, why we might be seeing the data we see, 
 and especially that we actually managed to create a low-latency method for sonification of /arbitrary/ data, and we used it for an expensive mocap setup but this could be applied to outputs from machine learning models (i.e. webcam object tracking) or even other low-cost hardware like wiimotes or something
+
+
+```{r generate-spectra, include=FALSE}
+
+# load audio files
+overtone <- wav::read_wav(overtone_stimulus)
+undertone <- wav::read_wav(undertone_stimulus)
+
+Fs <- stimuli_freq
+step <- trunc(Fs/1000)             # one spectral slice every 1 ms
+window <- trunc(100*Fs/1000)  # 100 ms data window
+fftn <- 2^ceiling(log2(abs(window)))
+
+# plot the spectra
+lower_freq <- 10
+upper_freq <- 1000
+
+spec_over = signal::specgram(overtone, n = fftn, Fs = Fs, window = window, overlap = window-step)
+
+freq_idx <- spec_over$f >= lower_freq & spec_over$f <= upper_freq
+time_values <- spec_over$t
+
+S <- abs(spec_over$S[freq_idx,])   # magnitude in range 10<f<=1000 Hz.
+S <- S/max(S)         # normalize magnitude so that max is 0 dB.
+S[S < 10^(-40/10)] <- 10^(-40/10) # clip below -40 dB.
+S[S > 10^(-3/10)] <- 10^(-3/10)   # clip above -3 dB.
+row.names(S) <- spec_over$f[freq_idx]
+data <- reshape2::melt(t(10*log10(S)), c("x", "y"), value.name = "z")
+data$tone <- "Overtone"
+
+
+spec_under <- signal::specgram(undertone, n = fftn, Fs = Fs, window = window, overlap = window-step)
+
+freq_idx <- spec_under$f >= lower_freq & spec_under$f <= upper_freq
+time_values <- spec_under$t
+
+S <- abs(spec_under$S[freq_idx,])   # magnitude in range 10<f<=1000 Hz.
+S <- S/max(S)         # normalize magnitude so that max is 0 dB.
+S[S < 10^(-40/10)] <- 10^(-40/10) # clip below -40 dB.
+S[S > 10^(-3/10)] <- 10^(-3/10)  # clip above -3 dB.
+row.names(S) <- spec_under$f[freq_idx]
+data2 <- reshape2::melt(t(10*log10(S)), c("x", "y"), value.name = "z")
+data2$tone <- "Undertone"
+
+data <- rbind(data, data2)
+
+
+ugd(width=1600, height=1200)
+ggplot(data = data, mapping = aes(x = x, y = y, fill = z)) +
+  geom_raster() +
+  scale_fill_gradientn(colors = hcl.colors(5)) +
+  guides(y = "prism_offset_minor") +
+  theme_prism(base_size = 16) +
+  labs(x = "Time (s)", y = "Frequency (Hz)", fill = "Magnitude (dB)") +
+  facet_wrap(~tone, nrow = 1)
+ugd_save("figures/spec_tones.png", width=1600, height=1200, zoom = 3)
+dev.off()
+
+
+rm(data, data2, S, spec_over, spec_under)
+
+
+```
+
+```{r stimuli-spectra, fig.align='center', fig.cap='Spectral analysis of the two base frequency audio files', out.width="100%"}
+knitr::include_graphics("figures/spec_tones.png")
+```
 
 
 <div id="refs"></div>
