@@ -419,8 +419,8 @@ Two distinct, continuous frequency ranges were selected for application in sonif
 \cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
   & Freq & Note\textsuperscript{a} & Freq & Note\textsuperscript{a} & Freq & Note\textsuperscript{a}\\
 \midrule
-Overtone & 349.230 & F4 & 440.000 & A4 & 554.365 & C\#5\\
-Undertone & 232.819 & A\#3 & 293.333 & D4 & 369.577 & F\#4\\
+Overtone & 349 & F4 & 440 & A4 & 554 & C\#5\\
+Undertone & 233 & A\#3 & 293 & D4 & 370 & F\#4\\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -583,12 +583,15 @@ Table\ldots{}
 \caption{Plot of pairwise position delta for each subject pair}\label{fig:pairwise-positiondelta}
 \end{figure}
 
-```
-
 \hypertarget{instantaneous-phase-angle-of-trajectories}{%
 \subsubsection{Instantaneous Phase Angle of Trajectories}\label{instantaneous-phase-angle-of-trajectories}}
 
 Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.what if some move really slow, fast, etc\ldots.esentially a waveform / signal data\ldots.(Figure \ref{fig:mean-instantaneous-phase-angle-circular-plot})
+
+The results showed that the mean angle difference
+was 8.861° ± 0.067° (SD) for the no sonification condition,
+14.211° ± 0.216° (SD) for the task condition, and
+8.749° ± 0.075° (SD) for the sync condition. (Figure \ref{fig:mean-instantaneous-phase-angle-circular-plot}).
 
 \begin{figure}
 
@@ -596,7 +599,19 @@ Hilbert transform\ldots etc.etc, distance doesn't tell the whole story\ldots.wha
 
 }
 
-\caption{Plot of mean absolute instantaneous phase angles of experimental conditions with the length of the needles representing the standard deviation as a percentage of 90 degrees. No Sonification condition mean phase angle =  8.86 (sd =  0.07 ) degrees, sync sonification condition mean phase angle =  8.75 (sd =  0.08 ) degrees, task sonification condition mean phase angle =  14.21 (sd =  0.22 ) degrees.}\label{fig:mean-instantaneous-phase-angle-circular-plot}
+\caption{Plot of mean absolute instantaneous phase angles of experimental conditions with the length of the needles representing the standard deviation as a percentage of 90 degrees. No Sonification condition mean phase angle =  8.861 (sd =  0.067 ) degrees, task sonification condition mean phase angle =  14.211 (sd =  0.216 ) degrees, sync sonification condition mean phase angle =  8.749 (sd =  0.075 ) degrees.}\label{fig:mean-instantaneous-phase-angle-circular-plot}
+\end{figure}
+
+\hypertarget{dynamic-time-warping}{%
+\subsection{Dynamic Time Warping}\label{dynamic-time-warping}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{figures/dtw_summary} 
+
+}
+
+\caption{Distribution density plot of normalized distance between paired trajectories by condition. The mean normalized distance is shown as a point (+), the 20th and 80th percentiles are shown as dashed lines and the 50th percentile is shown as a solid line. No Sonification condition normalized distance mean  =  0.014 (sd =  0.01 ) degrees, task sonification condition normalized distance mean =  0.028 (sd =  0.025 ) degrees, sync sonification condition normalized distance mean =  0.016 (sd =  0.007 ) degrees.}(\#fig:dtw-plot, )
 \end{figure}
 
 \hypertarget{learning}{%

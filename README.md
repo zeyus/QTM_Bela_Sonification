@@ -4,22 +4,24 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 # Contents
 
 <!--ts-->
-* [QTM Low-latency Sonification](#qtm-low-latency-sonification)
-* [Contents](#contents)
-* [Cognitive Science Bachelor's Project (WORK IN PROGRESS)](#cognitive-science-bachelors-project-work-in-progress)
-* [Project Structure](#project-structure)
-* [Usage](#usage)
-   * [Sonification](#sonification)
-   * [Data](#data)
-      * [Subject Information](#subject-information)
-      * [QTM Data Format](#qtm-data-format)
-   * [Data Preparation](#data-preparation)
-* [Open Source Libraries](#open-source-libraries)
-   * [Included](#included)
-   * [Used](#used)
+- [QTM Low-latency Sonification](#qtm-low-latency-sonification)
+- [Contents](#contents)
+- [Harmony in Motion: Real-time Sonification Strategies for Joint Action Research](#harmony-in-motion-real-time-sonification-strategies-for-joint-action-research)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+  - [Sonification](#sonification)
+  - [Data](#data)
+    - [Subject Information](#subject-information)
+    - [QTM Data Format](#qtm-data-format)
+  - [Data Preparation](#data-preparation)
+- [Open Source Libraries](#open-source-libraries)
+  - [Included](#included)
+  - [Used](#used)
 <!--te-->
 
-# Cognitive Science Bachelor's Project (WORK IN PROGRESS)
+# Harmony in Motion: Real-time Sonification Strategies for Joint Action Research
+
+**Cognitive Science Bachelor's Project (WORK IN PROGRESS)**
 
 The thesis was written around the investigation of the effect of low-latency sonification on the synchroniciy of joint action tasks.
 The project was supervised by [Anna Zamm](https://pure.au.dk/portal/en/persons/anna-zamm(34046139-7057-4cae-927d-f2458b279026).html) (PhD, Assistant Professor, Aarhus University).
