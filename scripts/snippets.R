@@ -540,3 +540,95 @@ ggplot(aes(x = mt_seq / capture_freq, y = instantaneous_phase_angle_diff_c)) +
   labs(x = "Time (seconds)", y = "Instantaneous Phase Angle Difference (degrees)")
 ugd_save("figures/phase_angle_example.png", width=1600, height=1200, zoom = 3)
 dev.off()
+
+
+
+
+
+
+
+
+
+# get the sum of the data points for each time point across a condition
+multitrajectory <- function(data, condition, start, finish) {
+    x <- data %>% 
+        dplyr::filter(
+            condition == condition,
+            mt_seq >= start * capture_freq &
+            mt_seq <= finish * capture_freq &
+            experiment_id != "Subject Pair 2") %>% 
+        group_by(mt_seq) %>% 
+        summarise(x = sum(z_ypos)) %>% 
+        ungroup() %>%
+        pull(x)
+    x
+}
+
+Fs <- 300
+step <- 1             # one spectral slice every 1/300th of a second
+window <- 20*Fs  # 100 ms data window
+fftn <- 2^(ceiling(log2(abs(window)))+2)
+
+# plot the spectra
+lower_freq <- 0
+upper_freq <- 0.5
+
+data <- multitrajectory(angular_trajectories, "No Sonification", 0, 90)
+
+spec_trajectory = signal::specgram(data, n = fftn, Fs = Fs, window = window, overlap = window-step)
+
+freq_idx <- spec_trajectory$f >= lower_freq & spec_trajectory$f <= upper_freq
+time_values <- spec_trajectory$t
+
+S <- abs(spec_trajectory$S[freq_idx,])
+S <- S/max(S)         # normalize magnitude so that max is 0 dB.
+row.names(S) <- spec_trajectory$f[freq_idx]
+data <- reshape2::melt(t(10*log10(S)), c("x", "y"), value.name = "z")
+data$tone <- "No"
+
+ugd(width=1600, height=1200)
+ggplot(data = data, mapping = aes(x = x / 300, y = y, fill = z)) +
+  geom_raster() +
+  scale_fill_gradientn(colors = hcl.colors(5)) +
+  guides(y = "prism_offset_minor") +
+  theme_prism(base_size = 16) +
+  labs(x = "Time (s)", y = "Frequency (Hz)", fill = "Magnitude (dB)") +
+  facet_wrap(~tone, nrow = 1)
+ugd_save("figures/spec_sync.png", width=1600, height=1200, zoom = 3)
+dev.off()
+
+
+# grouped_data <- trajectories_angles_pairwise %>%
+#   group_by(condition, experiment_id) %>%
+#   summarize(mean_delta_y = mean(delta_y),
+#             sd_delta_y = stats::sd(delta_y))
+
+# result_tibble <- grouped_data %>%
+#   group_by(condition) %>%
+#   summarize(mean_delta_y = mean(mean_delta_y),
+#             sd_delta_y = mean(sd_delta_y))
+# # box plot (geom_boxplot) the mean pairwise position delta by experiment, and condition
+# result_tibble %>%
+#     ggplot(aes(
+#         x = condition,
+#         y = mean_delta_y,
+#         fill = condition)) +
+#     geom_boxplot(show.legend = FALSE) +
+#     stat_summary(
+#       aes(
+#         color = stage(condition, after_scale = darken(color, 0.70))),
+#       fun = "mean",
+#       geom = "point",
+#       shape = 8,
+#       size = 2,
+#       show.legend = FALSE) +
+#     guides(y = "prism_offset_minor") +
+#     theme_prism(base_size = 16) +
+#     labs(
+#         x = "Condition",
+#         y = "Mean pairwise position delta")
+# outlier.size = 0.2,
+#         outlier.fill = NA,
+#         outlier.shape = 3,
+#         outlier.stroke = 0.2,
+#         outlier.alpha=0.5

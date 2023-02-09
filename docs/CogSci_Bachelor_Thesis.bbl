@@ -727,6 +727,59 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{setharesSoundSound2005}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
+           family={Sethares},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{fullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{bibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tuning, {{Timbre}}, {{Spectrum}}, {{Scale}}}
+      \field{isbn}{978-1-85233-797-1}
+      \field{langid}{english}
+      \field{title}{Sound on {{Sound}}}
+      \field{urlday}{8}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{39\bibrangedash 50}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/1-84628-113-X_3
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\5QCS2RNG\\2005_Sound on Sound.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
+    \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
@@ -1568,6 +1621,59 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1364661305003566
       \endverb
       \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{setharesSoundSound2005}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
+           family={Sethares},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{fullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{bibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tuning, {{Timbre}}, {{Spectrum}}, {{Scale}}}
+      \field{isbn}{978-1-85233-797-1}
+      \field{langid}{english}
+      \field{title}{Sound on {{Sound}}}
+      \field{urlday}{8}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{39\bibrangedash 50}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/1-84628-113-X_3
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\5QCS2RNG\\2005_Sound on Sound.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
     \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%

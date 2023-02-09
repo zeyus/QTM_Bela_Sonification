@@ -20,8 +20,8 @@ affiliations:
 - name: Aarhus University
   index: 1
 abstract: "Placeholder: For any time-sensitive task making use of auditory feedback, having low latency is vital to ensure the sonification feels connected to the action, rather than disjointed..."
-date: "4 January 2023"
-submitted: "4 January 2023"
+date: "15 February 2023"
+submitted: "15 February 2023"
 degree: "BSc Cognitive Science"
 supervisor: "Anna Zamm, Assistant Professor"
 faculty: "Faculty of Arts"
@@ -45,7 +45,7 @@ sansfont: calibri
 fontsize: 11pt
 spacing: double
 # set this to false when the document is ready for submission
-draft: true
+draft: false
 # set this to false if the last page or refs look bad
 aligncols: true
 output:
@@ -317,7 +317,10 @@ kbl(freq_ranges,
     threeparttable = TRUE)
 ```
 
-```{r sensory-dissonance, fig.align='center', fig.cap='Sensory dissonance of sine waves by interval for five frequencies. Figure courtesy (ref:setharesTuningTimbreSpectrum2010)', out.width="100%"}
+
+(ref:freqpercept) [@setharesSoundSound2005, p. 47]
+
+```{r sensory-dissonance, fig.align='center', fig.cap='Sensory dissonance of sine waves by interval for five frequencies. Figure (ref:freqpercept)', out.width="100%"}
 # load figure image
 sensory_dissonance <- "figures/setharesTuningTimbreSpectrum2010_p47.png"
 knitr::include_graphics(sensory_dissonance)
@@ -549,7 +552,7 @@ if (file.exists(trajectories_with_hilbert)) {
     rm(trajectories_with_hilbert, trajectories)
 }
 # ensure consistent ordering of conditions
-angular_trajectories$condition <- factor(angular_trajectories$condition, levels = c("No Sonification", "Task", "Sync"))
+angular_trajectories$condition <- factor(angular_trajectories$condition, levels = c("No Sonification", "Task", "Sync"), ordered=TRUE)
 ```
 
 ```{r, pairwise-trajectories-dtw, include=FALSE}
@@ -637,34 +640,51 @@ Distance between subject sleds is a useful proxy for determining the level of su
 Table…
 
 
-```{r pairwise-position-delta, fig.cap="Plot of pairwise position delta for each subject pair", fig.align="center", out.width="100%"}
-
-# box plot (geom_boxplot) the mean pairwise position delta by experiment, and condition
-plt <- trajectories_angles_pairwise %>%
-    group_by(condition, trial) %>%
-    summarise(delta_y = mean(delta_y), .groups="drop") %>%
-    ggplot(aes(
-        x = condition,
-        y = delta_y,
+```{r pairwise-position-plot, include=FALSE}
+ugd(width=1600, height=1200)
+ggplot(
+    trajectories_angles_pairwise,
+    aes(
+        x=condition,
+        y=delta_y,
         fill = condition)) +
-    geom_boxplot(show.legend = FALSE) +
+    geom_violin(
+        adjust = .5,
+        show.legend = FALSE,
+        draw_quantiles = c(0.2, 0.8),
+        linetype = "dashed"
+        ) +
+    geom_violin(
+        adjust = .5,
+        show.legend = FALSE,
+        draw_quantiles = c(0.5),
+        fill="transparent"
+        ) +
     stat_summary(
-      aes(
-        color = stage(condition, after_scale = darken(color, 0.70))),
-      fun = "mean",
-      geom = "point",
-      shape = 8,
-      size = 2,
-      show.legend = FALSE) +
+        aes(
+            color = stage(condition, after_scale = darken(color, 0.70))),
+        fun = "mean",
+        geom = "point",
+        shape = 8,
+        size = 2,
+        show.legend = FALSE) +
     guides(y = "prism_offset_minor") +
+    scale_fill_manual(values = colorblind_friendly_pal) +
     theme_prism(base_size = 16) +
     labs(
         x = "Condition",
-        y = "Mean pairwise position delta")
+        y = "Pairwise position delta")
 
+ugd_save("figures/parwise_position_delta.png", width=1600, height=1200, zoom = 3)
+dev.off()
 
+```
 
-plt
+```{r pairwise-positiondelta, fig.cap="Plot of pairwise position delta for each subject pair", fig.align="center", out.width="100%"}
+
+knitr::include_graphics("figures/parwise_position_delta.png")
+
+```
 
 ```
 
@@ -708,7 +728,7 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
   #pos$angle_sd_pct <- pos$angle_sd*(1/pos$angle_mean)
   rel_breaks <- breaks*(limit)
 
-  get.poly <- function(a,b,r1=0.0,r2=1.0,condition=NA) {
+  get.poly <- function(a,b,r1=0.0,r2=1.0,cond=NA) {
     th.start <- pi*(1-a/100)
     th.end   <- pi*(1-b/100)
     end.x <- r2*cos(th.end)
@@ -716,8 +736,13 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
     th     <- seq(th.start,th.end,length.out=1000)
     x        <- c(r1*cos(th),rev(r2*cos(th)))
     y        <- c(r1*sin(th),rev(r2*sin(th)))
-    condition <- condition
-    return(data.frame(x,y,condition,end.x,end.y))
+    cond <- factor(cond,levels=levels(pos$condition), ordered=TRUE)
+    return(data.frame(
+        x=x,
+        y=y,
+        condition=cond,
+        end.x=end.x,
+        end.y=end.y))
   }
 
   plt = ggplot() +
@@ -734,12 +759,15 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
       aes(x=1.1*cos(pi*(1-rel_breaks/100)),y=1.1*sin(pi*(1-rel_breaks/100)),label=paste0(breaks, "°")))
 
   # add a geom_polygon for each pos
+  cond_colors <- colorblind_friendly_pal
+  names(cond_colors) <- levels(pos$condition)
+  
   d_labels = data.frame()
   for (i in 1:nrow(pos)) {
     d = get.poly(
         pos$angle_mean_pct[i]-0.1,
         pos$angle_mean_pct[i]+0.1,0,1-pos$angle_sd_pct[i],
-        condition=pos$condition[i])
+        cond=pos$condition[i])
     d_label = data.frame(
         x=d$end.x[1],
         y=d$end.y[1],
@@ -755,6 +783,8 @@ gg.gauge <- function(pos,breaks=c(0,180)) {
   plt = plt +
     coord_fixed()+
     theme_prism()+
+    scale_color_manual(values=cond_colors, breaks=names(cond_colors))+
+    scale_fill_manual(values=cond_colors, breaks=names(cond_colors))+
     theme(
           axis.text=element_blank(),
           axis.title=element_blank(),
@@ -1055,7 +1085,7 @@ data <- rbind(data, data2)
 
 
 ugd(width=1600, height=1200)
-ggplot(data = data, mapping = aes(x = x, y = y, fill = z)) +
+ggplot(data = data, mapping = aes(x = x / 1000, y = y, fill = z)) +
   geom_raster() +
   scale_fill_gradientn(colors = hcl.colors(5)) +
   guides(y = "prism_offset_minor") +
