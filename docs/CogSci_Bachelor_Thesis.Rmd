@@ -167,7 +167,8 @@ colorblind_friendly_pal_dark <- darken(colorblind_friendly_pal, 0.5)
 colorblind_friendly_pal <- lighten(colorblind_friendly_pal, 0.25)
 options(ggplot2.discrete.colour=colorblind_friendly_pal)
 options(ggplot2.discrete.fill=colorblind_friendly_pal)
-
+figure_width <- 1600
+figure_height <- 1200
 
 # after all the packages are loaded, we can save
 # a bibliography of all the packages used
@@ -607,7 +608,7 @@ dtw_results_mean <- dtw_results %>%
  
 
 # plot the mean and standard deviation
-ugd(width=1600, height=1200)
+ugd(width=figure_width, width=figure_height)
 
 ggplot(dtw_results_mean, aes(x=condition, y=mean_distance, fill=condition)) +
   geom_bar(stat="identity") +
@@ -623,7 +624,7 @@ ggplot(dtw_results_mean, aes(x=condition, y=mean_distance, fill=condition)) +
     legend.position = "none"
   )
 
-ugd_save("figures/dtw_summary.png", width=1600, height=1200, zoom = 3)
+ugd_save("figures/dtw_summary.png", width=figure_width, width=figure_height, zoom = 3)
 dev.off()
 
 # drop subject, we are doing pairwise analysis now
@@ -641,7 +642,7 @@ Table…
 
 
 ```{r pairwise-position-plot, include=FALSE}
-ugd(width=1600, height=1200)
+ugd(width=figure_width, width=figure_height)
 ggplot(
     trajectories_angles_pairwise,
     aes(
@@ -675,7 +676,7 @@ ggplot(
         x = "Condition",
         y = "Pairwise position delta")
 
-ugd_save("figures/parwise_position_delta.png", width=1600, height=1200, zoom = 3)
+ugd_save("figures/parwise_position_delta.png", width=figure_width, width=figure_height, zoom = 3)
 dev.off()
 
 ```
@@ -841,10 +842,10 @@ trajectories_angles_pairwise_mean_condition$angle_sd <- sqrt(trajectories_angles
 trajectories_angles_pairwise_mean_condition <- trajectories_angles_pairwise_mean_condition %>%
     dplyr::select(-angle_var)
 
-ugd(width=1600, height=1200)
+ugd(width=figure_width, width=figure_height)
 gg.gauge(trajectories_angles_pairwise_mean_condition, breaks = c(0, 90)) +
       theme(legend.position = "bottom")
-ugd_save("figures/mean_condition_phase_angles_mean_sd.png", width=1600, height=1200, zoom = 3)
+ugd_save("figures/mean_condition_phase_angles_mean_sd.png", width=figure_width, width=figure_height, zoom = 3)
 dev.off()
 
 plot_title <- paste(
@@ -1084,7 +1085,7 @@ data2$tone <- "Undertone"
 data <- rbind(data, data2)
 
 
-ugd(width=1600, height=1200)
+ugd(width=figure_width, width=figure_height)
 ggplot(data = data, mapping = aes(x = x / 1000, y = y, fill = z)) +
   geom_raster() +
   scale_fill_gradientn(colors = hcl.colors(5)) +
@@ -1092,7 +1093,7 @@ ggplot(data = data, mapping = aes(x = x / 1000, y = y, fill = z)) +
   theme_prism(base_size = 16) +
   labs(x = "Time (s)", y = "Frequency (Hz)", fill = "Magnitude (dB)") +
   facet_wrap(~tone, nrow = 1)
-ugd_save("figures/spec_tones.png", width=1600, height=1200, zoom = 3)
+ugd_save("figures/spec_tones.png", width=figure_width, width=figure_height, zoom = 3)
 dev.off()
 
 
