@@ -100,22 +100,22 @@ const std::array<std::string, NUM_SUBJECTS> gSubjMarkerLabels{{"CAR_W", "CAR_D"}
 /* SONIFICATION */
 
 // file for the lower tone
-const std::string gUndertoneFile = "./res/simple_As3.wav";
+const std::string gUndertoneFile = "./res/simple_As2.wav";
 
 // minimum frequency for undertone playback.
-const float gUndertoneFreqMin = 232.819;
+const float gUndertoneFreqMin = 116.40;
 // maximum frequencey for undertone playback.
-const float gUndertoneFreqMax = 369.577;
+const float gUndertoneFreqMax = 184.788;
 
 // file for the higher tone
-const std::string gOvertoneFile = "./res/simple_f4.wav";
+const std::string gOvertoneFile = "./res/simple_f3.wav";
 
 // minimum frequency for overtone playback.
-const float gOvertoneFreqMin = 349.23;
+const float gOvertoneFreqMin = 174.614;
 // maximum frequencey for overtone playback.
-const float gOvertoneFreqMax = 554.365;
+const float gOvertoneFreqMax = 277.183;
 // the center overtone frequency
-const float gFreqCenter = 440.0;
+const float gFreqCenter = 220.0;
 
 
 // length of wave files in samples
