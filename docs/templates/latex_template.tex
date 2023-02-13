@@ -7,6 +7,12 @@
 \usepackage{titlesec}
 \usepackage{calc}
 \usepackage{tikz}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
 \usepackage{hyperref}
 \hypersetup{colorlinks,
             urlcolor=NavyBlue,
@@ -18,7 +24,7 @@
 \usepackage{seqsplit}
 \usepackage{enumitem}
 \usepackage{xparse}
-\usepackage{setspace}
+
 $if(aligncols)$
 \usepackage{balance}
 $endif$
@@ -181,13 +187,7 @@ $endfor$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
 
-\usepackage{hyperref}
 $if(colorlinks)$
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 $endif$
