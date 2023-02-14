@@ -19,6 +19,173 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
+    \entry{benedictSurveyMaterialsCoatings2016}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0d43853e9510ea1eb2fcc8730469f1b8}{%
+           family={Benedict},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3656575819baf48804d58afd817e45dc}{%
+           family={Barrick},
+           familyi={B\bibinitperiod},
+           given={Gregory\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba94abd4df8dceb55388a46d24734630}{%
+           family={Pazder},
+           familyi={P\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=759548e98d5b24046ba6de1ffdb5689b}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Christopher\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=7b3e10f7af33b99e11f4625d7966c9da}{%
+           family={Simard},
+           familyi={S\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod}}}%
+        {{hash=cfc73d63e091f3430b2112f2355e98cd}{%
+           family={Takami},
+           familyi={T\bibinitperiod},
+           given={Hideki},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Edinburgh, United Kingdom}%
+      }
+      \strng{namehash}{426e5d38df856e872b6e518fd38f7625}
+      \strng{fullhash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{bibnamehash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{authorbibnamehash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{authornamehash}{426e5d38df856e872b6e518fd38f7625}
+      \strng{authorfullhash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{editorbibnamehash}{0068d6119652fff0550b6b59c24e09de}
+      \strng{editornamehash}{366cd67407e6aa5e2ca70d6dc5b30fe0}
+      \strng{editorfullhash}{0068d6119652fff0550b6b59c24e09de}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{eventtitle}{{{SPIE Astronomical Telescopes}} + {{Instrumentation}}}
+      \field{month}{8}
+      \field{title}{Survey of Materials and Coatings Suitable for Controlling Stray Light from the Near-{{UV}} to the near-{{IR}}}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{99083T}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1117/12.2231348
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\PVRJC2CC\\Benedict et al_2016_Survey of materials and coatings suitable for controlling stray light from the.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.2231348
+      \endverb
+      \verb{url}
+      \verb http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.2231348
+      \endverb
+    \endentry
+    \entry{bevilacquaSensoriMotorLearningMovement2016}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=bc9efed31f15056ea62f0434eedffda2}{%
+           family={Bevilacqua},
+           familyi={B\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df6a8c8ba3a2cca8a522c88d07d6a773}{%
+           family={Boyer},
+           familyi={B\bibinitperiod},
+           given={Eric\bibnamedelima O.},
+           giveni={E\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73b0bdd47accc82e8f47511333cc1292}{%
+           family={Françoise},
+           familyi={F\bibinitperiod},
+           given={Jules},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=301fdfa278bf7a80ac9788e736214de5}{%
+           family={Houix},
+           familyi={H\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e00c91a52712b58078798346d3d4ff39}{%
+           family={Susini},
+           familyi={S\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2585501883e26c72d426ab861ee2e3c7}{%
+           family={Roby-Brami},
+           familyi={R\bibinithyphendelim B\bibinitperiod},
+           given={Agnès},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac936388f7365959d64f66517502b140}{%
+           family={Hanneton},
+           familyi={H\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8ca2d99ef53a0d0f9321f88d01dc9c5e}
+      \strng{fullhash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{bibnamehash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{authorbibnamehash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{authornamehash}{8ca2d99ef53a0d0f9321f88d01dc9c5e}
+      \strng{authorfullhash}{d2a446f338e0c18ff8989e5a96979734}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{25}
+      \field{issn}{1662-453X}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{month}{8}
+      \field{shortjournal}{Front. Neurosci.}
+      \field{shorttitle}{Sensori-{{Motor Learning}} with {{Movement Sonification}}}
+      \field{title}{Sensori-{{Motor Learning}} with {{Movement Sonification}}: {{Perspectives}} from {{Recent Interdisciplinary Studies}}}
+      \field{urlday}{13}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{10}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fnins.2016.00385
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\V48R697X\\Bevilacqua et al. - 2016 - Sensori-Motor Learning with Movement Sonification.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
+      \endverb
+    \endentry
     \entry{boltSensoryAttenuationAuditory2021}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
@@ -150,6 +317,219 @@
       \endverb
       \keyw{extracted}
     \endentry
+    \entry{clarkCoordinatingEachOther2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Herbert\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{fullhash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{bibnamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authorbibnamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authornamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authorfullhash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In everyday joint activities, people coordinate with each other by means not only of linguistic signals, but also of material signals – signals in which they indicate things by deploying material objects, locations, or actions around them. Material signals fall into two main classes: directing-to and placing-for. In directing-to, people request addressees to direct their attention to objects, events, or themselves. In placing-for, people place objects, actions, or themselves in special sites for addressees to interpret. Both classes have many subtypes. Features of material signals were examined in pairs of people who were videotaped as they assembled TV stands, built Lego models, planned furnishings for a house, played piano duets, or bought coffee at Starbucks. In these activities, the pointing and placements were often sustained, creating three phases of signals – initiation, maintenance, and termination – each with its own interpretation.}
+      \field{issn}{1461-4456, 1461-7080}
+      \field{journaltitle}{Discourse Studies}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4-5}
+      \field{shortjournal}{Discourse Studies}
+      \field{title}{Coordinating with Each Other in a Material World}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{7}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{507\bibrangedash 525}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1177/1461445605054404
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1177/1461445605054404
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1177/1461445605054404
+      \endverb
+    \endentry
+    \entry{debashiSonificationNetworkTraffic2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=dea3f2e40693a4125fa610914fd92665}{%
+           family={Debashi},
+           familyi={D\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
+           family={Vickers},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=61c49fe983be8e83df3eb250b77ceae7}{%
+           family={Mankin},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{fullhash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{bibnamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authorbibnamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authornamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authorfullhash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{editorbibnamehash}{61c49fe983be8e83df3eb250b77ceae7}
+      \strng{editornamehash}{61c49fe983be8e83df3eb250b77ceae7}
+      \strng{editorfullhash}{61c49fe983be8e83df3eb250b77ceae7}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{shortjournal}{PLoS ONE}
+      \field{title}{Sonification of Network Traffic Flow for Monitoring and Situational Awareness}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{13}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0195948}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0195948
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\VNPCFP54\\Debashi and Vickers - 2018 - Sonification of network traffic flow for monitorin.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.plos.org/10.1371/journal.pone.0195948
+      \endverb
+      \verb{url}
+      \verb https://dx.plos.org/10.1371/journal.pone.0195948
+      \endverb
+    \endentry
+    \entry{dubusEvaluationFourModels2012}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{fullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{bibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorbibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authornamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorfullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1783-7677, 1783-8738}
+      \field{journaltitle}{Journal on Multimodal User Interfaces}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{3-4}
+      \field{shortjournal}{J Multimodal User Interfaces}
+      \field{title}{Evaluation of Four Models for the Sonification of Elite Rowing}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{5}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{143\bibrangedash 156}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/s12193-011-0085-1
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ISNSZYIP\\Dubus - 2012 - Evaluation of four models for the sonification of .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s12193-011-0085-1
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s12193-011-0085-1
+      \endverb
+    \endentry
+    \entry{dubusInteractiveSonificationMotion2013}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {KTH Royal Institute of Technology}%
+      }
+      \strng{namehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{fullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{bibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorbibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authornamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorfullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{DiVA portal is a finding tool for research publications and student theses written at the following 50 universities and research institutions.}
+      \field{langid}{english}
+      \field{shorttitle}{Interactive Sonification of Motion}
+      \field{title}{Interactive Sonification of Motion : {{Design}}, Implementation and Control of Expressive Auditory Feedback with Mobile Devices}
+      \field{urlday}{5}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\V4JITEWG\\Dubus - 2013 - Interactive sonification of motion Design, imple.pdf;C\:\\Users\\webma\\Zotero\\storage\\94UMW8VZ\\record.html
+      \endverb
+      \verb{urlraw}
+      \verb http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-127944
+      \endverb
+      \verb{url}
+      \verb http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-127944
+      \endverb
+    \endentry
     \entry{dubusSonificationPhysicalQuantities2011}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
@@ -171,11 +551,11 @@
       \strng{authorbibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
       \strng{authornamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
       \strng{authorfullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \field{extraname}{1}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We introduce a meta-study of previous sonification designs taking physical quantities as input data. The aim is to build a solid foundation for future sonification works so that auditory display researchers would be able to take benefit from former studies, avoiding to start from scratch when beginning new sonification projects. This work is at an early stage and the objective of this paper is rather to introduce the methodology than to come to definitive conclusions. After a historical introduction, we explain how to collect a large amount of articles and extract useful information about mapping strategies. Then, we present the physical quantities grouped according to conceptual dimensions, as well as the sound parameters used in sonification designs and we summarize the current state of the study by listing the couplings extracted from the article database. A total of 54 articles have been examined for the present article. Finally, a preliminary analysis of the results is performed.}
@@ -192,14 +572,134 @@
       \endverb
       \keyw{introduction,linus,luke,useful}
     \endentry
+    \entry{dubusSystematicReviewMapping2013}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a59474db7c65b94f259d403f69d45c5}{%
+           family={Bresin},
+           familyi={B\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{fullhash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{bibnamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authorbibnamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authornamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authorfullhash}{08786833daed6fdadb2c73c8c01dcf07}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The field of sonification has progressed greatly over the past twenty years and currently constitutes an established area of research. This article aims at exploiting and organizing the knowledge accumulated in previous experimental studies to build a foundation for future sonification works. A systematic review of these studies may reveal trends in sonification design, and therefore support the development of design guidelines. To this end, we have reviewed and analyzed 179 scientific publications related to sonification of physical quantities. Using a bottom-up approach, we set up a list of conceptual dimensions belonging to both physical and auditory domains. Mappings used in the reviewed works were identified, forming a database of 495 entries. Frequency of use was analyzed among these conceptual dimensions as well as higher-level categories. Results confirm two hypotheses formulated in a preliminary study: pitch is by far the most used auditory dimension in sonification applications, and spatial auditory dimensions are almost exclusively used to sonify kinematic quantities. To detect successful as well as unsuccessful sonification strategies, assessment of mapping efficiency conducted in the reviewed works was considered. Results show that a proper evaluation of sonification mappings is performed only in a marginal proportion of publications. Additional aspects of the publication database were investigated: historical distribution of sonification works is presented, projects are classified according to their primary function, and the sonic material used in the auditory display is discussed. Finally, a mapping-based approach for characterizing sonification is proposed.}
+      \field{day}{17}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{shortjournal}{PLOS ONE}
+      \field{title}{A {{Systematic Review}} of {{Mapping Strategies}} for the {{Sonification}} of {{Physical Quantities}}}
+      \field{urlday}{5}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{8}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e82491}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0082491
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ILLLBKVQ\\Dubus and Bresin - 2013 - A Systematic Review of Mapping Strategies for the .pdf;C\:\\Users\\webma\\Zotero\\storage\\3DTNDWBP\\article.html
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
+      \endverb
+      \verb{url}
+      \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
+      \endverb
+      \keyw{Drug synthesis,Kinematics,Physical mapping,Pitch perception,Sensory perception,Signal filtering,Sonification,Systematic reviews}
+    \endentry
+    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0077-8923, 1749-6632}
+      \field{journaltitle}{Annals of the New York Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
+      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
+      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{1425}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{52\bibrangedash 69}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/nyas.13693
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+    \endentry
     \entry{effenbergMovementSonificationEffects2005}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=2898283c164562575d7165f1e70754ce}{%
+        {{un=1,uniquepart=given,hash=2898283c164562575d7165f1e70754ce}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={A.O.},
            giveni={A\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \strng{namehash}{2898283c164562575d7165f1e70754ce}
       \strng{fullhash}{2898283c164562575d7165f1e70754ce}
@@ -211,7 +711,6 @@
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{1070-986X}
@@ -242,6 +741,130 @@
       \endverb
       \verb{url}
       \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{galantucciExperimentalSemioticsNew2009}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b3e79b120f442803bf6ba2f3f0547576}{%
+           family={Galantucci},
+           familyi={G\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{fullhash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{bibnamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authorbibnamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authornamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authorfullhash}{b3e79b120f442803bf6ba2f3f0547576}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{17568757, 17568765}
+      \field{journaltitle}{Topics in Cognitive Science}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shorttitle}{Experimental {{Semiotics}}}
+      \field{title}{Experimental {{Semiotics}}: {{A New Approach}} for {{Studying Communication}} as a {{Form}} of {{Joint Action}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{1}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{393\bibrangedash 410}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/j.1756-8765.2009.01027.x
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\G9GJK8IS\\Galantucci - 2009 - Experimental Semiotics A New Approach for Studyin.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
+      \endverb
+    \endentry
+    \entry{hildebrandtShortPaperEnhancing2014}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=061484a69ce2913bb62a0a1b8d0b01fa}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=040508666b430e19425dd0c986e56caa}{%
+           family={Lohmann},
+           familyi={L\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ba066aecdba0f8374d9f92efc02421e7}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Minseok},
+           giveni={M\bibinitperiod}}}%
+        {{hash=044e82546ffafb7e926aaabd116f1301}{%
+           family={Wohed},
+           familyi={W\bibinitperiod},
+           given={Petia},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{fullhash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{bibnamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authorbibnamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authornamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authorfullhash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{editorbibnamehash}{72f1474fd0ae435485820a26f620fade}
+      \strng{editornamehash}{4334faecf732258423ae1a8d165b825f}
+      \strng{editorfullhash}{72f1474fd0ae435485820a26f620fade}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{Business {{Process Management Workshops}}}
+      \field{isbn}{978-3-319-06256-3 978-3-319-06257-0}
+      \field{langid}{english}
+      \field{series}{Lecture {{Notes}} in {{Business Information Processing}}}
+      \field{shorttitle}{Short {{Paper}}}
+      \field{title}{Short {{Paper}}: {{Towards Enhancing Business Process Monitoring}} with {{Sonification}}}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{171}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{529\bibrangedash 536}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/978-3-319-06257-0_42
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
       \endverb
     \endentry
     \entry{kellerPianistsDuetBetter2007}{article}{}
@@ -308,6 +931,38 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S1053810005001613
       \endverb
       \keyw{extracted,linus}
+    \endentry
+    \entry{kimotoDesignImplementationStetho2002}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=28c9c2730ea6273a340e88aa2b385472}{%
+           family={Kimoto},
+           familyi={K\bibinitperiod},
+           given={Masahiko},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ea242974aa7d2f62f0a62a040d622cca}{%
+           family={Ohno},
+           familyi={O\bibinitperiod},
+           given={Hiroyuki},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{fullhash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{bibnamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authorbibnamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authornamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authorfullhash}{6537de748614a019c1d6cf16af77edf8}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{{ICMC}}}
+      \field{title}{Design and Implementation of Stetho: {{Network}} Sonificiation System}
+      \field{year}{2002, September}
     \endentry
     \entry{knoblichActionCoordinationGroups2003}{article}{}
       \name{author}{2}{}{%
@@ -420,6 +1075,9 @@
       \verb{doi}
       \verb 10.1016/B978-0-12-385527-5.00003-6
       \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\LEBQDHQ2\\Knoblich et al. - 2011 - Psychological Research on Joint Action.pdf
+      \endverb
       \verb{urlraw}
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
       \endverb
@@ -427,6 +1085,36 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
       \endverb
       \keyw{extracted,linus}
+    \endentry
+    \entry{kosinskiLiteratureReviewReaction2008}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a7dd175e166a48f006415bd1560d8db0}{%
+           family={Kosinski},
+           familyi={K\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{fullhash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{bibnamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authorbibnamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authornamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authorfullhash}{a7dd175e166a48f006415bd1560d8db0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Clemson University}
+      \field{title}{A {{Literature Review}} on {{Reaction Time}}}
+      \field{volume}{10(1)}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{337\bibrangedash 344}
+      \range{pages}{8}
     \endentry
     \entry{kourtisPredictiveRepresentationOther2012}{article}{}
       \name{author}{3}{}{%
@@ -531,6 +1219,66 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{loehrSoundYouMe2016}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{fullhash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{bibnamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authorbibnamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authornamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authorfullhash}{2c990f232f4966c29d71ca7136bb06eb}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{People performing joint actions coordinate their individual actions with each other to achieve a shared goal. The current study investigated the mental representations that are formed when people learn a new skill as part of a joint action. In a musical transfer-of-learning paradigm, piano novices first learned to perform simple melodies in the joint action context of coordinating with an accompanist to produce musical duets. Participants then performed their previously learned actions with two types of auditory feedback: while hearing either their individual action goal (the melody) or the shared action goal (the duet). As predicted, participants made more performance errors in the individual goal condition than in the shared goal condition. Further experimental manipulations indicated that this difference was not due to different coordination requirements in the two conditions or perceptual dissimilarities between learning and test. Together, these findings indicate that people form representations of shared goals in contexts that promote minimal representations, such as when learning a new action together with another person.}
+      \field{issn}{1747-0218, 1747-0226}
+      \field{journaltitle}{Quarterly Journal of Experimental Psychology}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Quarterly Journal of Experimental Psychology}
+      \field{shorttitle}{The Sound of You and Me}
+      \field{title}{The Sound of You and Me: {{Novices}} Represent Shared Goals in Joint Action}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{69}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{535\bibrangedash 547}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1080/17470218.2015.1061029
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\UMASTSSV\\Loehr and Vesper - 2016 - The sound of you and me Novices represent shared .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2015.1061029
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2015.1061029
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
     \entry{loehrMonitoringIndividualJoint2013}{article}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
@@ -608,6 +1356,76 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
+    \entry{mcdermottMusicalIntervalsRelative2010}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=077e90c488162ece8146662d95522b19}{%
+           family={McDermott},
+           familyi={M\bibinitperiod},
+           given={Josh\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d830ae6330dd8276fc94bf0163a79d0}{%
+           family={Keebler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab405f20757daf9293b503774eb6671b}{%
+           family={Micheyl},
+           familyi={M\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=676047572bf1fa2166937a0445a9a9f2}{%
+           family={Oxenham},
+           familyi={O\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{771c11ffb02b95fb870ce56edfc9451a}
+      \strng{fullhash}{656025eac0357063c4dc903e3394b994}
+      \strng{bibnamehash}{656025eac0357063c4dc903e3394b994}
+      \strng{authorbibnamehash}{656025eac0357063c4dc903e3394b994}
+      \strng{authornamehash}{771c11ffb02b95fb870ce56edfc9451a}
+      \strng{authorfullhash}{656025eac0357063c4dc903e3394b994}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0001-4966}
+      \field{journaltitle}{The Journal of the Acoustical Society of America}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4}
+      \field{shortjournal}{J. Acoust. Soc. Am.}
+      \field{shorttitle}{Musical Intervals and Relative Pitch}
+      \field{title}{Musical Intervals and Relative Pitch: {{Frequency}} Resolution, Not Interval Resolution, Is Special}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{128}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1943\bibrangedash 1951}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1121/1.3478785
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HVK5ELIQ\\McDermott et al_2010_Musical intervals and relative pitch.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+      \verb{url}
+      \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+    \endentry
     \entry{roguinReneTheophileHyacinthe2006}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ea57eba90fec9187792a5249a492da94}{%
@@ -661,6 +1479,203 @@
       \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
       \endverb
       \keyw{linus,single-citation}
+    \endentry
+    \entry{schmitzPerceptualEffectsAuditory2012}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{location}{1}{%
+        {Atlanta, GA, USA}%
+      }
+      \strng{namehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{fullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{bibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorbibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authornamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorfullhash}{373174065d59ae2dc4e675b81329fddd}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eventtitle}{International {{Conference}} on {{Auditory Display}}}
+      \field{journaltitle}{Proceedings of the 18th {{International Conference}} on {{Auditory Display}}}
+      \field{month}{6}
+      \field{title}{Perceptual Effects of Auditory Information about Own and Other Movements}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\XE8XCPHC\\Schmitz and Effenberg - 2012 - Perceptual effects of auditory information about o.pdf
+      \endverb
+    \endentry
+    \entry{schmitzSoundJoinedActions2017}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
+           family={Wedelstaedt},
+           familyi={W\bibinitperiod},
+           given={Ulrich\bibnamedelima V.},
+           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Philadelphia}%
+      }
+      \list{publisher}{1}{%
+        {John Benjamins Publishing Company}%
+      }
+      \strng{namehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{fullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{bibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorbibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authornamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorfullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
+      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
+      \field{isbn}{978-90-272-6555-5}
+      \field{number}{volume 8}
+      \field{series}{Advances in Interaction Studies}
+      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{193\bibrangedash 214}
+      \range{pages}{22}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \endverb
+      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+    \endentry
+    \entry{schmitzObservationSonifiedMovements2013}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a2d7bae00eef67c72a075f0a3692fbe}{%
+           family={Mohammadi},
+           familyi={M\bibinitperiod},
+           given={Bahram},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8163b5c3bd5247d7f99cf9db42d64e66}{%
+           family={Hammer},
+           familyi={H\bibinitperiod},
+           given={Anke},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8183c309bd6cc3f9e16c83c7536e91f5}{%
+           family={Heldmann},
+           familyi={H\bibinitperiod},
+           given={Marcus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2aebdc688bba12e9acc587ae2cbb6ce7}{%
+           family={Samii},
+           familyi={S\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99a07c7248e75b2971bbd50e83993509}{%
+           family={Münte},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima F.},
+           giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e216770f93141bde2f8d8c54a8a4db0e}
+      \strng{fullhash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{bibnamehash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{authorbibnamehash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{authornamehash}{e216770f93141bde2f8d8c54a8a4db0e}
+      \strng{authorfullhash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Producing sounds by a musical instrument can lead to audiomotor coupling, i.e. the joint activation of the auditory and motor system, even when only one modality is probed. The sonification of otherwise mute movements by sounds based on kinematic parameters of the movement has been shown to improve motor performance and perception of movements.}
+      \field{day}{14}
+      \field{issn}{1471-2202}
+      \field{journaltitle}{BMC Neuroscience}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shortjournal}{BMC Neurosci}
+      \field{title}{Observation of Sonified Movements Engages a Basal Ganglia Frontocortical Network}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{14}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{32}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/1471-2202-14-32
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\J2XMWMQF\\Schmitz et al. - 2013 - Observation of sonified movements engages a basal .pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/1471-2202-14-32
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/1471-2202-14-32
+      \endverb
+      \keyw{Brodmann Area,Incongruent Stimulus,Mirror Neuron System,Multisensory Integration,Superior Temporal Sulcus}
     \endentry
     \entry{sebanzJointActionBodies2006}{article}{}
       \name{author}{3}{}{%
@@ -780,6 +1795,78 @@
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
       \endverb
     \endentry
+    \entry{vanderwelUnderstandingJointAction2021}{article}{useprefix=true}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
+           family={Wel},
+           familyi={W\bibinitperiod},
+           given={Robrecht\bibnamedelima P.R.D.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=3754577f5e358008cafbba896b2b2db8}{%
+           family={Becchio},
+           familyi={B\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71f7225fb9984547f79d451c1e839fa2}{%
+           family={Curioni},
+           familyi={C\bibinitperiod},
+           given={Arianna},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c34c67badfd5b3624027e9c8c77a69f6}{%
+           family={Wolf},
+           familyi={W\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{88dfec2f0c3b9a1c91a570da356dcdd6}
+      \strng{fullhash}{626e732d39a584c37b88d019360fb442}
+      \strng{bibnamehash}{626e732d39a584c37b88d019360fb442}
+      \strng{authorbibnamehash}{626e732d39a584c37b88d019360fb442}
+      \strng{authornamehash}{88dfec2f0c3b9a1c91a570da356dcdd6}
+      \strng{authorfullhash}{626e732d39a584c37b88d019360fb442}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00016918}
+      \field{journaltitle}{Acta Psychologica}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Acta Psychologica}
+      \field{shorttitle}{Understanding Joint Action}
+      \field{title}{Understanding Joint Action: {{Current}} Theoretical and Empirical Approaches}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{215}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{103285}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.actpsy.2021.103285
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\YEBMR3W2\\van der Wel et al. - 2021 - Understanding joint action Current theoretical an.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0001691821000354
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0001691821000354
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
@@ -851,6 +1938,114 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
+    \entry{vickersSonificationProcessMonitoring}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
+           family={Vickers},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{fullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{bibnamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authorbibnamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authornamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authorfullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Sonification Handbook}
+      \field{title}{Sonification for Process Monitoring}
+      \field{pages}{455\bibrangedash 492}
+      \range{pages}{38}
+    \endentry
+    \entry{vinkenAuditoryCodingHuman2013}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=794310483c5ef76de7781016550012af}{%
+           family={Vinken},
+           familyi={V\bibinitperiod},
+           given={Pia\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d580b886aaa02ec040d352e1de9733fe}{%
+           family={Kröger},
+           familyi={K\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32d4d3fedc593d37e046c6ab9c1858d2}{%
+           family={Fehse},
+           familyi={F\bibinitperiod},
+           given={Ursula},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acd38e6fc86d9d7a6dce047c48d83402}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={Heike},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{404b0167ac794c6190ac9aa291c1044f}
+      \strng{fullhash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{bibnamehash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{authorbibnamehash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{authornamehash}{404b0167ac794c6190ac9aa291c1044f}
+      \strng{authorfullhash}{e1f4463c70268387457fff9b689f53f9}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although visual perception is dominant on motor perception, control and learning, auditory information can enhance and modulate perceptual as well as motor processes in a multifaceted manner. During last decades new methods of auditory augmentation had been developed with movement sonification as one of the most recent approaches expanding auditory movement information also to usually mute phases of movement. Despite general evidence on the effectiveness of movement sonification in different fields of applied research there is nearly no empirical proof on how sonification of gross motor human movement should be configured to achieve information rich sound sequences. Such lack of empirical proof is given for (a) the selection of suitable movement features as well as for (b) effective kinetic–acoustical mapping patterns and for (c) the number of regarded dimensions of sonification. In this study we explore the informational content of artificial acoustical kinematics in terms of a kinematic movement sonification using an intermodal discrimination paradigm. In a repeated measure design we analysed discrimination rates of six everyday upper limb actions to evaluate the effectiveness of seven different kinds of kinematic–acoustical mappings as well as short term learning effects. The kinematics of the upper limb actions were calculated based on inertial motion sensor data and transformed into seven different sonifications. Sound sequences were randomly presented to participants and discrimination rates as well as confidence of choice were analysed. Data indicate an instantaneous comprehensibility of the artificial movement acoustics as well as short term learning effects. No differences between different dimensional encodings became evident thus indicating a high efficiency for intermodal pattern discrimination for the acoustically coded velocity distribution of the actions. Taken together movement information related to continuous kinematic parameters can be transformed into the auditory domain. Additionally, pattern based action discrimination is obviously not restricted to the visual modality. Artificial acoustical kinematics might be used to supplement and/or substitute visual motion perception in sports and motor rehabilitation.}
+      \field{issn}{2213-4794, 2213-4808}
+      \field{journaltitle}{Multisensory Research}
+      \field{langid}{english}
+      \field{number}{6}
+      \field{shortjournal}{Multisens Res}
+      \field{title}{Auditory {{Coding}} of {{Human Movement Kinematics}}}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{26}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{533\bibrangedash 552}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1163/22134808-00002435
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\DII8GFIJ\\Vinken et al. - 2013 - Auditory Coding of Human Movement Kinematics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
+      \endverb
+      \verb{url}
+      \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
+      \endverb
+      \keyw{linus,luke,useful}
+    \endentry
     \entry{mousetrap2021}{misc}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=94f38e4aacf9db7542b0e05db730abfd}{%
@@ -911,9 +2106,218 @@
       \verb{url}
       \verb https://psyarxiv.com/v685r
       \endverb
+    \endentry
+    \entry{yangRealtimeSonificationBiceps2015}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=82f2ff6d0e92dd1a5b5e27b95084d27e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jiajun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b81f678a6f8b5b5dea330a3b3de62ef4}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Graz, Austria}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Electronic Music and Acoustics (IEM), University of Music and Performing Arts Graz (KUG)}%
+      }
+      \strng{namehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{fullhash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{bibnamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authorbibnamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authornamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authorfullhash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: 951458301}
+      \field{eventtitle}{{{ICAD}} 15 Proceedings of the 21st {{International Conference}} on {{Auditory Display}}}
+      \field{isbn}{978-3-902949-01-1}
+      \field{langid}{english}
+      \field{title}{Real-Time Sonification of Biceps Curl Exercise Using Muscular Activity and Kinematics}
+      \field{year}{2015}
+      \field{dateera}{ce}
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
+    \entry{benedictSurveyMaterialsCoatings2016}{inbook}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0d43853e9510ea1eb2fcc8730469f1b8}{%
+           family={Benedict},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3656575819baf48804d58afd817e45dc}{%
+           family={Barrick},
+           familyi={B\bibinitperiod},
+           given={Gregory\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ba94abd4df8dceb55388a46d24734630}{%
+           family={Pazder},
+           familyi={P\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=759548e98d5b24046ba6de1ffdb5689b}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Christopher\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=7b3e10f7af33b99e11f4625d7966c9da}{%
+           family={Simard},
+           familyi={S\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod}}}%
+        {{hash=cfc73d63e091f3430b2112f2355e98cd}{%
+           family={Takami},
+           familyi={T\bibinitperiod},
+           given={Hideki},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Edinburgh, United Kingdom}%
+      }
+      \strng{namehash}{426e5d38df856e872b6e518fd38f7625}
+      \strng{fullhash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{bibnamehash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{authorbibnamehash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{authornamehash}{426e5d38df856e872b6e518fd38f7625}
+      \strng{authorfullhash}{b1df7d0b15d2b968d08dd060d257ea6f}
+      \strng{editorbibnamehash}{0068d6119652fff0550b6b59c24e09de}
+      \strng{editornamehash}{366cd67407e6aa5e2ca70d6dc5b30fe0}
+      \strng{editorfullhash}{0068d6119652fff0550b6b59c24e09de}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{eventtitle}{{{SPIE Astronomical Telescopes}} + {{Instrumentation}}}
+      \field{month}{8}
+      \field{title}{Survey of Materials and Coatings Suitable for Controlling Stray Light from the Near-{{UV}} to the near-{{IR}}}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{99083T}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1117/12.2231348
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\PVRJC2CC\\Benedict et al_2016_Survey of materials and coatings suitable for controlling stray light from the.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.2231348
+      \endverb
+      \verb{url}
+      \verb http://proceedings.spiedigitallibrary.org/proceeding.aspx?doi=10.1117/12.2231348
+      \endverb
+    \endentry
+    \entry{bevilacquaSensoriMotorLearningMovement2016}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=bc9efed31f15056ea62f0434eedffda2}{%
+           family={Bevilacqua},
+           familyi={B\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=df6a8c8ba3a2cca8a522c88d07d6a773}{%
+           family={Boyer},
+           familyi={B\bibinitperiod},
+           given={Eric\bibnamedelima O.},
+           giveni={E\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73b0bdd47accc82e8f47511333cc1292}{%
+           family={Françoise},
+           familyi={F\bibinitperiod},
+           given={Jules},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=301fdfa278bf7a80ac9788e736214de5}{%
+           family={Houix},
+           familyi={H\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e00c91a52712b58078798346d3d4ff39}{%
+           family={Susini},
+           familyi={S\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2585501883e26c72d426ab861ee2e3c7}{%
+           family={Roby-Brami},
+           familyi={R\bibinithyphendelim B\bibinitperiod},
+           given={Agnès},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac936388f7365959d64f66517502b140}{%
+           family={Hanneton},
+           familyi={H\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8ca2d99ef53a0d0f9321f88d01dc9c5e}
+      \strng{fullhash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{bibnamehash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{authorbibnamehash}{d2a446f338e0c18ff8989e5a96979734}
+      \strng{authornamehash}{8ca2d99ef53a0d0f9321f88d01dc9c5e}
+      \strng{authorfullhash}{d2a446f338e0c18ff8989e5a96979734}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{25}
+      \field{issn}{1662-453X}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{month}{8}
+      \field{shortjournal}{Front. Neurosci.}
+      \field{shorttitle}{Sensori-{{Motor Learning}} with {{Movement Sonification}}}
+      \field{title}{Sensori-{{Motor Learning}} with {{Movement Sonification}}: {{Perspectives}} from {{Recent Interdisciplinary Studies}}}
+      \field{urlday}{13}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{10}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fnins.2016.00385
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\V48R697X\\Bevilacqua et al. - 2016 - Sensori-Motor Learning with Movement Sonification.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
+      \endverb
+    \endentry
     \entry{boltSensoryAttenuationAuditory2021}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
@@ -1045,6 +2449,219 @@
       \endverb
       \keyw{extracted}
     \endentry
+    \entry{clarkCoordinatingEachOther2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Herbert\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{fullhash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{bibnamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authorbibnamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authornamehash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \strng{authorfullhash}{a12d1b2b1b03baf2305a0b8b1652d0d0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In everyday joint activities, people coordinate with each other by means not only of linguistic signals, but also of material signals – signals in which they indicate things by deploying material objects, locations, or actions around them. Material signals fall into two main classes: directing-to and placing-for. In directing-to, people request addressees to direct their attention to objects, events, or themselves. In placing-for, people place objects, actions, or themselves in special sites for addressees to interpret. Both classes have many subtypes. Features of material signals were examined in pairs of people who were videotaped as they assembled TV stands, built Lego models, planned furnishings for a house, played piano duets, or bought coffee at Starbucks. In these activities, the pointing and placements were often sustained, creating three phases of signals – initiation, maintenance, and termination – each with its own interpretation.}
+      \field{issn}{1461-4456, 1461-7080}
+      \field{journaltitle}{Discourse Studies}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4-5}
+      \field{shortjournal}{Discourse Studies}
+      \field{title}{Coordinating with Each Other in a Material World}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{7}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{507\bibrangedash 525}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1177/1461445605054404
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1177/1461445605054404
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1177/1461445605054404
+      \endverb
+    \endentry
+    \entry{debashiSonificationNetworkTraffic2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=dea3f2e40693a4125fa610914fd92665}{%
+           family={Debashi},
+           familyi={D\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
+           family={Vickers},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=61c49fe983be8e83df3eb250b77ceae7}{%
+           family={Mankin},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{fullhash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{bibnamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authorbibnamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authornamehash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{authorfullhash}{bf28841d2aeae79a16dcd8434549571e}
+      \strng{editorbibnamehash}{61c49fe983be8e83df3eb250b77ceae7}
+      \strng{editornamehash}{61c49fe983be8e83df3eb250b77ceae7}
+      \strng{editorfullhash}{61c49fe983be8e83df3eb250b77ceae7}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{shortjournal}{PLoS ONE}
+      \field{title}{Sonification of Network Traffic Flow for Monitoring and Situational Awareness}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{13}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0195948}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0195948
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\VNPCFP54\\Debashi and Vickers - 2018 - Sonification of network traffic flow for monitorin.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.plos.org/10.1371/journal.pone.0195948
+      \endverb
+      \verb{url}
+      \verb https://dx.plos.org/10.1371/journal.pone.0195948
+      \endverb
+    \endentry
+    \entry{dubusEvaluationFourModels2012}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{fullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{bibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorbibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authornamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorfullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1783-7677, 1783-8738}
+      \field{journaltitle}{Journal on Multimodal User Interfaces}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{3-4}
+      \field{shortjournal}{J Multimodal User Interfaces}
+      \field{title}{Evaluation of Four Models for the Sonification of Elite Rowing}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{5}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{143\bibrangedash 156}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/s12193-011-0085-1
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ISNSZYIP\\Dubus - 2012 - Evaluation of four models for the sonification of .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s12193-011-0085-1
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s12193-011-0085-1
+      \endverb
+    \endentry
+    \entry{dubusInteractiveSonificationMotion2013}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {KTH Royal Institute of Technology}%
+      }
+      \strng{namehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{fullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{bibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorbibnamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authornamehash}{e52b2e092a3fcf7391809b91e2013d68}
+      \strng{authorfullhash}{e52b2e092a3fcf7391809b91e2013d68}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{DiVA portal is a finding tool for research publications and student theses written at the following 50 universities and research institutions.}
+      \field{langid}{english}
+      \field{shorttitle}{Interactive Sonification of Motion}
+      \field{title}{Interactive Sonification of Motion : {{Design}}, Implementation and Control of Expressive Auditory Feedback with Mobile Devices}
+      \field{urlday}{5}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\V4JITEWG\\Dubus - 2013 - Interactive sonification of motion Design, imple.pdf;C\:\\Users\\webma\\Zotero\\storage\\94UMW8VZ\\record.html
+      \endverb
+      \verb{urlraw}
+      \verb http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-127944
+      \endverb
+      \verb{url}
+      \verb http://urn.kb.se/resolve?urn=urn:nbn:se:kth:diva-127944
+      \endverb
+    \endentry
     \entry{dubusSonificationPhysicalQuantities2011}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1e0224bc5cc5e0ef84b78d64fc028e29}{%
@@ -1066,11 +2683,11 @@
       \strng{authorbibnamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
       \strng{authornamehash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
       \strng{authorfullhash}{1553d947afeeb6bc1b4ef100f7d9e0ac}
+      \field{extraname}{1}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We introduce a meta-study of previous sonification designs taking physical quantities as input data. The aim is to build a solid foundation for future sonification works so that auditory display researchers would be able to take benefit from former studies, avoiding to start from scratch when beginning new sonification projects. This work is at an early stage and the objective of this paper is rather to introduce the methodology than to come to definitive conclusions. After a historical introduction, we explain how to collect a large amount of articles and extract useful information about mapping strategies. Then, we present the physical quantities grouped according to conceptual dimensions, as well as the sound parameters used in sonification designs and we summarize the current state of the study by listing the couplings extracted from the article database. A total of 54 articles have been examined for the present article. Finally, a preliminary analysis of the results is performed.}
@@ -1087,14 +2704,134 @@
       \endverb
       \keyw{introduction,linus,luke,useful}
     \endentry
+    \entry{dubusSystematicReviewMapping2013}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
+           family={Dubus},
+           familyi={D\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a59474db7c65b94f259d403f69d45c5}{%
+           family={Bresin},
+           familyi={B\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{fullhash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{bibnamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authorbibnamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authornamehash}{08786833daed6fdadb2c73c8c01dcf07}
+      \strng{authorfullhash}{08786833daed6fdadb2c73c8c01dcf07}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The field of sonification has progressed greatly over the past twenty years and currently constitutes an established area of research. This article aims at exploiting and organizing the knowledge accumulated in previous experimental studies to build a foundation for future sonification works. A systematic review of these studies may reveal trends in sonification design, and therefore support the development of design guidelines. To this end, we have reviewed and analyzed 179 scientific publications related to sonification of physical quantities. Using a bottom-up approach, we set up a list of conceptual dimensions belonging to both physical and auditory domains. Mappings used in the reviewed works were identified, forming a database of 495 entries. Frequency of use was analyzed among these conceptual dimensions as well as higher-level categories. Results confirm two hypotheses formulated in a preliminary study: pitch is by far the most used auditory dimension in sonification applications, and spatial auditory dimensions are almost exclusively used to sonify kinematic quantities. To detect successful as well as unsuccessful sonification strategies, assessment of mapping efficiency conducted in the reviewed works was considered. Results show that a proper evaluation of sonification mappings is performed only in a marginal proportion of publications. Additional aspects of the publication database were investigated: historical distribution of sonification works is presented, projects are classified according to their primary function, and the sonic material used in the auditory display is discussed. Finally, a mapping-based approach for characterizing sonification is proposed.}
+      \field{day}{17}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{PLOS ONE}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{shortjournal}{PLOS ONE}
+      \field{title}{A {{Systematic Review}} of {{Mapping Strategies}} for the {{Sonification}} of {{Physical Quantities}}}
+      \field{urlday}{5}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{8}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e82491}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0082491
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ILLLBKVQ\\Dubus and Bresin - 2013 - A Systematic Review of Mapping Strategies for the .pdf;C\:\\Users\\webma\\Zotero\\storage\\3DTNDWBP\\article.html
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
+      \endverb
+      \verb{url}
+      \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
+      \endverb
+      \keyw{Drug synthesis,Kinematics,Physical mapping,Pitch perception,Sensory perception,Signal filtering,Sonification,Systematic reviews}
+    \endentry
+    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0077-8923, 1749-6632}
+      \field{journaltitle}{Annals of the New York Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
+      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
+      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{1425}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{52\bibrangedash 69}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/nyas.13693
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+    \endentry
     \entry{effenbergMovementSonificationEffects2005}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=2898283c164562575d7165f1e70754ce}{%
+        {{un=1,uniquepart=given,hash=2898283c164562575d7165f1e70754ce}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={A.O.},
            giveni={A\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \strng{namehash}{2898283c164562575d7165f1e70754ce}
       \strng{fullhash}{2898283c164562575d7165f1e70754ce}
@@ -1106,7 +2843,6 @@
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{1070-986X}
@@ -1137,6 +2873,130 @@
       \endverb
       \verb{url}
       \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{galantucciExperimentalSemioticsNew2009}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b3e79b120f442803bf6ba2f3f0547576}{%
+           family={Galantucci},
+           familyi={G\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{fullhash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{bibnamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authorbibnamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authornamehash}{b3e79b120f442803bf6ba2f3f0547576}
+      \strng{authorfullhash}{b3e79b120f442803bf6ba2f3f0547576}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{17568757, 17568765}
+      \field{journaltitle}{Topics in Cognitive Science}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shorttitle}{Experimental {{Semiotics}}}
+      \field{title}{Experimental {{Semiotics}}: {{A New Approach}} for {{Studying Communication}} as a {{Form}} of {{Joint Action}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{1}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{393\bibrangedash 410}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/j.1756-8765.2009.01027.x
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\G9GJK8IS\\Galantucci - 2009 - Experimental Semiotics A New Approach for Studyin.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
+      \endverb
+    \endentry
+    \entry{hildebrandtShortPaperEnhancing2014}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=061484a69ce2913bb62a0a1b8d0b01fa}{%
+           family={Hildebrandt},
+           familyi={H\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=040508666b430e19425dd0c986e56caa}{%
+           family={Lohmann},
+           familyi={L\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ba066aecdba0f8374d9f92efc02421e7}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Minseok},
+           giveni={M\bibinitperiod}}}%
+        {{hash=044e82546ffafb7e926aaabd116f1301}{%
+           family={Wohed},
+           familyi={W\bibinitperiod},
+           given={Petia},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{fullhash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{bibnamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authorbibnamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authornamehash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{authorfullhash}{061484a69ce2913bb62a0a1b8d0b01fa}
+      \strng{editorbibnamehash}{72f1474fd0ae435485820a26f620fade}
+      \strng{editornamehash}{4334faecf732258423ae1a8d165b825f}
+      \strng{editorfullhash}{72f1474fd0ae435485820a26f620fade}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{booktitle}{Business {{Process Management Workshops}}}
+      \field{isbn}{978-3-319-06256-3 978-3-319-06257-0}
+      \field{langid}{english}
+      \field{series}{Lecture {{Notes}} in {{Business Information Processing}}}
+      \field{shorttitle}{Short {{Paper}}}
+      \field{title}{Short {{Paper}}: {{Towards Enhancing Business Process Monitoring}} with {{Sonification}}}
+      \field{urlday}{11}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{171}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{529\bibrangedash 536}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/978-3-319-06257-0_42
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
       \endverb
     \endentry
     \entry{kellerPianistsDuetBetter2007}{article}{}
@@ -1204,6 +3064,38 @@
       \endverb
       \keyw{extracted,linus}
     \endentry
+    \entry{kimotoDesignImplementationStetho2002}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=28c9c2730ea6273a340e88aa2b385472}{%
+           family={Kimoto},
+           familyi={K\bibinitperiod},
+           given={Masahiko},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ea242974aa7d2f62f0a62a040d622cca}{%
+           family={Ohno},
+           familyi={O\bibinitperiod},
+           given={Hiroyuki},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{fullhash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{bibnamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authorbibnamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authornamehash}{6537de748614a019c1d6cf16af77edf8}
+      \strng{authorfullhash}{6537de748614a019c1d6cf16af77edf8}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{{ICMC}}}
+      \field{title}{Design and Implementation of Stetho: {{Network}} Sonificiation System}
+      \field{year}{2002, September}
+    \endentry
     \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
@@ -1256,6 +3148,9 @@
       \range{pages}{43}
       \verb{doi}
       \verb 10.1016/B978-0-12-385527-5.00003-6
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\LEBQDHQ2\\Knoblich et al. - 2011 - Psychological Research on Joint Action.pdf
       \endverb
       \verb{urlraw}
       \verb https://linkinghub.elsevier.com/retrieve/pii/B9780123855275000036
@@ -1322,6 +3217,36 @@
       \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0278-7393.29.5.1006
       \endverb
       \keyw{extracted,linus}
+    \endentry
+    \entry{kosinskiLiteratureReviewReaction2008}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a7dd175e166a48f006415bd1560d8db0}{%
+           family={Kosinski},
+           familyi={K\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{fullhash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{bibnamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authorbibnamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authornamehash}{a7dd175e166a48f006415bd1560d8db0}
+      \strng{authorfullhash}{a7dd175e166a48f006415bd1560d8db0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Clemson University}
+      \field{title}{A {{Literature Review}} on {{Reaction Time}}}
+      \field{volume}{10(1)}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{337\bibrangedash 344}
+      \range{pages}{8}
     \endentry
     \entry{kourtisPredictiveRepresentationOther2012}{article}{}
       \name{author}{3}{}{%
@@ -1503,6 +3428,136 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
+    \entry{loehrSoundYouMe2016}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{fullhash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{bibnamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authorbibnamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authornamehash}{2c990f232f4966c29d71ca7136bb06eb}
+      \strng{authorfullhash}{2c990f232f4966c29d71ca7136bb06eb}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{People performing joint actions coordinate their individual actions with each other to achieve a shared goal. The current study investigated the mental representations that are formed when people learn a new skill as part of a joint action. In a musical transfer-of-learning paradigm, piano novices first learned to perform simple melodies in the joint action context of coordinating with an accompanist to produce musical duets. Participants then performed their previously learned actions with two types of auditory feedback: while hearing either their individual action goal (the melody) or the shared action goal (the duet). As predicted, participants made more performance errors in the individual goal condition than in the shared goal condition. Further experimental manipulations indicated that this difference was not due to different coordination requirements in the two conditions or perceptual dissimilarities between learning and test. Together, these findings indicate that people form representations of shared goals in contexts that promote minimal representations, such as when learning a new action together with another person.}
+      \field{issn}{1747-0218, 1747-0226}
+      \field{journaltitle}{Quarterly Journal of Experimental Psychology}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Quarterly Journal of Experimental Psychology}
+      \field{shorttitle}{The Sound of You and Me}
+      \field{title}{The Sound of You and Me: {{Novices}} Represent Shared Goals in Joint Action}
+      \field{urlday}{18}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{69}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{535\bibrangedash 547}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1080/17470218.2015.1061029
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\UMASTSSV\\Loehr and Vesper - 2016 - The sound of you and me Novices represent shared .pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2015.1061029
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2015.1061029
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
+    \entry{mcdermottMusicalIntervalsRelative2010}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=077e90c488162ece8146662d95522b19}{%
+           family={McDermott},
+           familyi={M\bibinitperiod},
+           given={Josh\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d830ae6330dd8276fc94bf0163a79d0}{%
+           family={Keebler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima V.},
+           giveni={M\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab405f20757daf9293b503774eb6671b}{%
+           family={Micheyl},
+           familyi={M\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=676047572bf1fa2166937a0445a9a9f2}{%
+           family={Oxenham},
+           familyi={O\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{771c11ffb02b95fb870ce56edfc9451a}
+      \strng{fullhash}{656025eac0357063c4dc903e3394b994}
+      \strng{bibnamehash}{656025eac0357063c4dc903e3394b994}
+      \strng{authorbibnamehash}{656025eac0357063c4dc903e3394b994}
+      \strng{authornamehash}{771c11ffb02b95fb870ce56edfc9451a}
+      \strng{authorfullhash}{656025eac0357063c4dc903e3394b994}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0001-4966}
+      \field{journaltitle}{The Journal of the Acoustical Society of America}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4}
+      \field{shortjournal}{J. Acoust. Soc. Am.}
+      \field{shorttitle}{Musical Intervals and Relative Pitch}
+      \field{title}{Musical Intervals and Relative Pitch: {{Frequency}} Resolution, Not Interval Resolution, Is Special}
+      \field{urlday}{7}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{128}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1943\bibrangedash 1951}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1121/1.3478785
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HVK5ELIQ\\McDermott et al_2010_Musical intervals and relative pitch.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+      \verb{url}
+      \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+    \endentry
     \entry{roguinReneTheophileHyacinthe2006}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ea57eba90fec9187792a5249a492da94}{%
@@ -1556,6 +3611,203 @@
       \verb http://www.clinmedres.org/cgi/doi/10.3121/cmr.4.3.230
       \endverb
       \keyw{linus,single-citation}
+    \endentry
+    \entry{schmitzPerceptualEffectsAuditory2012}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{location}{1}{%
+        {Atlanta, GA, USA}%
+      }
+      \strng{namehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{fullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{bibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorbibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authornamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorfullhash}{373174065d59ae2dc4e675b81329fddd}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eventtitle}{International {{Conference}} on {{Auditory Display}}}
+      \field{journaltitle}{Proceedings of the 18th {{International Conference}} on {{Auditory Display}}}
+      \field{month}{6}
+      \field{title}{Perceptual Effects of Auditory Information about Own and Other Movements}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\XE8XCPHC\\Schmitz and Effenberg - 2012 - Perceptual effects of auditory information about o.pdf
+      \endverb
+    \endentry
+    \entry{schmitzSoundJoinedActions2017}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=1}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d9b63a529b8f2f8ed45152f0bc5f8f99}{%
+           family={Wedelstaedt},
+           familyi={W\bibinitperiod},
+           given={Ulrich\bibnamedelima V.},
+           giveni={U\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Philadelphia}%
+      }
+      \list{publisher}{1}{%
+        {John Benjamins Publishing Company}%
+      }
+      \strng{namehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{fullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{bibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorbibnamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authornamehash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{authorfullhash}{373174065d59ae2dc4e675b81329fddd}
+      \strng{editorbibnamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editornamehash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \strng{editorfullhash}{dcd9c5651a6d3b53555be8797fb190bd}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present chapter introduces the method of sonification as a tool for studying intercorporeality and enactment. We show that auditory movement information can support motor perception as well as the control of movements, and explain these effects by mechanisms which are consistent with the enactment approach. Providing additional auditory information about a movement enables the acting individual as well as observers to perceive the movement in exactly the same way via audition. Thus, a sonification can establish a common percept for all interaction partners, which corresponds well to the concept of intercorporeality. Furthermore, we show that sonifications can be specifically designed to constitute a variety of frameworks for the analysis of interpersonal coordination and intercorporeality.}
+      \field{booktitle}{Moving Bodies in Interaction-- Interacting Bodies in Motion: Intercorporeality, Interkinaesthesia, and Enaction in Sports}
+      \field{isbn}{978-90-272-6555-5}
+      \field{number}{volume 8}
+      \field{series}{Advances in Interaction Studies}
+      \field{title}{Sound {{Joined Actions}} in {{Rowing}} and {{Swimming}}}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{193\bibrangedash 214}
+      \range{pages}{22}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\SJNFT4JV\\Schmitz_Effenberg_Sound_Joined_Actions_final.pdf
+      \endverb
+      \keyw{Athletes,Discourse analysis,highlighted,Interaction (Philosophy),introduction,Kinesiology,linus,Movement; Psychology of,Physiological aspects,Physiology,Sports}
+    \endentry
+    \entry{schmitzObservationSonifiedMovements2013}{article}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a2d7bae00eef67c72a075f0a3692fbe}{%
+           family={Mohammadi},
+           familyi={M\bibinitperiod},
+           given={Bahram},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8163b5c3bd5247d7f99cf9db42d64e66}{%
+           family={Hammer},
+           familyi={H\bibinitperiod},
+           given={Anke},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8183c309bd6cc3f9e16c83c7536e91f5}{%
+           family={Heldmann},
+           familyi={H\bibinitperiod},
+           given={Marcus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2aebdc688bba12e9acc587ae2cbb6ce7}{%
+           family={Samii},
+           familyi={S\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=99a07c7248e75b2971bbd50e83993509}{%
+           family={Münte},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima F.},
+           giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e216770f93141bde2f8d8c54a8a4db0e}
+      \strng{fullhash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{bibnamehash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{authorbibnamehash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \strng{authornamehash}{e216770f93141bde2f8d8c54a8a4db0e}
+      \strng{authorfullhash}{1112bbaf173ec5a6aa8cd4143f3ccdeb}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Producing sounds by a musical instrument can lead to audiomotor coupling, i.e. the joint activation of the auditory and motor system, even when only one modality is probed. The sonification of otherwise mute movements by sounds based on kinematic parameters of the movement has been shown to improve motor performance and perception of movements.}
+      \field{day}{14}
+      \field{issn}{1471-2202}
+      \field{journaltitle}{BMC Neuroscience}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shortjournal}{BMC Neurosci}
+      \field{title}{Observation of Sonified Movements Engages a Basal Ganglia Frontocortical Network}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{14}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{32}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/1471-2202-14-32
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\J2XMWMQF\\Schmitz et al. - 2013 - Observation of sonified movements engages a basal .pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/1471-2202-14-32
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/1471-2202-14-32
+      \endverb
+      \keyw{Brodmann Area,Incongruent Stimulus,Mirror Neuron System,Multisensory Integration,Superior Temporal Sulcus}
     \endentry
     \entry{sebanzJointActionBodies2006}{article}{}
       \name{author}{3}{}{%
@@ -1675,6 +3927,78 @@
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
       \endverb
     \endentry
+    \entry{vanderwelUnderstandingJointAction2021}{article}{useprefix=true}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
+           family={Wel},
+           familyi={W\bibinitperiod},
+           given={Robrecht\bibnamedelima P.R.D.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=3754577f5e358008cafbba896b2b2db8}{%
+           family={Becchio},
+           familyi={B\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71f7225fb9984547f79d451c1e839fa2}{%
+           family={Curioni},
+           familyi={C\bibinitperiod},
+           given={Arianna},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c34c67badfd5b3624027e9c8c77a69f6}{%
+           family={Wolf},
+           familyi={W\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{88dfec2f0c3b9a1c91a570da356dcdd6}
+      \strng{fullhash}{626e732d39a584c37b88d019360fb442}
+      \strng{bibnamehash}{626e732d39a584c37b88d019360fb442}
+      \strng{authorbibnamehash}{626e732d39a584c37b88d019360fb442}
+      \strng{authornamehash}{88dfec2f0c3b9a1c91a570da356dcdd6}
+      \strng{authorfullhash}{626e732d39a584c37b88d019360fb442}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00016918}
+      \field{journaltitle}{Acta Psychologica}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Acta Psychologica}
+      \field{shorttitle}{Understanding Joint Action}
+      \field{title}{Understanding Joint Action: {{Current}} Theoretical and Empirical Approaches}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{volume}{215}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{103285}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.actpsy.2021.103285
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\YEBMR3W2\\van der Wel et al. - 2021 - Understanding joint action Current theoretical an.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0001691821000354
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0001691821000354
+      \endverb
+      \keyw{highlighted,introduction,linus}
+    \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
@@ -1746,6 +4070,114 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
+    \entry{vickersSonificationProcessMonitoring}{inbook}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
+           family={Vickers},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{fullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{bibnamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authorbibnamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authornamehash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \strng{authorfullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Sonification Handbook}
+      \field{title}{Sonification for Process Monitoring}
+      \field{pages}{455\bibrangedash 492}
+      \range{pages}{38}
+    \endentry
+    \entry{vinkenAuditoryCodingHuman2013}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=794310483c5ef76de7781016550012af}{%
+           family={Vinken},
+           familyi={V\bibinitperiod},
+           given={Pia\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d580b886aaa02ec040d352e1de9733fe}{%
+           family={Kröger},
+           familyi={K\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=32d4d3fedc593d37e046c6ab9c1858d2}{%
+           family={Fehse},
+           familyi={F\bibinitperiod},
+           given={Ursula},
+           giveni={U\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acd38e6fc86d9d7a6dce047c48d83402}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={Heike},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{404b0167ac794c6190ac9aa291c1044f}
+      \strng{fullhash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{bibnamehash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{authorbibnamehash}{e1f4463c70268387457fff9b689f53f9}
+      \strng{authornamehash}{404b0167ac794c6190ac9aa291c1044f}
+      \strng{authorfullhash}{e1f4463c70268387457fff9b689f53f9}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although visual perception is dominant on motor perception, control and learning, auditory information can enhance and modulate perceptual as well as motor processes in a multifaceted manner. During last decades new methods of auditory augmentation had been developed with movement sonification as one of the most recent approaches expanding auditory movement information also to usually mute phases of movement. Despite general evidence on the effectiveness of movement sonification in different fields of applied research there is nearly no empirical proof on how sonification of gross motor human movement should be configured to achieve information rich sound sequences. Such lack of empirical proof is given for (a) the selection of suitable movement features as well as for (b) effective kinetic–acoustical mapping patterns and for (c) the number of regarded dimensions of sonification. In this study we explore the informational content of artificial acoustical kinematics in terms of a kinematic movement sonification using an intermodal discrimination paradigm. In a repeated measure design we analysed discrimination rates of six everyday upper limb actions to evaluate the effectiveness of seven different kinds of kinematic–acoustical mappings as well as short term learning effects. The kinematics of the upper limb actions were calculated based on inertial motion sensor data and transformed into seven different sonifications. Sound sequences were randomly presented to participants and discrimination rates as well as confidence of choice were analysed. Data indicate an instantaneous comprehensibility of the artificial movement acoustics as well as short term learning effects. No differences between different dimensional encodings became evident thus indicating a high efficiency for intermodal pattern discrimination for the acoustically coded velocity distribution of the actions. Taken together movement information related to continuous kinematic parameters can be transformed into the auditory domain. Additionally, pattern based action discrimination is obviously not restricted to the visual modality. Artificial acoustical kinematics might be used to supplement and/or substitute visual motion perception in sports and motor rehabilitation.}
+      \field{issn}{2213-4794, 2213-4808}
+      \field{journaltitle}{Multisensory Research}
+      \field{langid}{english}
+      \field{number}{6}
+      \field{shortjournal}{Multisens Res}
+      \field{title}{Auditory {{Coding}} of {{Human Movement Kinematics}}}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{26}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{533\bibrangedash 552}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1163/22134808-00002435
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\DII8GFIJ\\Vinken et al. - 2013 - Auditory Coding of Human Movement Kinematics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
+      \endverb
+      \verb{url}
+      \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
+      \endverb
+      \keyw{linus,luke,useful}
+    \endentry
     \entry{mousetrap2021}{misc}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=94f38e4aacf9db7542b0e05db730abfd}{%
@@ -1806,6 +4238,48 @@
       \verb{url}
       \verb https://psyarxiv.com/v685r
       \endverb
+    \endentry
+    \entry{yangRealtimeSonificationBiceps2015}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=82f2ff6d0e92dd1a5b5e27b95084d27e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jiajun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b81f678a6f8b5b5dea330a3b3de62ef4}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Graz, Austria}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Electronic Music and Acoustics (IEM), University of Music and Performing Arts Graz (KUG)}%
+      }
+      \strng{namehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{fullhash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{bibnamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authorbibnamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authornamehash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \strng{authorfullhash}{2a1298f0cd9ca58e5842045a7d3cedb6}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: 951458301}
+      \field{eventtitle}{{{ICAD}} 15 Proceedings of the 21st {{International Conference}} on {{Auditory Display}}}
+      \field{isbn}{978-3-902949-01-1}
+      \field{langid}{english}
+      \field{title}{Real-Time Sonification of Biceps Curl Exercise Using Muscular Activity and Kinematics}
+      \field{year}{2015}
+      \field{dateera}{ce}
     \endentry
   \enddatalist
 \endrefsection
