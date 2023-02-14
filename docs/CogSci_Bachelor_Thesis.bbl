@@ -461,6 +461,64 @@
       \endverb
       \keyw{extracted,linus}
     \endentry
+    \entry{carlilePerceptionAuditoryMotion2016}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c584da8848214cd497f89e3e99d9d0b4}{%
+           family={Carlile},
+           familyi={C\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1fc0667ecf86281efe9ea86be0c1f5ea}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Johahn},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{fullhash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{bibnamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authorbibnamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authornamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authorfullhash}{71a071ed3db8c0fff5718009b5fbd505}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The growing availability of efficient and relatively inexpensive virtual auditory display technology has provided new research platforms to explore the perception of auditory motion. At the same time, deployment of these technologies in command and control as well as in entertainment roles is generating an increasing need to better understand the complex processes underlying auditory motion perception. This is a particularly challenging processing feat because it involves the rapid deconvolution of the relative change in the locations of sound sources produced by rotational and translations of the head in space (self-motion) to enable the perception of actual source motion. The fact that we perceive our auditory world to be stable despite almost continual movement of the head demonstrates the efficiency and effectiveness of this process. This review examines the acoustical basis of auditory motion perception and a wide range of psychophysical, electrophysiological, and cortical imaging studies that have probed the limits and possible mechanisms underlying this perception.}
+      \field{day}{1}
+      \field{issn}{2331-2165, 2331-2165}
+      \field{journaltitle}{Trends in Hearing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shortjournal}{Trends in Hearing}
+      \field{title}{The {{Perception}} of {{Auditory Motion}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{20}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{233121651664425}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1177/2331216516644254
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\GULJUGQW\\Carlile_Leung_2016_The Perception of Auditory Motion.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1177/2331216516644254
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1177/2331216516644254
+      \endverb
+    \endentry
     \entry{clarkCoordinatingEachOther2005}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
@@ -2452,6 +2510,72 @@
       \endverb
       \verb{url}
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
+    \endentry
+    \entry{tommasiniComputationalModelImplement2019}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8c77b0cc446513a67434d37f06d61217}{%
+           family={Tommasini},
+           familyi={T\bibinitperiod},
+           given={Fabián\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=359a8dba78f09c57c14855c386581f13}{%
+           family={Ramos},
+           familyi={R\bibinitperiod},
+           given={Oscar\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c42e665464910bfcae766cfa80cd6570}{%
+           family={Hüg},
+           familyi={H\bibinitperiod},
+           given={Mercedes\bibnamedelima X.},
+           giveni={M\bibinitperiod\bibinitdelim X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=009c39c66febc3f66e18b192a0373d90}{%
+           family={Ferreyra},
+           familyi={F\bibinitperiod},
+           given={Sebastián\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{edf8373b539b128f57fe8a86526c08e8}
+      \strng{fullhash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{bibnamehash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{authorbibnamehash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{authornamehash}{edf8373b539b128f57fe8a86526c08e8}
+      \strng{authorfullhash}{aebea3a7878cf63712c809ff1883041e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0814-6039, 1839-2571}
+      \field{journaltitle}{Acoustics Australia}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{1}
+      \field{shortjournal}{Acoust Aust}
+      \field{title}{A {{Computational Model}} to {{Implement Binaural Synthesis}} in a {{Hard Real-Time Auditory Virtual Environment}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{51\bibrangedash 66}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/s40857-019-00152-7
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s40857-019-00152-7
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s40857-019-00152-7
       \endverb
     \endentry
     \entry{vandersteenADaptationAnticipationModel2013}{article}{useprefix=true}
@@ -3659,6 +3783,64 @@
       \endverb
       \keyw{extracted,linus}
     \endentry
+    \entry{carlilePerceptionAuditoryMotion2016}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c584da8848214cd497f89e3e99d9d0b4}{%
+           family={Carlile},
+           familyi={C\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1fc0667ecf86281efe9ea86be0c1f5ea}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Johahn},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{fullhash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{bibnamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authorbibnamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authornamehash}{71a071ed3db8c0fff5718009b5fbd505}
+      \strng{authorfullhash}{71a071ed3db8c0fff5718009b5fbd505}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The growing availability of efficient and relatively inexpensive virtual auditory display technology has provided new research platforms to explore the perception of auditory motion. At the same time, deployment of these technologies in command and control as well as in entertainment roles is generating an increasing need to better understand the complex processes underlying auditory motion perception. This is a particularly challenging processing feat because it involves the rapid deconvolution of the relative change in the locations of sound sources produced by rotational and translations of the head in space (self-motion) to enable the perception of actual source motion. The fact that we perceive our auditory world to be stable despite almost continual movement of the head demonstrates the efficiency and effectiveness of this process. This review examines the acoustical basis of auditory motion perception and a wide range of psychophysical, electrophysiological, and cortical imaging studies that have probed the limits and possible mechanisms underlying this perception.}
+      \field{day}{1}
+      \field{issn}{2331-2165, 2331-2165}
+      \field{journaltitle}{Trends in Hearing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shortjournal}{Trends in Hearing}
+      \field{title}{The {{Perception}} of {{Auditory Motion}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{20}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{233121651664425}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1177/2331216516644254
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\GULJUGQW\\Carlile_Leung_2016_The Perception of Auditory Motion.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1177/2331216516644254
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1177/2331216516644254
+      \endverb
+    \endentry
     \entry{clarkCoordinatingEachOther2005}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
@@ -5650,6 +5832,72 @@
       \endverb
       \verb{url}
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
+      \endverb
+    \endentry
+    \entry{tommasiniComputationalModelImplement2019}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=8c77b0cc446513a67434d37f06d61217}{%
+           family={Tommasini},
+           familyi={T\bibinitperiod},
+           given={Fabián\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=359a8dba78f09c57c14855c386581f13}{%
+           family={Ramos},
+           familyi={R\bibinitperiod},
+           given={Oscar\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c42e665464910bfcae766cfa80cd6570}{%
+           family={Hüg},
+           familyi={H\bibinitperiod},
+           given={Mercedes\bibnamedelima X.},
+           giveni={M\bibinitperiod\bibinitdelim X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=009c39c66febc3f66e18b192a0373d90}{%
+           family={Ferreyra},
+           familyi={F\bibinitperiod},
+           given={Sebastián\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{edf8373b539b128f57fe8a86526c08e8}
+      \strng{fullhash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{bibnamehash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{authorbibnamehash}{aebea3a7878cf63712c809ff1883041e}
+      \strng{authornamehash}{edf8373b539b128f57fe8a86526c08e8}
+      \strng{authorfullhash}{aebea3a7878cf63712c809ff1883041e}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0814-6039, 1839-2571}
+      \field{journaltitle}{Acoustics Australia}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{1}
+      \field{shortjournal}{Acoust Aust}
+      \field{title}{A {{Computational Model}} to {{Implement Binaural Synthesis}} in a {{Hard Real-Time Auditory Virtual Environment}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{47}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{51\bibrangedash 66}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/s40857-019-00152-7
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s40857-019-00152-7
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s40857-019-00152-7
       \endverb
     \endentry
     \entry{vandersteenADaptationAnticipationModel2013}{article}{useprefix=true}
