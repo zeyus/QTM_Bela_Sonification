@@ -434,6 +434,48 @@
       \verb https://dx.plos.org/10.1371/journal.pone.0195948
       \endverb
     \endentry
+    \entry{dobsonDetailsPublicHealth1963}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=265973a842fa63c7b813adacd67f64d6}{%
+           family={Dobson},
+           familyi={D\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CDC}%
+      }
+      \strng{namehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{fullhash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{bibnamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authorbibnamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authornamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authorfullhash}{265973a842fa63c7b813adacd67f64d6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Details - {{Public Health Image Library}}({{PHIL}})}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{1963}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\RDQ7SZGM\\details.html
+      \endverb
+      \verb{urlraw}
+      \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+      \verb{url}
+      \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+    \endentry
     \entry{dubusEvaluationFourModels2012}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
@@ -1938,7 +1980,7 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
-    \entry{vickersSonificationProcessMonitoring}{inbook}{}
+    \entry{vickersSonificationProcessMonitoring2011}{inbook}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
            family={Vickers},
@@ -1955,12 +1997,15 @@
       \strng{authorfullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{The Sonification Handbook}
       \field{title}{Sonification for Process Monitoring}
+      \field{year}{2011}
+      \field{dateera}{ce}
       \field{pages}{455\bibrangedash 492}
       \range{pages}{38}
     \endentry
@@ -2566,6 +2611,48 @@
       \verb https://dx.plos.org/10.1371/journal.pone.0195948
       \endverb
     \endentry
+    \entry{dobsonDetailsPublicHealth1963}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=265973a842fa63c7b813adacd67f64d6}{%
+           family={Dobson},
+           familyi={D\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CDC}%
+      }
+      \strng{namehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{fullhash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{bibnamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authorbibnamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authornamehash}{265973a842fa63c7b813adacd67f64d6}
+      \strng{authorfullhash}{265973a842fa63c7b813adacd67f64d6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Details - {{Public Health Image Library}}({{PHIL}})}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{1963}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\RDQ7SZGM\\details.html
+      \endverb
+      \verb{urlraw}
+      \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+      \verb{url}
+      \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+    \endentry
     \entry{dubusEvaluationFourModels2012}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e52b2e092a3fcf7391809b91e2013d68}{%
@@ -4070,7 +4157,7 @@
       \endverb
       \keyw{extracted,introduction,linus}
     \endentry
-    \entry{vickersSonificationProcessMonitoring}{inbook}{}
+    \entry{vickersSonificationProcessMonitoring2011}{inbook}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=47dc51bf4b4bd01ff2aa8a058e34cf6a}{%
            family={Vickers},
@@ -4087,12 +4174,15 @@
       \strng{authorfullhash}{47dc51bf4b4bd01ff2aa8a058e34cf6a}
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
-      \field{labeldatesource}{nodate}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{The Sonification Handbook}
       \field{title}{Sonification for Process Monitoring}
+      \field{year}{2011}
+      \field{dateera}{ce}
       \field{pages}{455\bibrangedash 492}
       \range{pages}{38}
     \endentry
