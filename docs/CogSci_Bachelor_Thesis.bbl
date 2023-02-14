@@ -1030,6 +1030,69 @@
       \verb http://ieeexplore.ieee.org/document/1423934/
       \endverb
     \endentry
+    \entry{ferrari-tonioloTwoBrainsAction2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8b996e23f514e27f6593c58f7c1f70d3}{%
+           family={Ferrari-Toniolo},
+           familyi={F\bibinithyphendelim T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=412bbfb17d55445b8d1a85759012b35f}{%
+           family={Visco-Comandini},
+           familyi={V\bibinithyphendelim C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6681613034285cc992ff87f140320f4}{%
+           family={Battaglia-Mayer},
+           familyi={B\bibinithyphendelim M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8fbbcf62545eb1b455ac9451787dca01}
+      \strng{fullhash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{bibnamehash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{authorbibnamehash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{authornamehash}{8fbbcf62545eb1b455ac9451787dca01}
+      \strng{authorfullhash}{8ab2884b1666efb01c4f5788e808782a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{25}
+      \field{issn}{0270-6474, 1529-2401}
+      \field{journaltitle}{The Journal of Neuroscience}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{J. Neurosci.}
+      \field{shorttitle}{Two Brains in Action}
+      \field{title}{Two Brains in Action: {{Joint-action}} Coding in the Primate Frontal Cortex}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1512\bibrangedash 18}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\5QIHYL6C\\Ferrari-Toniolo et al_2019_Two brains in action.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+      \verb{url}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+    \endentry
     \entry{galantucciExperimentalSemioticsNew2009}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b3e79b120f442803bf6ba2f3f0547576}{%
@@ -1228,6 +1291,62 @@
       \endverb
       \verb{url}
       \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+    \endentry
+    \entry{keetels2012perception}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9c3076f23a79ac1ff130599bc7e7e011}{%
+           family={Keetels},
+           familyi={K\bibinitperiod},
+           given={Mirjam},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef1735a85f06750dd4d1c13e7acb0a6f}{%
+           family={Vroomen},
+           familyi={V\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=0f7280928c5718c2999d04fe624a113d}{%
+           family={{Murray, MM}},
+           familyi={M\bibinitperiod}}}%
+        {{hash=f7aaac25a702d416471591bcedc52a5d}{%
+           family={{Wallace, MT}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton (FL)}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press/Taylor \& Francis}%
+      }
+      \strng{namehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{fullhash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{bibnamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authorbibnamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authornamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authorfullhash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{editorbibnamehash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \strng{editornamehash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \strng{editorfullhash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Neural Bases of Multisensory Processes}
+      \field{title}{Perception of Synchrony between the Senses}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK92837/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK92837/
       \endverb
     \endentry
     \entry{kellerMusicalMeterAttention2005}{article}{}
@@ -1898,6 +2017,72 @@
       \endverb
       \verb{url}
       \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+    \endentry
+    \entry{mcphersonActionSoundLatencyAre2016}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=417f65b4b89c37848e01f4eab6ef06bb}{%
+           family={McPherson},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=98f3e6ac0a59d7cf80d9b2b8264f03fd}{%
+           family={Jack},
+           familyi={J\bibinitperiod},
+           given={R.\bibnamedelimi H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9428b4c2e57f9014840e57fc247343e6}{%
+           family={Moro},
+           familyi={M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e7643fe65bca5af1fccd12550a366d4}{%
+           family={Proceedings\bibnamedelimb of\bibnamedelimb the\bibnamedelimb International\bibnamedelimb Conference\bibnamedelimb on\bibnamedelimb New\bibnamedelimb Interfaces\bibnamedelimb for\bibnamedelimb Musical\bibnamedelima Expression},
+           familyi={P\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim t\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           given={Brisbane},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Griffith University}%
+      }
+      \strng{namehash}{7d84a851c1da9bbd9ec2b422b3cbc588}
+      \strng{fullhash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{bibnamehash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{authorbibnamehash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{authornamehash}{7d84a851c1da9bbd9ec2b422b3cbc588}
+      \strng{authorfullhash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The importance of low and consistent latency in interactive music systems is well-established. So how do commonly-used tools for creating digital musical instruments and other tangible interfaces perform in terms of latency from user action to sound output? This paper examines several common configurations where a microcontroller (e.g. Arduino) or wireless device communicates with computer-based sound generator (e.g. Max/MSP, Pd). We find that, perhaps surprisingly, almost none of the tested configurations meet generally-accepted guidelines for latency and jitter. To address this limitation, the paper presents a new embedded platform, Bela, which is capable of complex audio and sensor processing at submillisecond latency.}
+      \field{annotation}{Accepted: 2016-05-24T10:51:01Z}
+      \field{day}{11}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shorttitle}{Action-{{Sound Latency}}}
+      \field{title}{Action-{{Sound Latency}}: {{Are Our Tools Fast Enough}}?}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\IYIYJZKB\\McPherson et al_2016_Action-Sound Latency.pdf;C\:\\Users\\webma\\Zotero\\storage\\7FF6KL99\\12479.html
+      \endverb
+      \verb{urlraw}
+      \verb https://qmro.qmul.ac.uk/xmlui/handle/123456789/12479
+      \endverb
+      \verb{url}
+      \verb https://qmro.qmul.ac.uk/xmlui/handle/123456789/12479
       \endverb
     \endentry
     \entry{roguinReneTheophileHyacinthe2006}{article}{}
@@ -4043,6 +4228,69 @@
       \verb http://ieeexplore.ieee.org/document/1423934/
       \endverb
     \endentry
+    \entry{ferrari-tonioloTwoBrainsAction2019}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8b996e23f514e27f6593c58f7c1f70d3}{%
+           family={Ferrari-Toniolo},
+           familyi={F\bibinithyphendelim T\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=412bbfb17d55445b8d1a85759012b35f}{%
+           family={Visco-Comandini},
+           familyi={V\bibinithyphendelim C\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6681613034285cc992ff87f140320f4}{%
+           family={Battaglia-Mayer},
+           familyi={B\bibinithyphendelim M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8fbbcf62545eb1b455ac9451787dca01}
+      \strng{fullhash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{bibnamehash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{authorbibnamehash}{8ab2884b1666efb01c4f5788e808782a}
+      \strng{authornamehash}{8fbbcf62545eb1b455ac9451787dca01}
+      \strng{authorfullhash}{8ab2884b1666efb01c4f5788e808782a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{25}
+      \field{issn}{0270-6474, 1529-2401}
+      \field{journaltitle}{The Journal of Neuroscience}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{J. Neurosci.}
+      \field{shorttitle}{Two Brains in Action}
+      \field{title}{Two Brains in Action: {{Joint-action}} Coding in the Primate Frontal Cortex}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1512\bibrangedash 18}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\5QIHYL6C\\Ferrari-Toniolo et al_2019_Two brains in action.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+      \verb{url}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.1512-18.2019
+      \endverb
+    \endentry
     \entry{galantucciExperimentalSemioticsNew2009}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b3e79b120f442803bf6ba2f3f0547576}{%
@@ -4241,6 +4489,62 @@
       \endverb
       \verb{url}
       \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+    \endentry
+    \entry{keetels2012perception}{inbook}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9c3076f23a79ac1ff130599bc7e7e011}{%
+           family={Keetels},
+           familyi={K\bibinitperiod},
+           given={Mirjam},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef1735a85f06750dd4d1c13e7acb0a6f}{%
+           family={Vroomen},
+           familyi={V\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=0f7280928c5718c2999d04fe624a113d}{%
+           family={{Murray, MM}},
+           familyi={M\bibinitperiod}}}%
+        {{hash=f7aaac25a702d416471591bcedc52a5d}{%
+           family={{Wallace, MT}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boca Raton (FL)}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press/Taylor \& Francis}%
+      }
+      \strng{namehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{fullhash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{bibnamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authorbibnamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authornamehash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{authorfullhash}{c782605c0a42c549da09a1c5c4e898af}
+      \strng{editorbibnamehash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \strng{editornamehash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \strng{editorfullhash}{7a46de2d723fdea3d52eaa66291dbdbb}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Neural Bases of Multisensory Processes}
+      \field{title}{Perception of Synchrony between the Senses}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK92837/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/books/NBK92837/
       \endverb
     \endentry
     \entry{kellerMusicalMeterAttention2005}{article}{}
@@ -4911,6 +5215,72 @@
       \endverb
       \verb{url}
       \verb http://scitation.aip.org/content/asa/journal/jasa/128/4/10.1121/1.3478785
+      \endverb
+    \endentry
+    \entry{mcphersonActionSoundLatencyAre2016}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=417f65b4b89c37848e01f4eab6ef06bb}{%
+           family={McPherson},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=98f3e6ac0a59d7cf80d9b2b8264f03fd}{%
+           family={Jack},
+           familyi={J\bibinitperiod},
+           given={R.\bibnamedelimi H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9428b4c2e57f9014840e57fc247343e6}{%
+           family={Moro},
+           familyi={M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e7643fe65bca5af1fccd12550a366d4}{%
+           family={Proceedings\bibnamedelimb of\bibnamedelimb the\bibnamedelimb International\bibnamedelimb Conference\bibnamedelimb on\bibnamedelimb New\bibnamedelimb Interfaces\bibnamedelimb for\bibnamedelimb Musical\bibnamedelima Expression},
+           familyi={P\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim t\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim f\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           given={Brisbane},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Griffith University}%
+      }
+      \strng{namehash}{7d84a851c1da9bbd9ec2b422b3cbc588}
+      \strng{fullhash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{bibnamehash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{authorbibnamehash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \strng{authornamehash}{7d84a851c1da9bbd9ec2b422b3cbc588}
+      \strng{authorfullhash}{44b09ded7b8ef2fbf797e2595b3247c8}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The importance of low and consistent latency in interactive music systems is well-established. So how do commonly-used tools for creating digital musical instruments and other tangible interfaces perform in terms of latency from user action to sound output? This paper examines several common configurations where a microcontroller (e.g. Arduino) or wireless device communicates with computer-based sound generator (e.g. Max/MSP, Pd). We find that, perhaps surprisingly, almost none of the tested configurations meet generally-accepted guidelines for latency and jitter. To address this limitation, the paper presents a new embedded platform, Bela, which is capable of complex audio and sensor processing at submillisecond latency.}
+      \field{annotation}{Accepted: 2016-05-24T10:51:01Z}
+      \field{day}{11}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shorttitle}{Action-{{Sound Latency}}}
+      \field{title}{Action-{{Sound Latency}}: {{Are Our Tools Fast Enough}}?}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\IYIYJZKB\\McPherson et al_2016_Action-Sound Latency.pdf;C\:\\Users\\webma\\Zotero\\storage\\7FF6KL99\\12479.html
+      \endverb
+      \verb{urlraw}
+      \verb https://qmro.qmul.ac.uk/xmlui/handle/123456789/12479
+      \endverb
+      \verb{url}
+      \verb https://qmro.qmul.ac.uk/xmlui/handle/123456789/12479
       \endverb
     \endentry
     \entry{roguinReneTheophileHyacinthe2006}{article}{}
