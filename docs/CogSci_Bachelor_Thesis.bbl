@@ -19,6 +19,73 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global}
+    \entry{agliotiActionAnticipationMotor2008}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b58154d5e8390b54fc0508378b04f7a7}{%
+           family={Aglioti},
+           familyi={A\bibinitperiod},
+           given={Salvatore\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f893cf11210e15315d1228b762b50825}{%
+           family={Cesari},
+           familyi={C\bibinitperiod},
+           given={Paola},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e92f96fd03b3757acabc6e1e00f002d6}{%
+           family={Romani},
+           familyi={R\bibinitperiod},
+           given={Michela},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9dd565d04e6af708c25b4b1fdfd4bc71}{%
+           family={Urgesi},
+           familyi={U\bibinitperiod},
+           given={Cosimo},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{92e16d23f833e9940ab46748c61df775}
+      \strng{fullhash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{bibnamehash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{authorbibnamehash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{authornamehash}{92e16d23f833e9940ab46748c61df775}
+      \strng{authorfullhash}{53c326b7529da04e716fd39b7ae9871d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1097-6256, 1546-1726}
+      \field{journaltitle}{Nature Neuroscience}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shortjournal}{Nat Neurosci}
+      \field{title}{Action Anticipation and Motor Resonance in Elite Basketball Players}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{11}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1109\bibrangedash 1116}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1038/nn.2182
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nature.com/articles/nn.2182
+      \endverb
+      \verb{url}
+      \verb http://www.nature.com/articles/nn.2182
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
     \entry{benedictSurveyMaterialsCoatings2016}{inbook}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=0d43853e9510ea1eb2fcc8730469f1b8}{%
@@ -317,6 +384,83 @@
       \endverb
       \keyw{extracted}
     \endentry
+    \entry{calvo-merinoActionObservationAcquired2005}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=27e6f6b5bdd9bb063d83d31d992acf9d}{%
+           family={Calvo-Merino},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66c2cb8cdf32e61a71fbc0abdf3dcfbc}{%
+           family={Glaser},
+           familyi={G\bibinitperiod},
+           given={D.E.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=760b3e002a87e8d61ae2cf658c39358b}{%
+           family={Grèzes},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544ad94eb7225fe6fed16134184dd2c}{%
+           family={Passingham},
+           familyi={P\bibinitperiod},
+           given={R.E.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=134c49cd31c7ba7537a1baf2e8385d35}{%
+           family={Haggard},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7bba188dbacc19d28fe276b50ebdad0a}
+      \strng{fullhash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{bibnamehash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{authorbibnamehash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{authornamehash}{7bba188dbacc19d28fe276b50ebdad0a}
+      \strng{authorfullhash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1460-2199, 1047-3211}
+      \field{journaltitle}{Cerebral Cortex}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{8}
+      \field{shorttitle}{Action {{Observation}} and {{Acquired Motor Skills}}}
+      \field{title}{Action {{Observation}} and {{Acquired Motor Skills}}: {{An fMRI Study}} with {{Expert Dancers}}}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{15}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1243\bibrangedash 1249}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1093/cercor/bhi007
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HF8XSMRU\\Calvo-Merino et al. - 2005 - Action Observation and Acquired Motor Skills An f.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://academic.oup.com/cercor/article/15/8/1243/304707/Action-Observation-and-Acquired-Motor-Skills-An
+      \endverb
+      \verb{url}
+      \verb http://academic.oup.com/cercor/article/15/8/1243/304707/Action-Observation-and-Acquired-Motor-Skills-An
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
     \entry{clarkCoordinatingEachOther2005}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
@@ -474,6 +618,63 @@
       \endverb
       \verb{url}
       \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+    \endentry
+    \entry{dotovEntrainingChaoticDynamics2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=08efe27f21a73af1f00da2068dd1b019}{%
+           family={Dotov},
+           familyi={D\bibinitperiod},
+           given={Dobromir},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0bdc716710feb01c15c8f7d4a0e914ba}{%
+           family={Froese},
+           familyi={F\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{fullhash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{bibnamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authorbibnamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authornamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authorfullhash}{693d37641e7e0eb15da5163d42ab3407}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{01679457}
+      \field{journaltitle}{Human Movement Science}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shortjournal}{Human Movement Science}
+      \field{shorttitle}{Entraining Chaotic Dynamics}
+      \field{title}{Entraining Chaotic Dynamics: {{A}} Novel Movement Sonification Paradigm Could Promote Generalization}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{61}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{27\bibrangedash 41}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.humov.2018.06.016
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\IZ7P295W\\Dotov_Froese_2018_Entraining chaotic dynamics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0167945717308941
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0167945717308941
       \endverb
     \endentry
     \entry{dubusEvaluationFourModels2012}{article}{}
@@ -676,6 +877,50 @@
       \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
       \endverb
       \keyw{Drug synthesis,Kinematics,Physical mapping,Pitch perception,Sensory perception,Signal filtering,Sonification,Systematic reviews}
+    \endentry
+    \entry{mullerDynamicTimeWarping2007}{inbook}{}
+      \name{bookauthor}{1}{}{%
+        {{hash=80b6d841b668c1c8aa2744a675afd39e}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Meinard},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{bookauthorbibnamehash}{80b6d841b668c1c8aa2744a675afd39e}
+      \strng{bookauthornamehash}{80b6d841b668c1c8aa2744a675afd39e}
+      \strng{bookauthorfullhash}{80b6d841b668c1c8aa2744a675afd39e}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Information {{Retrieval}} for {{Music}} and {{Motion}}}
+      \field{isbn}{978-3-540-74047-6 978-3-540-74048-3}
+      \field{langid}{english}
+      \field{title}{Dynamic {{Time Warping}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{69\bibrangedash 84}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/978-3-540-74048-3_4
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
+      \endverb
     \endentry
     \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
       \name{author}{2}{}{%
@@ -909,6 +1154,137 @@
       \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
       \endverb
     \endentry
+    \entry{hochDancingTogetherInfant2021}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=89837db7e3f999c93f46a11290360f7a}{%
+           family={Hoch},
+           familyi={H\bibinitperiod},
+           given={Justine\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a306aa15f98fd931f20ca720d5fdab7e}{%
+           family={Ossmy},
+           familyi={O\bibinitperiod},
+           given={Ori},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a84b1ce502ed7edd08a33ef121d10311}{%
+           family={Cole},
+           familyi={C\bibinitperiod},
+           given={Whitney\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0f3399f0e441a635f36c36f6ba8adf9}{%
+           family={Hasan},
+           familyi={H\bibinitperiod},
+           given={Shohan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37191c5124a4a97f13ad79407df4c8ad}{%
+           family={Adolph},
+           familyi={A\bibinitperiod},
+           given={Karen\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{481a5323749d55ae6c3dd94f9bd84095}
+      \strng{fullhash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{bibnamehash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{authorbibnamehash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{authornamehash}{481a5323749d55ae6c3dd94f9bd84095}
+      \strng{authorfullhash}{4be201d31efb55bf60d1f38f62bcce31}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0009-3920, 1467-8624}
+      \field{journaltitle}{Child Development}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{4}
+      \field{shortjournal}{Child Dev}
+      \field{shorttitle}{“{{Dancing}}” {{Together}}}
+      \field{title}{“{{Dancing}}” {{Together}}: {{Infant}}–{{Mother Locomotor Synchrony}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{92}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1337\bibrangedash 1353}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/cdev.13513
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\FSUT6D7Y\\Hoch et al_2021_“Dancing” Together.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+    \endentry
+    \entry{kellerMusicalMeterAttention2005}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9d99d0bcb7dbc96512bd5e1893d87401}{%
+           family={Burnham},
+           familyi={B\bibinitperiod},
+           given={Denis\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b920b585db5bf9847030d5530998c489}
+      \strng{fullhash}{b920b585db5bf9847030d5530998c489}
+      \strng{bibnamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authorbibnamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authornamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authorfullhash}{b920b585db5bf9847030d5530998c489}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Performing in musical ensembles can be viewed as a dual task that requires simultaneous attention to a high priority �target� auditory pattern (e.g., a performer�s own part) and either (a) another part in the ensemble or (b) the aggregate texture that results when all parts are integrated. The current study tested the hypothesis that metric frameworks (rhythmic schemas) promote the efficient allocation of attentional resources in such multipart musical contexts. Experiment 1 employed a recognition memory paradigm to investigate the effects of attending to metrical versus nonmetrical target patterns upon the perception of aggregate patterns in which they were embedded. Experiment 2 required metrical and nonmetrical target patterns to be reproduced while memorizing different, concurrently presented metrical patterns that were also subsequently reproduced. Both experiments included conditions in which the different patterns within the multipart structure were matched or mismatched in terms of best-fitting meter. Results indicate that dual-task performance was best in matched-metrical conditions, intermediate in mismatched-metrical conditions, and worst in nonmetrical conditions. This suggests that metric frameworks may facilitate complex musical interactions by enabling efficient allocation of attentional resources.}
+      \field{day}{1}
+      \field{issn}{0730-7829, 1533-8312}
+      \field{journaltitle}{Music Perception}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Musical {{Meter}} in {{Attention}} to {{Multipart Rhythm}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{22}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{629\bibrangedash 661}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1525/mp.2005.22.4.629
+      \endverb
+      \verb{urlraw}
+      \verb https://online.ucpress.edu/mp/article/22/4/629/62193/Musical-Meter-in-Attention-to-Multipart-Rhythm
+      \endverb
+      \verb{url}
+      \verb https://online.ucpress.edu/mp/article/22/4/629/62193/Musical-Meter-in-Attention-to-Multipart-Rhythm
+      \endverb
+    \endentry
     \entry{kellerPianistsDuetBetter2007}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
@@ -998,13 +1374,14 @@
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{{ICMC}}}
       \field{title}{Design and Implementation of Stetho: {{Network}} Sonificiation System}
-      \field{year}{2002, September}
+      \field{year}{2002}
+      \field{dateera}{ce}
     \endentry
     \entry{knoblichActionCoordinationGroups2003}{article}{}
       \name{author}{2}{}{%
@@ -1260,6 +1637,61 @@
       \verb C\:\\Users\\webma\\Zotero\\storage\\RDTBT4TR\\Kramer et al. - 1999 - Sonification Report Status of the Field and Resea.pdf
       \endverb
       \keyw{highlighted,introduction,linus}
+    \endentry
+    \entry{loehrTemporalCoordinationPerforming2011}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ff101afdf9a6b56f1bfa543fa70cfcdd}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={Caroline},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{fullhash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{bibnamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authorbibnamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authornamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authorfullhash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many common behaviours require people to coordinate the timing of their actions with the timing of others' actions. We examined whether representations of musicians' actions are activated in coperformers with whom they must coordinate their actions in time and whether coperformers simulate each other's actions using their own motor systems during temporal coordination. Pianists performed right-hand melodies along with simple or complex left-hand accompaniments produced by themselves or by another pianist. Individual performers' preferred performance rates were measured in solo performance of the right-hand melody. The complexity of the left-hand accompaniment influenced the temporal grouping structure of the right-hand melody in the same way when it was performed by the self or by the duet partner, providing some support for the action corepresentation hypothesis. In contrast, accompaniment complexity had little influence on temporal coordination measures (asynchronies and cross-correlations between parts). Temporal coordination measures were influenced by a priori similarities between partners' preferred rates; partners who had similar preferred rates in solo performance were better synchronized and showed mutual adaptation to each other's timing during duet performances. These findings extend previous findings of action corepresentation and action simulation to a task that requires precise temporal coordination of independent yet simultaneous actions.}
+      \field{issn}{1747-0218, 1747-0226}
+      \field{journaltitle}{Quarterly Journal of Experimental Psychology}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shortjournal}{Quarterly Journal of Experimental Psychology}
+      \field{title}{Temporal {{Coordination}} between {{Performing Musicians}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{64}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2153\bibrangedash 2167}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1080/17470218.2011.603427
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2011.603427
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2011.603427
+      \endverb
     \endentry
     \entry{loehrSoundYouMe2016}{article}{}
       \name{author}{2}{}{%
@@ -1837,6 +2269,60 @@
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
       \endverb
     \endentry
+    \entry{vandersteenADaptationAnticipationModel2013}{article}{useprefix=true}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=860870c1b3208313becdb2e8010f7dc3}{%
+           family={Steen},
+           familyi={S\bibinitperiod},
+           given={M.\bibnamedelimi C.\bibnamedelimi (Marieke)},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim (\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{fullhash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{bibnamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authorbibnamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authornamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authorfullhash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1662-5161}
+      \field{journaltitle}{Frontiers in Human Neuroscience}
+      \field{shortjournal}{Front. Hum. Neurosci.}
+      \field{title}{The {{ADaptation}} and {{Anticipation Model}} ({{ADAM}}) of Sensorimotor Synchronization}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{7}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fnhum.2013.00253
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\EGDQ83US\\van der Steen and Keller - 2013 - The ADaptation and Anticipation Model (ADAM) of se.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/article/10.3389/fnhum.2013.00253/abstract
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/article/10.3389/fnhum.2013.00253/abstract
+      \endverb
+    \endentry
     \entry{vanderwelUnderstandingJointAction2021}{article}{useprefix=true}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
@@ -1909,6 +2395,66 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{varletComputationContinuousRelative2011a}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a1f3b032efa739ebf6501d8161fa3980}{%
+           family={Varlet},
+           familyi={V\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0452d2b00ffde5b981c4a304ff9d8c67}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{911c1619c75262b667763db630cdcd58}
+      \strng{fullhash}{911c1619c75262b667763db630cdcd58}
+      \strng{bibnamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authorbibnamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authornamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authorfullhash}{911c1619c75262b667763db630cdcd58}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Continuous relative phase measures have been used to quantify the coordination between different body segments in several activities. Our aim in this study was to investigate how the methods traditionally used to compute the continuous phase of human rhythmic movement are affected by modulations of frequency. We compared the continuous phase computed method with the traditional method derived from the position–velocity phase plane and with the Hilbert Transform. The methods were tested using sinusoidal signals with a modulation of frequency between or within cycles. Our results showed that the continuous phase computed with the first method results in oscillations in the phase time-series not expected for a sinusoidal signal and that the continuous phase is overestimated with the Hilbert Transform. We proposed a new method that produces a correct estimation of continuous phase by using half-cycle estimations of frequency to normalize the phase planes prior to calculating phase angles. The findings of the current study have important implications for computing continuous relative phase when investigating human movement coordination.}
+      \field{day}{7}
+      \field{issn}{0021-9290}
+      \field{journaltitle}{Journal of Biomechanics}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{6}
+      \field{shortjournal}{Journal of Biomechanics}
+      \field{title}{Computation of Continuous Relative Phase and Modulation of Frequency of Human Movement}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{44}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1200\bibrangedash 1204}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.jbiomech.2011.02.001
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ZHZJF87R\\Varlet_Richardson_2011_Computation of continuous relative phase and modulation of frequency of human.pdf;C\:\\Users\\webma\\Zotero\\storage\\5FIPCLKZ\\S0021929011000820.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0021929011000820
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0021929011000820
+      \endverb
+      \keyw{Continuous relative phase,Coordination,Frequency modulation,Hilbert Transform,Normalization,Velocity}
+    \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
@@ -1942,6 +2488,7 @@
       \strng{authorbibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
       \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
       \strng{authorfullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \field{extraname}{1}
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{extradatescope}{labelyear}
@@ -1979,6 +2526,136 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
       \endverb
       \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{vesperAreYouReady2013}{article}{useprefix=true}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
+           family={Wel},
+           familyi={W\bibinitperiod},
+           given={Robrecht\bibnamedelimb P.\bibnamedelimi R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{909e42140001493972615b2ea3a21e30}
+      \strng{bibnamehash}{909e42140001493972615b2ea3a21e30}
+      \strng{authorbibnamehash}{909e42140001493972615b2ea3a21e30}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{909e42140001493972615b2ea3a21e30}
+      \field{extraname}{2}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1939-1277, 0096-1523}
+      \field{journaltitle}{Journal of Experimental Psychology: Human Perception and Performance}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Experimental Psychology: Human Perception and Performance}
+      \field{shorttitle}{Are You Ready to Jump?}
+      \field{title}{Are You Ready to Jump? {{Predictive}} Mechanisms in Interpersonal Coordination.}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{39}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{48\bibrangedash 61}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1037/a0028066
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/a0028066
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/a0028066
+      \endverb
+    \endentry
+    \entry{vesperOurActionsMy2014}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{bibnamehash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{authorbibnamehash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{09c7c955bd5a32192788a95677d2b11c}
+      \field{extraname}{3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00283932}
+      \field{journaltitle}{Neuropsychologia}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{shortjournal}{Neuropsychologia}
+      \field{shorttitle}{Our Actions in My Mind}
+      \field{title}{Our Actions in My Mind: {{Motor}} Imagery of Joint Action}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{55}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{115\bibrangedash 121}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.neuropsychologia.2013.05.024
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0028393213001784
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0028393213001784
+      \endverb
     \endentry
     \entry{vickersSonificationProcessMonitoring2011}{inbook}{}
       \name{author}{1}{}{%
@@ -2090,6 +2767,165 @@
       \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
       \endverb
       \keyw{linus,luke,useful}
+    \endentry
+    \entry{wenkeWhatSharedJoint2011}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=d2a804c06f8b1c52ed8c2513e6adbca6}{%
+           family={Wenke},
+           familyi={W\bibinitperiod},
+           given={Dorit},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcdab56cd39200fcf52b405349448a8e}{%
+           family={Atmaca},
+           familyi={A\bibinitperiod},
+           given={Silke},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03631b8e9d7368faa1ebfeea10a91bf3}{%
+           family={Holländer},
+           familyi={H\bibinitperiod},
+           given={Antje},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=479c69b9ce4c9ecdd8b1b582cc9741d1}{%
+           family={Liepelt},
+           familyi={L\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65cd05c6455cd4b1b3793b203a992448}{%
+           family={Baess},
+           familyi={B\bibinitperiod},
+           given={Pamela},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a555baa1883826f27a0300cfdfba3d77}{%
+           family={Prinz},
+           familyi={P\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e4addc2163b3569c107705a7e4bafb36}
+      \strng{fullhash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{bibnamehash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{authorbibnamehash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{authornamehash}{e4addc2163b3569c107705a7e4bafb36}
+      \strng{authorfullhash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1878-5158, 1878-5166}
+      \field{journaltitle}{Review of Philosophy and Psychology}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Rev.Phil.Psych.}
+      \field{shorttitle}{What Is {{Shared}} in {{Joint Action}}?}
+      \field{title}{What Is {{Shared}} in {{Joint Action}}? {{Issues}} of {{Co-representation}}, {{Response Conflict}}, and {{Agent Identification}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{2}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{147\bibrangedash 172}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1007/s13164-011-0057-0
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s13164-011-0057-0
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s13164-011-0057-0
+      \endverb
+    \endentry
+    \entry{wolpertUnifyingComputationalFramework2003}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d811c1a8eabfbf99490b0307a578f143}{%
+           family={Wolpert},
+           familyi={W\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1c6f06ab49571c68db278158470ad659}{%
+           family={Doya},
+           familyi={D\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=840eef6c5434cf797bbed6e91d3230fb}{%
+           family={Kawato},
+           familyi={K\bibinitperiod},
+           given={Mitsuo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=1488153249a28a1d279f091dfb42cf0b}{%
+           family={Frith},
+           familyi={F\bibinitperiod},
+           given={C.D.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=29d1c6b6fe66810be6c3b2ce9c329add}{%
+           family={Wolpert},
+           familyi={W\bibinitperiod},
+           given={D.M.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{74a8b57b504bb7de39cde2cac75c8e1b}
+      \strng{fullhash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{bibnamehash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{authorbibnamehash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{authornamehash}{74a8b57b504bb7de39cde2cac75c8e1b}
+      \strng{authorfullhash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{editorbibnamehash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \strng{editornamehash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \strng{editorfullhash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent empirical studies have implicated the use of the motor system during action observation, imitation and social interaction. In this paper, we explore the computational parallels between the processes that occur in motor control and in action observation, imitation, social interaction and theory of mind. In particular, we examine the extent to which motor commands acting on the body can be equated with communicative signals acting on other people and suggest that computational solutions for motor control may have been extended to the domain of social interaction.}
+      \field{day}{29}
+      \field{issn}{0962-8436, 1471-2970}
+      \field{journaltitle}{Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1431}
+      \field{shortjournal}{Phil. Trans. R. Soc. Lond. B}
+      \field{title}{A Unifying Computational Framework for Motor Control and Social Interaction}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{358}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{593\bibrangedash 602}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1098/rstb.2002.1238
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\GM4HPX63\\Wolpert et al. - 2003 - A unifying computational framework for motor contr.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://royalsocietypublishing.org/doi/10.1098/rstb.2002.1238
+      \endverb
+      \verb{url}
+      \verb https://royalsocietypublishing.org/doi/10.1098/rstb.2002.1238
+      \endverb
     \endentry
     \entry{mousetrap2021}{misc}{}
       \name{author}{5}{}{%
@@ -2196,6 +3032,73 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global}
+    \entry{agliotiActionAnticipationMotor2008}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b58154d5e8390b54fc0508378b04f7a7}{%
+           family={Aglioti},
+           familyi={A\bibinitperiod},
+           given={Salvatore\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f893cf11210e15315d1228b762b50825}{%
+           family={Cesari},
+           familyi={C\bibinitperiod},
+           given={Paola},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e92f96fd03b3757acabc6e1e00f002d6}{%
+           family={Romani},
+           familyi={R\bibinitperiod},
+           given={Michela},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9dd565d04e6af708c25b4b1fdfd4bc71}{%
+           family={Urgesi},
+           familyi={U\bibinitperiod},
+           given={Cosimo},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{92e16d23f833e9940ab46748c61df775}
+      \strng{fullhash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{bibnamehash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{authorbibnamehash}{53c326b7529da04e716fd39b7ae9871d}
+      \strng{authornamehash}{92e16d23f833e9940ab46748c61df775}
+      \strng{authorfullhash}{53c326b7529da04e716fd39b7ae9871d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1097-6256, 1546-1726}
+      \field{journaltitle}{Nature Neuroscience}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shortjournal}{Nat Neurosci}
+      \field{title}{Action Anticipation and Motor Resonance in Elite Basketball Players}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{11}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1109\bibrangedash 1116}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1038/nn.2182
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nature.com/articles/nn.2182
+      \endverb
+      \verb{url}
+      \verb http://www.nature.com/articles/nn.2182
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
     \entry{benedictSurveyMaterialsCoatings2016}{inbook}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=0d43853e9510ea1eb2fcc8730469f1b8}{%
@@ -2494,6 +3397,83 @@
       \endverb
       \keyw{extracted}
     \endentry
+    \entry{calvo-merinoActionObservationAcquired2005}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=27e6f6b5bdd9bb063d83d31d992acf9d}{%
+           family={Calvo-Merino},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66c2cb8cdf32e61a71fbc0abdf3dcfbc}{%
+           family={Glaser},
+           familyi={G\bibinitperiod},
+           given={D.E.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=760b3e002a87e8d61ae2cf658c39358b}{%
+           family={Grèzes},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544ad94eb7225fe6fed16134184dd2c}{%
+           family={Passingham},
+           familyi={P\bibinitperiod},
+           given={R.E.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=134c49cd31c7ba7537a1baf2e8385d35}{%
+           family={Haggard},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7bba188dbacc19d28fe276b50ebdad0a}
+      \strng{fullhash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{bibnamehash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{authorbibnamehash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \strng{authornamehash}{7bba188dbacc19d28fe276b50ebdad0a}
+      \strng{authorfullhash}{2e5e581cd5bdd8e5bbc46332b069003a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{1}
+      \field{issn}{1460-2199, 1047-3211}
+      \field{journaltitle}{Cerebral Cortex}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{8}
+      \field{shorttitle}{Action {{Observation}} and {{Acquired Motor Skills}}}
+      \field{title}{Action {{Observation}} and {{Acquired Motor Skills}}: {{An fMRI Study}} with {{Expert Dancers}}}
+      \field{urlday}{22}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{15}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1243\bibrangedash 1249}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1093/cercor/bhi007
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HF8XSMRU\\Calvo-Merino et al. - 2005 - Action Observation and Acquired Motor Skills An f.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://academic.oup.com/cercor/article/15/8/1243/304707/Action-Observation-and-Acquired-Motor-Skills-An
+      \endverb
+      \verb{url}
+      \verb http://academic.oup.com/cercor/article/15/8/1243/304707/Action-Observation-and-Acquired-Motor-Skills-An
+      \endverb
+      \keyw{extracted,linus}
+    \endentry
     \entry{clarkCoordinatingEachOther2005}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a12d1b2b1b03baf2305a0b8b1652d0d0}{%
@@ -2651,6 +3631,63 @@
       \endverb
       \verb{url}
       \verb https://phil.cdc.gov/details.aspx?pid=12020
+      \endverb
+    \endentry
+    \entry{dotovEntrainingChaoticDynamics2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=08efe27f21a73af1f00da2068dd1b019}{%
+           family={Dotov},
+           familyi={D\bibinitperiod},
+           given={Dobromir},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0bdc716710feb01c15c8f7d4a0e914ba}{%
+           family={Froese},
+           familyi={F\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{fullhash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{bibnamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authorbibnamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authornamehash}{693d37641e7e0eb15da5163d42ab3407}
+      \strng{authorfullhash}{693d37641e7e0eb15da5163d42ab3407}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{01679457}
+      \field{journaltitle}{Human Movement Science}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shortjournal}{Human Movement Science}
+      \field{shorttitle}{Entraining Chaotic Dynamics}
+      \field{title}{Entraining Chaotic Dynamics: {{A}} Novel Movement Sonification Paradigm Could Promote Generalization}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{61}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{27\bibrangedash 41}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/j.humov.2018.06.016
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\IZ7P295W\\Dotov_Froese_2018_Entraining chaotic dynamics.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0167945717308941
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0167945717308941
       \endverb
     \endentry
     \entry{dubusEvaluationFourModels2012}{article}{}
@@ -2853,6 +3890,50 @@
       \verb https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0082491
       \endverb
       \keyw{Drug synthesis,Kinematics,Physical mapping,Pitch perception,Sensory perception,Signal filtering,Sonification,Systematic reviews}
+    \endentry
+    \entry{mullerDynamicTimeWarping2007}{inbook}{}
+      \name{bookauthor}{1}{}{%
+        {{hash=80b6d841b668c1c8aa2744a675afd39e}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Meinard},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{bookauthorbibnamehash}{80b6d841b668c1c8aa2744a675afd39e}
+      \strng{bookauthornamehash}{80b6d841b668c1c8aa2744a675afd39e}
+      \strng{bookauthorfullhash}{80b6d841b668c1c8aa2744a675afd39e}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Information {{Retrieval}} for {{Music}} and {{Motion}}}
+      \field{isbn}{978-3-540-74047-6 978-3-540-74048-3}
+      \field{langid}{english}
+      \field{title}{Dynamic {{Time Warping}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{69\bibrangedash 84}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/978-3-540-74048-3_4
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
+      \endverb
     \endentry
     \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
       \name{author}{2}{}{%
@@ -3086,6 +4167,137 @@
       \verb https://link.springer.com/10.1007/978-3-319-06257-0_42
       \endverb
     \endentry
+    \entry{hochDancingTogetherInfant2021}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=89837db7e3f999c93f46a11290360f7a}{%
+           family={Hoch},
+           familyi={H\bibinitperiod},
+           given={Justine\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a306aa15f98fd931f20ca720d5fdab7e}{%
+           family={Ossmy},
+           familyi={O\bibinitperiod},
+           given={Ori},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a84b1ce502ed7edd08a33ef121d10311}{%
+           family={Cole},
+           familyi={C\bibinitperiod},
+           given={Whitney\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0f3399f0e441a635f36c36f6ba8adf9}{%
+           family={Hasan},
+           familyi={H\bibinitperiod},
+           given={Shohan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37191c5124a4a97f13ad79407df4c8ad}{%
+           family={Adolph},
+           familyi={A\bibinitperiod},
+           given={Karen\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{481a5323749d55ae6c3dd94f9bd84095}
+      \strng{fullhash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{bibnamehash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{authorbibnamehash}{4be201d31efb55bf60d1f38f62bcce31}
+      \strng{authornamehash}{481a5323749d55ae6c3dd94f9bd84095}
+      \strng{authorfullhash}{4be201d31efb55bf60d1f38f62bcce31}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0009-3920, 1467-8624}
+      \field{journaltitle}{Child Development}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{4}
+      \field{shortjournal}{Child Dev}
+      \field{shorttitle}{“{{Dancing}}” {{Together}}}
+      \field{title}{“{{Dancing}}” {{Together}}: {{Infant}}–{{Mother Locomotor Synchrony}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{92}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1337\bibrangedash 1353}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1111/cdev.13513
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\FSUT6D7Y\\Hoch et al_2021_“Dancing” Together.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/cdev.13513
+      \endverb
+    \endentry
+    \entry{kellerMusicalMeterAttention2005}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9d99d0bcb7dbc96512bd5e1893d87401}{%
+           family={Burnham},
+           familyi={B\bibinitperiod},
+           given={Denis\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b920b585db5bf9847030d5530998c489}
+      \strng{fullhash}{b920b585db5bf9847030d5530998c489}
+      \strng{bibnamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authorbibnamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authornamehash}{b920b585db5bf9847030d5530998c489}
+      \strng{authorfullhash}{b920b585db5bf9847030d5530998c489}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Performing in musical ensembles can be viewed as a dual task that requires simultaneous attention to a high priority �target� auditory pattern (e.g., a performer�s own part) and either (a) another part in the ensemble or (b) the aggregate texture that results when all parts are integrated. The current study tested the hypothesis that metric frameworks (rhythmic schemas) promote the efficient allocation of attentional resources in such multipart musical contexts. Experiment 1 employed a recognition memory paradigm to investigate the effects of attending to metrical versus nonmetrical target patterns upon the perception of aggregate patterns in which they were embedded. Experiment 2 required metrical and nonmetrical target patterns to be reproduced while memorizing different, concurrently presented metrical patterns that were also subsequently reproduced. Both experiments included conditions in which the different patterns within the multipart structure were matched or mismatched in terms of best-fitting meter. Results indicate that dual-task performance was best in matched-metrical conditions, intermediate in mismatched-metrical conditions, and worst in nonmetrical conditions. This suggests that metric frameworks may facilitate complex musical interactions by enabling efficient allocation of attentional resources.}
+      \field{day}{1}
+      \field{issn}{0730-7829, 1533-8312}
+      \field{journaltitle}{Music Perception}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Musical {{Meter}} in {{Attention}} to {{Multipart Rhythm}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{22}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{629\bibrangedash 661}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1525/mp.2005.22.4.629
+      \endverb
+      \verb{urlraw}
+      \verb https://online.ucpress.edu/mp/article/22/4/629/62193/Musical-Meter-in-Attention-to-Multipart-Rhythm
+      \endverb
+      \verb{url}
+      \verb https://online.ucpress.edu/mp/article/22/4/629/62193/Musical-Meter-in-Attention-to-Multipart-Rhythm
+      \endverb
+    \endentry
     \entry{kellerPianistsDuetBetter2007}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
@@ -3175,13 +4387,14 @@
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
+      \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{{{ICMC}}}
       \field{title}{Design and Implementation of Stetho: {{Network}} Sonificiation System}
-      \field{year}{2002, September}
+      \field{year}{2002}
+      \field{dateera}{ce}
     \endentry
     \entry{knoblichPsychologicalResearchJoint2011}{inbook}{}
       \name{author}{3}{}{%
@@ -3514,6 +4727,61 @@
       \verb https://direct.mit.edu/jocn/article/25/7/1049/27943/Monitoring-Individual-and-Joint-Action-Outcomes-in
       \endverb
       \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{loehrTemporalCoordinationPerforming2011}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7c6952cc07d02a0125e3066dc761b3db}{%
+           family={Loehr},
+           familyi={L\bibinitperiod},
+           given={Janeen\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ff101afdf9a6b56f1bfa543fa70cfcdd}{%
+           family={Palmer},
+           familyi={P\bibinitperiod},
+           given={Caroline},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{fullhash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{bibnamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authorbibnamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authornamehash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \strng{authorfullhash}{14eed63168b07ebc28ea56f35ea2ed97}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many common behaviours require people to coordinate the timing of their actions with the timing of others' actions. We examined whether representations of musicians' actions are activated in coperformers with whom they must coordinate their actions in time and whether coperformers simulate each other's actions using their own motor systems during temporal coordination. Pianists performed right-hand melodies along with simple or complex left-hand accompaniments produced by themselves or by another pianist. Individual performers' preferred performance rates were measured in solo performance of the right-hand melody. The complexity of the left-hand accompaniment influenced the temporal grouping structure of the right-hand melody in the same way when it was performed by the self or by the duet partner, providing some support for the action corepresentation hypothesis. In contrast, accompaniment complexity had little influence on temporal coordination measures (asynchronies and cross-correlations between parts). Temporal coordination measures were influenced by a priori similarities between partners' preferred rates; partners who had similar preferred rates in solo performance were better synchronized and showed mutual adaptation to each other's timing during duet performances. These findings extend previous findings of action corepresentation and action simulation to a task that requires precise temporal coordination of independent yet simultaneous actions.}
+      \field{issn}{1747-0218, 1747-0226}
+      \field{journaltitle}{Quarterly Journal of Experimental Psychology}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{shortjournal}{Quarterly Journal of Experimental Psychology}
+      \field{title}{Temporal {{Coordination}} between {{Performing Musicians}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{64}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2153\bibrangedash 2167}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1080/17470218.2011.603427
+      \endverb
+      \verb{urlraw}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2011.603427
+      \endverb
+      \verb{url}
+      \verb http://journals.sagepub.com/doi/10.1080/17470218.2011.603427
+      \endverb
     \endentry
     \entry{loehrSoundYouMe2016}{article}{}
       \name{author}{2}{}{%
@@ -4014,6 +5282,60 @@
       \verb http://link.springer.com/10.1007/1-84628-113-X_3
       \endverb
     \endentry
+    \entry{vandersteenADaptationAnticipationModel2013}{article}{useprefix=true}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=860870c1b3208313becdb2e8010f7dc3}{%
+           family={Steen},
+           familyi={S\bibinitperiod},
+           given={M.\bibnamedelimi C.\bibnamedelimi (Marieke)},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim (\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=862ff15b8c7d3edb0942c2672b9371e6}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Peter\bibnamedelima E.},
+           giveni={P\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{fullhash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{bibnamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authorbibnamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authornamehash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \strng{authorfullhash}{62ee5f42bf084a3cd4ac9e195b8c06ec}
+      \field{sortinit}{v}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1662-5161}
+      \field{journaltitle}{Frontiers in Human Neuroscience}
+      \field{shortjournal}{Front. Hum. Neurosci.}
+      \field{title}{The {{ADaptation}} and {{Anticipation Model}} ({{ADAM}}) of Sensorimotor Synchronization}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{7}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fnhum.2013.00253
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\EGDQ83US\\van der Steen and Keller - 2013 - The ADaptation and Anticipation Model (ADAM) of se.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/article/10.3389/fnhum.2013.00253/abstract
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/article/10.3389/fnhum.2013.00253/abstract
+      \endverb
+    \endentry
     \entry{vanderwelUnderstandingJointAction2021}{article}{useprefix=true}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
@@ -4086,6 +5408,66 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{varletComputationContinuousRelative2011a}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a1f3b032efa739ebf6501d8161fa3980}{%
+           family={Varlet},
+           familyi={V\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0452d2b00ffde5b981c4a304ff9d8c67}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{911c1619c75262b667763db630cdcd58}
+      \strng{fullhash}{911c1619c75262b667763db630cdcd58}
+      \strng{bibnamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authorbibnamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authornamehash}{911c1619c75262b667763db630cdcd58}
+      \strng{authorfullhash}{911c1619c75262b667763db630cdcd58}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Continuous relative phase measures have been used to quantify the coordination between different body segments in several activities. Our aim in this study was to investigate how the methods traditionally used to compute the continuous phase of human rhythmic movement are affected by modulations of frequency. We compared the continuous phase computed method with the traditional method derived from the position–velocity phase plane and with the Hilbert Transform. The methods were tested using sinusoidal signals with a modulation of frequency between or within cycles. Our results showed that the continuous phase computed with the first method results in oscillations in the phase time-series not expected for a sinusoidal signal and that the continuous phase is overestimated with the Hilbert Transform. We proposed a new method that produces a correct estimation of continuous phase by using half-cycle estimations of frequency to normalize the phase planes prior to calculating phase angles. The findings of the current study have important implications for computing continuous relative phase when investigating human movement coordination.}
+      \field{day}{7}
+      \field{issn}{0021-9290}
+      \field{journaltitle}{Journal of Biomechanics}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{6}
+      \field{shortjournal}{Journal of Biomechanics}
+      \field{title}{Computation of Continuous Relative Phase and Modulation of Frequency of Human Movement}
+      \field{urlday}{19}
+      \field{urlmonth}{12}
+      \field{urlyear}{2022}
+      \field{volume}{44}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1200\bibrangedash 1204}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.jbiomech.2011.02.001
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\ZHZJF87R\\Varlet_Richardson_2011_Computation of continuous relative phase and modulation of frequency of human.pdf;C\:\\Users\\webma\\Zotero\\storage\\5FIPCLKZ\\S0021929011000820.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0021929011000820
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0021929011000820
+      \endverb
+      \keyw{Continuous relative phase,Coordination,Frequency modulation,Hilbert Transform,Normalization,Velocity}
+    \endentry
     \entry{vesperMinimalArchitectureJoint2010}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
@@ -4119,6 +5501,7 @@
       \strng{authorbibnamehash}{cbfbc559f18764691fcc75d80ad533ed}
       \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
       \strng{authorfullhash}{cbfbc559f18764691fcc75d80ad533ed}
+      \field{extraname}{1}
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{extradatescope}{labelyear}
@@ -4156,6 +5539,136 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0893608010001152
       \endverb
       \keyw{extracted,introduction,linus}
+    \endentry
+    \entry{vesperOurActionsMy2014}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{bibnamehash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{authorbibnamehash}{09c7c955bd5a32192788a95677d2b11c}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{09c7c955bd5a32192788a95677d2b11c}
+      \field{extraname}{2}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00283932}
+      \field{journaltitle}{Neuropsychologia}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{shortjournal}{Neuropsychologia}
+      \field{shorttitle}{Our Actions in My Mind}
+      \field{title}{Our Actions in My Mind: {{Motor}} Imagery of Joint Action}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{55}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{115\bibrangedash 121}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.neuropsychologia.2013.05.024
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0028393213001784
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0028393213001784
+      \endverb
+    \endentry
+    \entry{vesperAreYouReady2013}{article}{useprefix=true}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=84b27a4a0be03e25d04032e2ced55dcc}{%
+           family={Vesper},
+           familyi={V\bibinitperiod},
+           given={Cordula},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ba9c2853a83fc30a67bc830814d926f}{%
+           family={Wel},
+           familyi={W\bibinitperiod},
+           given={Robrecht\bibnamedelimb P.\bibnamedelimi R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0,
+           prefix={van\bibnamedelima der},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=2d841fa604844eb4b8845605c1b8c427}{%
+           family={Knoblich},
+           familyi={K\bibinitperiod},
+           given={Günther},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a236312b36076def91d9af84fc51bdf8}{%
+           family={Sebanz},
+           familyi={S\bibinitperiod},
+           given={Natalie},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{fullhash}{909e42140001493972615b2ea3a21e30}
+      \strng{bibnamehash}{909e42140001493972615b2ea3a21e30}
+      \strng{authorbibnamehash}{909e42140001493972615b2ea3a21e30}
+      \strng{authornamehash}{649f9edfa64d00003bb0eec11db0b300}
+      \strng{authorfullhash}{909e42140001493972615b2ea3a21e30}
+      \field{extraname}{3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1939-1277, 0096-1523}
+      \field{journaltitle}{Journal of Experimental Psychology: Human Perception and Performance}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Experimental Psychology: Human Perception and Performance}
+      \field{shorttitle}{Are You Ready to Jump?}
+      \field{title}{Are You Ready to Jump? {{Predictive}} Mechanisms in Interpersonal Coordination.}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{39}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{48\bibrangedash 61}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1037/a0028066
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/a0028066
+      \endverb
+      \verb{url}
+      \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/a0028066
+      \endverb
     \endentry
     \entry{vickersSonificationProcessMonitoring2011}{inbook}{}
       \name{author}{1}{}{%
@@ -4267,6 +5780,165 @@
       \verb https://brill.com/view/journals/msr/26/6/article-p533_2.xml
       \endverb
       \keyw{linus,luke,useful}
+    \endentry
+    \entry{wenkeWhatSharedJoint2011}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=d2a804c06f8b1c52ed8c2513e6adbca6}{%
+           family={Wenke},
+           familyi={W\bibinitperiod},
+           given={Dorit},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bcdab56cd39200fcf52b405349448a8e}{%
+           family={Atmaca},
+           familyi={A\bibinitperiod},
+           given={Silke},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03631b8e9d7368faa1ebfeea10a91bf3}{%
+           family={Holländer},
+           familyi={H\bibinitperiod},
+           given={Antje},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=479c69b9ce4c9ecdd8b1b582cc9741d1}{%
+           family={Liepelt},
+           familyi={L\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65cd05c6455cd4b1b3793b203a992448}{%
+           family={Baess},
+           familyi={B\bibinitperiod},
+           given={Pamela},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a555baa1883826f27a0300cfdfba3d77}{%
+           family={Prinz},
+           familyi={P\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e4addc2163b3569c107705a7e4bafb36}
+      \strng{fullhash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{bibnamehash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{authorbibnamehash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \strng{authornamehash}{e4addc2163b3569c107705a7e4bafb36}
+      \strng{authorfullhash}{3e81935b0e04ab6f4ce919cbe0a18fd2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1878-5158, 1878-5166}
+      \field{journaltitle}{Review of Philosophy and Psychology}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{2}
+      \field{shortjournal}{Rev.Phil.Psych.}
+      \field{shorttitle}{What Is {{Shared}} in {{Joint Action}}?}
+      \field{title}{What Is {{Shared}} in {{Joint Action}}? {{Issues}} of {{Co-representation}}, {{Response Conflict}}, and {{Agent Identification}}}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{2}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{147\bibrangedash 172}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1007/s13164-011-0057-0
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s13164-011-0057-0
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s13164-011-0057-0
+      \endverb
+    \endentry
+    \entry{wolpertUnifyingComputationalFramework2003}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d811c1a8eabfbf99490b0307a578f143}{%
+           family={Wolpert},
+           familyi={W\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1c6f06ab49571c68db278158470ad659}{%
+           family={Doya},
+           familyi={D\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=840eef6c5434cf797bbed6e91d3230fb}{%
+           family={Kawato},
+           familyi={K\bibinitperiod},
+           given={Mitsuo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=1488153249a28a1d279f091dfb42cf0b}{%
+           family={Frith},
+           familyi={F\bibinitperiod},
+           given={C.D.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=29d1c6b6fe66810be6c3b2ce9c329add}{%
+           family={Wolpert},
+           familyi={W\bibinitperiod},
+           given={D.M.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{74a8b57b504bb7de39cde2cac75c8e1b}
+      \strng{fullhash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{bibnamehash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{authorbibnamehash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{authornamehash}{74a8b57b504bb7de39cde2cac75c8e1b}
+      \strng{authorfullhash}{9a15f9e095e14c568be81df6a4b56983}
+      \strng{editorbibnamehash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \strng{editornamehash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \strng{editorfullhash}{75b3d6c6c6a8ab518ab9c6dbe8653e13}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent empirical studies have implicated the use of the motor system during action observation, imitation and social interaction. In this paper, we explore the computational parallels between the processes that occur in motor control and in action observation, imitation, social interaction and theory of mind. In particular, we examine the extent to which motor commands acting on the body can be equated with communicative signals acting on other people and suggest that computational solutions for motor control may have been extended to the domain of social interaction.}
+      \field{day}{29}
+      \field{issn}{0962-8436, 1471-2970}
+      \field{journaltitle}{Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1431}
+      \field{shortjournal}{Phil. Trans. R. Soc. Lond. B}
+      \field{title}{A Unifying Computational Framework for Motor Control and Social Interaction}
+      \field{urlday}{12}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{358}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{593\bibrangedash 602}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1098/rstb.2002.1238
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\GM4HPX63\\Wolpert et al. - 2003 - A unifying computational framework for motor contr.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://royalsocietypublishing.org/doi/10.1098/rstb.2002.1238
+      \endverb
+      \verb{url}
+      \verb https://royalsocietypublishing.org/doi/10.1098/rstb.2002.1238
+      \endverb
     \endentry
     \entry{mousetrap2021}{misc}{}
       \name{author}{5}{}{%
