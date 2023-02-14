@@ -1202,6 +1202,114 @@
       \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
       \endverb
     \endentry
+    \entry{gelerDynamicTimeWarping2019}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8bb4738a58cb4b8a2c3be224b38bce16}{%
+           family={Geler},
+           familyi={G\bibinitperiod},
+           given={Zoltan},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=02cb8b459d518bb32baf3a664bb32330}{%
+           family={Kurbalija},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d425d47beeecf3c1849a15a97f45bff7}{%
+           family={Ivanovic},
+           familyi={I\bibinitperiod},
+           given={Mirjana},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ef5613eb4f55655de0e751cb7d63ee2}{%
+           family={Radovanovic},
+           familyi={R\bibinitperiod},
+           given={Milos},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f687e0d0dfe3a9030d2c300da6547be9}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Weihui},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Sofia, Bulgaria}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{439507c5d4a1df27ada1daadabcd2132}
+      \strng{fullhash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{bibnamehash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{authorbibnamehash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{authornamehash}{439507c5d4a1df27ada1daadabcd2132}
+      \strng{authorfullhash}{ca70b7b67fe015031217febecf11e87a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eventtitle}{2019 {{IEEE International Symposium}} on {{INnovations}} in {{Intelligent SysTems}} and {{Applications}} ({{INISTA}})}
+      \field{isbn}{978-1-72811-862-8}
+      \field{journaltitle}{2019 {{IEEE International Symposium}} on {{INnovations}} in {{Intelligent SysTems}} and {{Applications}} ({{INISTA}})}
+      \field{month}{7}
+      \field{shorttitle}{Dynamic {{Time Warping}}}
+      \field{title}{Dynamic {{Time Warping}}: {{Itakura}} vs {{Sakoe-Chiba}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/INISTA.2019.8778300
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8778300/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8778300/
+      \endverb
+    \endentry
+    \entry{R-dtw}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c24e6d3eb07e2c01ebb875f8dca15f30}{%
+           family={Giorgino},
+           familyi={G\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{fullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{bibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorbibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authornamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorfullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 1.23-1}
+      \field{title}{dtw: Dynamic Time Warping Algorithms}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=dtw
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=dtw
+      \endverb
+    \endentry
     \entry{hildebrandtShortPaperEnhancing2014}{inbook}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=061484a69ce2913bb62a0a1b8d0b01fa}{%
@@ -4522,6 +4630,114 @@
       \endverb
       \verb{url}
       \verb https://onlinelibrary.wiley.com/doi/10.1111/j.1756-8765.2009.01027.x
+      \endverb
+    \endentry
+    \entry{gelerDynamicTimeWarping2019}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8bb4738a58cb4b8a2c3be224b38bce16}{%
+           family={Geler},
+           familyi={G\bibinitperiod},
+           given={Zoltan},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=02cb8b459d518bb32baf3a664bb32330}{%
+           family={Kurbalija},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d425d47beeecf3c1849a15a97f45bff7}{%
+           family={Ivanovic},
+           familyi={I\bibinitperiod},
+           given={Mirjana},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ef5613eb4f55655de0e751cb7d63ee2}{%
+           family={Radovanovic},
+           familyi={R\bibinitperiod},
+           given={Milos},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f687e0d0dfe3a9030d2c300da6547be9}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Weihui},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Sofia, Bulgaria}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{439507c5d4a1df27ada1daadabcd2132}
+      \strng{fullhash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{bibnamehash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{authorbibnamehash}{ca70b7b67fe015031217febecf11e87a}
+      \strng{authornamehash}{439507c5d4a1df27ada1daadabcd2132}
+      \strng{authorfullhash}{ca70b7b67fe015031217febecf11e87a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{eventtitle}{2019 {{IEEE International Symposium}} on {{INnovations}} in {{Intelligent SysTems}} and {{Applications}} ({{INISTA}})}
+      \field{isbn}{978-1-72811-862-8}
+      \field{journaltitle}{2019 {{IEEE International Symposium}} on {{INnovations}} in {{Intelligent SysTems}} and {{Applications}} ({{INISTA}})}
+      \field{month}{7}
+      \field{shorttitle}{Dynamic {{Time Warping}}}
+      \field{title}{Dynamic {{Time Warping}}: {{Itakura}} vs {{Sakoe-Chiba}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/INISTA.2019.8778300
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8778300/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8778300/
+      \endverb
+    \endentry
+    \entry{R-dtw}{manual}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c24e6d3eb07e2c01ebb875f8dca15f30}{%
+           family={Giorgino},
+           familyi={G\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{fullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{bibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorbibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authornamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorfullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 1.23-1}
+      \field{title}{dtw: Dynamic Time Warping Algorithms}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=dtw
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=dtw
       \endverb
     \endentry
     \entry{hildebrandtShortPaperEnhancing2014}{inbook}{}

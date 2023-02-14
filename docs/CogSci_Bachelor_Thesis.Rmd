@@ -613,7 +613,7 @@ Instantaneous phase is a commonly used method for assessing synchrony between tw
 
 ### Dynamic Time Warping
 
-Dynamic Time Warping (DTW) is a method used to compare the similarity of two or more sequences of data. DTW works by finding the optimal alignment between the two sequences by stretching or compressing one sequence so that the difference between the sequences is minimized [@mullerDynamicTimeWarping2007]. This alignment is represented by a mapping function that indicates the relationship between the two sequences at each point in time. DTW has found applications in a wide range of fields, including speech recognition, music analysis, and in joint action [@hochDancingTogetherInfant2021]. For the present study, DTW was used to compare the trajectories of the two sleds and assess the level of synchrony between them over time, allowing for a more detailed analysis of the movement patterns. For the analysis, data were decimated, resulting in a sample rate of 30 Hz which reduced the computation time significantly and comparisons between several full-rate and down-sampled DTW analyses resulted in comparable normalized path distances. Furthermore, a linear mixed model was fit to the normalized path distances.
+Dynamic Time Warping (DTW) is a method used to compare the similarity of two or more sequences of data. DTW works by finding the optimal alignment between the two sequences by stretching or compressing one sequence so that the difference between the sequences is minimized [@mullerDynamicTimeWarping2007]. This alignment is represented by a mapping function that indicates the relationship between the two sequences at each point in time. DTW has found applications in a wide range of fields, including speech recognition, music analysis, and in joint action [@hochDancingTogetherInfant2021]. For the present study, DTW was used to compare the trajectories of the two sleds and assess the level of synchrony between them over time, allowing for a more detailed analysis of the movement patterns. For the analysis, data were decimated, resulting in a sample rate of 30 Hz which reduced the computation time significantly and comparisons between several full-rate and down-sampled DTW analyses resulted in comparable normalized path distances. DTW path distances were calculated with the R package `dtw` [@R-dtw] using the Sakoe-Chiba windowing method [@gelerDynamicTimeWarping2019] with a window size of 90 samples (3 seconds) and using the `symmetric2` step pattern. Furthermore, a linear mixed model was fit to the normalized path distances.
 
 
 # Results
@@ -1072,7 +1072,7 @@ if (file.exists(paste0(cache_dir, "/dtw_fit_report.rds"))) {
 knitr::include_graphics("figures/dtw_summary.png")
 ```
 
-Analysis of DTW showed gave a mean normalized distance of `r dtw_res$dist_mean[dtw_res$condition == "No Sonification"]` ± `r dtw_res$dist_sd[dtw_res$condition == "No Sonification"]` for the no sonification condition,
+Analysis of DTW results gave a mean normalized path distance of `r dtw_res$dist_mean[dtw_res$condition == "No Sonification"]` ± `r dtw_res$dist_sd[dtw_res$condition == "No Sonification"]` for the no sonification condition,
 `r dtw_res$dist_mean[dtw_res$condition == "Task"]` ± `r dtw_res$dist_sd[dtw_res$condition == "Task"]` for the task condition, and
 `r dtw_res$dist_mean[dtw_res$condition == "Sync"]` ± `r dtw_res$dist_sd[dtw_res$condition == "Sync"]` for the sync condition. (Figure \@ref(fig:dtw-plot)).
 
