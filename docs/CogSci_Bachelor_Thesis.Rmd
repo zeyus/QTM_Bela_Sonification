@@ -497,7 +497,23 @@ knitr::include_graphics("figures/sync_sonif_illustration.png")
 
 ## Motion Capture (LR)
 
-Motion capture data were collected using a `r n_tracking_cams + n_video_cams` camera (`r n_tracking_cams` Qualisys Miqus M3 and `r n_video_cams` Qualisys Miqus Video) system connected to a Qualisys Camera Sync Unit. Marker data were acquired at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager (QTM) software version `r qtm_version` was used to collect and process the data with real-time 3D tracking data output. QTM options for ‘processing of every frame’ and ‘2D data preprocessing’ were disabled for real-time output to ensure minimal latency. Figure \@ref(fig:exp-graph) outlines the flow of data from motion capture to sonification. 
+Motion capture data were collected using a `r n_tracking_cams + n_video_cams` camera (`r n_tracking_cams` Qualisys Miqus M3 and `r n_video_cams` Qualisys Miqus Video) system connected to a Qualisys Camera Sync Unit. Marker data were acquired at a sampling rate of `r capture_freq` Hz and video data were acquired at a sampling rate of 25 Hz. Qualisys Track Manager (QTM) software version `r qtm_version` was used to collect and process the data with real-time 3D tracking data output. QTM options for ‘processing of every frame’ and ‘2D data preprocessing’ were disabled for real-time output to ensure minimal latency.
+
+### Markers (LR)
+
+For the experimental setup, one passive marker was placed on each car, and two additional passive reference markers were placed on the front corners of the track (see Figure \@ref(fig:track-setup) for a visual representation of the track and marker placement). These additional markers provided reference points for the 3D orientation of the track and the cars across trials in case of accidental track movement. Four preliminary sessions of two minutes were recorded of variable speed sled movements in QTM, and unique labels were given to the four passive markers. The recordings were used for training a QTM Automatic Identification of Marker (AIM) model. AIM models were applied to recordings and real-time output to apply known labels to marker data, allowing the sonification to read the current position of both sleds.
+
+```{r track-setup, fig.align='center', fig.cap='Illustration depicting the experimental track setup and dimensions. Photos depict the constructed track as well as the sleds with the passive motion tracking markers.', out.width="100%"}
+knitr::include_graphics("figures/track_dimensions.png")
+```
+
+## Sonification (LR)
+
+Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The two audio output channels were connected to a pair of Genelec G Two active speakers. The main program used the latest available Bela platform framework [^belaplatform]. Figure \@ref(fig:exp-graph) outlines the flow of data from motion capture to sonification.
+
+[^code]: Source, data, and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
+
+[^belaplatform]: Commit ID `42bbf18c3710ed82cdf24b09ab72ac2239bf148e` from 10 August 2022: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
 
 ```{r exp-graph-prep}
@@ -557,22 +573,6 @@ rsvg_png(
 ```{r exp-graph, fig.align='center', fig.cap='Diagram desgribing the low-latency sonification pipeline. Motion tracking cameras collected recordings of passive markers which were processed in QTM and 3D trajectory data were sonified on the Bela device which played audio on the connected loudspeakers.', out.width="100%"}
 knitr::include_graphics(graph_png_file)
 ```
-
-### Markers (LR)
-
-For the experimental setup, one passive marker was placed on each car, and two additional passive reference markers were placed on the front corners of the track (see Figure \@ref(fig:track-setup) for a visual representation of the track and marker placement). These additional markers provided reference points for the 3D orientation of the track and the cars across trials in case of accidental track movement. Four preliminary sessions of two minutes were recorded of variable speed sled movements in QTM, and unique labels were given to the four passive markers. The recordings were used for training a QTM Automatic Identification of Marker (AIM) model. AIM models were applied to recordings and real-time output to apply known labels to marker data, allowing the sonification to read the current position of both sleds.
-
-```{r track-setup, fig.align='center', fig.cap='Illustration depicting the experimental track setup and dimensions. Photos depict the constructed track as well as the sleds with the passive motion tracking markers.', out.width="100%"}
-knitr::include_graphics("figures/track_dimensions.png")
-```
-
-## Sonification (LR)
-
-Motion capture data were sent via UDP packets over USB networking to a Bela Mini device running version `r bela_version` running a custom C++ program[^code]. The main program loop was configured to execute every `r bela_buffer_size` samples, with an output sample rate of `r bela_freq` Hz for `r bela_n_channels` audio channels. The two audio output channels were connected to a pair of Genelec G Two active speakers. The main program used the latest available Bela platform framework [^belaplatform].
-
-[^code]: Source, data, and analyses are available at [`r rmarkdown::metadata$repository`](`r rmarkdown::metadata$repository`)
-
-[^belaplatform]: Commit ID `42bbf18c3710ed82cdf24b09ab72ac2239bf148e` from 10 August 2022: https://github.com/BelaPlatform/Bela/commit/42bbf18c3710ed82cdf24b09ab72ac2239bf148e
 
 Two 16-bit 44.1 kHz wave files were prepared from the output of a MIDI synthesizer at the lowest frequency for both of the tones and were cut off at 113145 samples where the zero-crossing of both files aligned. A 5ms fade-in and fade-out were applied to the start and end of the files to minimize DC pop during sample looping. To allow for dynamic frequency changes, sound file playback used a floating point read pointer which was incremented sequentially as the 32ms buffer was populated. When the playback frequency was increased, the step size of the read position would increase by the change in frequency, and would proportionally interpolate between samples to provide a smooth-sounding frequency transition. This method was implemented to ensure that the audio resolution was never below the original file’s resolution.
 
