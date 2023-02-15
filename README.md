@@ -4,20 +4,20 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 # Contents
 
 <!--ts-->
-- [QTM Low-latency Sonification](#qtm-low-latency-sonification)
-- [Contents](#contents)
-- [Harmony in Motion: Real-time Sonification Strategies for Joint Action Research](#harmony-in-motion-real-time-sonification-strategies-for-joint-action-research)
-  - [Abstract](#abstract)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-  - [Sonification](#sonification)
-  - [Data](#data)
-    - [Subject Information](#subject-information)
-    - [QTM Data Format](#qtm-data-format)
-  - [Data Preparation](#data-preparation)
-- [Open Source Libraries](#open-source-libraries)
-  - [Included](#included)
-  - [Used](#used)
+* [QTM Low-latency Sonification](#qtm-low-latency-sonification)
+* [Contents](#contents)
+* [Harmony in Motion: Real-time Sonification Strategies for Joint Action Research](#harmony-in-motion-real-time-sonification-strategies-for-joint-action-research)
+   * [Abstract](#abstract)
+* [Project Structure](#project-structure)
+* [Usage](#usage)
+   * [Sonification](#sonification)
+   * [Data](#data)
+      * [Subject Information](#subject-information)
+      * [QTM Data Format](#qtm-data-format)
+   * [Data Preparation](#data-preparation)
+* [Open Source Libraries](#open-source-libraries)
+   * [Included](#included)
+   * [Used](#used)
 <!--te-->
 
 # Harmony in Motion: Real-time Sonification Strategies for Joint Action Research
