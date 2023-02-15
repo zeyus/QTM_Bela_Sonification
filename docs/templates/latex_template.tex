@@ -434,6 +434,12 @@ $endif$
     Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{NavyBlue}{MIT}}).
   }
 \restoregeometry
+$if(requiredsummary)$
+\clearpage
+\section*{Summary}
+$requiredsummary$
+\clearpage
+$endif$
 $for(include-before)$
 $include-before$
 

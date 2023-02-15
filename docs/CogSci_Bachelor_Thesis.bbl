@@ -253,6 +253,64 @@
       \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
       \endverb
     \endentry
+    \entry{bidelmanNeuralCorrelatesConsonance2009}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e099c17fb6541ac6264954d36e86d296}{%
+           family={Bidelman},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d8a10bfe835d5e19df07f41a57fe107}{%
+           family={Krishnan},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{fullhash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{bibnamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authorbibnamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authornamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authorfullhash}{5395667f4ebc60d306979b7c015249fe}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{0270-6474, 1529-2401}
+      \field{journaltitle}{Journal of Neuroscience}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{42}
+      \field{shortjournal}{Journal of Neuroscience}
+      \field{title}{Neural {{Correlates}} of {{Consonance}}, {{Dissonance}}, and the {{Hierarchy}} of {{Musical Pitch}} in the {{Human Brainstem}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{29}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13165\bibrangedash 13171}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\DTCGC8Y7\\Bidelman_Krishnan_2009_Neural Correlates of Consonance, Dissonance, and the Hierarchy of Musical Pitch.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+      \verb{url}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+    \endentry
     \entry{boltSensoryAttenuationAuditory2021}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
@@ -383,6 +441,76 @@
       \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
       \endverb
       \keyw{extracted}
+    \endentry
+    \entry{brockIfMotionSounds2012}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=acd38e6fc86d9d7a6dce047c48d83402}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={Heike},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d2b553c025c6ff551b633b141dac9de}{%
+           family={Baumann},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b11e9ed9420706ff1ef4f686fc7ed8de}
+      \strng{fullhash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{bibnamehash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{authorbibnamehash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{authornamehash}{b11e9ed9420706ff1ef4f686fc7ed8de}
+      \strng{authorfullhash}{74f5c02530fba676bc90b14d17d73f3c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Within last years, movement sonification turned out to be an appropriate support for motor perception and motor control that can display physical motion in a very rich and direct way. But how should movement sonification be configured to support motor learning? The appropriate selection of movement parameters and their transformation into characteristic motion features is essential for an auditory display to become effective. In this paper, we introduce a real-time sonification framework for all common MIDI environments based on acceleration and orientation data from inertial sensors. Fundamental processing steps to transform motion information into meaningful sound will be discussed. The proposed framework of inertial motion capturing, kinematic parameter selection and possible kinematic acoustic mapping provides a basis for mobile real-time movement sonification which is a prospective powerful training tool for rehabilitation and sports and offers a broad variety of application possibilities.}
+      \field{issn}{18777058}
+      \field{journaltitle}{Procedia Engineering}
+      \field{langid}{english}
+      \field{shortjournal}{Procedia Engineering}
+      \field{shorttitle}{If Motion Sounds}
+      \field{title}{If Motion Sounds: {{Movement}} Sonification Based on Inertial Sensor Data}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{34}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{556\bibrangedash 561}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.proeng.2012.04.095
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HYCVDNZ8\\Brock et al. - 2012 - If motion sounds Movement sonification based on i.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1877705812017080
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1877705812017080
+      \endverb
+      \keyw{linus,luke,methods}
     \endentry
     \entry{calvo-merinoActionObservationAcquired2005}{article}{}
       \name{author}{5}{}{%
@@ -980,82 +1108,26 @@
       \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
       \endverb
     \endentry
-    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
-      \name{author}{2}{}{%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+    \entry{effenbergMovementSonificationEffects2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O.},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
-           family={Schmitz},
-           familyi={S\bibinitperiod},
-           given={Gerd},
-           giveni={G\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{namehash}{e544caada546836d3df5caa086416400}
+      \strng{fullhash}{e544caada546836d3df5caa086416400}
+      \strng{bibnamehash}{e544caada546836d3df5caa086416400}
+      \strng{authorbibnamehash}{e544caada546836d3df5caa086416400}
+      \strng{authornamehash}{e544caada546836d3df5caa086416400}
+      \strng{authorfullhash}{e544caada546836d3df5caa086416400}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{issn}{0077-8923, 1749-6632}
-      \field{journaltitle}{Annals of the New York Academy of Sciences}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{number}{1}
-      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
-      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
-      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
-      \field{urlday}{1}
-      \field{urlmonth}{9}
-      \field{urlyear}{2022}
-      \field{volume}{1425}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{52\bibrangedash 69}
-      \range{pages}{18}
-      \verb{doi}
-      \verb 10.1111/nyas.13693
-      \endverb
-      \verb{file}
-      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
-      \endverb
-    \endentry
-    \entry{effenbergMovementSonificationEffects2005}{article}{}
-      \name{author}{1}{}{%
-        {{un=1,uniquepart=given,hash=2898283c164562575d7165f1e70754ce}{%
-           family={Effenberg},
-           familyi={E\bibinitperiod},
-           given={A.O.},
-           giveni={A\bibinitperiod},
-           givenun=1}}%
-      }
-      \strng{namehash}{2898283c164562575d7165f1e70754ce}
-      \strng{fullhash}{2898283c164562575d7165f1e70754ce}
-      \strng{bibnamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authorbibnamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authornamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authorfullhash}{2898283c164562575d7165f1e70754ce}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{1070-986X}
@@ -1086,6 +1158,64 @@
       \endverb
       \verb{url}
       \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0077-8923, 1749-6632}
+      \field{journaltitle}{Annals of the New York Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
+      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
+      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{1425}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{52\bibrangedash 69}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/nyas.13693
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
       \endverb
     \endentry
     \entry{ferrari-tonioloTwoBrainsAction2019}{article}{}
@@ -1790,6 +1920,58 @@
       \endverb
       \keyw{extracted,linus}
     \endentry
+    \entry{kosBiofeedbackSportChallenges2015}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f475aabf9aa17605a63cbf9de993c0ed}{%
+           family={Kos},
+           familyi={K\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf051aa6a3318eb9d6267abfce04c138}{%
+           family={Umek},
+           familyi={U\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=045f39fa6bd85465e7bde3e842039d8f}{%
+           family={Tomazic},
+           familyi={T\bibinitperiod},
+           given={Saso},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2e59d8188ecda5d755fe91c4933b4d00}
+      \strng{fullhash}{005666e7e6d936335bb242625a35d58d}
+      \strng{bibnamehash}{005666e7e6d936335bb242625a35d58d}
+      \strng{authorbibnamehash}{005666e7e6d936335bb242625a35d58d}
+      \strng{authornamehash}{2e59d8188ecda5d755fe91c4933b4d00}
+      \strng{authorfullhash}{005666e7e6d936335bb242625a35d58d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Science and technology are ever more frequently used in sports for achieving the competitive advantage. Motion tracking systems, in connection to the biomechanical biofeedback, help in accelerating motor learning. Requirements about various parameters important in real-time biofeedback applications are discussed. Special focus is given on feedback loop delays and its real-time operation. Optical tracking and inertial sensor tracking systems are presented and compared. Real-time sensor signal acquisitions and real-time processing challenges, in connection to biomechanical biofeedback, are presented. This paper can serve as a starting point for determining the adequate combination of technical equipment and its specifications that work favorably for the operation of the planned real-time biofeedback application.}
+      \field{eventtitle}{2015 {{IEEE}} 15th {{International Conference}} on {{Bioinformatics}} and {{Bioengineering}} ({{BIBE}})}
+      \field{journaltitle}{2015 {{IEEE}} 15th {{International Conference}} on {{Bioinformatics}} and {{Bioengineering}} ({{BIBE}})}
+      \field{month}{11}
+      \field{shorttitle}{Biofeedback in Sport}
+      \field{title}{Biofeedback in Sport: {{Challenges}} in Real-Time Motion Tracking and Processing}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/BIBE.2015.7367681
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\PYVTBGBM\\Kos et al. - 2015 - Biofeedback in sport Challenges in real-time moti.pdf;C\:\\Users\\webma\\Zotero\\storage\\TVQCQ34F\\7367681.html
+      \endverb
+      \keyw{Biological control systems,Biomedical optical imaging,Delays,Feedback loop,Gyroscopes,introduction,latency,Real-time systems,Tracking}
+    \endentry
     \entry{kosinskiLiteratureReviewReaction2008}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a7dd175e166a48f006415bd1560d8db0}{%
@@ -2313,12 +2495,12 @@
            given={Gerd},
            giveni={G\bibinitperiod},
            givenun=0}}%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
+           givenun=0}}%
       }
       \list{location}{1}{%
         {Atlanta, GA, USA}%
@@ -2355,12 +2537,12 @@
            given={Gerd},
            giveni={G\bibinitperiod},
            givenun=0}}%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
+           givenun=0}}%
       }
       \name{editor}{2}{}{%
         {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
@@ -2567,6 +2749,58 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{setharesLocalConsonanceRelationship1993}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
+           family={Sethares},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{fullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{bibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-4966}
+      \field{journaltitle}{The Journal of the Acoustical Society of America}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{The Journal of the Acoustical Society of America}
+      \field{title}{Local Consonance and the Relationship between Timbre and Scale}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{94}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1218\bibrangedash 1228}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1121/1.408175
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\WP62CJYG\\Sethares_1993_Local consonance and the relationship between timbre and scale.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://asa.scitation.org/doi/10.1121/1.408175
+      \endverb
+      \verb{url}
+      \verb http://asa.scitation.org/doi/10.1121/1.408175
+      \endverb
+    \endentry
     \entry{setharesSoundSound2005}{inbook}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
@@ -2588,6 +2822,7 @@
       \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
       \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
       \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
@@ -3683,6 +3918,64 @@
       \verb http://journal.frontiersin.org/Article/10.3389/fnins.2016.00385/abstract
       \endverb
     \endentry
+    \entry{bidelmanNeuralCorrelatesConsonance2009}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e099c17fb6541ac6264954d36e86d296}{%
+           family={Bidelman},
+           familyi={B\bibinitperiod},
+           given={G.\bibnamedelimi M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d8a10bfe835d5e19df07f41a57fe107}{%
+           family={Krishnan},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{fullhash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{bibnamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authorbibnamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authornamehash}{5395667f4ebc60d306979b7c015249fe}
+      \strng{authorfullhash}{5395667f4ebc60d306979b7c015249fe}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{0270-6474, 1529-2401}
+      \field{journaltitle}{Journal of Neuroscience}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{42}
+      \field{shortjournal}{Journal of Neuroscience}
+      \field{title}{Neural {{Correlates}} of {{Consonance}}, {{Dissonance}}, and the {{Hierarchy}} of {{Musical Pitch}} in the {{Human Brainstem}}}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{29}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{13165\bibrangedash 13171}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\DTCGC8Y7\\Bidelman_Krishnan_2009_Neural Correlates of Consonance, Dissonance, and the Hierarchy of Musical Pitch.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+      \verb{url}
+      \verb https://www.jneurosci.org/lookup/doi/10.1523/JNEUROSCI.3900-09.2009
+      \endverb
+    \endentry
     \entry{boltSensoryAttenuationAuditory2021}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1d2f43a45c47b0d6e195d72fd386429}{%
@@ -3813,6 +4106,76 @@
       \verb http://doi.apa.org/getdoi.cfm?doi=10.1037/0033-295X.108.3.624
       \endverb
       \keyw{extracted}
+    \endentry
+    \entry{brockIfMotionSounds2012}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=acd38e6fc86d9d7a6dce047c48d83402}{%
+           family={Brock},
+           familyi={B\bibinitperiod},
+           given={Heike},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d2b553c025c6ff551b633b141dac9de}{%
+           family={Baumann},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b11e9ed9420706ff1ef4f686fc7ed8de}
+      \strng{fullhash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{bibnamehash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{authorbibnamehash}{74f5c02530fba676bc90b14d17d73f3c}
+      \strng{authornamehash}{b11e9ed9420706ff1ef4f686fc7ed8de}
+      \strng{authorfullhash}{74f5c02530fba676bc90b14d17d73f3c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Within last years, movement sonification turned out to be an appropriate support for motor perception and motor control that can display physical motion in a very rich and direct way. But how should movement sonification be configured to support motor learning? The appropriate selection of movement parameters and their transformation into characteristic motion features is essential for an auditory display to become effective. In this paper, we introduce a real-time sonification framework for all common MIDI environments based on acceleration and orientation data from inertial sensors. Fundamental processing steps to transform motion information into meaningful sound will be discussed. The proposed framework of inertial motion capturing, kinematic parameter selection and possible kinematic acoustic mapping provides a basis for mobile real-time movement sonification which is a prospective powerful training tool for rehabilitation and sports and offers a broad variety of application possibilities.}
+      \field{issn}{18777058}
+      \field{journaltitle}{Procedia Engineering}
+      \field{langid}{english}
+      \field{shortjournal}{Procedia Engineering}
+      \field{shorttitle}{If Motion Sounds}
+      \field{title}{If Motion Sounds: {{Movement}} Sonification Based on Inertial Sensor Data}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{34}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{556\bibrangedash 561}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.proeng.2012.04.095
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\HYCVDNZ8\\Brock et al. - 2012 - If motion sounds Movement sonification based on i.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1877705812017080
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1877705812017080
+      \endverb
+      \keyw{linus,luke,methods}
     \endentry
     \entry{calvo-merinoActionObservationAcquired2005}{article}{}
       \name{author}{5}{}{%
@@ -4410,82 +4773,26 @@
       \verb http://link.springer.com/10.1007/978-3-540-74048-3_4
       \endverb
     \endentry
-    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
-      \name{author}{2}{}{%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+    \entry{effenbergMovementSonificationEffects2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O.},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
-           family={Schmitz},
-           familyi={S\bibinitperiod},
-           given={Gerd},
-           giveni={G\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
-      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{namehash}{e544caada546836d3df5caa086416400}
+      \strng{fullhash}{e544caada546836d3df5caa086416400}
+      \strng{bibnamehash}{e544caada546836d3df5caa086416400}
+      \strng{authorbibnamehash}{e544caada546836d3df5caa086416400}
+      \strng{authornamehash}{e544caada546836d3df5caa086416400}
+      \strng{authorfullhash}{e544caada546836d3df5caa086416400}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{issn}{0077-8923, 1749-6632}
-      \field{journaltitle}{Annals of the New York Academy of Sciences}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{number}{1}
-      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
-      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
-      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
-      \field{urlday}{1}
-      \field{urlmonth}{9}
-      \field{urlyear}{2022}
-      \field{volume}{1425}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{52\bibrangedash 69}
-      \range{pages}{18}
-      \verb{doi}
-      \verb 10.1111/nyas.13693
-      \endverb
-      \verb{file}
-      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
-      \endverb
-    \endentry
-    \entry{effenbergMovementSonificationEffects2005}{article}{}
-      \name{author}{1}{}{%
-        {{un=1,uniquepart=given,hash=2898283c164562575d7165f1e70754ce}{%
-           family={Effenberg},
-           familyi={E\bibinitperiod},
-           given={A.O.},
-           giveni={A\bibinitperiod},
-           givenun=1}}%
-      }
-      \strng{namehash}{2898283c164562575d7165f1e70754ce}
-      \strng{fullhash}{2898283c164562575d7165f1e70754ce}
-      \strng{bibnamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authorbibnamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authornamehash}{2898283c164562575d7165f1e70754ce}
-      \strng{authorfullhash}{2898283c164562575d7165f1e70754ce}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{issn}{1070-986X}
@@ -4516,6 +4823,64 @@
       \endverb
       \verb{url}
       \verb http://ieeexplore.ieee.org/document/1423934/
+      \endverb
+    \endentry
+    \entry{effenbergAccelerationDecelerationConstant2018}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
+           family={Effenberg},
+           familyi={E\bibinitperiod},
+           given={Alfred\bibnamedelima O.},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3840fbe7e33cac933d86334e4fe3f3c6}{%
+           family={Schmitz},
+           familyi={S\bibinitperiod},
+           given={Gerd},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{fullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{bibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorbibnamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authornamehash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \strng{authorfullhash}{16775c623d055bdc5a9f88a1f1ed4555}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0077-8923, 1749-6632}
+      \field{journaltitle}{Annals of the New York Academy of Sciences}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Ann. N.Y. Acad. Sci.}
+      \field{shorttitle}{Acceleration and Deceleration at Constant Speed}
+      \field{title}{Acceleration and Deceleration at Constant Speed: Systematic Modulation of Motion Perception by Kinematic Sonification}
+      \field{urlday}{1}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{1425}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{52\bibrangedash 69}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/nyas.13693
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\QCZDNVFK\\Effenberg and Schmitz - 2018 - Acceleration and deceleration at constant speed s.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/nyas.13693
       \endverb
     \endentry
     \entry{ferrari-tonioloTwoBrainsAction2019}{article}{}
@@ -5220,6 +5585,58 @@
       \endverb
       \keyw{extracted,linus}
     \endentry
+    \entry{kosBiofeedbackSportChallenges2015}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f475aabf9aa17605a63cbf9de993c0ed}{%
+           family={Kos},
+           familyi={K\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cf051aa6a3318eb9d6267abfce04c138}{%
+           family={Umek},
+           familyi={U\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=045f39fa6bd85465e7bde3e842039d8f}{%
+           family={Tomazic},
+           familyi={T\bibinitperiod},
+           given={Saso},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2e59d8188ecda5d755fe91c4933b4d00}
+      \strng{fullhash}{005666e7e6d936335bb242625a35d58d}
+      \strng{bibnamehash}{005666e7e6d936335bb242625a35d58d}
+      \strng{authorbibnamehash}{005666e7e6d936335bb242625a35d58d}
+      \strng{authornamehash}{2e59d8188ecda5d755fe91c4933b4d00}
+      \strng{authorfullhash}{005666e7e6d936335bb242625a35d58d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Science and technology are ever more frequently used in sports for achieving the competitive advantage. Motion tracking systems, in connection to the biomechanical biofeedback, help in accelerating motor learning. Requirements about various parameters important in real-time biofeedback applications are discussed. Special focus is given on feedback loop delays and its real-time operation. Optical tracking and inertial sensor tracking systems are presented and compared. Real-time sensor signal acquisitions and real-time processing challenges, in connection to biomechanical biofeedback, are presented. This paper can serve as a starting point for determining the adequate combination of technical equipment and its specifications that work favorably for the operation of the planned real-time biofeedback application.}
+      \field{eventtitle}{2015 {{IEEE}} 15th {{International Conference}} on {{Bioinformatics}} and {{Bioengineering}} ({{BIBE}})}
+      \field{journaltitle}{2015 {{IEEE}} 15th {{International Conference}} on {{Bioinformatics}} and {{Bioengineering}} ({{BIBE}})}
+      \field{month}{11}
+      \field{shorttitle}{Biofeedback in Sport}
+      \field{title}{Biofeedback in Sport: {{Challenges}} in Real-Time Motion Tracking and Processing}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/BIBE.2015.7367681
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\PYVTBGBM\\Kos et al. - 2015 - Biofeedback in sport Challenges in real-time moti.pdf;C\:\\Users\\webma\\Zotero\\storage\\TVQCQ34F\\7367681.html
+      \endverb
+      \keyw{Biological control systems,Biomedical optical imaging,Delays,Feedback loop,Gyroscopes,introduction,latency,Real-time systems,Tracking}
+    \endentry
     \entry{kosinskiLiteratureReviewReaction2008}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=a7dd175e166a48f006415bd1560d8db0}{%
@@ -5743,12 +6160,12 @@
            given={Gerd},
            giveni={G\bibinitperiod},
            givenun=0}}%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
+           givenun=0}}%
       }
       \list{location}{1}{%
         {Atlanta, GA, USA}%
@@ -5785,12 +6202,12 @@
            given={Gerd},
            giveni={G\bibinitperiod},
            givenun=0}}%
-        {{un=1,uniquepart=given,hash=e544caada546836d3df5caa086416400}{%
+        {{un=0,uniquepart=base,hash=e544caada546836d3df5caa086416400}{%
            family={Effenberg},
            familyi={E\bibinitperiod},
            given={Alfred\bibnamedelima O},
            giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=1}}%
+           givenun=0}}%
       }
       \name{editor}{2}{}{%
         {{hash=faa1cc10c94f92d5691931cdcbe2fd13}{%
@@ -5997,6 +6414,58 @@
       \endverb
       \keyw{highlighted,introduction,linus}
     \endentry
+    \entry{setharesLocalConsonanceRelationship1993}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
+           family={Sethares},
+           familyi={S\bibinitperiod},
+           given={William\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{fullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{bibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
+      \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-4966}
+      \field{journaltitle}{The Journal of the Acoustical Society of America}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{The Journal of the Acoustical Society of America}
+      \field{title}{Local Consonance and the Relationship between Timbre and Scale}
+      \field{urlday}{14}
+      \field{urlmonth}{2}
+      \field{urlyear}{2023}
+      \field{volume}{94}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1218\bibrangedash 1228}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1121/1.408175
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\webma\\Zotero\\storage\\WP62CJYG\\Sethares_1993_Local consonance and the relationship between timbre and scale.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://asa.scitation.org/doi/10.1121/1.408175
+      \endverb
+      \verb{url}
+      \verb http://asa.scitation.org/doi/10.1121/1.408175
+      \endverb
+    \endentry
     \entry{setharesSoundSound2005}{inbook}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1a5bd88dd02ede41f81c8254c3957256}{%
@@ -6018,6 +6487,7 @@
       \strng{authorbibnamehash}{1a5bd88dd02ede41f81c8254c3957256}
       \strng{authornamehash}{1a5bd88dd02ede41f81c8254c3957256}
       \strng{authorfullhash}{1a5bd88dd02ede41f81c8254c3957256}
+      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{extradatescope}{labelyear}
