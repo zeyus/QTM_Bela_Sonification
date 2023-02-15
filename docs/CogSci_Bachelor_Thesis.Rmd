@@ -4,7 +4,8 @@ keywords:
     - Joint Action
     - Sonification
     - Real-time
-    - Motion Capture
+    - Synchronization
+    - Interpersonal Coordination
 authors:
 - name: Linus Backström
   affiliation: 1
@@ -19,7 +20,7 @@ authors:
 affiliations:
 - name: Aarhus University
   index: 1
-abstract: "Joint actions involving high levels of coordination often require individuals to represent and monitor their own actions as well as their partner’s actions in parallel, but current research is unclear on how this occurs under various circumstances. Using different movement sonification mapping strategies, we enhance attention towards either individual or joint outcomes of actions and separate them into experimental conditions. Five subject pairs participated in a pilot experiment to investigate whether synchrony is optimized when focusing on self-other or joint outcome representations. In the experiment, blindfolded subjects moved sleds along a track, and attempted to remain as synchronous as possible. The sled movements were captured with a motion capture system which sent 3D positional data to a low-latency sonification pipeline to implement the mapping strategies. The results showed that there were significant differences between the two sonification strategies although the No Sonification condition consistently performed best, this may be due to auditory localization that was only possible in the No Sonification condition. This pilot experiment successfully implemented a novel paradigm for joint action research that can be used in further studies in the field."
+abstract: "Joint actions involving high levels of coordination often require individuals to represent and monitor their own actions as well as their partner’s actions in parallel, but current research is unclear on how this occurs under various circumstances. Using different movement sonification mapping strategies, we enhance attention towards either individual or joint outcomes of actions, and separate them into experimental conditions. Five subject pairs participated in a pilot experiment investigating whether synchrony is optimized when focusing on self-other or joint outcome representations. In the experiment, blindfolded subjects moved sleds along a track, while attempting to remain as synchronous as possible. The sled movements were captured with a motion capture system which sent 3D positional data to a low-latency sonification pipeline to implement the mapping strategies. The results showed that there were significant differences between the two sonification strategies. Notably, the No Sonification control condition consistently outperformed both sonification conditions, possibly due to environmental auditory localization that may have been masked during the sonification conditions. This pilot experiment successfully implemented a novel paradigm for joint action research that can be used in further studies in the field."
 requiredsummary: |
   Joint actions, where two or more people synchronize their actions in pursuit of a shared goal, are a common aspect of human behavior. Understanding the mechanisms that enable individuals to work together is therefore highly valuable to cognitive scientists. Joint actions frequently require simultaneous actions by the participants, creating the need for agents to monitor both their own and their partner’s actions in parallel. By utilizing movement sonification, we attempt to facilitate monitoring of external information, thereby optimizing synchronization during a novel joint action task.
 
@@ -607,7 +608,7 @@ Each session recorded had the AIM model applied to the duration of the recording
 
 ## Subject Synchronization (LR)
 
-Three methods were used on data collected from the experiment to assess the level of synchrony between the participants in the various sonification conditions. The first method, absolute spatial distance (delta), provides a simple measure of the overall synchrony between the sleds but does not account for the temporal dynamics of the movement. The second method, Instantaneous Phase Angle Difference, provides real-time information about the synchrony of the movement, but may be sensitive to noise in the data and requires a good understanding of the mathematics involved. The third method, Dynamic Time Warping, offers a detailed analysis of the temporal dynamics of the movement and can handle differences in the speed of the movement, but may be computationally intensive and sensitive to the choice of the time-warping parameter. Each of the three methods has its strengths and limitations, and the choice of which method to use will depend on the specific goals and requirements of the analysis.
+Three methods were used on data collected from the experiment to assess the level of synchrony between the participants in the various sonification conditions. The first method, absolute spatial distance (delta), provides a simple measure of the overall synchrony between the sleds but does not account for the temporal dynamics of the movement. The second method, Instantaneous Phase Angle Difference, provides real-time information about the synchrony of the movement, but may be sensitive to noise in the data and requires a good understanding of the mathematics involved. The third method, Dynamic Time Warping, offers a detailed analysis of the temporal dynamics of the movement and can handle differences in the speed of the movement, but may be computationally intensive and sensitive to the choice of the time-warping parameter. Each of the three methods has its strengths and limitations, and can provide insight into different aspects of subject synchronization during the experimental conditions.
 
 ### Absolute Spatial Distance (LR)
 
@@ -666,22 +667,21 @@ dst_res <- trajectories_angles_pairwise %>%
         .groups = "drop"
     )
 
-plot_title <- paste(
-    "Bar plot of mean normalized x-coordinate deltas between subject pairs for each condition. Error bars show standard deviation.",
+plot_title <- paste0(
+    "Bar plot of mean normalized x-coordinate deltas between subject pairs for each condition. Error bars show standard deviation. ",
     "No Sonification condition normalized delta mean  = ",
     round(dst_res$dist_mean[dst_res$condition == "No Sonification"], 3),
-    "(sd = ",
+    " (SD = ",
     round(dst_res$dist_sd[dst_res$condition == "No Sonification"], 3),
     "), task sonification condition normalized delta mean = ",
     round(dst_res$dist_mean[dst_res$condition == "Task"], 3),
-    "(sd = ",
+    " (SD = ",
     round(dst_res$dist_sd[dst_res$condition == "Task"], 3),
     "), sync sonification condition normalized delta mean = ",
     round(dst_res$dist_mean[dst_res$condition == "Sync"], 3),
-    "(sd = ",
+    " (SD = ",
     round(dst_res$dist_sd[dst_res$condition == "Sync"], 3),
-    ").",
-    sep = " ")
+    ").")
 
 # load dst_fit_report from cache if available
 if (file.exists(paste0(cache_dir, "/dst_fit_report.rds"))) {
@@ -884,24 +884,23 @@ dev.off()
 # round the number for printing
 ipa_res$angle_mean <- round(ipa_res$angle_mean, 3)
 ipa_res$angle_sd <- round(ipa_res$angle_sd, 3)
-plot_title <- paste(
-    "Plot of mean absolute instantaneous phase angles of experimental conditions",
-    "with the length of the needles representing the standard deviation",
-    "as a percentage of 90 degrees.",
+plot_title <- paste0(
+    "Plot of mean absolute instantaneous phase angles of experimental conditions ",
+    "with the length of the needles representing the standard deviation ",
+    "as a percentage of 90 degrees. ",
     "No Sonification condition mean phase angle = ",
     ipa_res$angle_mean[ipa_res$condition == "No Sonification"],
-    "(sd = ",
+    " (SD = ",
     ipa_res$angle_sd[ipa_res$condition == "No Sonification"],
     ") degrees, task sonification condition mean phase angle = ",
     ipa_res$angle_mean[ipa_res$condition == "Task"],
-    "(sd = ",
+    " (SD = ",
     ipa_res$angle_sd[ipa_res$condition == "Task"],
     ") degrees, sync sonification condition mean phase angle = ",
     ipa_res$angle_mean[ipa_res$condition == "Sync"],
-    "(sd = ",
+    " (SD = ",
     ipa_res$angle_sd[ipa_res$condition == "Sync"],
-    ") degrees.",
-    sep = " ")
+    ") degrees.")
 
 
 # load ipa_fit_report from cache if available
@@ -1036,24 +1035,23 @@ dtw_res <- dtw_results %>%
     )
 
 
-plot_title <- paste(
-    "Distribution density plot of normalized DTW path distance between paired trajectories by condition.",
-    "The mean normalized path distance is shown as a point (+), the 20th and 80th percentiles are shown as dotted lines",
+plot_title <- paste0(
+    "Distribution density plot of normalized DTW path distance between paired trajectories by condition. ",
+    "The mean normalized path distance is shown as a point (+), the 20th and 80th percentiles are shown as dotted lines ",
     "and the 50th percentile is shown as a solid line.",
     "No Sonification condition normalized path distance mean  = ",
     dtw_res$dist_mean[dtw_res$condition == "No Sonification"],
-    "(sd = ",
+    " (SD = ",
     dtw_res$dist_sd[dtw_res$condition == "No Sonification"],
     "), task sonification condition normalized path distance mean = ",
     dtw_res$dist_mean[dtw_res$condition == "Task"],
-    "(sd = ",
+    " (SD = ",
     dtw_res$dist_sd[dtw_res$condition == "Task"],
     "), sync sonification condition normalized path distance mean = ",
     dtw_res$dist_mean[dtw_res$condition == "Sync"],
-    "(sd = ",
+    " (SD = ",
     dtw_res$dist_sd[dtw_res$condition == "Sync"],
-    ").",
-    sep = " ")
+    ").")
 
 # load dtw fit report if available
 if (file.exists(paste0(cache_dir, "/dtw_fit_report.rds"))) {
@@ -1106,11 +1104,11 @@ broom.mixed::tidy
 
 Although we could not completely isolate the joint action representations, partially due to sound created from the movement of the sleds, our sonification strategies primed attention towards either self-other monitoring by sonification of both sled positions independently, or joint outcome by sonification of the positions of each sled relative to the other. The results of the models fit for calculated synchrony measures all showed that the No Sonification condition performed best, with the lowest distance delta, relative instantaneous phase angle, and DTW path length, and the Task condition performed the worst. The model estimates were reported as statistically significant for all three measures. The Sync condition was marginally worse than the No Sonification condition, but the model results were only statistically significant for the models applied to distance delta and relative instantaneous phase angle.
 
-Despite the fact that these results may initially seem surprising, we identify potential contributing factors that may have affected the outcome. All participants reported during debriefing that they subjectively felt that the No Sonification condition was the easiest for them, even though they were blindfolded for all the conditions. One of the more obvious possible reasons is therefore that the sound of the sleds sliding on the track, although not very loud, provided spatial information to the subjects in a familiar way, i.e., binaural input that allows for auditory localization. Individuals with unimpaired hearing can use auditory cues to discriminate the spatial location of movement, and the level of accuracy is dependent on the velocity of movement (degrees/second), with lower velocity generally resulting in higher accuracy [@carlilePerceptionAuditoryMotion2016]. In our experiment, the velocity of the sleds in degrees/second is estimated to be relatively low[^trackanglevelo], meaning that the naturally occurring sounds may have been better suited for this particular task compared to the sonifications.  In the experimental conditions, the auditory localization is then somewhat masked by the sonification, which comes from speakers either in front or behind the subject, depending on the side of the track they were seated at. This issue could be addressed in several ways. First, by adding a condition where, in addition to vision, the subjects’ hearing is also restricted, giving a baseline level of synchrony. Second, by using some form of spatial cues for the sonification conditions, in the form of stereo separation that mirrors track position. Finally, by requiring headphones for all the conditions and implementing a real-time binaural synthesis [@tommasiniComputationalModelImplement2019].
+Despite the fact that these results may initially seem surprising, we identify potential contributing factors that may have affected the outcome. All participants reported during debriefing that they subjectively felt that the No Sonification condition was the easiest for them, even though they were blindfolded for all the conditions. One of the more obvious possible reasons is therefore that the sound of the sleds sliding on the track, although not very loud, provided spatial information to the subjects in a familiar way, i.e., binaural input that allows for auditory localization. Individuals with unimpaired hearing can use auditory cues to discriminate the spatial location of movement, and the level of accuracy is dependent on the velocity of movement (degrees/second), with lower velocity generally resulting in higher accuracy [@carlilePerceptionAuditoryMotion2016]. In our experiment, the velocity of the sleds in degrees/second is estimated to be relatively low[^trackanglevelo], meaning that the naturally occurring sounds may have been better suited for this particular task compared to the sonifications.  In the experimental conditions, the environmentral auditory localization is then somewhat masked by the sonification, which comes from speakers either in front or behind the subject, depending on the side of the track they were seated at. This issue could be addressed in several ways. First, by adding a condition where, in addition to vision, the subjects’ hearing is also restricted, giving a baseline level of synchrony. Second, by using some form of spatial cues for the sonification conditions, in the form of stereo separation that mirrors track position. Finally, by requiring headphones for all the conditions and implementing a real-time binaural synthesis [@tommasiniComputationalModelImplement2019].
 
 [^trackanglevelo]: Given the track length of 1130mm and a head positioned 700mm perpendicular from the track, there are approximately 78 degrees between the start and end of the track, giving an approximate velocity of 26 degrees/second and 4 degrees/second for the highest and lowest frequency subjects respectively.
 
-Another potential confounding factor is the implementation of the sonification strategies. We initially planned for them to have at least a stereo component, but due to hardware constraints and time limitations, the sonification was restricted to using speakers situated in the room. Both subjects heard the same audio during the experiment, which makes it impossible to sonify the position of a single subject relative to the other. In the Task condition, this is less important, as their absolute position on the track is sonified, but in the Sync condition, this would provide subject-specific information about their relative location. Although the mapping of the pitch was consistent across all trials because participants did not change seats during the experiment, this limitation meant that during the Sync condition, subjects had to learn the mapping of the undertone to their sled in order to extract information about their relative location. The strategies also differed in terms of the sound that was produced under circumstances where the two sleds moved in synchrony; although both sonification strategies played a perfect fifth interval, the Sync condition’s two tones held the same pitch, whereas the Task condition’s two tones changed pitch in parallel. This was intentional, as the self-other representation needed to convey information on the location of both sleds as opposed to the joint-outcome representation, which focused on the level of synchronization, but this also meant that there was no direct connection between the amplitude modulation of the overtone in the Sync condition and the frequency modulation of the overtone in the Task condition. These issues may also be mitigated by the use of headphones, allowing additional parameters to be mapped to panning instead.
+Another potential confounding factor is the implementation of the sonification strategies. We initially planned for them to have at least a stereo component, but due to hardware constraints and time limitations, the sonification was restricted to using speakers situated in the room. Both subjects heard the same audio during the experiment, which makes it impossible to sonify the position of a single subject relative to the other. In the Task condition, this is less important, as their absolute position on the track is sonified, but in the Sync condition, this would provide subject-specific information about their relative location. Although the mapping of the pitch was consistent across all trials because participants did not change seats during the experiment, this limitation meant that during the Sync condition, subjects had to learn the mapping of the undertone to their sled in order to extract information about their relative location. The strategies also differed in terms of the sound that was produced under circumstances where the two sleds moved in synchrony; although both sonification strategies played a perfect fifth interval, the Sync condition’s two tones held the same pitch, whereas the Task condition’s two tones changed pitch in parallel. This was intentional, as the self-other representation needed to convey information on the location of both sleds as opposed to the joint-outcome representation, which focused on the level of synchronization, but this also meant that there was no direct connection between the amplitude modulation of the overtone in the Sync condition and the frequency modulation of the overtone in the Task condition. These issues may also be mitigated by the use of headphones, allowing additional parameters to be mapped to panning instead. It may also be beneficial to investigate other parameters such as sound brightness, which may perform better than pitch [@mcdermottMusicalIntervalsRelative2010].
 
 One further limitation is the frequency range that was used in the experiment. Although testing demonstrated that the frequency range sounded harmonious and not irritating, a mistake in the software synthesizer tone generation process nevertheless resulted in the output frequency becoming one octave lower than the initially selected note[^notesynth] (see Figure \@ref(fig:stimuli-spectra)). As such, it may have resulted in sonification that was perceived as generally more dissonant than the originally intended center frequency of 440Hz (Figure \@ref(fig:sensory-dissonance)). It may also be useful to try strategies where synchrony creates an octave interval or a unison, rather than a perfect fifth interval. Both behavioral and neural research indicate that there are dips in perceived consonance (inversely, an increase in perceived dissonance) on either side of perfect fifth and octave intervals, but the difference is larger at an octave interval, even in non-musicians [@setharesLocalConsonanceRelationship1993; @bidelmanNeuralCorrelatesConsonance2009]. This may help subjects recognize when they have achieved perfect synchrony, although it may also make slight variances become overly pronounced.
 
@@ -1189,7 +1187,7 @@ Some final issues that should be noted include the insufficient number of refere
 
 # Conclusion
 
-Our study has successfully demonstrated that real-time sonification of motion tracking data is achievable in a joint action lab experiment. This method uses low-cost hardware for the sonification pipeline, along with open source code; it can therefore be used for research in the field of joint action with minimal budgetary requirements, and be adapted to sonify data from any available source, including video feeds, remote devices (e.g. Wiimotes) and touch devices. The mapping of sonification parameters may also be extended to include loudness or brightness, which may perform better than pitch [@mcdermottMusicalIntervalsRelative2010]. We also showed that sonification strategy selection does have an impact on synchrony, and that, while further investigation is needed, joint-outcome sonification may be a promising strategy, especially if some of the auditory localization aspects of naturally occurring sounds can be implemented.
+Our study has successfully demonstrated that real-time sonification of motion tracking data is achievable in a joint action lab experiment. This method uses low-cost hardware for the sonification pipeline, along with open source code; it can therefore be used for research in the field of joint action with minimal budgetary requirements, and be adapted to sonify data from any available source, including video feeds, remote devices (e.g. Wiimotes) and touch devices. The mapping of sonification parameters may also be extended to arbitrary audio features including virtualized 3D sound. We also showed that sonification strategy selection does have an impact on synchrony, and that, while further investigation is needed, joint-outcome sonification may be a promising strategy, especially if some of the auditory localization aspects of naturally occurring sounds can be implemented.
 
 
 <div id="refs"></div>

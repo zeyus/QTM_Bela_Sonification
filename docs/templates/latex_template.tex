@@ -400,6 +400,10 @@ $endif$
   $abstract$
   \end{abstract}
   $endif$
+  $if(keywords)$
+  \vspace{2mm}
+  \textbf{Keywords:} {$for(keywords)$$keywords$$sep$; $endfor$}
+  $endif$
 
   \marginpar{
     \sffamily\small

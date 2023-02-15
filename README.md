@@ -4,29 +4,34 @@ This project uses the Bela hardware device to sonify motion capture data from Qu
 # Contents
 
 <!--ts-->
-* [QTM Low-latency Sonification](#qtm-low-latency-sonification)
-* [Contents](#contents)
-* [Harmony in Motion: Real-time Sonification Strategies for Joint Action Research](#harmony-in-motion-real-time-sonification-strategies-for-joint-action-research)
-* [Project Structure](#project-structure)
-* [Usage](#usage)
-   * [Sonification](#sonification)
-   * [Data](#data)
-      * [Subject Information](#subject-information)
-      * [QTM Data Format](#qtm-data-format)
-   * [Data Preparation](#data-preparation)
-* [Open Source Libraries](#open-source-libraries)
-   * [Included](#included)
-   * [Used](#used)
+- [QTM Low-latency Sonification](#qtm-low-latency-sonification)
+- [Contents](#contents)
+- [Harmony in Motion: Real-time Sonification Strategies for Joint Action Research](#harmony-in-motion-real-time-sonification-strategies-for-joint-action-research)
+  - [Abstract](#abstract)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+  - [Sonification](#sonification)
+  - [Data](#data)
+    - [Subject Information](#subject-information)
+    - [QTM Data Format](#qtm-data-format)
+  - [Data Preparation](#data-preparation)
+- [Open Source Libraries](#open-source-libraries)
+  - [Included](#included)
+  - [Used](#used)
 <!--te-->
 
 # Harmony in Motion: Real-time Sonification Strategies for Joint Action Research
 
-**Cognitive Science Bachelor's Project (WORK IN PROGRESS)**
+**Cognitive Science Bachelor's Project**
 
 The thesis was written around the investigation of the effect of low-latency sonification on the synchroniciy of joint action tasks.
 The project was supervised by [Anna Zamm](https://pure.au.dk/portal/en/persons/anna-zamm(34046139-7057-4cae-927d-f2458b279026).html) (PhD, Assistant Professor, Aarhus University).
 
-The ~~final~~ WIP thesis can be found in this repository in the `docs` directory in the following formats:
+## Abstract
+
+> Joint actions involving high levels of coordination often require individuals to represent and monitor their own actions as well as their partner’s actions in parallel, but current research is unclear on how this occurs under various circumstances. Using different movement sonification mapping strategies, we enhance attention towards either individual or joint outcomes of actions, and separate them into experimental conditions. Five subject pairs participated in a pilot experiment investigating whether synchrony is optimized when focusing on self-other or joint outcome representations. In the experiment, blindfolded subjects moved sleds along a track, while attempting to remain as synchronous as possible. The sled movements were captured with a motion capture system which sent 3D positional data to a low-latency sonification pipeline to implement the mapping strategies. The results showed that there were significant differences between the two sonification strategies. Notably, the No Sonification control condition consistently outperformed both sonification conditions, possibly due to environmental auditory localization that may have been masked during the sonification conditions. This pilot experiment successfully implemented a novel paradigm for joint action research that can be used in further studies in the field.
+
+The final thesis can be found in this repository in the `docs` directory in the following formats:
 
 - [PDF](docs/CogSci_Bachelor_Thesis.pdf)
 - [LaTeX](docs/CogSci_Bachelor_Thesis.tex)
