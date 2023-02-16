@@ -391,18 +391,11 @@ $endif$
 \date{\vspace{-5ex}}
 \begin{document}
 \newgeometry{includemp, reversemp, left=1.0cm, marginparwidth=4.5cm, marginparsep=0.5cm}
+
+ 
   $if(title)$
   \maketitle
   % \thispagestyle{empty}% suppress header and footer on title page
-  $endif$
-  $if(abstract)$
-  \begin{abstract}
-  $abstract$
-  \end{abstract}
-  $endif$
-  $if(keywords)$
-  \vspace{2mm}
-  \textbf{Keywords:} {$for(keywords)$$keywords$$sep$; $endfor$}
   $endif$
 
   \marginpar{
@@ -437,6 +430,19 @@ $endif$
     {\bfseries License}\\
     Authors of papers retain copyright and release the work under a MIT Licence (\href{$licensepath$}{\color{NavyBlue}{MIT}}).
   }
+
+  $if(abstract)$
+  \begin{abstract}
+  $abstract$
+  \end{abstract}
+  $endif$
+
+  $if(keywords)$
+  \bigbreak
+  \textbf{Keywords:} {$for(keywords)$$keywords$$sep$; $endfor$}
+  $endif$
+  
+
 \restoregeometry
 $if(requiredsummary)$
 \clearpage
