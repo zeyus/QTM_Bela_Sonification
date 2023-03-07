@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Luke Ring and Linus Backström
+Copyright (c) 2023 Luke Ring and Linus Backström
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
